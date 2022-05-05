@@ -8,7 +8,6 @@ import Footer from './components/Footer';
 function App() {
   return (
     <div className="App">
-      <h1>EventHorizon</h1>
       <Navbar />
       <Routes>
       <Route path='/' element={<MainScreen />} />
