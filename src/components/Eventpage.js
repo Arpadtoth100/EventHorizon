@@ -1,11 +1,5 @@
-
-
 function Eventpage() {
-    return(
-        <div>
-            Eventpage
-        </div>
-    )
+  return <div>Eventpage</div>;
 }
 
-export default Eventpage
+export default Eventpage;
