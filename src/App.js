@@ -9,6 +9,7 @@ import Eventspage from './components/Eventpage';
 import Privacy from './components/Privacy';
 import SignOut from './components/SignOut';
 import UserMainLayout from './layouts/UserMainLayout';
+import ThankYouScreen from './views/ThankYouScreen';
 
 function App() {
   return (
@@ -37,6 +38,7 @@ function App() {
           <Route path="/faq" element={<div>FAQ comes here</div>} />
           <Route path="/privacy" element={<Privacy />} />
           <Route path="*" element={<div>No content found</div>} />
+          <Route path='/thankyou' element={<ThankYouScreen />} />
         </Route>
       </Routes>
     </div>
