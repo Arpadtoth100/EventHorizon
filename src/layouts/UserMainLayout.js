@@ -2,9 +2,9 @@ import { Outlet } from 'react-router-dom';
 import Navbar from '../components/Header/Navbar';
 import Footer from '../components/Footer/Footer';
 
-function PublicLayout() {
+function UserMainLayout() {
   return (
-    <div className='themain'>
+    <div>
       <Navbar />
       <Outlet />
       <Footer />
@@ -12,4 +12,4 @@ function PublicLayout() {
   );
 }
 
-export default PublicLayout;
+export default UserMainLayout;

@@ -1,5 +1,5 @@
-function EventScreen() {
-  return <div>Event Screen</div>;
+function EventsScreen() {
+  return <div>Events Screen</div>;
 }
 
-export default EventScreen;
+export default EventsScreen;
