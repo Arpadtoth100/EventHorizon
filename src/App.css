@@ -46,6 +46,7 @@
   font-size: 1.2rem;
   background-image: linear-gradient(to bottom, white 0%, gray 100%);
   background-size: 100%;
+  background-clip: text;
   -webkit-background-clip: text;
   -moz-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -56,6 +57,121 @@
 .link:hover {
   transform: scale(1.1);
   transition: transform 200ms ease-in-out;
+}
+
+#introduction_s {
+  width: 900px;
+  margin: auto;
+}
+
+.infoboxcontainer {
+  display: flex;
+}
+
+.infoboxcolumn {
+  flex-grow: 1;
+  height: 500px;
+}
+
+.infoboxcolumn + .infoboxcolumn {
+  margin-left: 2%;
+}
+
+.footer_main{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 60px;
+  background-color: black;
+  color: white;
+  margin-top: auto;
+}
+
+.signinup_main{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  height: calc(100vh - 120px);
+}
+
+.background{
+  width: 430px;
+  height: 520px;
+  position: absolute;
+  transform: translate(-50%,-50%);
+  left: 50%;
+  top: 50%;
+}
+
+form{
+  width: 400px;
+  background-color: rgba(255,255,255,0.13);
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255,255,255,0.1);
+  box-shadow: 0 0 40px rgba(8,7,16,0.6);
+  padding: 50px 35px;
+}
+
+form *{
+  color: black;
+  letter-spacing: 0.5px;
+  outline: none;
+  border: none;
+}
+
+.signinform{
+  height: 470px,
+}
+
+.signupform{
+  height: 600px,
+}
+
+form h3{
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 42px;
+  text-align: center;
+}
+
+label{
+  display: block;
+  margin-top: 30px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+input{
+  display: block;
+  height: 50px;
+  width: 100%;
+  background-color: rgba(255,255,255,0.07);
+  border-radius: 3px;
+  padding: 0 10px;
+  margin-top: 8px;
+  font-size: 14px;
+  font-weight: 300;
+  box-shadow: 0 0 5px rgba(8,7,16,0.6);
+}
+
+::placeholder{
+  color: #e5e5e5;
+}
+
+button{
+  margin-top: 50px;
+  width: 100%;
+  background-color: #ffffff;
+  color: #080710;
+  padding: 15px 0;
+  font-size: 18px;
+  font-weight: 600;
+  box-shadow: 0 0 10px rgba(8,7,16,0.6);
+  border-radius: 3px;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 960px) {
@@ -134,17 +250,24 @@
   .cards-list {
     flex-direction: column;
   }
-}
 
-#introduction_s {
-  width: 900px;
-  margin: auto;
-}
 
-.infoboxcontainer {
-  display: flex;
-}
+  .signinup_main{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+  }
 
+  .signin_main{
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+
+  .signup_main{
+    margin-bottom: 30px;
+  }
+}
 .infoboxcolumn {
   flex-grow: 1;
   height: 500px;

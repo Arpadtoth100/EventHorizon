@@ -10,6 +10,7 @@ import Privacy from './components/Privacy';
 import SignOut from './components/SignOut';
 import UserMainLayout from './layouts/UserMainLayout';
 import ThankYouScreen from './views/ThankYouScreen';
+import SignInUpScreen from './views/SignInUpScreen';
 import SignIn from './components/SignIn';
 import Contact from './components/Contact';
 import FAQ from './components/FAQ';
@@ -24,7 +25,7 @@ function App() {
           <Route path="/aboutus" element={<AboutUs />} />
           <Route path="/search" element={<SearchForEvents />} />
           <Route path="/events" element={<Eventspage />} />
-          <Route path="/signin" element={<SignIn/>} />
+          <Route path="/signin" element={<SignInUpScreen />} />
           <Route path="/contact" element={<Contact/>} />
           <Route path="/faq" element={<FAQ/>} />
           <Route path="/privacy" element={<Privacy />} />
