@@ -1,34 +1,38 @@
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
+import logo from "../../images/white-flag-svgrepo-com.svg"
 
 function Navbar() {
   
-  const { linkActive, setLinkActive } = useState('');
+  const [ menuActive, setMenuActive ] = useState('');
+  const [ mobileMenuActive, setMobileMenuActive ] = useState('');
 
   const hamburgerHandler = () => {
-    setLinkActive('active');
-
+    setMenuActive((prev) => prev ? undefined : 'active');
+    setMobileMenuActive((prev) => prev ? undefined : 'act');
   };
+
+  console.log(menuActive)
 
   return (
     <header className="header">
       <div className="header_main">
-        <img src="../images/pngwing.com.png" alt="#" />
-        <ul className="menu">
+        <img src={logo} alt="horizon" />
+        <ul className={`menu ${menuActive}`}>
           <li className="item">
 
             <NavLink
               to="main"
               id="nav-mainpage"
-              className={`link ${linkActive}`}>
-              Random
+              className="link">
+              MAIN PAGE
             </NavLink>
           </li>
           <li className="item">
             <NavLink
               to="aboutus"
               id="nav-aboutus"
-              className={`link ${linkActive}`}>   
+              className="link">   
               ABOUT US
             </NavLink>
           </li>
@@ -36,7 +40,7 @@ function Navbar() {
             <NavLink
               to="events"
               id="nav-events"
-              className={`link ${linkActive}`}>
+              className="link">
               EVENTS
             </NavLink>
           </li>
@@ -44,13 +48,13 @@ function Navbar() {
             <NavLink
               to="signin"
               id="nav-login"
-              className={`link ${linkActive}`}>
+              className="link">
               LOG IN
             </NavLink>
           </li>
         </ul>
         <div
-          className="header_toggle"
+          className={`header_toggle ${mobileMenuActive}`}
           id="mobile-menu"
           onClick={hamburgerHandler}
         >
