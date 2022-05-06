@@ -10,6 +10,7 @@ import Privacy from './components/Privacy';
 import SignOut from './components/SignOut';
 import UserMainLayout from './layouts/UserMainLayout';
 import ThankYouScreen from './views/ThankYouScreen';
+import SignInUpScreen from './views/SignInUpScreen';
 
 function App() {
   return (
@@ -21,7 +22,7 @@ function App() {
           <Route path="/aboutus" element={<AboutUs />} />
           <Route path="/search" element={<SearchForEvents />} />
           <Route path="/events" element={<Eventspage />} />
-          <Route path="/signin" element={<div>sign in screen here</div>} />
+          <Route path="/signin" element={<SignInUpScreen />} />
           <Route path="/contact" element={<div>Contact comes here</div>} />
           <Route path="/faq" element={<div>FAQ comes here</div>} />
           <Route path="/privacy" element={<Privacy />} />
