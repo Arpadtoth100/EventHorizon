@@ -10,10 +10,6 @@
     sans-serif;
 }
 
-body {
-  background-color: #fde4cf;
-}
-
 .header_main {
   display: flex;
   align-items: center;

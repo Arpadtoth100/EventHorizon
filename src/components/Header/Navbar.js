@@ -2,12 +2,12 @@ import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 
 function Navbar() {
-  const { active, setActive } = useState('');
+  
+  const { linkActive, setLinkActive } = useState('');
 
   const hamburgerHandler = () => {
-    setActive((prev) => {
-      return prev ? 'active' : '';
-    });
+    setLinkActive('active');
+
   };
 
   return (
@@ -16,26 +16,35 @@ function Navbar() {
         <img src="../images/pngwing.com.png" alt="#" />
         <ul className="menu">
           <li className="item">
-            <NavLink to="main" id="nav-mainpage" className={`link, ${active}`}>
-              MAIN PAGE
+
+            <NavLink
+              to="main"
+              id="nav-mainpage"
+              className={`link ${linkActive}`}>
+              Random
             </NavLink>
           </li>
           <li className="item">
             <NavLink
               to="aboutus"
               id="nav-aboutus"
-              className={`link, ${active}`}
-            >
+              className={`link ${linkActive}`}>   
               ABOUT US
             </NavLink>
           </li>
           <li className="item">
-            <NavLink to="events" id="nav-events" className={`link, ${active}`}>
+            <NavLink
+              to="events"
+              id="nav-events"
+              className={`link ${linkActive}`}>
               EVENTS
             </NavLink>
           </li>
           <li className="item">
-            <NavLink to="signin" id="nav-login" className={`link, ${active}`}>
+            <NavLink
+              to="signin"
+              id="nav-login"
+              className={`link ${linkActive}`}>
               LOG IN
             </NavLink>
           </li>
