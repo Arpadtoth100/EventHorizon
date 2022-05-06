@@ -11,6 +11,9 @@ import SignOut from './components/SignOut';
 import UserMainLayout from './layouts/UserMainLayout';
 import ThankYouScreen from './views/ThankYouScreen';
 import SignInUpScreen from './views/SignInUpScreen';
+import SignIn from './components/SignIn';
+import Contact from './components/Contact';
+import FAQ from './components/FAQ';
 
 function App() {
   return (
@@ -23,8 +26,8 @@ function App() {
           <Route path="/search" element={<SearchForEvents />} />
           <Route path="/events" element={<Eventspage />} />
           <Route path="/signin" element={<SignInUpScreen />} />
-          <Route path="/contact" element={<div>Contact comes here</div>} />
-          <Route path="/faq" element={<div>FAQ comes here</div>} />
+          <Route path="/contact" element={<Contact/>} />
+          <Route path="/faq" element={<FAQ/>} />
           <Route path="/privacy" element={<Privacy />} />
           <Route path="*" element={<div>No content found</div>} />
         </Route>
@@ -35,8 +38,8 @@ function App() {
           <Route path="/search" element={<SearchForEvents />} />
           <Route path="/events" element={<Eventspage />} />
           <Route path="/signout" element={<SignOut />} />
-          <Route path="/contact" element={<div>Contact comes here</div>} />
-          <Route path="/faq" element={<div>FAQ comes here</div>} />
+          <Route path="/contact" element={<Contact/>} />
+          <Route path="/faq" element={<FAQ/>} />
           <Route path="/privacy" element={<Privacy />} />
           <Route path="*" element={<div>No content found</div>} />
           <Route path='/thankyou' element={<ThankYouScreen />} />
