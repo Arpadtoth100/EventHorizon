@@ -130,6 +130,10 @@
   #mobile-menu.act .bar:nth-child(3) {
     transform: translateY(-8px) rotate(-45deg);
   }
+
+  .cards-list {
+    flex-direction: column;
+  }
 }
 
 #introduction_s {
@@ -160,3 +164,35 @@
   color: white;
   margin-top: auto;
 }
+
+/* Event Card Container and Card */
+
+.cards-list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: nowrap;
+  gap: 20px;
+}
+.event-card-image {
+  width: 250px;
+  border-radius: 9px;
+}
+.event-card {
+  margin: 10px 0 10px 0;
+}
+.event-title {
+  color: #3B3851;
+}
+.event-date {
+  color: #D4501F;
+  font-size: 12px;
+}
+.event-organizer {
+  color: #7C7A8A;
+  font-size: 12px;
+}
+.event-venue {
+  color: #D4501F;
+  font-size: 12px;
+}
+
