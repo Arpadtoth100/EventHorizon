@@ -1,21 +1,13 @@
+import UserNavigationMenu from './UserNavigationMenu';
 
-
-function Profiles() {
-
-    return(
-        <div>
-            <h2>Profile Page</h2>
-            <div>
-                <ul>
-                    <li>Események</li>
-                    <li>Események létrehozása</li>
-                    <li>Saját eseményeim</li>
-                    <li>Esemény keresése</li>
-                    <li>Beállítások</li>
-                    <li>Kilépés</li>
-                </ul>
-            </div>
-        </div>
-    )
+function Profile() {
+  return (
+    <div>
+      <h2>Profile Page</h2>
+      <div>
+        <UserNavigationMenu />
+      </div>
+    </div>
+  );
 }
-export default Profiles
+export default Profile;

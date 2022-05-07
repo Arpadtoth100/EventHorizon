@@ -11,7 +11,7 @@ import SignOut from './components/SignOut';
 import UserMainLayout from './layouts/UserMainLayout';
 import ThankYouScreen from './views/ThankYouScreen';
 import SignInUpScreen from './views/SignInUpScreen';
-import SignIn from './components/SignIn';
+import Profile from './components/Profile';
 import Contact from './components/Contact';
 import FAQ from './components/FAQ';
 
@@ -26,23 +26,23 @@ function App() {
           <Route path="/search" element={<SearchForEvents />} />
           <Route path="/events" element={<Eventspage />} />
           <Route path="/signin" element={<SignInUpScreen />} />
-          <Route path="/contact" element={<Contact/>} />
-          <Route path="/faq" element={<FAQ/>} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/faq" element={<FAQ />} />
           <Route path="/privacy" element={<Privacy />} />
           <Route path="*" element={<div>No content found</div>} />
         </Route>
         <Route element={<UserMainLayout />}>
-          <Route path="/" element={<MainScreen />} />
+          <Route path="/profile" element={<Profile />} />
           <Route path="/main" element={<MainScreen />} />
           <Route path="/aboutus" element={<AboutUs />} />
           <Route path="/search" element={<SearchForEvents />} />
           <Route path="/events" element={<Eventspage />} />
           <Route path="/signout" element={<SignOut />} />
-          <Route path="/contact" element={<Contact/>} />
-          <Route path="/faq" element={<FAQ/>} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/faq" element={<FAQ />} />
           <Route path="/privacy" element={<Privacy />} />
           <Route path="*" element={<div>No content found</div>} />
-          <Route path='/thankyou' element={<ThankYouScreen />} />
+          <Route path="/thankyou" element={<ThankYouScreen />} />
         </Route>
       </Routes>
     </div>
