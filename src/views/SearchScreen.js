@@ -1,6 +1,6 @@
 import Map from '../components/utilities/Map';
 import SearchBar from '../components/SearchBar';
-import FilterBar from '../components/FilterBar';
+import FilterBar from '../components/utilities/FilterBar';
 import CardContainer from '../components/utilities/CardContainer';
 
 function SearchScreen() {
