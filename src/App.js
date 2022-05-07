@@ -3,17 +3,17 @@ import { Routes, Route } from 'react-router-dom';
 
 import MainScreen from './views/MainScreen';
 import PublicLayout from './layouts/PublicLayout';
-import AboutUs from './components/AboutUs';
+import AboutUs from './components/Header/AboutUs';
 import SearchForEvents from './components/SearchForEvents';
 import Eventspage from './components/Eventpage';
-import Privacy from './components/Privacy';
+import Privacy from './components/Footer/Privacy';
 import SignOut from './components/SignOut';
 import UserMainLayout from './layouts/UserMainLayout';
 import ThankYouScreen from './views/ThankYouScreen';
 import SignInUpScreen from './views/SignInUpScreen';
 import Profile from './components/Profile';
-import Contact from './components/Contact';
-import FAQ from './components/FAQ';
+import Contact from './components/Footer/Contact';
+import FAQ from './components/Footer/FAQ';
 
 function App() {
   return (
