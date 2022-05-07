@@ -14,7 +14,7 @@ function UserNavigationMenu() {
           <NavLink to="/myevents">My Events</NavLink>
         </li>
         <li>
-          <NavLink to="/search">Look Through Events</NavLink>
+          <NavLink to="/search">Browse Events</NavLink>
         </li>
         <li>
           <NavLink to="/preferences">Preferences</NavLink>

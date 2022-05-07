@@ -5,7 +5,7 @@ import MainScreen from './views/MainScreen';
 import PublicLayout from './layouts/PublicLayout';
 import AboutUs from './components/Header/AboutUs';
 import SearchForEvents from './components/SearchForEvents';
-import Eventspage from './components/Eventpage';
+import Eventpage from './components/EventComponents/Eventpage';
 import Privacy from './components/Footer/Privacy';
 import SignOut from './components/SignOut';
 import UserMainLayout from './layouts/UserMainLayout';
@@ -23,9 +23,9 @@ function App() {
         <Route element={<PublicLayout />}>
           <Route path="/" element={<MainScreen />} />
           <Route path="/main" element={<MainScreen />} />
-          <Route path="/aboutus" element={<AboutUs />} />
+          <Route path="/about" element={<AboutUs />} />
           <Route path="/search" element={<SearchForEvents />} />
-          <Route path="/events" element={<Eventspage />} />
+          <Route path="/events" element={<div>Events List coming here</div>} />
           <Route path="/signin" element={<SignInUpScreen />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/faq" element={<FAQ />} />
@@ -37,7 +37,7 @@ function App() {
           <Route path="/main" element={<MainScreen />} />
           <Route path="/aboutus" element={<AboutUs />} />
           <Route path="/search" element={<SearchForEvents />} />
-          <Route path="/events" element={<Eventspage />} />
+          <Route path="/events" element={<div>Events List coming here</div>} />
           <Route path="/signout" element={<SignOut />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/faq" element={<FAQ />} />

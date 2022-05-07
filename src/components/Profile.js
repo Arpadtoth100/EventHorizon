@@ -1,4 +1,4 @@
-import UserNavigationMenu from './UserNavigationMenu';
+import UserNavigationMenu from './utilities/UserNavigationMenu';
 
 function Profile() {
   return (
