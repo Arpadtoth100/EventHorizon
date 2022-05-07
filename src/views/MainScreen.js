@@ -1,32 +1,13 @@
-import { eventCardData } from "../services/eventCardData";
-import EventCard from "../components/EventCard";
+import CardContainer from '../components/utilities/CardContainer';
 
 const MainScreen = () => {
-
-    const cards = eventCardData.map(item => {
-        return (
-            <EventCard
-                key={item.id}
-                {...item}
-            />
-        )
-    })
-
-    return <>
-
-        <div className="main">
-            <h2>MainScreen</h2>
-            <h3>Recent events</h3>
-            <section className="cards-list">
-                {cards}
-            </section>
-            <h3>Paid events</h3>
-            <section className="cards-list">
-                {cards}
-            </section>
-
-        </div>
+  return (
+    <>
+      <div>Caroussel here</div>
+      <CardContainer title={'Newest Events on the Horizon'} />
+      <CardContainer title={'Featured Events'} />
     </>
+  );
 };
 
 export default MainScreen;

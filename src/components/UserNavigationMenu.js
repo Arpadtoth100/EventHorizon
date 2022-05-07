@@ -14,13 +14,13 @@ function UserNavigationMenu() {
           <NavLink to="/my_events">My Events</NavLink>
         </li>
         <li>
-          <NavLink to="search">Look Through Events</NavLink>
+          <NavLink to="/search">Look Through Events</NavLink>
         </li>
         <li>
-          <NavLink to="preferences">Preferences</NavLink>
+          <NavLink to="/preferences">Preferences</NavLink>
         </li>
         <li>
-          <NavLink to="log_out">Log Out</NavLink>
+          <NavLink to="/log_out">Log Out</NavLink>
         </li>
       </ul>
     </>
