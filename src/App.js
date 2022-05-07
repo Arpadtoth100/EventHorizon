@@ -14,6 +14,7 @@ import SignInUpScreen from './views/SignInUpScreen';
 import Profile from './components/Profile';
 import Contact from './components/Footer/Contact';
 import FAQ from './components/Footer/FAQ';
+import Preferences from './components/Preferences';
 
 function App() {
   return (
@@ -43,6 +44,7 @@ function App() {
           <Route path="/privacy" element={<Privacy />} />
           <Route path="*" element={<div>No content found</div>} />
           <Route path="/thankyou" element={<ThankYouScreen />} />
+          <Route path="/preferences" element={<Preferences />} />
         </Route>
       </Routes>
     </div>

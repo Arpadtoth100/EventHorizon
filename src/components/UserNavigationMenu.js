@@ -11,7 +11,7 @@ function UserNavigationMenu() {
           <NavLink to="/create_event">Create Event</NavLink>
         </li>
         <li>
-          <NavLink to="/my_events">My Events</NavLink>
+          <NavLink to="/myevents">My Events</NavLink>
         </li>
         <li>
           <NavLink to="/search">Look Through Events</NavLink>
@@ -20,7 +20,7 @@ function UserNavigationMenu() {
           <NavLink to="/preferences">Preferences</NavLink>
         </li>
         <li>
-          <NavLink to="/log_out">Log Out</NavLink>
+          <NavLink to="/signout">Sign Out</NavLink>
         </li>
       </ul>
     </>

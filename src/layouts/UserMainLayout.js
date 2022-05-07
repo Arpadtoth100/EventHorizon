@@ -4,7 +4,7 @@ import Footer from '../components/Footer/Footer';
 
 function UserMainLayout() {
   return (
-    <div>
+    <div className="themain">
       <Navbar />
       <Outlet />
       <Footer />
