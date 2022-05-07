@@ -1,4 +1,4 @@
-import EventCard from '../EventCard';
+import EventCard from './EventCard';
 import { eventCardData } from '../../services/eventCardData';
 
 function CardContainer(props) {

@@ -1,6 +1,4 @@
-import InfoBoxCreateEvent from '../components/InfoBoxCreateEvent';
-import InfoBoxSearch from '../components/InfoBoxSearch';
-import InfoBoxProfile from '../components/InfoBoxProfile';
+import InfoBox from '../components/utilities/InfoBox';
 
 function ThankYouScreen() {
   return (
@@ -9,13 +7,13 @@ function ThankYouScreen() {
       <h2>What do you want to do next?</h2>
       <div className="infoboxcontainer">
         <div className="infoboxcolumn">
-          <InfoBoxCreateEvent />
+          <InfoBox navTo={'/create'} title={'Create Event'} />
         </div>
         <div className="infoboxcolumn">
-          <InfoBoxSearch />
+          <InfoBox navTo={'/search'} title={'Browse Events'} />
         </div>
         <div className="infoboxcolumn">
-          <InfoBoxProfile />
+          <InfoBox navTo={'/profile'} title={'Go to profile'} />
         </div>
       </div>
     </div>
