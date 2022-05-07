@@ -1,18 +1,17 @@
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import logo from "../../images/white-flag-svgrepo-com.svg"
+import logo from '../../images/white-flag-svgrepo-com.svg';
 
 function Navbar() {
-  
-  const [ menuActive, setMenuActive ] = useState('');
-  const [ mobileMenuActive, setMobileMenuActive ] = useState('');
+  const [menuActive, setMenuActive] = useState('');
+  const [mobileMenuActive, setMobileMenuActive] = useState('');
 
   const hamburgerHandler = () => {
-    setMenuActive((prev) => prev ? undefined : 'active');
-    setMobileMenuActive((prev) => prev ? undefined : 'act');
+    setMenuActive((prev) => (prev ? undefined : 'active'));
+    setMobileMenuActive((prev) => (prev ? undefined : 'act'));
   };
 
-  console.log(menuActive)
+  console.log(menuActive);
 
   return (
     <header className="header">
@@ -20,35 +19,22 @@ function Navbar() {
         <img src={logo} alt="horizon" />
         <ul className={`menu ${menuActive}`}>
           <li className="item">
-
-            <NavLink
-              to="main"
-              id="nav-mainpage"
-              className="link">
+            <NavLink to="/main" id="nav-mainpage" className="link">
               MAIN PAGE
             </NavLink>
           </li>
           <li className="item">
-            <NavLink
-              to="aboutus"
-              id="nav-aboutus"
-              className="link">   
-              ABOUT US
-            </NavLink>
-          </li>
-          <li className="item">
-            <NavLink
-              to="events"
-              id="nav-events"
-              className="link">
+            <NavLink to="/events" id="nav-events" className="link">
               EVENTS
             </NavLink>
           </li>
           <li className="item">
-            <NavLink
-              to="signin"
-              id="nav-login"
-              className="link">
+            <NavLink to="/about" id="nav-aboutus" className="link">
+              ABOUT US
+            </NavLink>
+          </li>
+          <li className="item">
+            <NavLink to="/signin" id="nav-login" className="link">
               LOG IN
             </NavLink>
           </li>
