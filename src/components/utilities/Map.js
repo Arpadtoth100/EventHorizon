@@ -1,5 +1,7 @@
+import map from '../../map.jpg';
+
 function Map() {
-  return <img src="images/map.png" alt="" />;
+  return <img src={map} alt="" />;
 }
 
 export default Map;
