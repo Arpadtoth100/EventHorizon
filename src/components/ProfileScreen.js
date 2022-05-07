@@ -1,13 +1,13 @@
 import UserNavigationMenu from './utilities/UserNavigationMenu';
 
-function Profile() {
+function ProfileScreen() {
   return (
     <div>
-      <h2>Profile Page</h2>
+      <h2>ProfileScreen Page</h2>
       <div>
         <UserNavigationMenu />
       </div>
     </div>
   );
 }
-export default Profile;
+export default ProfileScreen;
