@@ -1,11 +1,11 @@
-import DatePick from '../components/utilities/DatePicker';
+import SelectDate from './utilities/SelectDate';
 import Select from './utilities/Select';
 
 function SearchBar() {
   return (
     <div>
       <input type="text" placeholder="City" />
-      <DatePick />
+      <SelectDate />
       <Select
         options={[['Please choose an option', 'Paid', 'Free'], 'Event type']}
       />
