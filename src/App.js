@@ -24,6 +24,7 @@ function App() {
           <Route path="/" element={<MainScreen />} />
           <Route path="/main" element={<MainScreen />} />
           <Route path="/events" element={<div>Events List coming here</div>} />
+          <Route path="/eventpage" element={<Eventpage />} />
           <Route path="/about" element={<AboutUs />} />
           <Route path="/search" element={<SearchScreen />} />
           <Route path="/signin" element={<SignInUpScreen />} />
@@ -36,6 +37,7 @@ function App() {
           <Route path="/thankyou" element={<ThankYouScreen />} />
           <Route path="/main" element={<MainScreen />} />
           <Route path="/events" element={<div>Events List coming here</div>} />
+          <Route path="/eventpage" element={<Eventpage />} />
           <Route path="/aboutus" element={<AboutUs />} />
           <Route path="/profile" element={<ProfileScreen />} />
           <Route path="/preferences" element={<Preferences />} />
