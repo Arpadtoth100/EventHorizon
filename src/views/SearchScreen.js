@@ -5,7 +5,7 @@ import CardContainer from '../components/utilities/CardContainer';
 
 function SearchScreen() {
   return (
-    <div>
+    <div className="outlet_main">
       <SearchBar />
       <FilterBar />
       <CardContainer title={'Results:'} />

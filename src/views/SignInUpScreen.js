@@ -3,7 +3,7 @@ import SignUp from "../components/SignUp"
 
 function SignInUpScreen(){
     return(
-        <div className="signinup_main">
+        <div className="signinup_main outlet_main">
             <SignIn />
             <SignUp />
         </div>
