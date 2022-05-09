@@ -33,7 +33,7 @@ function SignUp() {
                 <input type="text" placeholder="Username" name="username" id="su_username" onChange={collectSignUpData}/>
 
                 <label htmlFor="username">Email</label>
-                <input type="text" placeholder="Username" name="email" id="su_email" onChange={collectSignUpData}/>
+                <input type="text" placeholder="Email" name="email" id="su_email" onChange={collectSignUpData}/>
 
                 <label htmlFor="password">Password</label>
                 <input type="password" placeholder="Password" name="password" id="su_password" onChange={collectSignUpData}/>
