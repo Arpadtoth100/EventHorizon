@@ -23,7 +23,7 @@ function App() {
         <Route element={<PublicLayout />}>
           <Route path="/" element={<MainScreen />} />
           <Route path="/main" element={<MainScreen />} />
-          <Route path="/events" element={<div>Events List coming here</div>} />
+          <Route path="/events" element={<div className="outlet_main">Events List coming here</div>} />
           <Route path="/eventpage" element={<Eventpage />} />
           <Route path="/about" element={<AboutUs />} />
           <Route path="/search" element={<SearchScreen />} />
@@ -31,12 +31,12 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/faq" element={<FAQ />} />
           <Route path="/privacy" element={<Privacy />} />
-          <Route path="*" element={<div>No content found</div>} />
+          <Route path="*" element={<div className="outlet_main">No content found</div>} />
         </Route>
         <Route element={<UserMainLayout />}>
           <Route path="/thankyou" element={<ThankYouScreen />} />
           <Route path="/main" element={<MainScreen />} />
-          <Route path="/events" element={<div>Events List coming here</div>} />
+          <Route path="/events" element={<div className="outlet_main">Events List coming here</div>} />
           <Route path="/eventpage" element={<Eventpage />} />
           <Route path="/aboutus" element={<AboutUs />} />
           <Route path="/profile" element={<ProfileScreen />} />
@@ -46,7 +46,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/faq" element={<FAQ />} />
           <Route path="/privacy" element={<Privacy />} />
-          <Route path="*" element={<div>No content found</div>} />
+          <Route path="*" element={<div className="outlet_main">No content found</div>} />
         </Route>
       </Routes>
     </div>

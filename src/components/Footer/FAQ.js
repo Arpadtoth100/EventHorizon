@@ -1,7 +1,7 @@
 
 function FAQ() {
     return(
-        <div>
+        <div className="outlet_main">
             FAQ
         </div>
     )

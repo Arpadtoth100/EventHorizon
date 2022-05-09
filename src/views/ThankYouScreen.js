@@ -2,7 +2,7 @@ import InfoBox from '../components/utilities/InfoBox';
 
 function ThankYouScreen() {
   return (
-    <div>
+    <div className="outlet_main">
       <h1>Welcome to Event Horizon!</h1>
       <h2>What do you want to do next?</h2>
       <div className="infoboxcontainer">

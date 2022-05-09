@@ -2,7 +2,7 @@ import UserNavigationMenu from './utilities/UserNavigationMenu';
 
 function ProfileScreen() {
   return (
-    <div>
+    <div className="outlet_main">
       <h2>ProfileScreen Page</h2>
       <div>
         <UserNavigationMenu />
