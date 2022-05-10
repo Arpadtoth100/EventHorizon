@@ -15,6 +15,7 @@ import ProfileScreen from './components/ProfileScreen';
 import Contact from './components/Footer/Contact';
 import FAQ from './components/Footer/FAQ';
 import Preferences from './components/Preferences';
+import CreateEventScreen from './views/CreateEventScreen';
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/faq" element={<FAQ />} />
           <Route path="/privacy" element={<Privacy />} />
+          <Route path="/create_event" element={<CreateEventScreen />} />
           <Route path="*" element={<div className="outlet_main">No content found</div>} />
         </Route>
         <Route element={<UserMainLayout />}>
@@ -46,6 +48,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/faq" element={<FAQ />} />
           <Route path="/privacy" element={<Privacy />} />
+          <Route path="/create_event" element={<CreateEventScreen />} />
           <Route path="*" element={<div className="outlet_main">No content found</div>} />
         </Route>
       </Routes>
