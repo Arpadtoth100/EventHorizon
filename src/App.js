@@ -16,7 +16,7 @@ import Contact from './components/Footer/Contact';
 import FAQ from './components/Footer/FAQ';
 import Preferences from './components/Preferences';
 import ProfileUpdatedScreen from './views/ProfileUpdatedScreen';
-import SettingsScreen from './components/Settings';
+import SettingsScreen from './views/SettingsScreen';
 
 function App() {
   return (
