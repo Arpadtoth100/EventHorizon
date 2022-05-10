@@ -15,7 +15,6 @@ import ProfileScreen from './components/ProfileScreen';
 import Contact from './components/Footer/Contact';
 import FAQ from './components/Footer/FAQ';
 import Preferences from './components/Preferences';
-import Settings from './views/SettingsScreen';
 import ProfileUpdatedScreen from './views/ProfileUpdatedScreen';
 import SettingsScreen from './components/Settings';
 
