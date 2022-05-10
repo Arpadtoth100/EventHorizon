@@ -15,6 +15,10 @@ import ProfileScreen from './components/ProfileScreen';
 import Contact from './components/Footer/Contact';
 import FAQ from './components/Footer/FAQ';
 import Preferences from './components/Preferences';
+import ProfileUpdatedScreen from './views/ProfileUpdatedScreen';
+import SettingsScreen from './views/SettingsScreen';
+import CreateEventScreen from './views/CreateEventScreen';
+
 
 function App() {
   return (
@@ -31,10 +35,12 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/faq" element={<FAQ />} />
           <Route path="/privacy" element={<Privacy />} />
+          <Route path="/create_event" element={<CreateEventScreen />} />
           <Route path="*" element={<div className="outlet_main">No content found</div>} />
         </Route>
         <Route element={<UserMainLayout />}>
           <Route path="/thankyou" element={<ThankYouScreen />} />
+          <Route path="/profileupdated" element={<ProfileUpdatedScreen />} />
           <Route path="/main" element={<MainScreen />} />
           <Route path="/events" element={<div className="outlet_main">Events List coming here</div>} />
           <Route path="/eventpage" element={<Eventpage />} />
@@ -42,10 +48,12 @@ function App() {
           <Route path="/profile" element={<ProfileScreen />} />
           <Route path="/preferences" element={<Preferences />} />
           <Route path="/search" element={<SearchScreen />} />
+          <Route path="/settings" element={<SettingsScreen />} />
           <Route path="/signout" element={<SignOut />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/faq" element={<FAQ />} />
           <Route path="/privacy" element={<Privacy />} />
+          <Route path="/create_event" element={<CreateEventScreen />} />
           <Route path="*" element={<div className="outlet_main">No content found</div>} />
         </Route>
       </Routes>

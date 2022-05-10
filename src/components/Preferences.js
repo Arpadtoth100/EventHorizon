@@ -1,5 +1,5 @@
 function Preferences() {
-  return <div>Preferences</div>;
+  return <div className="outlet_main">Preferences</div>;
 }
 
 export default Preferences;
