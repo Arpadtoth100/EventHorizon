@@ -342,6 +342,17 @@ button{
   font-size: 12px;
 }
 
+/* Settings Page*/
+
+.settingsform {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+
 .paginationBtns {
   width: 80%;
   height: 20px;
