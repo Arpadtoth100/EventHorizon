@@ -144,14 +144,14 @@ form h3{
   text-align: center;
 }
 
-label{
+.textlabel{
   display: block;
   margin-top: 30px;
   font-size: 16px;
   font-weight: 500;
 }
 
-input{
+.textinput{
   display: block;
   height: 50px;
   width: 100%;
@@ -166,6 +166,22 @@ input{
 
 ::placeholder{
   color: #e5e5e5;
+}
+
+#su_organization{
+  margin-top: 30px;
+  margin-right: 10px;
+  width: 15px;
+  height: 15px;
+  box-shadow: 0 0 5px rgba(8,7,16,0.6);
+  border-radius: 3px;
+}
+
+#checkbox_label{
+  display: block;
+  margin-top: 30px;
+  font-size: 16px;
+  font-weight: 500;
 }
 
 button{

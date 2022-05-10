@@ -27,21 +27,23 @@ function SignIn() {
       <form className="signinform" onSubmit={submitHandler}>
         <h3>Sign In Here</h3>
 
-        <label htmlFor="email">Email</label>
+        <label htmlFor="si_email" className='textlabel'>Email</label>
         <input
           type="text"
           placeholder="Email"
           name="email"
           id="si_email"
+          className="textinput"
           onChange={collectSignInData}
         />
 
-        <label htmlFor="password">Password</label>
+        <label htmlFor="si_password" className='textlabel'>Password</label>
         <input
           type="password"
           placeholder="Password"
           name="password"
           id="si_password"
+          className="textinput"
           onChange={collectSignInData}
         />
 
