@@ -31,8 +31,6 @@ function SignUp() {
     }
   };
 
-  console.log(signUpData)
-
   return (
     <div className="signup_main">
       <form className="signupform" onSubmit={submitHandler}>
