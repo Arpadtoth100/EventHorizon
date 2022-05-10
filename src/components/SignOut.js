@@ -1,5 +1,5 @@
 function SignOut() {
-  return <div>SignOut</div>;
+  return <div className="outlet_main">SignOut</div>;
 }
 
 export default SignOut;
