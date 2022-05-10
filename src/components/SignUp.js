@@ -1,50 +1,93 @@
-import {useState} from 'react'
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function SignUp() {
+  const [signUpData, setSignUpData] = useState({
+    username: '',
+    email: '',
+    password: '',
+    confirmpassword: '',
+    organization: 'false'
+  });
 
-    const [signUpData, setSignUpData] = useState({
-        username: '',
-        email: '',
-        password: '',
-        confirmpassword: '',
-    })
+  const navTo = useNavigate();
 
-    const collectSignUpData = (event) => {
-        if(event.target.name === 'username'){
-            setSignUpData((prev) => ({...prev, 'username': event.target.value}))
-        }
-        else if(event.target.name === 'email'){
-            setSignUpData((prev) => ({...prev, 'email': event.target.value}))
-        }
-        else if(event.target.name === 'password'){
-            setSignUpData((prev) => ({...prev, 'password': event.target.value}))
-        }
-        else if(event.target.name === 'confirmpassword'){
-            setSignUpData((prev) => ({...prev, 'confirmpassword': event.target.value}))
-        }
+  const submitHandler = (e) => {
+    e.preventDefault();
+    navTo('/thankyou');
+  };
+
+  const collectSignUpData = (event) => {
+    if (event.target.name === 'username') {
+      setSignUpData((prev) => ({ ...prev, username: event.target.value }));
+    } else if (event.target.name === 'email') {
+      setSignUpData((prev) => ({ ...prev, email: event.target.value }));
+    } else if (event.target.name === 'password') {
+      setSignUpData((prev) => ({ ...prev, password: event.target.value }));
+    } else if (event.target.name === 'confirmpassword') {
+      setSignUpData((prev) => ({...prev, confirmpassword: event.target.value}));
+    } else if (event.target.name === 'organization') {
+      setSignUpData((prev) => ({...prev, organization: event.target.checked}));
     }
+  };
 
-    return (
-        <div className='signup_main'>
-            <form className="signupform">
-                <h3>Sign Up Here</h3>
+  return (
+    <div className="signup_main">
+      <form className="signupform" onSubmit={submitHandler}>
+        <h3>Sign Up Here</h3>
 
-                <label htmlFor="username">Username</label>
-                <input type="text" placeholder="Username" name="username" id="su_username" onChange={collectSignUpData}/>
+        <label htmlFor="su_username" className='textlabel'>Username</label>
+        <input
+          type="text"
+          placeholder="Username"
+          name="username"
+          id="su_username"
+          className="textinput"
+          onChange={collectSignUpData}
+        />
 
-                <label htmlFor="username">Email</label>
-                <input type="text" placeholder="Email" name="email" id="su_email" onChange={collectSignUpData}/>
+        <label htmlFor="su_email" className='textlabel'>Email</label>
+        <input
+          type="text"
+          placeholder="Email"
+          name="email"
+          id="su_email"
+          className="textinput"
+          onChange={collectSignUpData}
+        />
 
-                <label htmlFor="password">Password</label>
-                <input type="password" placeholder="Password" name="password" id="su_password" onChange={collectSignUpData}/>
+        <label htmlFor="su_password" className='textlabel'>Password</label>
+        <input
+          type="password"
+          placeholder="Password"
+          name="password"
+          id="su_password"
+          className="textinput"
+          onChange={collectSignUpData}
+        />
 
-                <label htmlFor="password">Confirm Password</label>
-                <input type="password" placeholder="Confirm Password" name="confirmpassword" id="su_confirmpassword" onChange={collectSignUpData}/>
+        <label htmlFor="su_confirmpassword" className='textlabel'>Confirm Password</label>
+        <input
+          type="password"
+          placeholder="Confirm Password"
+          name="confirmpassword"
+          id="su_confirmpassword"
+          className="textinput"
+          onChange={collectSignUpData}
+        />
 
-                <button>Sign Up</button>
-            </form>
-        </div>
-    )
+        <input
+          type="checkbox"
+          name="organization"
+          id="su_organization"
+          onChange={collectSignUpData}
+        />
+        <label htmlFor="su_organization" id="cehckbox_label">Organization</label>
+
+        <button>Sign Up</button>
+      </form>
+    </div>
+  );
 }
 
-export default SignUp
+export default SignUp;

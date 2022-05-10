@@ -1,5 +1,5 @@
 function EventsScreen() {
-  return <div>Events Screen</div>;
+  return <div className="outlet_main">Events Screen</div>;
 }
 
 export default EventsScreen;
