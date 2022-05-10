@@ -184,7 +184,7 @@ form h3{
   font-weight: 500;
 }
 
-button{
+.btn{
   margin-top: 50px;
   width: 100%;
   background-color: #ffffff;
@@ -367,4 +367,43 @@ button{
 .paginationActive a {
   color: white;
   background-color: #2b2eff;
+}
+
+.map_text {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  color: #281414;
+  z-index: 10;
+  margin: 0;
+  padding: 0;
+}
+
+.combo_search {
+  position: absolute;
+  top: 1rem;
+  left: 50%;
+  height: 2rem;
+  max-width: 600px;
+  z-index: 10;
+}
+
+#locate {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  z-index: 10;
+}
+
+#locate img {
+  width: 30px;
+  cursor: pointer;
+}
+
+.mapcontainer_div{
+  position:relative;
+  width: 50vw;
+  height: 50vh;
 }

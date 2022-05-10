@@ -1,4 +1,4 @@
-import Map from '../components/utilities/Map';
+import Map from '../components/GoogleMap/Map';
 import SearchBar from '../components/SearchBar';
 import FilterBar from '../components/utilities/FilterBar';
 import Pagination from '../services/Pagination';
@@ -9,7 +9,9 @@ function SearchScreen() {
       <SearchBar />
       <FilterBar />
       <Pagination />
-      <Map />
+      <div className="mapcontainer_div">
+        <Map />
+      </div>
     </div>
   );
 }

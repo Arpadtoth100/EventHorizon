@@ -7,7 +7,7 @@ function SignUp() {
     email: '',
     password: '',
     confirmpassword: '',
-    organization: 'false'
+    organization: 'false',
   });
 
   const navTo = useNavigate();
@@ -25,9 +25,15 @@ function SignUp() {
     } else if (event.target.name === 'password') {
       setSignUpData((prev) => ({ ...prev, password: event.target.value }));
     } else if (event.target.name === 'confirmpassword') {
-      setSignUpData((prev) => ({...prev, confirmpassword: event.target.value}));
+      setSignUpData((prev) => ({
+        ...prev,
+        confirmpassword: event.target.value,
+      }));
     } else if (event.target.name === 'organization') {
-      setSignUpData((prev) => ({...prev, organization: event.target.checked}));
+      setSignUpData((prev) => ({
+        ...prev,
+        organization: event.target.checked,
+      }));
     }
   };
 
@@ -36,7 +42,9 @@ function SignUp() {
       <form className="signupform" onSubmit={submitHandler}>
         <h3>Sign Up Here</h3>
 
-        <label htmlFor="su_username" className='textlabel'>Username</label>
+        <label htmlFor="su_username" className="textlabel">
+          Username
+        </label>
         <input
           type="text"
           placeholder="Username"
@@ -46,7 +54,9 @@ function SignUp() {
           onChange={collectSignUpData}
         />
 
-        <label htmlFor="su_email" className='textlabel'>Email</label>
+        <label htmlFor="su_email" className="textlabel">
+          Email
+        </label>
         <input
           type="text"
           placeholder="Email"
@@ -56,7 +66,9 @@ function SignUp() {
           onChange={collectSignUpData}
         />
 
-        <label htmlFor="su_password" className='textlabel'>Password</label>
+        <label htmlFor="su_password" className="textlabel">
+          Password
+        </label>
         <input
           type="password"
           placeholder="Password"
@@ -66,7 +78,9 @@ function SignUp() {
           onChange={collectSignUpData}
         />
 
-        <label htmlFor="su_confirmpassword" className='textlabel'>Confirm Password</label>
+        <label htmlFor="su_confirmpassword" className="textlabel">
+          Confirm Password
+        </label>
         <input
           type="password"
           placeholder="Confirm Password"
@@ -82,9 +96,11 @@ function SignUp() {
           id="su_organization"
           onChange={collectSignUpData}
         />
-        <label htmlFor="su_organization" id="cehckbox_label">Organization</label>
+        <label htmlFor="su_organization" id="cehckbox_label">
+          Organization
+        </label>
 
-        <button>Sign Up</button>
+        <button className="btn">Sign Up</button>
       </form>
     </div>
   );
