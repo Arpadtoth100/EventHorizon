@@ -20,6 +20,9 @@ function UserNavigationMenu() {
           <NavLink to="/preferences">Preferences</NavLink>
         </li>
         <li>
+          <NavLink to="/settings">Settings</NavLink>
+        </li>
+        <li>
           <NavLink to="/signout">Sign Out</NavLink>
         </li>
       </ul>
