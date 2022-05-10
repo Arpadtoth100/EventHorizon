@@ -27,7 +27,9 @@ function SignIn() {
       <form className="signinform" onSubmit={submitHandler}>
         <h3>Sign In Here</h3>
 
-        <label htmlFor="si_email" className='textlabel'>Email</label>
+        <label htmlFor="si_email" className="textlabel">
+          Email
+        </label>
         <input
           type="text"
           placeholder="Email"
@@ -37,7 +39,9 @@ function SignIn() {
           onChange={collectSignInData}
         />
 
-        <label htmlFor="si_password" className='textlabel'>Password</label>
+        <label htmlFor="si_password" className="textlabel">
+          Password
+        </label>
         <input
           type="password"
           placeholder="Password"
@@ -47,7 +51,7 @@ function SignIn() {
           onChange={collectSignInData}
         />
 
-        <button>Sing In</button>
+        <button className="btn">Sing In</button>
       </form>
     </div>
   );
