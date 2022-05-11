@@ -1,7 +1,42 @@
+import { useState } from "react"
+import { storage } from "../config/firebase"
+import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage"
 import SelectDateFromTo from "../components/utilities/SelectDateFromTo"
 import Map from "../components/GoogleMap/Map"
 
 function CreateEventScreen() {
+    const [progress, setProgress] = useState(0)
+    const [imageToUpload, setImageToUpload] = useState(null)
+
+    const imageHandler = (event) => {
+        setImageToUpload(event.target.files[0])
+        console.log(event.target.files[0])
+    }
+
+    const uploadHandler = (event) => {
+        event.preventDefault();
+        uploadImage(imageToUpload)
+    }
+
+    const uploadImage = (image) => {
+        if (!image) return;
+        const storageRef = ref(storage, `/images/${image.name}`)
+        const uploadTask = uploadBytesResumable(storageRef, image)
+
+        uploadTask.on("state_changed", (snapshot => {
+            const prog = Math.round((snapshot.bytesTransferred / snapshot.totalBytes) * 100)
+            setProgress(prog)
+        },
+        (err) => console.log(err),
+        () => {
+            getDownloadURL(uploadTask.snapshot.ref)
+            .then(url => console.log(url))
+        }
+        ))
+    }
+
+    console.log(new Date())
+
     return (
         <div className="outlet_main create_event_main">
 
@@ -48,7 +83,19 @@ function CreateEventScreen() {
                     className="textinput"
                 />
 
-                Upload img
+                <label htmlFor="ce_upload" className="textlabel">
+                    Upload Image
+                </label>
+                <input
+                    type="file"
+                    placeholder="Upload Image"
+                    name="upload"
+                    id="ce_upload"
+                    className="textinput"
+                    onChange={imageHandler}
+                />
+                <button className="btn" onClick={uploadHandler}>Upload Image</button>
+                <h4>Uploaded {progress}</h4>
 
                 <label htmlFor="ce_online" className="textlabel">
                     Online or Offline
