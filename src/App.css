@@ -144,14 +144,14 @@ form h3{
   text-align: center;
 }
 
-label{
+.textlabel{
   display: block;
   margin-top: 30px;
   font-size: 16px;
   font-weight: 500;
 }
 
-input{
+.textinput{
   display: block;
   height: 50px;
   width: 100%;
@@ -168,7 +168,23 @@ input{
   color: #e5e5e5;
 }
 
-button{
+#su_organization{
+  margin-top: 30px;
+  margin-right: 10px;
+  width: 15px;
+  height: 15px;
+  box-shadow: 0 0 5px rgba(8,7,16,0.6);
+  border-radius: 3px;
+}
+
+#checkbox_label{
+  display: block;
+  margin-top: 30px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.btn{
   margin-top: 50px;
   width: 100%;
   background-color: #ffffff;
@@ -326,3 +342,79 @@ button{
   font-size: 12px;
 }
 
+/* Settings Page*/
+
+.settingsform {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+
+.paginationBtns {
+  width: 80%;
+  height: 20px;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+}
+
+.paginationBtns a {
+  padding: 5px;
+  margin: 5px;
+  border-radius: 3px;
+  border: 1px solid #2b2eff;
+  color: #2b2eff;
+  cursor: pointer;
+}
+
+.paginationBtns a:hover {
+  color: white;
+  background-color: #2b2eff;
+}
+
+.paginationActive a {
+  color: white;
+  background-color: #2b2eff;
+}
+
+.map_text {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  color: #281414;
+  z-index: 10;
+  margin: 0;
+  padding: 0;
+}
+
+.combo_search {
+  position: absolute;
+  top: 1rem;
+  left: 50%;
+  height: 2rem;
+  max-width: 600px;
+  z-index: 10;
+}
+
+#locate {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  z-index: 10;
+}
+
+#locate img {
+  width: 30px;
+  cursor: pointer;
+}
+
+.mapcontainer_div{
+  position:relative;
+  width: 50vw;
+  height: 50vh;
+}
