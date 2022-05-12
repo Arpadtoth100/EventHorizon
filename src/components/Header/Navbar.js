@@ -35,7 +35,7 @@ function Navbar() {
           </li>
           <li className="item">
             <NavLink to="/signin" id="nav-login" className="link">
-              LOG IN
+              SIGN IN
             </NavLink>
           </li>
         </ul>

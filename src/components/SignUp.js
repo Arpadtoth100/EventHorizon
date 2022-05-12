@@ -2,24 +2,35 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { auth } from '../config/firebase';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { createUser } from './services/crud';
 
 function SignUp() {
-  const [signUpData, setSignUpData] = useState({
+  const defValue = {
     username: '',
     email: '',
     password: '',
     confirmpassword: '',
     organization: 'false',
-  });
+    location: '',
+  };
+
+  const [signUpData, setSignUpData] = useState(defValue);
 
   const navTo = useNavigate();
   const [signUpError, setSignUpError] = useState('');
+
   const submitHandler = (e) => {
     e.preventDefault();
     createUserWithEmailAndPassword(auth, signUpData.email, signUpData.password)
       .then((authCredential) => {
-        console.log('user', authCredential.user);
-        console.log('user', auth?.currentUser);
+        console.log('userID', authCredential.user.uid);
+        const { username, organization, location } = signUpData;
+        const uid = authCredential.user.uid;
+
+        createUser(uid, username, organization, location);
+      })
+      .then(() => {
+        setSignUpData(defValue);
         navTo('/thankyou');
       })
       .catch((e) => {
@@ -33,6 +44,8 @@ function SignUp() {
       setSignUpData((prev) => ({ ...prev, username: event.target.value }));
     } else if (event.target.name === 'email') {
       setSignUpData((prev) => ({ ...prev, email: event.target.value }));
+    } else if (event.target.name === 'location') {
+      setSignUpData((prev) => ({ ...prev, location: event.target.value }));
     } else if (event.target.name === 'password') {
       setSignUpData((prev) => ({ ...prev, password: event.target.value }));
     } else if (event.target.name === 'confirmpassword') {
@@ -104,6 +117,17 @@ function SignUp() {
           placeholder="Confirm Password"
           name="confirmpassword"
           id="su_confirmpassword"
+          className="textinput"
+          onChange={collectSignUpData}
+        />
+        <label htmlFor="su_location" className="textlabel">
+          Location
+        </label>
+        <input
+          type="text"
+          placeholder="Location"
+          name="location"
+          id="su_location"
           className="textinput"
           onChange={collectSignUpData}
         />
