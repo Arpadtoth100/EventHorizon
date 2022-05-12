@@ -15,13 +15,13 @@ function UserNavigationMenu() {
           <NavLink to="/myevents">My Events</NavLink>
         </li>
         <li>
+          <NavLink to="/joined_events">Joined Events</NavLink>
+        </li>
+        <li>
           <NavLink to="/search">Browse Events</NavLink>
         </li>
         <li>
           <NavLink to="/preferences">Preferences</NavLink>
-        </li>
-        <li>
-          <NavLink to="/settings">Settings</NavLink>
         </li>
         <li>
           <SignOut />
