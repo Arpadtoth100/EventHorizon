@@ -13,7 +13,7 @@ function SignUp() {
   });
 
   const navTo = useNavigate();
-  const [signUpError, setSignUpError] = useState(false);
+  const [signUpError, setSignUpError] = useState('');
   const submitHandler = (e) => {
     e.preventDefault();
     createUserWithEmailAndPassword(auth, signUpData.email, signUpData.password)
@@ -24,7 +24,7 @@ function SignUp() {
       })
       .catch((e) => {
         console.log('error', e);
-        setSignUpError(true);
+        setSignUpError(e?.message);
       });
   };
 
@@ -51,7 +51,13 @@ function SignUp() {
   return (
     <div className="signup_main">
       <form className="signupform" onSubmit={submitHandler}>
-        {signUpError && <div>Registration failed, please try again</div>}
+        {signUpError && (
+          <div>
+            <p>Registration failed due to the following: </p>
+            {signUpError}
+            <p> Please try again</p>
+          </div>
+        )}
         <h3>Sign Up Here</h3>
 
         <label htmlFor="su_username" className="textlabel">
