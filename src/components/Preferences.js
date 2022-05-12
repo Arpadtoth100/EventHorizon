@@ -15,7 +15,7 @@ function Preferences() {
 
   const submitHandler = (e) => {
     e.preventDefault();
-    navTo('/profileupdated');
+    navTo('/profile');
   };
 
   const collectSignUpData = (event) => {

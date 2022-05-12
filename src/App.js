@@ -14,7 +14,6 @@ import SignInUpScreen from './views/SignInUpScreen';
 import ProfileScreen from './components/ProfileScreen';
 import Contact from './components/Footer/Contact';
 import FAQ from './components/Footer/FAQ';
-import ProfileUpdatedScreen from './views/ProfileUpdatedScreen';
 import PreferencesScreen from './views/PreferencesScreen';
 import CreateEventScreen from './views/CreateEventScreen';
 
@@ -25,10 +24,6 @@ function App() {
         <Route element={<PublicLayout />}>
           <Route path="/" element={<MainScreen />} />
           <Route path="/main" element={<MainScreen />} />
-          <Route
-            path="/events"
-            element={<div className="outlet_main">Events List coming here</div>}
-          />
           <Route path="/eventpage" element={<Eventpage />} />
           <Route path="/about" element={<AboutUs />} />
           <Route path="/search" element={<SearchScreen />} />
@@ -43,13 +38,9 @@ function App() {
           />
         </Route>
         <Route element={<UserMainLayout />}>
-          <Route path="/thankyou" element={<ThankYouScreen />} />
-          <Route path="/profileupdated" element={<ProfileUpdatedScreen />} />
           <Route path="/main" element={<MainScreen />} />
-          <Route
-            path="/events"
-            element={<div className="outlet_main">Events List coming here</div>}
-          />
+          <Route path="/thankyou" element={<ThankYouScreen />} />
+          <Route path="/create_event" element={<CreateEventScreen />} />
           <Route path="/eventpage" element={<Eventpage />} />
           <Route path="/aboutus" element={<AboutUs />} />
           <Route path="/profile" element={<ProfileScreen />} />
@@ -59,7 +50,6 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/faq" element={<FAQ />} />
           <Route path="/privacy" element={<Privacy />} />
-          <Route path="/create_event" element={<CreateEventScreen />} />
           <Route
             path="*"
             element={<div className="outlet_main">No content found</div>}
