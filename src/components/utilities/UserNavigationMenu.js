@@ -1,4 +1,5 @@
 import { NavLink } from 'react-router-dom';
+import SignOut from '../SignOut';
 
 function UserNavigationMenu() {
   return (
@@ -23,7 +24,7 @@ function UserNavigationMenu() {
           <NavLink to="/settings">Settings</NavLink>
         </li>
         <li>
-          <NavLink to="/signout">Sign Out</NavLink>
+          <SignOut />
         </li>
       </ul>
     </>
