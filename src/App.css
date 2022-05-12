@@ -77,7 +77,7 @@ html {
   height: 500px;
 }
 
-.infoboxcolumn+.infoboxcolumn {
+.infoboxcolumn + .infoboxcolumn {
   margin-left: 2%;
 }
 
@@ -130,11 +130,11 @@ form * {
 }
 
 .signinform {
-  height: 470px,
+  height: 470px;
 }
 
 .signupform {
-  height: 600px,
+  height: 600px;
 }
 
 form h3 {
@@ -202,7 +202,7 @@ form h3 {
   height: 500px;
 }
 
-.infoboxcolumn+.infoboxcolumn {
+.infoboxcolumn + .infoboxcolumn {
   margin-left: 2%;
 }
 
@@ -236,21 +236,21 @@ form h3 {
 }
 
 .event-title {
-  color: #3B3851;
+  color: #3b3851;
 }
 
 .event-date {
-  color: #D4501F;
+  color: #d4501f;
   font-size: 12px;
 }
 
 .event-organizer {
-  color: #7C7A8A;
+  color: #7c7a8a;
   font-size: 12px;
 }
 
 .event-venue {
-  color: #D4501F;
+  color: #d4501f;
   font-size: 12px;
 }
 
@@ -263,7 +263,6 @@ form h3 {
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
-
 
 .paginationBtns {
   width: 80%;
@@ -331,7 +330,7 @@ form h3 {
   height: 50vh;
 }
 
-.create_event_main{
+.create_event_main {
   display: flex;
 }
 
@@ -412,7 +411,6 @@ form h3 {
     flex-direction: column;
   }
 
-
   .signinup_main {
     display: flex;
     flex-direction: column;
@@ -488,7 +486,7 @@ form h3 {
   background-color: rgb(179, 175, 175);
   transition: background-color 0.3s ease-in-out;
   margin: 5px;
-  cursor: pointer
+  cursor: pointer;
 }
 
 .dot:hover {
@@ -507,7 +505,7 @@ form h3 {
   padding: 0;
   font-family: "Arial", sans-serif;
 }
-.modal-background {
+/* .modal-background {
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.8);
@@ -515,7 +513,7 @@ form h3 {
   display: flex;
   justify-content: center;
   align-items: center;
-}
+} */
 .ModalWrapper {
   width: 800px;
   height: 500px;
@@ -525,7 +523,8 @@ form h3 {
   display: grid;
   grid-template-columns: 1fr 1fr;
   position: relative;
-  top: -300px;
+  top: -25rem;
+  left: 35rem;
   z-index: 10;
   border-radius: 10px;
 }
@@ -558,7 +557,7 @@ form h3 {
   background: #141414;
   color: #fff;
   border: none;
-  border-radius: 15px;
+  border-radius: 5px;
 }
 .ModalDiscardButton {
   margin-right: 20px;
