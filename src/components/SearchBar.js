@@ -1,34 +1,30 @@
 import SelectDate from './utilities/SelectDate';
-import Select from './utilities/Select';
 
 function SearchBar() {
   return (
-    <div>
+    <>
       <input type="text" placeholder="City" />
       <SelectDate />
-      <Select
-        options={[['Please choose an option', 'Paid', 'Free'], 'Event type']}
-      />
-      <Select
-        options={[
-          ['Please choose an option', 'Online', 'In Person'],
-          'Event Location',
-        ]}
-      />
-      <Select
-        options={[
-          [
-            'Please choose an option',
-            'Music',
-            'Flash Mob',
-            'Theatre',
-            'E-Sports',
-            'Sports',
-          ],
-          'Category',
-        ]}
-      />
-    </div>
+      <label htmlFor="se_price">Admission</label>
+      <select className="search_event_select" name="se_price" id="se_price">
+        <option value="free">Free</option>
+        <option value="paid">Paid</option>
+      </select>
+      <label htmlFor="se_type">Event type</label>
+      <select className="search_event_select" name="se_type" id="se_type">
+        <option value="online">Online</option>
+        <option value="paid">In Person</option>
+      </select>
+      <label htmlFor="se_category">Category</label>
+      <select className="se_select" name="se_category" id="se_category">
+        <option value="0">Please Select an option</option>
+        <option value="1">Music</option>
+        <option value="2">Theatre</option>
+        <option value="3">Travel</option>
+        <option value="4">Sports</option>
+        <option value="5">E-Sports</option>
+      </select>
+    </>
   );
 }
 export default SearchBar;

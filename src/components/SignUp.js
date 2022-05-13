@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { auth } from '../config/firebase';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
-import { createUser } from './services/crud';
+import { createUser } from '../services/crud';
 
 function SignUp() {
   const defValue = {
