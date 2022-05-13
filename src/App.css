@@ -578,3 +578,41 @@ form h3 {
   padding: 0;
   z-index: 10;
 }
+
+/*about us*/
+.aboutus-hero {
+  height: 75vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.aboutus-hero-img-wrapper {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+.aboutus-hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.aboutus-hero-text {
+  color: white;
+  font-size: 48px;
+  font-weight: bold;
+  flex: 1;
+  z-index: 2;
+  position: relative;
+}
+.blabla {
+  padding: 100px;
+  background:#2ec4b6;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
