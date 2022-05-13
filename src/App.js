@@ -16,6 +16,8 @@ import Contact from './components/Footer/Contact';
 import FAQ from './components/Footer/FAQ';
 import PreferencesScreen from './views/PreferencesScreen';
 import CreateEventScreen from './views/CreateEventScreen';
+import JoinedEventsScreen from './views/JoinedEventsScreen';
+import MyEventsScreen from './components/MyEvents';
 
 import { onAuthStateChanged } from 'firebase/auth';
 import { useEffect, useState } from 'react';
@@ -65,6 +67,8 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/faq" element={<FAQ />} />
           <Route path="/privacy" element={<Privacy />} />
+          <Route path="/joined_events" element={<JoinedEventsScreen />} />
+          <Route path="/my_events" element={<MyEventsScreen />} />
           <Route
             path="*"
             element={<div className="outlet_main">No content found</div>}

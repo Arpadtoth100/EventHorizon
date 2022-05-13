@@ -12,7 +12,7 @@ function UserNavigationMenu() {
           <NavLink to="/create_event">Create Event</NavLink>
         </li>
         <li>
-          <NavLink to="/myevents">My Events</NavLink>
+          <NavLink to="/my_events">My Events</NavLink>
         </li>
         <li>
           <NavLink to="/joined_events">Joined Events</NavLink>
