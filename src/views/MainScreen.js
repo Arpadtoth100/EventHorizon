@@ -1,6 +1,6 @@
 import CardContainer from '../components/utilities/CardContainer';
 import { eventCardData } from '../services/eventCardData';
-import Slider from '../components/services/Slider';
+import Slider from '../services/Slider';
 
 const imgSet = [
   'https://www.w3schools.com/howto/img_nature_wide.jpg',

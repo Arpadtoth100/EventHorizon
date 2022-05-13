@@ -17,7 +17,22 @@ import FAQ from './components/Footer/FAQ';
 import PreferencesScreen from './views/PreferencesScreen';
 import CreateEventScreen from './views/CreateEventScreen';
 
+import { onAuthStateChanged } from 'firebase/auth';
+import { useEffect, useState } from 'react';
+import { auth } from './config/firebase';
+
 function App() {
+  const [loggedUserID, setLoggedUserID] = useState();
+
+  useEffect(() => {
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        setLoggedUserID(user.uid);
+      }
+      console.log(loggedUserID);
+    });
+  });
+
   return (
     <div className="App">
       <Routes>
