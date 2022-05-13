@@ -2,21 +2,55 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFileArrowUp } from '@fortawesome/free-solid-svg-icons';
+import { auth } from '../config/firebase';
+import { updateEmail, updatePassword } from 'firebase/auth';
+import { updateUser } from '../services/crud';
 
 function Preferences() {
-  const [signUpData, setSignUpData] = useState({
+  const defValue = {
     username: '',
     email: '',
-    location: '',
+    password: '',
+    confirmpassword: '',
     organization: 'false',
-  });
+    location: '',
+  };
+
+  const [signUpData, setSignUpData] = useState(defValue);
+
 
   const navTo = useNavigate();
+  const [error, setError] = useState('');
 
   const submitHandler = (e) => {
     e.preventDefault();
-    navTo('/profile');
+
+    if (signUpData.password !== signUpData.confirmpassword) {
+      return setError("Passwords do not match")
+    }
+
+    updateEmail(auth.currentUser, signUpData.email)
+      .then(() => {
+
+        updatePassword(auth.currentUser, signUpData.confirmpassword)
+        updateUser(auth.currentUser.uid, {
+          username: signUpData.username,
+          location: signUpData.location,
+          organization: signUpData.organization
+        })
+      })
+      .then(() => {
+        navTo('/profile');
+      })
+      .catch((e) => {
+        console.log('error', e);
+        setError(e?.message)
+      })
+
+
+
   };
+
 
   const collectSignUpData = (event) => {
     if (event.target.name === 'username') {
@@ -25,6 +59,13 @@ function Preferences() {
       setSignUpData((prev) => ({ ...prev, email: event.target.value }));
     } else if (event.target.name === 'location') {
       setSignUpData((prev) => ({ ...prev, location: event.target.value }));
+    } else if (event.target.name === 'password') {
+      setSignUpData((prev) => ({ ...prev, password: event.target.value }));
+    } else if (event.target.name === 'confirmpassword') {
+      setSignUpData((prev) => ({
+        ...prev,
+        confirmpassword: event.target.value,
+      }));
     } else if (event.target.name === 'organization') {
       setSignUpData((prev) => ({
         ...prev,
@@ -36,6 +77,7 @@ function Preferences() {
   return (
     <div className="outlet_main">
       <form className="settingsform" onSubmit={submitHandler}>
+
         <h3>Update Your Profile</h3>
         <br></br>
         <span>Upload profile picture </span>
@@ -67,6 +109,30 @@ function Preferences() {
           onChange={collectSignUpData}
         />
 
+        <label htmlFor="su_password" className="textlabel">
+          Password
+        </label>
+        <input
+          type="password"
+          placeholder="Password"
+          name="password"
+          id="su_password"
+          className="textinput"
+          onChange={collectSignUpData}
+        />
+
+        <label htmlFor="su_confirmpassword" className="textlabel">
+          Confirm Password
+        </label>
+        <input
+          type="password"
+          placeholder="Confirm Password"
+          name="confirmpassword"
+          id="su_confirmpassword"
+          className="textinput"
+          onChange={collectSignUpData}
+        />
+
         <label htmlFor="su_location" className="textlabel">
           Location
         </label>
@@ -89,7 +155,15 @@ function Preferences() {
           Organization
         </label>
 
-        <button>Update</button>
+        {error && (
+          <div>
+            <p>Updating profile failed due to the following: </p>
+            {error}
+            <p> Please try again</p>
+          </div>
+        )}
+
+        <button className='btn'>Update</button>
       </form>
     </div>
   );
