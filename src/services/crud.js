@@ -4,7 +4,8 @@ import {
   set,
   push,
   update,
-  //get, remove
+  get,
+  // remove
 } from 'firebase/database';
 // import {
 //   onChildAdded,
@@ -33,3 +34,13 @@ export function createEvent(eventData) {
   const newRefEvent = push(refEvent);
   return set(newRefEvent, eventData);
 }
+
+export function readEvent(key) {
+  if(key) {
+    const refEvent = ref(database, `${eventEndpoint}/${key}`)
+    return get(refEvent);
+  }
+  const refEvent = ref(database, eventEndpoint)
+  return get(refEvent);
+}
+
