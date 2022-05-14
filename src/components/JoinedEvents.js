@@ -2,7 +2,7 @@
 
 function JoinedEvents() {
     return (
-        <div>My Events</div>
+        <div></div>
     )
 }
 

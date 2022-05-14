@@ -17,7 +17,7 @@ import FAQ from './components/Footer/FAQ';
 import PreferencesScreen from './views/PreferencesScreen';
 import CreateEventScreen from './views/CreateEventScreen';
 import JoinedEventsScreen from './views/JoinedEventsScreen';
-import MyEventsScreen from './components/MyEvents';
+import MyEventsScreen from './views/MyEventsScreen';
 
 import { onAuthStateChanged } from 'firebase/auth';
 import { useEffect, useState } from 'react';
