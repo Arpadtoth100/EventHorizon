@@ -2,7 +2,9 @@ import EventCard from '../EventComponents/EventCard';
 
 function CardContainer(props) {
   const cards = props.data.map((item) => {
-    return <EventCard key={item.id} {...item} />;
+    const key = item[0];
+    const eventData = item[1];
+    return <EventCard key={key} {...item[1]} />;
   });
   return (
     <div className="main">
