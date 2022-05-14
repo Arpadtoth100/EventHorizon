@@ -21,6 +21,11 @@ function SignUp() {
 
   const submitHandler = (e) => {
     e.preventDefault();
+
+    if (signUpData.password !== signUpData.confirmpassword) {
+      return signUpError("Passwords do not match")
+    }
+
     createUserWithEmailAndPassword(auth, signUpData.email, signUpData.password)
       .then((authCredential) => {
         console.log('userID', authCredential.user.uid);

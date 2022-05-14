@@ -4,7 +4,7 @@ import {
   set,
   push,
   update,
-  //get, update, remove
+  //get, remove
 } from 'firebase/database';
 // import {
 //   onChildAdded,
