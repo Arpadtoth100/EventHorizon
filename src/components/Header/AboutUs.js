@@ -1,9 +1,11 @@
+import ThankYou from "../utilities/ThankYou";
+
 function AboutUs() {
   return <div className="outlet_main">
     <div className="about-us_container">
       <div className="aboutus-hero" >
         <div className="aboutus-hero-img-wrapper">
-          <img className="aboutus-hero-img" src="./pexels-pixabay-207896.jpg" alt='' />
+          <img className="aboutus-hero-img" src="./pexels-pixabay-207896 new color1.jpg" alt='' />
         </div>
         <div className="aboutus-hero-text">
           <p>There are always great events on the horizon!</p>
@@ -14,6 +16,23 @@ function AboutUs() {
         <p>EventHorizon is the best lorem ipsum dolor sit amet consectetur, adipisicing elit. Cumque ratione est ut nisi nihil repudiandae officia pariatur voluptatem! Culpa eligendi vitae magni amet fugit nihil officiis harum, aliquid voluptas laudantium?</p>
       </div>
     </div>
+    <div>
+        <div className="thankyou">
+          <div className="thankyouTitle">
+            <br/>
+            <h1>Welcome to Event Horizon!</h1>
+            <br />
+            <div className="thankyouQuestion">
+            <h2>What do you want to do next?</h2>
+            <br />
+            </div>
+          </div>
+        </div>
+        <div className="thankyouContainer2">
+        < ThankYou />
+        </div>
+        
+      </div>
   </div>;
 }
 

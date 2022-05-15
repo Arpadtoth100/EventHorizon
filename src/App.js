@@ -39,7 +39,7 @@ function App() {
     <div className="App">
       <Routes>
         <Route element={<PublicLayout />}>
-          <Route path="/" element={<MainScreen />} />
+          <Route path="/" element={<MainScreen/>} />
           <Route path="/main" element={<MainScreen />} />
           <Route path="/eventpage" element={<Eventpage />} />
           <Route path="/about" element={<AboutUs />} />

@@ -1,9 +1,8 @@
 import EventCard from '../EventComponents/EventCard';
-import { readEvent } from '../../services/crud';
-import { useNavigate } from 'react-router-dom';
-import { useState } from 'react';
+
 
 function CardContainer(props) {
+
 
   /* const navTo = useNavigate();
   const [eventDetailData, setEventDetailData] = useState([]);
@@ -22,9 +21,10 @@ function CardContainer(props) {
     
   });
   
-  
+
+
   return (
-    <div className="main">
+    <div className="main" >
       <h3>{props.title}</h3>
       <section className="cards-list">{cards}</section>
     </div>

@@ -30,15 +30,18 @@ function CreateEventScreen() {
   const [eventData, setEventData] = useState(defaultEventData);
 
   const createChangeHandler = useCallback((e) => {
-    setEventData((p) => ({ ...p, [e.target.name]: e.target.value }));
+    setEventData((p) => ({ ...p, [e.target.name]: e.target.value }))
   }, []);
 
-  const createEventHandler = (e) => {
+  const createEventHandler = async (e) => {
     e.preventDefault();
+    await uploadImage(imageToUpload)
+    console.log("second")
     eventData.uid = auth?.currentUser.uid;
     createEvent(eventData).then(() => {
       setEventData(defaultEventData);
     });
+    console.log(eventData)
   };
 
   const imageHandler = (event) => {
@@ -46,29 +49,26 @@ function CreateEventScreen() {
     console.log(event.target.files[0]);
   };
 
-  const uploadHandler = (event) => {
+  /* const uploadHandler = (event) => {
     event.preventDefault();
-    uploadImage(imageToUpload);
-  };
+    uploadImage(imageToUpload)
+    console.log(eventData)
+  }; */
 
-  const uploadImage = (image) => {
+  const uploadImage = async (image) => {
     if (!image) return;
     const storageRef = ref(storage, `/images/${image.name}`);
     const uploadTask = uploadBytesResumable(storageRef, image);
-
-    uploadTask.on(
-      'state_changed',
-      ((snapshot) => {
-        const prog = Math.round(
-          (snapshot.bytesTransferred / snapshot.totalBytes) * 100
-        );
-        setProgress(prog);
-      },
+    uploadTask.on('state_changed', ((snapshot) => {
+      const prog = Math.round((snapshot.bytesTransferred / snapshot.totalBytes) * 100);
+      setProgress(prog);
+    },
       (err) => console.log(err),
       () => {
-        getDownloadURL(uploadTask.snapshot.ref).then((url) => console.log(url));
+        getDownloadURL(uploadTask.snapshot.ref).then((url) => setEventData((p) => ({ ...p, "image_url": url }))); console.log("zero");
       })
     );
+    console.log("first")
   };
 
   return (
@@ -140,10 +140,9 @@ function CreateEventScreen() {
           className="textinput"
           onChange={imageHandler}
         />
-        <button className="btn" onClick={uploadHandler}>
+        {/* <button className="btn" onClick={uploadHandler}>
           Upload Image
-        </button>
-        <h4>Uploaded {progress}</h4>
+        </button> */}
 
         <label htmlFor="event_type" className="textlabel">
           Online or Offline
@@ -226,7 +225,7 @@ function CreateEventScreen() {
           <option value="EUR">EUR</option>
         </select>
 
-        <button type="submit">Create Event!</button>
+        <button type="submit" className="btn">Create Event!</button>
       </form>
 
       <Map />
