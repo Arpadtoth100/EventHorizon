@@ -15,16 +15,6 @@ const MainScreen = () => {
 
   const [eventList, setEventList] = useState([]);
 
-  const [paidEventList, setPaidEventList] = useState([]);
-
-  /* const freeEvents = eventList.map((event) => {
-    if (event[1].free === "false") {
-      return event[1]
-    }
-    
-  }) */
-
-  
 
   useEffect(() => {
     readEvent()
