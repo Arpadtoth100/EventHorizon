@@ -12,15 +12,13 @@ function EventPage() {
   useEffect(() => {
     readEvent().then(snapshot => setEventList(Object.entries(snapshot.val())));
   }, [])
+
   return (
+
     <div className='outlet_main'>
-      
-      
-      <EventInfo
-      data={eventList}
-       
-      />
+      <EventInfo data={eventList}/>
     </div>
+    
   );
 }
 

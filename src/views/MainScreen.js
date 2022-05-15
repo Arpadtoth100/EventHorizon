@@ -4,10 +4,6 @@ import Slider from '../services/Slider';
 import { readEvent } from '../services/crud';
 import { useState, useEffect } from 'react';
 
-import { useNavigate } from 'react-router-dom'
-
-
-
 const imgSet = [
   'https://www.w3schools.com/howto/img_nature_wide.jpg',
   'https://www.w3schools.com/howto/img_snow_wide.jpg',
@@ -15,16 +11,7 @@ const imgSet = [
   'https://www.w3schools.com/howto/img_mountains_wide.jpg',
 ];
 
-
-
-const MainScreen = () => {
-
- /* const navigateTo = useNavigate()
-  function handleNavigate() {
-    navigateTo('/Eventpage')
-  }*/
-  const navigate = useNavigate();
-
+const MainScreen = (props) => {
 
   const [eventList, setEventList] = useState([]);
 
@@ -36,7 +23,7 @@ const MainScreen = () => {
   return (
     <div className="outlet_main">
       <Slider imgSet={imgSet} />
-      <CardContainer onClick={()=>navigate("/eventpage")}
+      <CardContainer
         title={'Newest Events on the Horizon'}
         data={eventList}
       />
