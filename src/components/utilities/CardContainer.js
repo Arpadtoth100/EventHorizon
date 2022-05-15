@@ -7,7 +7,7 @@ function CardContainer(props) {
     return <EventCard key={key} {...item[1]} />;
   });
   return (
-    <div className="main">
+    <div className="main" onClick={props.onClick}>
       <h3>{props.title}</h3>
       <section className="cards-list">{cards}</section>
     </div>
