@@ -1,4 +1,5 @@
 import CardContainer from '../components/utilities/CardContainer';
+import CardContainerPaid from '../components/utilities/CardContainerPaid';
 import { eventCardData } from '../services/eventCardData';
 import Slider from '../services/Slider';
 import { readEvent } from '../services/crud';
@@ -14,10 +15,24 @@ const MainScreen = () => {
 
   const [eventList, setEventList] = useState([]);
 
+  const [paidEventList, setPaidEventList] = useState([]);
+
+  /* const freeEvents = eventList.map((event) => {
+    if (event[1].free === "false") {
+      return event[1]
+    }
+    
+  }) */
+
+  
+
   useEffect(() => {
-    readEvent().then(snapshot => setEventList(Object.entries(snapshot.val())));
+    readEvent()
+    .then(snapshot => setEventList(Object.entries(snapshot.val())));
+    
   }, [])
 
+  console.log(eventList)
   return (
     <div className="outlet_main">
       <Slider imgSet={imgSet} />
@@ -25,7 +40,7 @@ const MainScreen = () => {
         title={'Newest Events on the Horizon'}
         data={eventList}
       />
-      <CardContainer title={'Featured Events'} data={eventList} />
+      <CardContainerPaid title={'Featured Events'} data={eventList} />
     </div>
   );
 };

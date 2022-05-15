@@ -3,7 +3,7 @@ import { readEvent } from '../../services/crud';
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 
-function CardContainer(props) {
+function CardContainerPaid(props) {
 
   /* const navTo = useNavigate();
   const [eventDetailData, setEventDetailData] = useState([]);
@@ -17,7 +17,7 @@ function CardContainer(props) {
 
   const cards = props.data.slice(0, 5).map((item) => {
     const key = item[0];
-    return item[1].free === true &&
+    return item[1].free === "false" &&
     <div key={key} /* onClick={clickHandler(key)} */><EventCard key={key} {...item[1]} /></div>
     
   });
@@ -31,4 +31,4 @@ function CardContainer(props) {
   );
 }
 
-export default CardContainer;
+export default CardContainerPaid;

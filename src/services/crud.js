@@ -24,8 +24,8 @@ export function createUser(userId, username, organization, location) {
   });
 }
 
-export function updateUser(key, userData) {
-  const refUser = ref(database, userEndpoint + key)
+export function updateUser(id, userData) {
+  const refUser = ref(database, userEndpoint + id)
   return update(refUser, userData)
 }
 
@@ -35,9 +35,9 @@ export function createEvent(eventData) {
   return set(newRefEvent, eventData);
 }
 
-export function readEvent(key) {
-  if(key) {
-    const refEvent = ref(database, `${eventEndpoint}/${key}`)
+export function readEvent(id) {
+  if(id) {
+    const refEvent = ref(database, `${eventEndpoint}/${id}`)
     return get(refEvent);
   }
   const refEvent = ref(database, eventEndpoint)
