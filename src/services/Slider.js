@@ -46,16 +46,18 @@ function Slider(props) {
 
   return (
     <>
-      <div className="main_slider">
-        <a href="/" className="left_arrow" onClick={slideLeft}>
-          <FontAwesomeIcon icon={faChevronLeft} />
-        </a>
-        <img src={props.imgSet[index]} alt="" />
-        <a href="/" className="right_arrow" onClick={slideRight}>
-          <FontAwesomeIcon icon={faChevronRight} />
-        </a>
+      <div className="main_slider_container">
+        <div className="main_slider">
+          <a href="/" className="left_arrow" onClick={slideLeft}>
+            <FontAwesomeIcon icon={faChevronLeft} />
+          </a>
+          <img className="sliderImg" src={props.imgSet[index]} alt="" />
+          <a href="/" className="right_arrow" onClick={slideRight}>
+            <FontAwesomeIcon icon={faChevronRight} />
+          </a>
+        </div>
+        <div className="dotset">{dotSet()}</div>
       </div>
-      <div className="dotset">{dotSet()}</div>
     </>
   );
 }
