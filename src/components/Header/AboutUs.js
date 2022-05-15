@@ -16,8 +16,8 @@ function AboutUs() {
         <p>EventHorizon is the best lorem ipsum dolor sit amet consectetur, adipisicing elit. Cumque ratione est ut nisi nihil repudiandae officia pariatur voluptatem! Culpa eligendi vitae magni amet fugit nihil officiis harum, aliquid voluptas laudantium?</p>
       </div>
     </div>
-    <div>
-      <br/>
+    <div className="thankyouContainer">
+      <br />
       <ThankYouScreen />
     </div>
   </div>;
