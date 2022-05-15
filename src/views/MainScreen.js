@@ -4,6 +4,7 @@ import { eventCardData } from '../services/eventCardData';
 import Slider from '../services/Slider';
 import { readEvent } from '../services/crud';
 import { useState, useEffect } from 'react';
+
 const imgSet = [
   'https://www.w3schools.com/howto/img_nature_wide.jpg',
   'https://www.w3schools.com/howto/img_snow_wide.jpg',
@@ -11,20 +12,10 @@ const imgSet = [
   'https://www.w3schools.com/howto/img_mountains_wide.jpg',
 ];
 
-const MainScreen = () => {
+const MainScreen = (props) => {
 
   const [eventList, setEventList] = useState([]);
 
-  const [paidEventList, setPaidEventList] = useState([]);
-
-  /* const freeEvents = eventList.map((event) => {
-    if (event[1].free === "false") {
-      return event[1]
-    }
-    
-  }) */
-
-  
 
   useEffect(() => {
     readEvent()
@@ -32,7 +23,7 @@ const MainScreen = () => {
     
   }, [])
 
-  console.log(eventList)
+
   return (
     <div className="outlet_main">
       <Slider imgSet={imgSet} />
