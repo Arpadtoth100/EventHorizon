@@ -3,7 +3,10 @@ import { eventCardData } from '../services/eventCardData';
 import Slider from '../services/Slider';
 import { readEvent } from '../services/crud';
 import { useState, useEffect } from 'react';
+
 import { useNavigate } from 'react-router-dom'
+
+
 
 const imgSet = [
   'https://www.w3schools.com/howto/img_nature_wide.jpg',
