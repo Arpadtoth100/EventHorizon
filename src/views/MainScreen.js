@@ -3,6 +3,7 @@ import { eventCardData } from '../services/eventCardData';
 import Slider from '../services/Slider';
 import { readEvent } from '../services/crud';
 import { useState, useEffect } from 'react';
+
 const imgSet = [
   'https://www.w3schools.com/howto/img_nature_wide.jpg',
   'https://www.w3schools.com/howto/img_snow_wide.jpg',
