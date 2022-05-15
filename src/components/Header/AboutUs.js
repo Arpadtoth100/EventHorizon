@@ -3,7 +3,7 @@ function AboutUs() {
     <div className="about-us_container">
       <div className="aboutus-hero" >
         <div className="aboutus-hero-img-wrapper">
-          <img className="aboutus-hero-img" src="./pexels-pixabay-207896.jpg" alt='' />
+          <img className="aboutus-hero-img" src="./pexels-pixabay-207896 new color1.jpg" alt='' />
         </div>
         <div className="aboutus-hero-text">
           <p>There are always great events on the horizon!</p>
