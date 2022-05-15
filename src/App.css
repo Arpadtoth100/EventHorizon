@@ -87,12 +87,6 @@ html {
   height: 20rem;
 }
 
-.ThankYouContainer{
-  position: absolute;
-  top: 12rem;
-  left: 15rem;
-}
-
 .footer_main {
   display: flex;
   justify-content: center;
