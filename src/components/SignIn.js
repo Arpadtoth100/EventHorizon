@@ -67,7 +67,7 @@ function SignIn() {
           onChange={collectSignInData}
         />
 
-        <button className="btn">Sing In</button>
+        <button className="btn">Sign In</button>
       </form>
     </div>
   );

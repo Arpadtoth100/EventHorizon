@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 function InfoBox(props) {
   return (
     <div>
-      <img src="https://picsum.photos/300/200" alt="" />
+      <NavLink to={props.navTo}><img className='infoboxImg' src={props.img} alt="" /></NavLink>
       <p>
         <NavLink to={props.navTo}>{props.title}</NavLink>
       </p>
