@@ -7,13 +7,17 @@ export default function EventInfo(props) {
   const openJoinModal = () => {
     setShowJoinModal(prev => !prev)
   }
+
+  console.log(props)
   return (
     <div className="event-info">
       <h3 className="eventinfo-name">
-        <p>{props.title}</p>
+        <p>{props.data.title}</p>
       </h3>
-      <div className="eventinfo-date">{props.date}</div>
-      <div className="eventinfo-venue">{props.venue}</div>
+      <img src={props.data.image_url} alt="the event" />
+      <div className="eventinfo-date">{props.data.date}</div>
+      <div className="eventinfo-venue">{props.data.venue}</div>
+      
       <div className="eventinfo-button">
         <button className="btn" onClick={openJoinModal}>Join</button>
         <JoinModal showJoinModal={showJoinModal} setShowJoinModal={setShowJoinModal} />
