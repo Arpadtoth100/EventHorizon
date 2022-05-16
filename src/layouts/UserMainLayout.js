@@ -5,7 +5,7 @@ import Footer from '../components/Footer/Footer';
 function UserMainLayout(props) {
   return (
     <div className="themain">
-      <Navbar loggedUserID={props.loggedUserID}/>
+      <Navbar loggedUserID={props.loggedUserID} />
       <Outlet />
       <Footer />
     </div>
