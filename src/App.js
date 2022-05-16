@@ -68,7 +68,7 @@ function App() {
           <Route path="/faq" element={<FAQ />} />
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/joined_events" element={<JoinedEventsScreen />} />
-          <Route path="/my_events" element={<MyEventsScreen />} />
+          <Route path="/my_events" element={<MyEventsScreen loggedUserID={loggedUserID}/>} />
           <Route
             path="*"
             element={<div className="outlet_main">No content found</div>}
