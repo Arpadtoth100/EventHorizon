@@ -11,9 +11,9 @@ export default function EventInfo(props) {
   console.log(props)
   return (
     <div className="event-info">
-      <h3 className="eventinfo-name">
-        <p>{props.data.title}</p>
-      </h3>
+      <h1 className="eventinfo-name">
+        {props.data.title}
+      </h1>
       <img src={props.data.image_url} alt="the event" />
       <div className="eventinfo-date">{props.data.date}</div>
       <div className="eventinfo-venue">{props.data.venue}</div>

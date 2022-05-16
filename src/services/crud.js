@@ -15,6 +15,7 @@ import {
 
 const userEndpoint = 'userDetails/';
 const eventEndpoint = 'events';
+const eventAttendeeEndpoint = 'eventAttendees';
 
 export function createUser(userId, username, organization, location) {
   set(ref(database, userEndpoint + userId), {
@@ -36,7 +37,7 @@ export function createEvent(eventData) {
 }
 
 export function readEvent(id) {
-  if(id) {
+  if (id) {
     const refEvent = ref(database, `${eventEndpoint}/${id}`)
     return get(refEvent);
   }
@@ -44,3 +45,10 @@ export function readEvent(id) {
   return get(refEvent);
 }
 
+export function createAttendee(userId, username, organization, location) {
+  set(ref(database, eventAttendeeEndpoint + userId), {
+    username,
+    organization,
+    location,
+  });
+}
