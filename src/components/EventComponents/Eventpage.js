@@ -22,7 +22,7 @@ function EventPage() {
   return (
 
     <div className='outlet_main'>
-      <EventInfo data={event}/>
+      <EventInfo data={event} eventId={params.id}/>
     </div>
     
   );
