@@ -2,10 +2,10 @@ import { Outlet } from 'react-router-dom';
 import Navbar from '../components/Header/Navbar';
 import Footer from '../components/Footer/Footer';
 
-function PublicLayout() {
+function PublicLayout(props) {
   return (
     <div className='themain'>
-      <Navbar />
+      <Navbar loggedUserID={props.loggedUserID}/>
       <Outlet />
       <Footer />
     </div>
