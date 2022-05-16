@@ -41,7 +41,7 @@ function App() {
         <Route element={<PublicLayout />}>
           <Route path="/" element={<MainScreen/>} />
           <Route path="/main" element={<MainScreen />} />
-          <Route path="/eventpage" element={<Eventpage />} />
+          <Route path="/eventpage/:id" element={<Eventpage />} />
           <Route path="/about" element={<AboutUs />} />
           <Route path="/search" element={<SearchScreen />} />
           <Route path="/signin" element={<SignInUpScreen />} />
