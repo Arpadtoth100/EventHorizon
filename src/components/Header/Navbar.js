@@ -1,8 +1,10 @@
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import logo from '../../images/white-flag-svgrepo-com.svg';
+import {auth} from '../../config/firebase'
+import { signOut } from "firebase/auth";
 
-function Navbar() {
+function Navbar(props) {
   const [menuActive, setMenuActive] = useState('');
   const [mobileMenuActive, setMobileMenuActive] = useState('');
 
@@ -12,6 +14,14 @@ function Navbar() {
   };
 
   console.log(menuActive);
+
+  const signOutHandler = () => {
+    signOut(auth).then(() => {
+      console.log("Signed out!")
+    }).catch((error) => {
+      console.log(`Error while signing out: ${error}`)
+    });
+  }
 
   return (
     <header className="header">
@@ -33,11 +43,8 @@ function Navbar() {
               ABOUT US
             </NavLink>
           </li>
-          <li className="item">
-            <NavLink to="/signin" id="nav-login" className="link">
-              SIGN IN
-            </NavLink>
-          </li>
+          {props.loggedUserID ? <li className="item"><NavLink to="/profile" id="nav-profile" className="link">PROFILE</NavLink></li> : <li className="item"><NavLink to="/signin" id="nav-profile" className="link">PROFILE</NavLink></li>}
+          {props.loggedUserID ? <li className="item"><NavLink to="/signin" id="nav-login" className="link" onClick={signOutHandler}>SIGN OUT</NavLink></li> : <li className="item"><NavLink to="/signin" id="nav-login" className="link">SIGN IN</NavLink></li>}        
         </ul>
         <div
           className={`header_toggle ${mobileMenuActive}`}

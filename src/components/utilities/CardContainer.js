@@ -3,6 +3,7 @@ import { readEvent } from '../../services/crud';
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 
+
 function CardContainer(props) {
 
 
@@ -12,6 +13,7 @@ function CardContainer(props) {
     event.preventDefault();
     navTo(`/eventpage/${key}`)
   }
+
 
   const cards = props.data.slice(0, 5).map((item) => {
     const key = item[0];
