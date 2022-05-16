@@ -25,24 +25,27 @@ import { auth } from './config/firebase';
 
 function App() {
   const [loggedUserID, setLoggedUserID] = useState();
+  const [userLogged, setUserLogged] = useState(false);
 
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
       if (user) {
         setLoggedUserID(user.uid);
+        setUserLogged(true)
       }
-      else{
+      else {
         setLoggedUserID(null)
+        setUserLogged(false)
       }
       console.log(loggedUserID);
     });
-  });
+  }, []);
 
   return (
     <div className="App">
       <Routes>
-        <Route element={<PublicLayout loggedUserID={loggedUserID}/>}>
-          <Route path="/" element={<MainScreen/>} />
+        <Route element={<PublicLayout loggedUserID={loggedUserID} />}>
+          <Route path="/" element={<MainScreen />} />
           <Route path="/main" element={<MainScreen />} />
           <Route path="/eventpage" element={<Eventpage />} />
           <Route path="/about" element={<AboutUs />} />
@@ -57,7 +60,7 @@ function App() {
             element={<div className="outlet_main">No content found</div>}
           />
         </Route>
-        <Route element={<UserMainLayout loggedUserID={loggedUserID}/>}>
+        {userLogged && <Route element={<UserMainLayout loggedUserID={loggedUserID} userLogged={userLogged} />}>
           <Route path="/main" element={<MainScreen />} />
           <Route path="/thankyou" element={<ThankYouScreen />} />
           <Route path="/create_event" element={<CreateEventScreen />} />
@@ -71,12 +74,12 @@ function App() {
           <Route path="/faq" element={<FAQ />} />
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/joined_events" element={<JoinedEventsScreen />} />
-          <Route path="/my_events" element={<MyEventsScreen loggedUserID={loggedUserID}/>} />
+          <Route path="/my_events" element={<MyEventsScreen loggedUserID={loggedUserID} />} />
           <Route
             path="*"
             element={<div className="outlet_main">No content found</div>}
           />
-        </Route>
+        </Route>}
       </Routes>
     </div>
   );
