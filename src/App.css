@@ -547,6 +547,8 @@ form h3 {
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 15;
+  top: 0;
 }
 .ModalWrapper {
   width: 50rem;
