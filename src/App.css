@@ -149,7 +149,8 @@ form * {
 }
 
 .signupform {
-  height: 600px;
+  height: 840px;
+  margin: 40px 0;
 }
 
 form h3 {

@@ -31,6 +31,9 @@ function App() {
       if (user) {
         setLoggedUserID(user.uid);
       }
+      else{
+        setLoggedUserID(null)
+      }
       console.log(loggedUserID);
     });
   });
@@ -38,7 +41,7 @@ function App() {
   return (
     <div className="App">
       <Routes>
-        <Route element={<PublicLayout />}>
+        <Route element={<PublicLayout loggedUserID={loggedUserID}/>}>
           <Route path="/" element={<MainScreen/>} />
           <Route path="/main" element={<MainScreen />} />
           <Route path="/eventpage" element={<Eventpage />} />
@@ -54,7 +57,7 @@ function App() {
             element={<div className="outlet_main">No content found</div>}
           />
         </Route>
-        <Route element={<UserMainLayout />}>
+        <Route element={<UserMainLayout loggedUserID={loggedUserID}/>}>
           <Route path="/main" element={<MainScreen />} />
           <Route path="/thankyou" element={<ThankYouScreen />} />
           <Route path="/create_event" element={<CreateEventScreen />} />
