@@ -582,21 +582,27 @@ form h3 {
 
 .ModalButton {
   padding: 10px 24px;
-  background: #141414;
+  background: #006d77;
   color: #fff;
   border: none;
 }
 .ModalJoinButton,
 .ModalSendButton,
-.ModalDiscardButton {
+.ModalDiscardButton,
+.joinEventBtn {
   padding: 10px 24px;
-  background: #141414;
+  background: #006d77;
   color: #fff;
   border: none;
   border-radius: 5px;
 }
+.joinEventBtn {
+  font-size: 1.5rem;
+  background: #05668d
+}
 .ModalDiscardButton {
   margin-right: 20px;
+  background: #023e8a;
 }
 .ModalSendButton {
   margin: 20px;
