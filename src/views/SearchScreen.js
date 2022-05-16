@@ -8,7 +8,7 @@ function SearchScreen() {
     <div className="outlet_main">
       <SearchBar />
       <FilterBar />
-      <Pagination />
+      {/* <Pagination /> */}
       <div className="mapcontainer_div">
         <Map />
       </div>
