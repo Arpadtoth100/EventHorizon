@@ -2,7 +2,7 @@ import React from 'react';
 import { MdClose } from 'react-icons/md';
 import EventInfo from './EventInfo';
 
-export default function JoinModal({ showJoinModal, setShowJoinModal }, props) {
+export default function JoinModal({ showJoinModal, setShowJoinModal, eventData }, props) {
     const CloseModalButton = MdClose;
 
     return (
@@ -12,7 +12,7 @@ export default function JoinModal({ showJoinModal, setShowJoinModal }, props) {
                     <div className='ModalWrapper' showJoinModal={showJoinModal}>
                         <img className="ModalImg" src="https://picsum.photos/300/200" alt='' />
                         <div className="ModalContent">
-                            <h1>Event title</h1>
+                            <h1>{eventData.data.title}</h1>
                             <p>Event location: </p>
                             <p>Event date: </p>
                             <div>
