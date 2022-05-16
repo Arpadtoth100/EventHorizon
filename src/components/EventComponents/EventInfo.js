@@ -19,7 +19,7 @@ export default function EventInfo(props) {
       <div className="eventinfo-venue">{props.data.venue}</div>
       
       <div className="eventinfo-button">
-        <button className="btn" onClick={openJoinModal}>Join</button>
+        <button className="joinEventBtn" onClick={openJoinModal}>Join Event</button>
         <JoinModal showJoinModal={showJoinModal} setShowJoinModal={setShowJoinModal} eventData={props}/>
       </div>
     </div>

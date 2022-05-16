@@ -37,7 +37,7 @@ const MainScreen = (props) => {
         data={eventList}
       />
       <CardContainerPaid 
-      title={'Featured Events'}
+      title={'Featured Events on The Horizon'}
       data={eventList} />
     </div>
   );
