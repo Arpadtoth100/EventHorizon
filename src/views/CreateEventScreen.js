@@ -114,7 +114,10 @@ function CreateEventScreen() {
           <option value="2">Flash Mob</option>
           <option value="3">Theatre</option>
           <option value="4">E-Sports</option>
-          <option value="5">Sports</option>
+          <option value="5">Outdoor activity</option>
+          <option value="6">Art & Culture</option>
+          <option value="7">Games</option>
+          <option value="8">Hobbies</option>
         </select>
 
         <label htmlFor="description" className="textlabel">
