@@ -4,7 +4,7 @@ import SignOut from '../SignOut';
 function UserNavigationMenu() {
   return (
     <>
-      <ul>
+      <ul className='userNavmenu'>
         <li>
           <NavLink to="/events">Events</NavLink>
         </li>

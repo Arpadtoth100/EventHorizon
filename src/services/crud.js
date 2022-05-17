@@ -55,7 +55,7 @@ export function readEvent(id) {
 }
 
 export function createAttendee(eventId, userId, username) {
-  set(ref(database, `${eventAttendeeEndpoint}/${eventId}`), {
+  update(ref(database, `${eventAttendeeEndpoint}/${eventId}`), {
     [userId]: username,
   });
 }

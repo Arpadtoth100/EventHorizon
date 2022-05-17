@@ -16,6 +16,7 @@ export default function JoinModal({ showJoinModal, setShowJoinModal, eventData, 
     const clickJoinHandler = (event) => {
         event.preventDefault();
         createAttendee(eventId, auth.currentUser.uid, userName);
+        alert("Thank you, you successfully joined the event!");
     };
     console.log(auth.currentUser.uid);
 
@@ -37,8 +38,10 @@ export default function JoinModal({ showJoinModal, setShowJoinModal, eventData, 
                                 <input className="JoinModalInput" type="email" id='email' placeholder="email" required></input>
                                 <button className="ModalSendButton">Send Event</button>
                             </div>
-                            <div><button className="ModalDiscardButton" aria-label='Close modal'
+                            <div>
+                                <button className="ModalDiscardButton" aria-label='Close modal'
                                 onClick={() => setShowJoinModal(prev => !prev)}>Discard</button>
+                                <br/>
                                 <button className="ModalJoinButton" onClick={clickJoinHandler}>Join Event</button></div>
 
                         </div>

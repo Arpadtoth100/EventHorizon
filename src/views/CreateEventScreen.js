@@ -227,8 +227,10 @@ function CreateEventScreen() {
 
         <button type="submit" className="btn">Create Event!</button>
       </form>
+      <div className='map_container'>
+        <Map />
+      </div>
 
-      <Map />
     </div>
   );
 }
