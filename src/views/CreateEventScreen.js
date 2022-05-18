@@ -36,13 +36,14 @@ function CreateEventScreen() {
   const createEventHandler = async (e) => {
     e.preventDefault();
     await uploadImage(imageToUpload)
-    console.log("second")
     eventData.uid = auth?.currentUser.uid;
     createEvent(eventData).then(() => {
       setEventData(defaultEventData);
     });
     console.log(eventData)
   };
+
+  console.log(eventData.image_url)
 
   const imageHandler = (event) => {
     setImageToUpload(event.target.files[0]);
@@ -65,10 +66,9 @@ function CreateEventScreen() {
     },
       (err) => console.log(err),
       () => {
-        getDownloadURL(uploadTask.snapshot.ref).then((url) => setEventData((p) => ({ ...p, "image_url": url }))); console.log("zero");
+        getDownloadURL(uploadTask.snapshot.ref).then((url) => setEventData((p) => ({ ...p, "image_url": url })));
       })
     );
-    console.log("first")
   };
 
   return (
