@@ -56,6 +56,8 @@ function CreateEventScreen() {
     console.log(eventData);
   };
 
+  console.log(eventData.image_url)
+
   const imageHandler = (event) => {
     setImageToUpload(event.target.files[0]);
     console.log(event.target.files[0]);
@@ -81,13 +83,9 @@ function CreateEventScreen() {
       },
       (err) => console.log(err),
       () => {
-        getDownloadURL(uploadTask.snapshot.ref).then((url) =>
-          setEventData((p) => ({ ...p, image_url: url }))
-        );
-        console.log('zero');
+        getDownloadURL(uploadTask.snapshot.ref).then((url) => setEventData((p) => ({ ...p, "image_url": url })));
       })
     );
-    console.log('first');
   };
 
   return (
