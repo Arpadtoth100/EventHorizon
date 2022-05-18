@@ -1,7 +1,7 @@
 export default function EventCard(props) {
   return (
     <div className="event-card">
-      <img src={props.image_url} className="event-card-image" alt="the event" />
+      <img src={props.image_url ? props.image_url : "https://picsum.photos/200"} className="event-card-image" alt="the event" />
       <h3 className="event-title">
         <p>{props.title}</p>
       </h3>

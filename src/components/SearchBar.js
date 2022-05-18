@@ -1,10 +1,10 @@
-import SelectDate from './utilities/SelectDate';
+import SelectDateFromTo from './utilities/SelectDateFromTo';
 
 function SearchBar() {
   return (
     <>
       <input type="text" placeholder="City" />
-      <SelectDate />
+      <SelectDateFromTo />
       <label htmlFor="se_price">Admission</label>
       <select className="search_event_select" name="se_price" id="se_price">
         <option value="free">Free</option>

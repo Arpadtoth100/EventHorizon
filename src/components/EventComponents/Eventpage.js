@@ -3,20 +3,26 @@ import EventDetail from './EventDetail';
 import EventInfo from './EventInfo';
 import { useState, useEffect } from 'react';
 import { readEvent } from '../../services/crud';
+import { useParams } from 'react-router-dom';
 
 
 function EventPage() {
 
-  const [eventList, setEventList] = useState([]);
+  const [event, setEvent] = useState([]);
+ 
+  const params = useParams()
+  console.log(params.id)
+
 
   useEffect(() => {
-    readEvent().then(snapshot => setEventList(Object.entries(snapshot.val())));
+    readEvent(params.id).then(snapshot => setEvent(snapshot.val()));
   }, [])
 
+  console.log(event)
   return (
 
     <div className='outlet_main'>
-      <EventInfo data={eventList}/>
+      <EventInfo data={event} eventId={params.id}/>
     </div>
     
   );

@@ -11,6 +11,9 @@ function CreateEventScreen() {
   const [progress, setProgress] = useState(0);
   const [imageToUpload, setImageToUpload] = useState(null);
 
+  const [startDate, setStartDate] = useState(new Date());
+  const [endDate, setEndDate] = useState(new Date());
+
   const defaultEventData = {
     uid: '',
     status: '',
@@ -30,17 +33,27 @@ function CreateEventScreen() {
   const [eventData, setEventData] = useState(defaultEventData);
 
   const createChangeHandler = useCallback((e) => {
-    setEventData((p) => ({ ...p, [e.target.name]: e.target.value }))
+    setEventData((p) => ({ ...p, [e.target.name]: e.target.value }));
   }, []);
+
+  //Ezzel nem mukodik
+  // const setDate = () => {
+  //   console.log('date', startDate, endDate);
+  //   setEventData((p) => ({ ...p, date_from: startDate }));
+  //   setEventData((p) => ({ ...p, date_to: endDate }));
+  //   console.log('date', startDate, endDate);
+  // };
 
   const createEventHandler = async (e) => {
     e.preventDefault();
-    await uploadImage(imageToUpload)
+    await uploadImage(imageToUpload);
     eventData.uid = auth?.currentUser.uid;
+    eventData.date_from = startDate;
+    eventData.date_to = endDate;
     createEvent(eventData).then(() => {
       setEventData(defaultEventData);
     });
-    console.log(eventData)
+    console.log(eventData);
   };
 
   console.log(eventData.image_url)
@@ -60,10 +73,14 @@ function CreateEventScreen() {
     if (!image) return;
     const storageRef = ref(storage, `/images/${image.name}`);
     const uploadTask = uploadBytesResumable(storageRef, image);
-    uploadTask.on('state_changed', ((snapshot) => {
-      const prog = Math.round((snapshot.bytesTransferred / snapshot.totalBytes) * 100);
-      setProgress(prog);
-    },
+    uploadTask.on(
+      'state_changed',
+      ((snapshot) => {
+        const prog = Math.round(
+          (snapshot.bytesTransferred / snapshot.totalBytes) * 100
+        );
+        setProgress(prog);
+      },
       (err) => console.log(err),
       () => {
         getDownloadURL(uploadTask.snapshot.ref).then((url) => setEventData((p) => ({ ...p, "image_url": url })));
@@ -114,7 +131,10 @@ function CreateEventScreen() {
           <option value="2">Flash Mob</option>
           <option value="3">Theatre</option>
           <option value="4">E-Sports</option>
-          <option value="5">Sports</option>
+          <option value="5">Outdoor activity</option>
+          <option value="6">Art & Culture</option>
+          <option value="7">Games</option>
+          <option value="8">Hobbies</option>
         </select>
 
         <label htmlFor="description" className="textlabel">
@@ -171,7 +191,12 @@ function CreateEventScreen() {
         />
 
         <br />
-        <SelectDateFromTo />
+        <SelectDateFromTo
+          startDate={startDate}
+          setStartDate={setStartDate}
+          endDate={endDate}
+          setEndDate={setEndDate}
+        />
 
         <label htmlFor="user_limit" className="textlabel">
           Maximum Number of Participants
@@ -225,10 +250,13 @@ function CreateEventScreen() {
           <option value="EUR">EUR</option>
         </select>
 
-        <button type="submit" className="btn">Create Event!</button>
+        <button type="submit" className="btn">
+          Create Event!
+        </button>
       </form>
-
-      <Map />
+      <div className="map_container">
+        <Map />
+      </div>
     </div>
   );
 }

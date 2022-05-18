@@ -547,6 +547,8 @@ form h3 {
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 15;
+  top: 0;
 }
 .ModalWrapper {
   width: 50rem;
@@ -554,16 +556,15 @@ form h3 {
   box-shadow: 0 5px 16px rgba(0, 0, 0, 0.2);
   background: #fff;
   color: #000;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  position: fixed;
-  top: 15rem;
-  left: 35rem;
+  display: flex;
+  /* grid-template-columns: 1fr 1fr; */
+  position: relative;
   z-index: 10;
   border-radius: 10px;
 }
+
 .ModalImg {
-  width: 80%;
+  width: 45%;
   height: 80%;
   margin: 50px;
   border-radius: 10px 10px 10px 10px;
@@ -580,21 +581,28 @@ form h3 {
 
 .ModalButton {
   padding: 10px 24px;
-  background: #141414;
+  background: #006d77;
   color: #fff;
   border: none;
 }
 .ModalJoinButton,
 .ModalSendButton,
-.ModalDiscardButton {
+.ModalDiscardButton,
+.joinEventBtn {
   padding: 10px 24px;
-  background: #141414;
+  background: #006d77;
   color: #fff;
   border: none;
   border-radius: 5px;
 }
+.joinEventBtn {
+  font-size: 1.5rem;
+  background: #05668d;
+}
 .ModalDiscardButton {
   margin-right: 20px;
+  background: #023e8a;
+  margin: 10px;
 }
 .ModalSendButton {
   margin: 20px;
@@ -650,4 +658,44 @@ form h3 {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.map_container {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  top: 4rem;
+  left: 4rem;
+}
+
+.useravatar {
+  border-radius: 50%;
+}
+
+.userprofile_container {
+  width: 100%;
+  margin: 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.userprofile_container div {
+  /* flex: 1; */
+  display: block;
+  margin-left: 10rem;
+  margin-right: 10rem;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.userNavmenu {
+  list-style: none;
+  font-size: 1.5rem;
+}
+
+.userprofile_container p {
+  font-size: 1.5rem;
+  font-weight: bold;
 }

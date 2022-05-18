@@ -4,24 +4,24 @@ import SignOut from '../SignOut';
 function UserNavigationMenu() {
   return (
     <>
-      <ul>
-        <li>
+      <ul className='userNavmenu'>
+        {/* <li>
           <NavLink to="/events">Events</NavLink>
-        </li>
+        </li>  Emese: szerintem ez ugyanaz, mint a search, szóval nem kell*/}
         <li>
           <NavLink to="/create_event">Create Event</NavLink>
         </li>
         <li>
-          <NavLink to="/my_events">My Events</NavLink>
+          <NavLink to="/my_events">Events I created</NavLink>
         </li>
         <li>
-          <NavLink to="/joined_events">Joined Events</NavLink>
+          <NavLink to="/joined_events">Events I Joined</NavLink>
         </li>
         <li>
           <NavLink to="/search">Browse Events</NavLink>
         </li>
         <li>
-          <NavLink to="/preferences">Preferences</NavLink>
+          <NavLink to="/updateuser">Update My Profile</NavLink>
         </li>
         <li>
           <SignOut />

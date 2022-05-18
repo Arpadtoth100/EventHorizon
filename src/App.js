@@ -14,7 +14,7 @@ import SignInUpScreen from './views/SignInUpScreen';
 import ProfileScreen from './components/ProfileScreen';
 import Contact from './components/Footer/Contact';
 import FAQ from './components/Footer/FAQ';
-import PreferencesScreen from './views/PreferencesScreen';
+import UpdateUserScreen from './views/UpdateUserScreen';
 import CreateEventScreen from './views/CreateEventScreen';
 import JoinedEventsScreen from './views/JoinedEventsScreen';
 import MyEventsScreen from './views/MyEventsScreen';
@@ -47,7 +47,7 @@ function App() {
         <Route element={<PublicLayout loggedUserID={loggedUserID} />}>
           <Route path="/" element={<MainScreen />} />
           <Route path="/main" element={<MainScreen />} />
-          <Route path="/eventpage" element={<Eventpage />} />
+          <Route path="/eventpage/:id" element={<Eventpage />} />
           <Route path="/about" element={<AboutUs />} />
           <Route path="/search" element={<SearchScreen />} />
           <Route path="/signin" element={<SignInUpScreen />} />
@@ -68,7 +68,7 @@ function App() {
           <Route path="/aboutus" element={<AboutUs />} />
           <Route path="/profile" element={<ProfileScreen />} />
           <Route path="/search" element={<SearchScreen />} />
-          <Route path="/preferences" element={<PreferencesScreen />} />
+          <Route path="/updateuser" element={<UpdateUserScreen />} />
           <Route path="/signout" element={<SignOut />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/faq" element={<FAQ />} />

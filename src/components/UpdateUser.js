@@ -6,7 +6,7 @@ import { auth } from '../config/firebase';
 import { updateEmail, updatePassword } from 'firebase/auth';
 import { updateUser } from '../services/crud';
 
-function Preferences() {
+function UpdateUser() {
   const defValue = {
     username: '',
     email: '',
@@ -168,4 +168,4 @@ function Preferences() {
     </div>
   );
 }
-export default Preferences;
+export default UpdateUser;
