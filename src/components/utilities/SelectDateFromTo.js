@@ -2,34 +2,30 @@ import { useState } from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 
-function SelectDateFromTo() {
-
-    const [startDate, setStartDate] = useState(new Date());
-    const [endDate, setEndDate] = useState(new Date());
-    return (
-        <>
-            <DatePicker
-                selected={startDate}
-                onChange={(date) => setStartDate(date)}
-                selectsStart
-                startDate={startDate}
-                endDate={endDate}
-                showTimeSelect
-                dateFormat="Pp"
-            />
-            <DatePicker
-                selected={endDate}
-                onChange={(date) => setEndDate(date)}
-                selectsEnd
-                startDate={startDate}
-                endDate={endDate}
-                minDate={startDate}
-                showTimeSelect
-                dateFormat="Pp"
-            />
-        </>
-    );
-
+function SelectDateFromTo(props) {
+  return (
+    <>
+      <DatePicker
+        selected={props.startDate}
+        onChange={(date) => props.setStartDate(date)}
+        selectsStart
+        startDate={props.startDate}
+        endDate={props.endDate}
+        showTimeSelect
+        dateFormat="Pp"
+      />
+      <DatePicker
+        selected={props.endDate}
+        onChange={(date) => props.setEndDate(date)}
+        selectsEnd
+        startDate={props.startDate}
+        endDate={props.endDate}
+        minDate={props.startDate}
+        showTimeSelect
+        dateFormat="Pp"
+      />
+    </>
+  );
 }
 
-export default SelectDateFromTo
+export default SelectDateFromTo;
