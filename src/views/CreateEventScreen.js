@@ -23,8 +23,8 @@ function CreateEventScreen() {
     image_url: '',
     event_type: '',
     location: '',
-    date_from: '',
-    date_to: '',
+    date_from: new Date(),
+    date_to: new Date(),
     user_limit: null,
     free: true,
     price: null,
@@ -48,15 +48,16 @@ function CreateEventScreen() {
     e.preventDefault();
     await uploadImage(imageToUpload);
     eventData.uid = auth?.currentUser.uid;
-    eventData.date_from = startDate;
-    eventData.date_to = endDate;
+    eventData.date_from = startDate.toString();
+    eventData.date_to = endDate.toString();
+    console.log('event feltoltes elott', eventData);
     createEvent(eventData).then(() => {
       setEventData(defaultEventData);
+      console.log('es utanna', eventData);
     });
-    console.log(eventData);
   };
 
-  console.log(eventData.image_url)
+  console.log(eventData.image_url);
 
   const imageHandler = (event) => {
     setImageToUpload(event.target.files[0]);
@@ -83,7 +84,9 @@ function CreateEventScreen() {
       },
       (err) => console.log(err),
       () => {
-        getDownloadURL(uploadTask.snapshot.ref).then((url) => setEventData((p) => ({ ...p, "image_url": url })));
+        getDownloadURL(uploadTask.snapshot.ref).then((url) =>
+          setEventData((p) => ({ ...p, image_url: url }))
+        );
       })
     );
   };
