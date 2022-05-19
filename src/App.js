@@ -31,11 +31,10 @@ function App() {
     onAuthStateChanged(auth, (user) => {
       if (user) {
         setLoggedUserID(user.uid);
-        setUserLogged(true)
-      }
-      else {
-        setLoggedUserID(null)
-        setUserLogged(false)
+        setUserLogged(true);
+      } else {
+        setLoggedUserID(null);
+        setUserLogged(false);
       }
       console.log(loggedUserID);
     });
@@ -60,26 +59,38 @@ function App() {
             element={<div className="outlet_main">No content found</div>}
           />
         </Route>
-        {userLogged && <Route element={<UserMainLayout loggedUserID={loggedUserID} userLogged={userLogged} />}>
-          <Route path="/main" element={<MainScreen />} />
-          <Route path="/thankyou" element={<ThankYouScreen />} />
-          <Route path="/create_event" element={<CreateEventScreen />} />
-          <Route path="/eventpage" element={<Eventpage />} />
-          <Route path="/aboutus" element={<AboutUs />} />
-          <Route path="/profile" element={<ProfileScreen />} />
-          <Route path="/search" element={<SearchScreen />} />
-          <Route path="/updateuser" element={<UpdateUserScreen />} />
-          <Route path="/signout" element={<SignOut />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/faq" element={<FAQ />} />
-          <Route path="/privacy" element={<Privacy />} />
-          <Route path="/joined_events" element={<JoinedEventsScreen />} />
-          <Route path="/my_events" element={<MyEventsScreen loggedUserID={loggedUserID} />} />
+        {userLogged && (
           <Route
-            path="*"
-            element={<div className="outlet_main">No content found</div>}
-          />
-        </Route>}
+            element={
+              <UserMainLayout
+                loggedUserID={loggedUserID}
+                userLogged={userLogged}
+              />
+            }
+          >
+            <Route path="/main" element={<MainScreen />} />
+            <Route path="/thankyou" element={<ThankYouScreen />} />
+            <Route path="/create_event" element={<CreateEventScreen />} />
+            <Route path="/eventpage" element={<Eventpage />} />
+            <Route path="/aboutus" element={<AboutUs />} />
+            <Route path="/profile" element={<ProfileScreen />} />
+            <Route path="/search" element={<SearchScreen />} />
+            <Route path="/updateuser" element={<UpdateUserScreen />} />
+            <Route path="/signout" element={<SignOut />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/faq" element={<FAQ />} />
+            <Route path="/privacy" element={<Privacy />} />
+            <Route path="/joined_events" element={<JoinedEventsScreen />} />
+            <Route
+              path="/my_events"
+              element={<MyEventsScreen loggedUserID={loggedUserID} />}
+            />
+            <Route
+              path="*"
+              element={<div className="outlet_main">No content found</div>}
+            />
+          </Route>
+        )}
       </Routes>
     </div>
   );
