@@ -69,7 +69,6 @@ function App() {
           </Route>
 
           <Route element={<UserMainLayout />}>
-            <Route path="/main" element={<MainScreen />} />
             <Route
               path="/thankyou"
               element={

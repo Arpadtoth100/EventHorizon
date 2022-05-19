@@ -12,12 +12,12 @@ function CardContainerMyCreated(props) {
     navTo("/eventdetail")
   
      } */
-  const loggedUserID = useContext(AuthContext);
+  const authContext = useContext(AuthContext);
 
   const cards = props.data.map((item) => {
     const key = item[0];
     return (
-      item[1].uid === loggedUserID && (
+      item[1].uid === authContext.loggedUserID && (
         <div key={key} /* onClick={clickHandler(key)} */>
           <EventCard key={key} {...item[1]} />
         </div>

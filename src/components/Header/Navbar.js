@@ -1,8 +1,6 @@
 import { useState, useContext } from 'react';
 import { NavLink } from 'react-router-dom';
 import logo from '../../images/white-flag-svgrepo-com.svg';
-import { auth } from '../../config/firebase';
-import { signOut } from 'firebase/auth';
 import { AuthContext } from '../Context/AuthContext';
 import SignOut from '../SignOut';
 
@@ -16,18 +14,6 @@ function Navbar(props) {
   };
 
   const authContext = useContext(AuthContext);
-
-  console.log(menuActive);
-
-  const signOutHandler = () => {
-    signOut(auth)
-      .then(() => {
-        console.log('Signed out!');
-      })
-      .catch((error) => {
-        console.log(`Error while signing out: ${error}`);
-      });
-  };
 
   return (
     <header className="header">

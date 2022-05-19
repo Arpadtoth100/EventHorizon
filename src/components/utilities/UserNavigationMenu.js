@@ -17,11 +17,10 @@ function UserNavigationMenu() {
           <NavLink to="/joined_events">Events Joined</NavLink>
         </li>
         <li>
-
           <NavLink to="/search">Browse Events</NavLink>
         </li>
         <li>
-          <NavLink to="/updateuser">Update My Profile</NavLink>
+          <NavLink to="/update_user">Update My Profile</NavLink>
         </li>
         {/* <li>
           <SignOut />

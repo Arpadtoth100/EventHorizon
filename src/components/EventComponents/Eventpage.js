@@ -5,26 +5,21 @@ import { useState, useEffect } from 'react';
 import { readEvent } from '../../services/crud';
 import { useParams } from 'react-router-dom';
 
-
 function EventPage() {
-
   const [event, setEvent] = useState([]);
- 
-  const params = useParams()
-  console.log(params.id)
 
+  const params = useParams();
+  console.log(params.id);
 
   useEffect(() => {
-    readEvent(params.id).then(snapshot => setEvent(snapshot.val()));
-  }, [])
+    readEvent(params.id).then((snapshot) => setEvent(snapshot.val()));
+  }, [params.id]);
 
-  console.log(event)
+  console.log(event);
   return (
-
-    <div className='outlet_main'>
-      <EventInfo data={event} eventId={params.id}/>
+    <div className="outlet_main">
+      <EventInfo data={event} eventId={params.id} />
     </div>
-    
   );
 }
 
