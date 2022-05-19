@@ -1,6 +1,6 @@
 import { useState, useCallback } from 'react';
 import { storage } from '../config/firebase';
-import { ref, uploadBytesResumable, getDownloadURL } from 'firebase/storage';
+import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 import { createEvent } from '../services/crud';
 import { auth } from '../config/firebase';
 
@@ -46,15 +46,19 @@ function CreateEventScreen() {
 
   const createEventHandler = async (e) => {
     e.preventDefault();
-    await uploadImage(imageToUpload);
-    eventData.uid = auth?.currentUser.uid;
-    eventData.date_from = startDate.toString();
-    eventData.date_to = endDate.toString();
-    console.log('event feltoltes elott', eventData);
-    createEvent(eventData).then(() => {
-      setEventData(defaultEventData);
-      console.log('es utanna', eventData);
-    });
+    if (imageToUpload) {
+      await uploadImage(imageToUpload);
+    } else {
+      console.log("third")
+      eventData.uid = auth?.currentUser.uid;
+      eventData.date_from = startDate.toString();
+      eventData.date_to = endDate.toString();
+      console.log('event feltoltes elott', eventData);
+      createEvent(eventData).then(() => {
+        setEventData(defaultEventData);
+        console.log('es utanna', eventData);
+      });
+    }
   };
 
   console.log(eventData.image_url);
@@ -70,7 +74,7 @@ function CreateEventScreen() {
     console.log(eventData)
   }; */
 
-  const uploadImage = async (image) => {
+  /* const uploadImage = async (image) => {
     if (!image) return;
     const storageRef = ref(storage, `/images/${image.name}`);
     const uploadTask = uploadBytesResumable(storageRef, image);
@@ -89,7 +93,24 @@ function CreateEventScreen() {
         );
       })
     );
-  };
+  }; */
+
+  const uploadImage = async (image) => {
+    if (!image) return;
+    const storageRef = ref(storage, `/images/${image.name}`);
+    uploadBytes(storageRef, image)
+      .then(uploadResult => {
+        console.log(uploadResult)
+        getDownloadURL(uploadResult.ref)
+          .then(url => {
+            createEvent({...eventData, uid: auth?.currentUser.uid, date_from: startDate.toString(), date_to: endDate.toString(), image_url: url}).then(() => {
+              setEventData(defaultEventData);
+            });
+          })
+          .then(value => console.log("eventdata first", eventData))
+      })
+      .catch(e => console.log(e))
+  }
 
   return (
     <div className="outlet_main create_event_main">

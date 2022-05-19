@@ -39,7 +39,7 @@ function App() {
       }
       console.log(loggedUserID);
     });
-  }, []);
+  }, [loggedUserID]);
 
   return (
     <div className="App">
