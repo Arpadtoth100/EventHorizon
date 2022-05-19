@@ -8,7 +8,6 @@ import SelectDateFromTo from '../components/utilities/SelectDateFromTo';
 import Map from '../components/GoogleMap/Map';
 
 function CreateEventScreen() {
-  const [progress, setProgress] = useState(0);
   const [imageToUpload, setImageToUpload] = useState(null);
 
   const [startDate, setStartDate] = useState(new Date());
@@ -41,7 +40,7 @@ function CreateEventScreen() {
     if (imageToUpload) {
       await uploadImage(imageToUpload);
     } else {
-      console.log("third")
+      console.log('third');
       eventData.uid = auth?.currentUser.uid;
       eventData.date_from = startDate.toString();
       eventData.date_to = endDate.toString();
@@ -60,49 +59,28 @@ function CreateEventScreen() {
     console.log(event.target.files[0]);
   };
 
-  /* const uploadHandler = (event) => {
-    event.preventDefault();
-    uploadImage(imageToUpload)
-    console.log(eventData)
-  }; */
-
-  /* const uploadImage = async (image) => {
-    if (!image) return;
-    const storageRef = ref(storage, `/images/${image.name}`);
-    const uploadTask = uploadBytesResumable(storageRef, image);
-    uploadTask.on(
-      'state_changed',
-      ((snapshot) => {
-        const prog = Math.round(
-          (snapshot.bytesTransferred / snapshot.totalBytes) * 100
-        );
-        setProgress(prog);
-      },
-      (err) => console.log(err),
-      () => {
-        getDownloadURL(uploadTask.snapshot.ref).then((url) =>
-          setEventData((p) => ({ ...p, image_url: url }))
-        );
-      })
-    );
-  }; */
-
   const uploadImage = async (image) => {
     if (!image) return;
     const storageRef = ref(storage, `/images/${image.name}`);
     uploadBytes(storageRef, image)
-      .then(uploadResult => {
-        console.log(uploadResult)
+      .then((uploadResult) => {
+        console.log(uploadResult);
         getDownloadURL(uploadResult.ref)
-          .then(url => {
-            createEvent({...eventData, uid: auth?.currentUser.uid, date_from: startDate.toString(), date_to: endDate.toString(), image_url: url}).then(() => {
+          .then((url) => {
+            createEvent({
+              ...eventData,
+              uid: auth?.currentUser.uid,
+              date_from: startDate.toString(),
+              date_to: endDate.toString(),
+              image_url: url,
+            }).then(() => {
               setEventData(defaultEventData);
             });
           })
-          .then(value => console.log("eventdata first", eventData))
+          .then((value) => console.log('eventdata first', eventData));
       })
-      .catch(e => console.log(e))
-  }
+      .catch((e) => console.log(e));
+  };
 
   return (
     <div className="outlet_main create_event_main">
@@ -176,9 +154,6 @@ function CreateEventScreen() {
           className="textinput"
           onChange={imageHandler}
         />
-        {/* <button className="btn" onClick={uploadHandler}>
-          Upload Image
-        </button> */}
 
         <label htmlFor="event_type" className="textlabel">
           Online or Offline

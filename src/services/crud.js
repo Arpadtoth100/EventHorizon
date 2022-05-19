@@ -26,16 +26,16 @@ export function createUser(userId, username, organization, location) {
 }
 
 export function updateUser(id, userData) {
-  const refUser = ref(database, userEndpoint + id)
-  return update(refUser, userData)
+  const refUser = ref(database, userEndpoint + id);
+  return update(refUser, userData);
 }
 
 export function readUser(id) {
   if (id) {
-    const refUser = ref(database, userEndpoint + id)
+    const refUser = ref(database, userEndpoint + id);
     return get(refUser);
   }
-  const refUser = ref(database, userEndpoint)
+  const refUser = ref(database, userEndpoint);
   return get(refUser);
 }
 
@@ -47,10 +47,10 @@ export function createEvent(eventData) {
 
 export function readEvent(id) {
   if (id) {
-    const refEvent = ref(database, `${eventEndpoint}/${id}`)
+    const refEvent = ref(database, `${eventEndpoint}/${id}`);
     return get(refEvent);
   }
-  const refEvent = ref(database, eventEndpoint)
+  const refEvent = ref(database, eventEndpoint);
   return get(refEvent);
 }
 
