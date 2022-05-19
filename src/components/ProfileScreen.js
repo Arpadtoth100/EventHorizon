@@ -31,13 +31,10 @@ const ProfileScreen = () => {
   return (
     <div className="outlet_main">
       <section className='userprofile_container'>
-        <div>
           <span>
             <img className='useravatar' src={user?.profile_url ? user?.profile_url : "https://picsum.photos/100"} alt="useravatar" />
             <p className='welcomeUser'>Welcome {user?.username ? user?.username : " Dear Guest"}!</p>
-
           </span>
-        </div>
         <div className="userNavMenu_container">
           <UserNavigationMenu />
         </div>
