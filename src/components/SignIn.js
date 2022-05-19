@@ -1,7 +1,8 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../config/firebase';
+import { AuthContext } from './Context/AuthContext';
 
 function SignIn() {
   const [signInData, setSignInData] = useState({
@@ -10,12 +11,14 @@ function SignIn() {
   });
   const [signInError, setSignInError] = useState('');
 
+  const authContext = useContext(AuthContext);
+
   const navigateTo = useNavigate();
   const submitHandler = (e) => {
     e.preventDefault();
     signInWithEmailAndPassword(auth, signInData.email, signInData.password)
       .then((authCredential) => {
-        console.log(authCredential.user);
+        authContext.setLoggedUserID(authCredential.user.uid);
         navigateTo('/profile');
       })
       .catch((e) => {
