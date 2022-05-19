@@ -1,8 +1,10 @@
 import UserNavigationMenu from './utilities/UserNavigationMenu';
 import CardContainer from '../components/utilities/CardContainer';
 import CardContainerPaid from '../components/utilities/CardContainerPaid';
-import { readEvent } from '../services/crud';
+import { readEvent, readUser } from '../services/crud';
 import { useState, useEffect } from 'react';
+import { auth } from '../config/firebase';
+
 
 const ProfileScreen = (props) => {
   const [eventList, setEventList] = useState([]);
@@ -12,15 +14,27 @@ const ProfileScreen = (props) => {
     readEvent()
       .then(snapshot => setEventList(Object.entries(snapshot.val())));
 
-  }, [])
+  }, []);
+
+  const [user, setUser] = useState(null);
+
+
+  useEffect(() => {
+    readUser(auth.currentUser.uid)
+      .then((snapshot) => {
+        setUser(snapshot.val());
+      })
+      .catch(e => console.log(e))
+  }, [auth.currentUser.uid])
+
+
   return (
     <div className="outlet_main">
-      <h2>ProfileScreen Page</h2>
       <section className='userprofile_container'>
         <div>
           <span>
-            <img className='useravatar' src="https://picsum.photos/150" alt="useravatar" />
-            <p className='welcomeUser'>Welcome User!</p>
+            <img className='useravatar' src={user?.profile_url ? user?.profile_url : "https://picsum.photos/100"} alt="useravatar" />
+            <p className='welcomeUser'>Welcome {user?.username ? user?.username : " Dear Guest"}!</p>
           </span>
         </div>
         <div className='userNavMenu_container'>
