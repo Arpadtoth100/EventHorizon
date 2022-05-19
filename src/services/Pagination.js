@@ -2,8 +2,6 @@ import { useState } from 'react';
 import ReactPaginate from 'react-paginate';
 import CardContainer from '../components/utilities/CardContainer';
 
-const perPage = 4;
-
 function Pagination(props) {
   const [pageNumber, setPageNumber] = useState(0);
 
@@ -11,6 +9,7 @@ function Pagination(props) {
     setPageNumber(selected);
   };
 
+  const perPage = 4;
   const offset = pageNumber * perPage;
   const currentPageData = props.data.slice(offset, offset + perPage);
 
@@ -18,7 +17,7 @@ function Pagination(props) {
 
   return (
     <>
-      <CardContainer title={'Results:'} data={currentPageData} />
+      <CardContainer title={props.title} data={currentPageData} />
       <ReactPaginate
         previousLabel={'Prev'}
         nextLabel={'Next'}

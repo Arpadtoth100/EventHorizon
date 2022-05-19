@@ -40,12 +40,12 @@ function CreateEventScreen() {
     if (imageToUpload) {
       await uploadImage(imageToUpload);
     } else {
-      console.log('third');
-      eventData.uid = auth?.currentUser.uid;
-      eventData.date_from = startDate.toString();
-      eventData.date_to = endDate.toString();
-      console.log('event feltoltes elott', eventData);
-      createEvent(eventData).then(() => {
+      createEvent({
+        ...eventData,
+        uid: auth?.currentUser.uid,
+        date_from: startDate.toString(),
+        date_to: endDate.toString(),
+      }).then(() => {
         setEventData(defaultEventData);
         console.log('es utanna', eventData);
       });
