@@ -36,14 +36,6 @@ function CreateEventScreen() {
     setEventData((p) => ({ ...p, [e.target.name]: e.target.value }));
   }, []);
 
-  //Ezzel nem mukodik
-  // const setDate = () => {
-  //   console.log('date', startDate, endDate);
-  //   setEventData((p) => ({ ...p, date_from: startDate }));
-  //   setEventData((p) => ({ ...p, date_to: endDate }));
-  //   console.log('date', startDate, endDate);
-  // };
-
   const createEventHandler = async (e) => {
     e.preventDefault();
     await uploadImage(imageToUpload);
