@@ -3,7 +3,8 @@ import { MdClose } from 'react-icons/md';
 import EventInfo from './EventInfo';
 import { auth } from '../../config/firebase'
 import { readUser, createAttendee } from '../../services/crud';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 
 
@@ -11,17 +12,24 @@ export default function JoinModal({ showJoinModal, setShowJoinModal, eventData, 
 
     const [userName, setUserName] = useState("");
 
+    const toSignInUP = useNavigate()
+
     const CloseModalButton = MdClose;
 
     const clickJoinHandler = (event) => {
         event.preventDefault();
+        if (!auth.currentUser.uid) {
+            toSignInUP("/signin")
+        }
         createAttendee(eventId, auth.currentUser.uid, userName);
         alert("Thank you, you successfully joined the event!");
     };
-    console.log(auth.currentUser.uid);
 
-
-    readUser(auth.currentUser.uid).then(snapshot => setUserName(snapshot.val().username));
+    useEffect(() => {
+        if (auth.currentUser.uid) {
+            readUser(auth.currentUser.uid).then(snapshot => setUserName(snapshot.val().username));
+        }
+    }, [])
 
     return (
         <>
@@ -40,8 +48,8 @@ export default function JoinModal({ showJoinModal, setShowJoinModal, eventData, 
                             </div>
                             <div>
                                 <button className="ModalDiscardButton" aria-label='Close modal'
-                                onClick={() => setShowJoinModal(prev => !prev)}>Discard</button>
-                                <br/>
+                                    onClick={() => setShowJoinModal(prev => !prev)}>Discard</button>
+                                <br />
                                 <button className="ModalJoinButton" onClick={clickJoinHandler}>Join Event</button></div>
 
                         </div>
