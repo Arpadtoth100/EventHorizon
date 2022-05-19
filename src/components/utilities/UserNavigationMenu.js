@@ -11,14 +11,21 @@ function UserNavigationMenu() {
           <NavLink to="/create_event">Create Event</NavLink>
         </li>
         <li>
-          <NavLink to="/my_events">Events I created</NavLink>
+          <NavLink to="/my_events">Events Created</NavLink>
         </li>
         <li>
-          <NavLink to="/joined_events">Events I Joined</NavLink>
+          <NavLink to="/joined_events">Events Joined</NavLink>
         </li>
         <li>
-          <NavLink to="/update_user">Update My Profile</NavLink>
+
+          <NavLink to="/search">Browse Events</NavLink>
         </li>
+        <li>
+          <NavLink to="/updateuser">Update My Profile</NavLink>
+        </li>
+        {/* <li>
+          <SignOut />
+        </li>  Emese: szerintem ez nem kell mert úgyis fenn van a navbarban*/}
       </ul>
     </>
   );

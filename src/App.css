@@ -564,6 +564,8 @@ form h3 {
 }
 
 .useravatar {
+  width: 10rem;
+  height: 10rem;
   border-radius: 50%;
 }
 
