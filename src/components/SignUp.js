@@ -10,8 +10,9 @@ function SignUp() {
     email: '',
     password: '',
     confirmpassword: '',
-    organization: 'false',
+    organization: false,
     location: '',
+    profile_url: '',
   };
 
   const [signUpData, setSignUpData] = useState(defValue);
@@ -23,7 +24,7 @@ function SignUp() {
     e.preventDefault();
 
     if (signUpData.password !== signUpData.confirmpassword) {
-      return signUpError("Passwords do not match")
+      return signUpError('Passwords do not match');
     }
 
     createUserWithEmailAndPassword(auth, signUpData.email, signUpData.password)
@@ -143,7 +144,7 @@ function SignUp() {
           id="su_organization"
           onChange={collectSignUpData}
         />
-        <label htmlFor="su_organization" id="cehckbox_label">
+        <label htmlFor="su_organization" id="checkbox_label">
           Organization
         </label>
 
