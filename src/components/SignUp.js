@@ -1,8 +1,9 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { auth } from '../config/firebase';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { createUser } from '../services/crud';
+import { AuthContext } from './Context/AuthContext';
 
 function SignUp() {
   const defValue = {
@@ -19,6 +20,7 @@ function SignUp() {
 
   const navTo = useNavigate();
   const [signUpError, setSignUpError] = useState('');
+  const authContext = useContext(AuthContext);
 
   const submitHandler = (e) => {
     e.preventDefault();
@@ -29,7 +31,7 @@ function SignUp() {
 
     createUserWithEmailAndPassword(auth, signUpData.email, signUpData.password)
       .then((authCredential) => {
-        console.log('userID', authCredential.user.uid);
+        authContext.setLoggedUserID(authCredential.user.uid);
         const { username, organization, location } = signUpData;
         const uid = authCredential.user.uid;
 

@@ -6,11 +6,11 @@ import { useState, useEffect } from 'react';
 import { auth } from '../config/firebase';
 
 
-const ProfileScreen = (props) => {
+const ProfileScreen = () => {
   const [eventList, setEventList] = useState([]);
 
-
   useEffect(() => {
+
     readEvent()
       .then(snapshot => setEventList(Object.entries(snapshot.val())));
 
@@ -35,20 +35,19 @@ const ProfileScreen = (props) => {
           <span>
             <img className='useravatar' src={user?.profile_url ? user?.profile_url : "https://picsum.photos/100"} alt="useravatar" />
             <p className='welcomeUser'>Welcome {user?.username ? user?.username : " Dear Guest"}!</p>
+
           </span>
         </div>
-        <div className='userNavMenu_container'>
+        <div className="userNavMenu_container">
           <UserNavigationMenu />
         </div>
       </section>
-      <CardContainer
-        title={'Newest Events on the Horizon'}
-        data={eventList}
-      />
+      <CardContainer title={'Newest Events on the Horizon'} data={eventList} />
       <CardContainerPaid
         title={'Featured Events on The Horizon'}
-        data={eventList} />
+        data={eventList}
+      />
     </div>
   );
-}
+};
 export default ProfileScreen;
