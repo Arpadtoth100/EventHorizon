@@ -28,7 +28,7 @@ function UpdateUser() {
         setUserData(snapshot.val())
       );
     }
-  }, [auth.currentUser.uid]);
+  }, []);
 
   const submitHandler = (e) => {
     e.preventDefault();
