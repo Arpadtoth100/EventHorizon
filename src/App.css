@@ -42,7 +42,7 @@ html {
   margin-left: 20px;
   margin-right: 20px;
   font-size: 1.2rem;
-  background-image: linear-gradient(to bottom, #9ceaef 0%, #3dccc7 100%);
+  background-color: aliceblue;
   background-size: 100%;
   background-clip: text;
   -webkit-background-clip: text;
