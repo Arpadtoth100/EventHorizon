@@ -12,7 +12,7 @@ function UpdateUser() {
     email: '',
     password: '',
     confirmpassword: '',
-    organization: 'false',
+    organization: false,
     location: '',
   };
 
