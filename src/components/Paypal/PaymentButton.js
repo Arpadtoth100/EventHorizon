@@ -1,8 +1,7 @@
 import { PayPalButtons } from '@paypal/react-paypal-js';
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 
-const PaymentBtn = ({ product }) => {
-  const [paidFor, setPaidFor] = useState(false);
+const PaymentBtn = ({ product, paidFor, setPaidFor }) => {
   const [error, setError] = useState(null);
 
   const handleApprove = (orderId) => {
@@ -43,8 +42,10 @@ const PaymentBtn = ({ product }) => {
         return actions.order.create({
           purchase_units: [
             {
-              description: product.description,
-              amount: { value: product.price },
+              description: product.title,
+              amount: {
+                value: product.price,
+              },
             },
           ],
         });
