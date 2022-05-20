@@ -22,7 +22,7 @@ const ProfileScreen = () => {
         setUser(snapshot.val());
       })
       .catch((e) => console.log(e));
-  }, []);
+  }, [auth.currentUser.uid]);
 
   return (
     <div className="outlet_main">
