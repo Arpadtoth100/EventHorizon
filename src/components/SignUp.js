@@ -150,7 +150,7 @@ function SignUp() {
           Organization
         </label>
 
-        <button className="btn">Sign Up</button>
+        <button className="signup_btn">Sign Up</button>
       </form>
     </div>
   );

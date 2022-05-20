@@ -1,6 +1,5 @@
 import React from 'react';
 import { MdClose } from 'react-icons/md';
-import EventInfo from './EventInfo';
 import { auth } from '../../config/firebase';
 import { readUser, createAttendee } from '../../services/crud';
 import { useState, useEffect } from 'react';
@@ -43,16 +42,18 @@ export default function JoinModal({
           <div className="ModalWrapper" showJoinModal={showJoinModal}>
             <img
               className="ModalImg"
-              src={eventData.data.image_url}
+              src={eventData.data.image_url ? eventData.data.image_url : "https://picsum.photos/200" }
               alt="the event"
             />
             <div className="ModalContent">
               <h1>{eventData.data.title}</h1>
-              <p>Event location: {eventData.data.venue}</p>
-              <p>Event date: {eventData.data.date} </p>
+              <h4>Event location: {eventData.data.location}</h4>
+              <h4>Event date: </h4>
+              <p>{eventData.data.date_from} </p>
+              <br></br>
               <div>
                 <label htmlFor="email">
-                  Send this event to your friend, enter their email:
+                  Send this event to your friend, enter their email: 
                 </label>
                 <input
                   className="JoinModalInput"
