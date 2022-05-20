@@ -31,6 +31,14 @@ html {
   z-index: 999;
 }
 
+.logotext {
+  font-size: 1.5rem;
+  display: inline-block;
+  color: #9ceaef;
+  font-weight: bold;
+  margin-right: 2rem;
+}
+
 .menu {
   display: inline-flex;
   list-style: none;
@@ -108,8 +116,7 @@ html {
   width: 100%;
   background-color: #aeecef;
   background-image: url(./images/background.jpg);
-  background-size: contain;
-
+  background-size: cover;
 }
 
 .outlet_main {
@@ -152,7 +159,7 @@ form * {
   height: 750px;
   margin: 40px 0;
   background-color: #edf6f9;
-  padding-top:1rem;
+  padding-top: 1rem;
 }
 
 form h3 {
@@ -225,7 +232,6 @@ form h3 {
   box-shadow: 0 0 10px rgba(8, 7, 16, 0.6);
   border-radius: 3px;
   cursor: pointer;
-
 }
 
 .infoboxcolumn {
@@ -533,10 +539,10 @@ form h3 {
   margin-top: 10px;
 }
 
-.ModalContent label{
+.ModalContent label {
   font-style: italic;
-color: #03045e;
-font-size: 1rem;
+  color: #03045e;
+  font-size: 1rem;
 }
 
 /*about us*/
@@ -597,7 +603,7 @@ font-size: 1rem;
   box-sizing: border-box;
 }
 
-.welcomeUser{
+.welcomeUser {
   color: #006d77;
 }
 
