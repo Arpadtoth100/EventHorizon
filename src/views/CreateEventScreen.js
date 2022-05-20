@@ -3,12 +3,14 @@ import { storage } from '../config/firebase';
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 import { createEvent } from '../services/crud';
 import { auth } from '../config/firebase';
+import { useNavigate } from 'react-router-dom';
 
 import SelectDateFromTo from '../components/utilities/SelectDateFromTo';
 import Map from '../components/GoogleMap/Map';
 
 function CreateEventScreen() {
   const [imageToUpload, setImageToUpload] = useState(null);
+  const navTo = useNavigate();
 
   const [startDate, setStartDate] = useState(new Date());
   const [endDate, setEndDate] = useState(new Date());
@@ -48,6 +50,7 @@ function CreateEventScreen() {
       }).then(() => {
         setEventData(defaultEventData);
         console.log('es utanna', eventData);
+        navTo('/event_created');
       });
     }
   };
@@ -75,12 +78,14 @@ function CreateEventScreen() {
               image_url: url,
             }).then(() => {
               setEventData(defaultEventData);
+              navTo('/event_created');
             });
           })
           .then((value) => console.log('eventdata first', eventData));
       })
       .catch((e) => console.log(e));
   };
+
 
   return (
     <div className="outlet_main create_event_main">

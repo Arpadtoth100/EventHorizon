@@ -15,6 +15,7 @@ import Eventpage from './components/EventComponents/Eventpage';
 import Privacy from './components/Footer/Privacy';
 import UserMainLayout from './layouts/UserMainLayout';
 import ThankYouScreen from './views/ThankYouScreen';
+import EventCreatedScreen from './views/EventCreatedScreen';
 import SignInUpScreen from './views/SignInUpScreen';
 import ProfileScreen from './components/ProfileScreen';
 import Contact from './components/Footer/Contact';
@@ -74,6 +75,69 @@ function App() {
               />
             </Route>
 
+
+          <Route element={<UserMainLayout />}>
+            <Route
+              path="/thankyou"
+              element={
+                <AuthProtected>
+                  <ThankYouScreen />
+                </AuthProtected>
+              }
+            />
+            <Route
+              path="/create_event"
+              element={
+                <AuthProtected>
+                  <CreateEventScreen />
+                </AuthProtected>
+              }
+            />
+            <Route
+              path="/event_created"
+              element={
+                <AuthProtected>
+                  <EventCreatedScreen />
+                </AuthProtected>
+              }
+            />
+            <Route
+              path="/profile"
+              element={
+                <AuthProtected>
+                  <ProfileScreen />
+                </AuthProtected>
+              }
+            />
+            <Route
+              path="/update_user"
+              element={
+                <AuthProtected>
+                  <UpdateUserScreen />
+                </AuthProtected>
+              }
+            />
+            <Route
+              path="/joined_events"
+              element={
+                <AuthProtected>
+                  <JoinedEventsScreen />
+                </AuthProtected>
+              }
+            />
+            <Route
+              path="/my_events"
+              element={
+                <AuthProtected>
+                  <MyEventsScreen />
+                </AuthProtected>
+              }
+            />
+          </Route>
+        </Routes>
+      </AuthContext.Provider>
+    </div>
+
             <Route element={<UserMainLayout />}>
               <Route
                 path="/thankyou"
@@ -128,6 +192,7 @@ function App() {
         </AuthContext.Provider>
       </div>
     </PayPalScriptProvider>
+
   );
 }
 

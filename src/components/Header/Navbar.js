@@ -20,10 +20,16 @@ function Navbar(props) {
   return (
     <header className="header">
       <div className="header_main">
-      <i style={{ color: '#9ceaef', marginRight: '2.5rem'}}>
-        <SunRiseIcon  width='30px' height='30px' />
-        <h3>Event Horizon</h3>
-        </i>
+        <div>
+          <i style={{ color: '#9ceaef', marginRight: '0.5rem' }}>
+            <SunRiseIcon width='36px' height='24px' />
+          </i>
+        </div>
+        <div>
+          <p className='logotext'>Event Horizon</p>
+        </div>
+
+
         <ul className={`menu ${menuActive}`}>
           <li className="item">
             <NavLink to="/main" id="nav-mainpage" className="link">

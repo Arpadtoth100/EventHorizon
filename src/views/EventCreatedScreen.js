@@ -1,16 +1,16 @@
-import ThankYou from "../components/utilities/ThankYou";
+import ThankYouEvent from "../components/utilities/ThankYouEvent";
 
-function ThankYouScreen() {
+function EventCreatedScreen() {
   return (
     <div className="outlet_main">
       <div>
         
         <div className="thankyouContainer">
-        < ThankYou />
+        < ThankYouEvent />
         </div>
         
       </div>
     </div>
   );
 }
-export default ThankYouScreen;
+export default EventCreatedScreen;
