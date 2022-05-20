@@ -104,7 +104,7 @@ html {
 .signinup_main {
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-around;
   width: 100%;
   background-color: #aeecef;
 }
@@ -141,13 +141,13 @@ form * {
 
 .signinform {
   height: 450px;
-  background-color:#edf6f9;
+  background-color: #edf6f9;
 }
 
 .signupform {
   height: 750px;
   margin: 40px 0;
-  background-color:#edf6f9;
+  background-color: #edf6f9;
 }
 
 form h3 {
@@ -192,7 +192,7 @@ form h3 {
 
 #checkbox_label {
   display: inline-block;
-  /* margin-top: 30px; */
+  margin-top: 30px;
   font-size: 16px;
   font-weight: 500;
 }
@@ -220,6 +220,7 @@ form h3 {
   box-shadow: 0 0 10px rgba(8, 7, 16, 0.6);
   border-radius: 3px;
   cursor: pointer;
+
 }
 
 .infoboxcolumn {
@@ -454,7 +455,7 @@ form h3 {
 }
 .ModalWrapper {
   width: 50rem;
-  height: 30rem;
+  height: 35rem;
   box-shadow: 0 5px 16px rgba(0, 0, 0, 0.2);
   background: #fff;
   color: #000;
@@ -497,7 +498,6 @@ form h3 {
   border: none;
   border-radius: 5px;
 }
-
 .joinEventBtn {
   font-size: 1.5rem;
   background: #05668d;
@@ -523,10 +523,15 @@ form h3 {
   padding: 0;
   z-index: 10;
 }
-.ModalContent label {
+.success {
+  background-color: #3dccc7;
+  margin-top: 10px;
+}
+
+.ModalContent label{
   font-style: italic;
-  color: #03045e;
-  font-size: 1rem;
+color: #03045e;
+font-size: 1rem;
 }
 
 /*about us*/
