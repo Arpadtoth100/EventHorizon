@@ -104,9 +104,8 @@ html {
 .signinup_main {
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-around;
   width: 100%;
-  background-color: #aeecef;
 }
 
 .outlet_main {
@@ -128,30 +127,28 @@ form {
   border-radius: 10px;
   backdrop-filter: blur(10px);
   border: 2px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 0 20px rgba(8, 7, 16, 0.6);
+  box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
   padding: 50px 35px;
 }
 
 form * {
-  color: #086375;
+  color: black;
   letter-spacing: 0.5px;
   outline: none;
   border: none;
 }
 
 .signinform {
-  height: 450px;
-  background-color:#edf6f9;
+  height: 470px;
 }
 
 .signupform {
-  height: 750px;
+  height: 840px;
   margin: 40px 0;
-  background-color:#edf6f9;
 }
 
 form h3 {
-  font-size: 28px;
+  font-size: 32px;
   font-weight: 500;
   line-height: 42px;
   text-align: center;
@@ -159,7 +156,7 @@ form h3 {
 
 .textlabel {
   display: block;
-  margin-top: 25px;
+  margin-top: 30px;
   font-size: 16px;
   font-weight: 500;
 }
@@ -171,7 +168,7 @@ form h3 {
   background-color: rgba(255, 255, 255, 0.07);
   border-radius: 3px;
   padding: 0 10px;
-  margin-top: 6px;
+  margin-top: 8px;
   font-size: 14px;
   font-weight: 300;
   box-shadow: 0 0 5px rgba(8, 7, 16, 0.6);
@@ -191,8 +188,8 @@ form h3 {
 }
 
 #checkbox_label {
-  display: inline-block;
-  /* margin-top: 30px; */
+  display: block;
+  margin-top: 30px;
   font-size: 16px;
   font-weight: 500;
 }
@@ -200,20 +197,8 @@ form h3 {
 .btn {
   margin-top: 50px;
   width: 100%;
-  background-color: #006d77;
-  color: #edf6f9;
-  padding: 15px 0;
-  font-size: 18px;
-  font-weight: 600;
-  box-shadow: 0 0 10px rgba(8, 7, 16, 0.6);
-  border-radius: 3px;
-  cursor: pointer;
-}
-.signup_btn {
-  margin-top: 30px;
-  width: 100%;
-  background-color: #006d77;
-  color: #edf6f9;
+  background-color: #ffffff;
+  color: #080710;
   padding: 15px 0;
   font-size: 18px;
   font-weight: 600;
@@ -454,7 +439,7 @@ form h3 {
 }
 .ModalWrapper {
   width: 50rem;
-  height: 30rem;
+  height: 35rem;
   box-shadow: 0 5px 16px rgba(0, 0, 0, 0.2);
   background: #fff;
   color: #000;
@@ -497,7 +482,6 @@ form h3 {
   border: none;
   border-radius: 5px;
 }
-
 .joinEventBtn {
   font-size: 1.5rem;
   background: #05668d;
@@ -523,10 +507,9 @@ form h3 {
   padding: 0;
   z-index: 10;
 }
-.ModalContent label {
-  font-style: italic;
-  color: #03045e;
-  font-size: 1rem;
+.success {
+  background-color: #3dccc7;
+  margin-top: 10px;
 }
 
 /*about us*/

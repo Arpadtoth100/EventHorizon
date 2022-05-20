@@ -12,6 +12,7 @@ export default function JoinModal({
   eventId,
 }) {
   const [userName, setUserName] = useState('');
+  const [success, setSuccess] = useState(false);
 
   const toSignInUP = useNavigate();
 
@@ -21,7 +22,7 @@ export default function JoinModal({
     event.preventDefault();
     if (auth.currentUser) {
       createAttendee(eventId, auth.currentUser.uid, userName);
-      alert('Thank you, you successfully joined the event!');
+      setSuccess(true);
     } else {
       toSignInUP('/signin');
     }
@@ -47,6 +48,7 @@ export default function JoinModal({
             />
             <div className="ModalContent">
               <h1>{eventData.data.title}</h1>
+              
               <h4>Event location: {eventData.data.location}</h4>
               <h4>Event date: </h4>
               <p>{eventData.data.date_from} </p>
@@ -77,6 +79,7 @@ export default function JoinModal({
                   Join Event
                 </button>
               </div>
+              {success && <p className='success'>Thank you, you successfully joined the event!</p>}
             </div>
             <CloseModalButton
               className="CloseModalButton"
