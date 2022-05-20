@@ -31,12 +31,6 @@ html {
   z-index: 999;
 }
 
-.header_main img {
-  width: 35px;
-  height: 35px;
-  margin-right: 20px;
-}
-
 .menu {
   display: inline-flex;
   list-style: none;
@@ -48,7 +42,7 @@ html {
   margin-left: 20px;
   margin-right: 20px;
   font-size: 1.2rem;
-  background-image: linear-gradient(to bottom, white 0%, gray 100%);
+ background-image: linear-gradient(to bottom, #9ceaef 0%, #3dccc7 100%);
   background-size: 100%;
   background-clip: text;
   -webkit-background-clip: text;

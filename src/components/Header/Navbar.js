@@ -1,10 +1,10 @@
 import { useState, useContext } from 'react';
 import { NavLink } from 'react-router-dom';
-import logo from '../../images/white-flag-svgrepo-com.svg';
 import { auth } from '../../config/firebase';
 import { signOut } from 'firebase/auth';
 import { AuthContext } from '../Context/AuthContext';
 import SignOut from '../SignOut';
+import SunRiseIcon from './SunRiseIcon';
 
 function Navbar(props) {
   const [menuActive, setMenuActive] = useState('');
@@ -32,7 +32,10 @@ function Navbar(props) {
   return (
     <header className="header">
       <div className="header_main">
-        <img src={logo} alt="horizon" />
+      <i style={{ color: '#9ceaef', marginRight: '2.5rem'}}>
+        <SunRiseIcon  width='30px' height='30px' />
+        <h3>Event Horizon</h3>
+        </i>
         <ul className={`menu ${menuActive}`}>
           <li className="item">
             <NavLink to="/main" id="nav-mainpage" className="link">
