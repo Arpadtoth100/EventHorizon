@@ -1,4 +1,4 @@
-import ThankYou from "../utilities/ThankYou";
+import ThankYou from "../utilities/ThankYouComponent";
 
 function AboutUs() {
   return <div className="outlet_main">
