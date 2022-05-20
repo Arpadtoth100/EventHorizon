@@ -1,13 +1,9 @@
 import PaymentBtn from './PaymentButton';
 
-const Payment = () => {
-  const product = {
-    description: 'whatever product',
-    price: 69.69,
-  };
+const Payment = ({ product, paidFor, setPaidFor }) => {
   return (
     <div>
-      <PaymentBtn product={product} />
+      <PaymentBtn product={product} paidfor={paidFor} setPaidFor={setPaidFor} />
     </div>
   );
 };

@@ -2,8 +2,11 @@ import React from 'react';
 import { MdClose } from 'react-icons/md';
 import { auth } from '../../config/firebase';
 import { readUser, createAttendee } from '../../services/crud';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
+import Payment from '../Paypal/Payment';
+
+import { usePayPalScriptReducer } from '@paypal/react-paypal-js';
 
 export default function JoinModal({
   showJoinModal,
@@ -13,8 +16,11 @@ export default function JoinModal({
 }) {
   const [userName, setUserName] = useState('');
   const [success, setSuccess] = useState(false);
+  const [paidFor, setPaidFor] = useState(false);
 
-  const toSignInUP = useNavigate();
+  const [{ options }, dispatch] = usePayPalScriptReducer();
+
+  const toSignIn = useNavigate();
 
   const CloseModalButton = MdClose;
 
@@ -24,7 +30,7 @@ export default function JoinModal({
       createAttendee(eventId, auth.currentUser.uid, userName);
       setSuccess(true);
     } else {
-      toSignInUP('/signin');
+      toSignIn('/signin');
     }
   };
 
@@ -36,6 +42,22 @@ export default function JoinModal({
     }
   }, []);
 
+  function priceCheck() {
+    dispatch({
+      type: 'resetOptions',
+      value: {
+        ...options,
+        currency: eventData.currency,
+      },
+    });
+  }
+  useEffect(() => {
+    if (eventData.free) {
+      setPaidFor(true);
+    }
+    priceCheck();
+  }, [eventData.currency]);
+
   return (
     <>
       {showJoinModal ? (
@@ -43,19 +65,23 @@ export default function JoinModal({
           <div className="ModalWrapper" showJoinModal={showJoinModal}>
             <img
               className="ModalImg"
-              src={eventData.data.image_url ? eventData.data.image_url : "https://picsum.photos/200" }
+              src={
+                eventData.image_url
+                  ? eventData.image_url
+                  : 'https://picsum.photos/200'
+              }
               alt="the event"
             />
             <div className="ModalContent">
-              <h1>{eventData.data.title}</h1>
-              
-              <h4>Event location: {eventData.data.location}</h4>
+              <h1>{eventData.title}</h1>
+
+              <h4>Event location: {eventData.location}</h4>
               <h4>Event date: </h4>
-              <p>{eventData.data.date_from} </p>
+              <p>{eventData.date_from} </p>
               <br></br>
               <div>
                 <label htmlFor="email">
-                  Send this event to your friend, enter their email: 
+                  Send this event to your friend, enter their email:
                 </label>
                 <input
                   className="JoinModalInput"
@@ -75,11 +101,31 @@ export default function JoinModal({
                   Discard
                 </button>
                 <br />
-                <button className="ModalJoinButton" onClick={clickJoinHandler}>
-                  Join Event
-                </button>
+                {paidFor ? (
+                  <button
+                    className="ModalJoinButton"
+                    onClick={clickJoinHandler}
+                  >
+                    Join Event
+                  </button>
+                ) : (
+                  <>
+                    <div>
+                      Event fee: {eventData.price} {eventData.currency}
+                    </div>
+                    <Payment
+                      product={eventData}
+                      paidfor={paidFor}
+                      setPaidFor={setPaidFor}
+                    />
+                  </>
+                )}
               </div>
-              {success && <p className='success'>Thank you, you successfully joined the event!</p>}
+              {success && (
+                <p className="success">
+                  Thank you, you successfully joined the event!
+                </p>
+              )}
             </div>
             <CloseModalButton
               className="CloseModalButton"

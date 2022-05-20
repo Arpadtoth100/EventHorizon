@@ -9,16 +9,14 @@ function EventPage() {
   const [event, setEvent] = useState([]);
 
   const params = useParams();
-  console.log(params.id);
 
   useEffect(() => {
     readEvent(params.id).then((snapshot) => setEvent(snapshot.val()));
   }, [params.id]);
 
-  console.log(event);
   return (
     <div className="outlet_main">
-      <EventInfo data={event} eventId={params.id} />
+      <EventInfo eventData={event} eventId={params.id} />
     </div>
   );
 }

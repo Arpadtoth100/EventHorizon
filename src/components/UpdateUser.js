@@ -12,7 +12,7 @@ function UpdateUser() {
     email: '',
     password: '',
     confirmpassword: '',
-    organization: 'false',
+    organization: false,
     location: '',
   };
 
@@ -28,7 +28,7 @@ function UpdateUser() {
         setUserData(snapshot.val())
       );
     }
-  }, [auth.currentUser.uid]);
+  }, []);
 
   const submitHandler = (e) => {
     e.preventDefault();
