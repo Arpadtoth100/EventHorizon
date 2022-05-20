@@ -1,7 +1,5 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFileArrowUp } from '@fortawesome/free-solid-svg-icons';
 import { auth } from '../config/firebase';
 import { updateEmail, updatePassword } from 'firebase/auth';
 import { updateUser, readUser } from '../services/crud';

@@ -17,18 +17,6 @@ function Navbar(props) {
 
   const authContext = useContext(AuthContext);
 
-  console.log(menuActive);
-
-  const signOutHandler = () => {
-    signOut(auth)
-      .then(() => {
-        console.log('Signed out!');
-      })
-      .catch((error) => {
-        console.log(`Error while signing out: ${error}`);
-      });
-  };
-
   return (
     <header className="header">
       <div className="header_main">
