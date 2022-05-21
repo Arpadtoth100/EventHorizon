@@ -59,3 +59,12 @@ export function createAttendee(eventId, userId, username) {
     [userId]: username,
   });
 }
+
+export function readAttendee(id) {
+  if (id) {
+    const refEvent = ref(database, `${eventAttendeeEndpoint}/${id}`);
+    return get(refEvent);
+  }
+  const refEvent = ref(database, eventAttendeeEndpoint);
+  return get(refEvent);
+}
