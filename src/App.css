@@ -268,7 +268,8 @@ form h3 {
 }
 
 .event-card-image {
-  width: 250px;
+  width: 200px;
+  height: 200px;
   border-radius: 9px;
 }
 
