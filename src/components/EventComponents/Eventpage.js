@@ -1,5 +1,4 @@
 import Image from '../utilities/Image';
-import EventDetail from './EventDetail';
 import EventInfo from './EventInfo';
 import { useState, useEffect } from 'react';
 import { readEvent } from '../../services/crud';

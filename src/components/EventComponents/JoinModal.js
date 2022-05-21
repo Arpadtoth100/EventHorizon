@@ -2,10 +2,9 @@ import React from 'react';
 import { MdClose } from 'react-icons/md';
 import { auth } from '../../config/firebase';
 import { readUser, createAttendee } from '../../services/crud';
-import { useState, useEffect, useContext } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Payment from '../Paypal/Payment';
-import { deleteEvent } from '../../services/crud';
 
 import { usePayPalScriptReducer } from '@paypal/react-paypal-js';
 
@@ -18,7 +17,6 @@ export default function JoinModal({
   const [userName, setUserName] = useState('');
   const [success, setSuccess] = useState(false);
   const [paidFor, setPaidFor] = useState(false);
-  const [correctUser, setCorrectUser] = useState(false);
 
   const [{ options }, dispatch] = usePayPalScriptReducer();
 
@@ -58,22 +56,7 @@ export default function JoinModal({
       setPaidFor(true);
     }
     priceCheck();
-  },   [eventData.currency]);
-
-  function userCheck()  {
-    console.log('eventid',eventId,)
-    console.log('eventuid',eventData.uid,)
-
-    if (auth.currentUser?.uid===eventData.uid) {
-
-     
-      setCorrectUser(true)
-
-    }
-  }
-  useEffect(()=>{
-    userCheck()
-  },[auth.currentUser])
+  }, [eventData.currency]);
 
   return (
     <>
@@ -110,13 +93,6 @@ export default function JoinModal({
                 <button className="ModalSendButton">Send Event</button>
               </div>
               <div>
-                {correctUser  && <button
-                  className="ModalDiscardButton"
-                  aria-label="Close modal"
-                  onClick={() => deleteEvent(eventId)}
-                >
-                  Delete Event
-                </button>}
                 <br />
                 {paidFor ? (
                   <button
