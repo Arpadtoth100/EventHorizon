@@ -26,7 +26,8 @@ html {
   justify-content: center;
   background-color: #006d77;
   height: 60px;
-  position: sticky;
+  position: fixed;
+  width: 100%;
   top: 0;
   z-index: 999;
 }
@@ -180,12 +181,12 @@ form h3 {
   display: block;
   height: 50px;
   width: 100%;
-  background-color: rgba(255, 255, 255, 0.07);
+  background-color: white;
   border-radius: 3px;
   padding: 0 10px;
   margin-top: 6px;
-  font-size: 14px;
-  font-weight: 300;
+  font-size: 18px;
+  font-weight: 600;
   box-shadow: 0 0 5px rgba(8, 7, 16, 0.6);
 }
 
