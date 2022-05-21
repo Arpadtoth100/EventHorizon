@@ -17,12 +17,12 @@ const ProfileScreen = () => {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
-    readUser(auth.currentUser.uid)
+    readUser(auth.currentUser?.uid)
       .then((snapshot) => {
         setUser(snapshot.val());
       })
       .catch((e) => console.log(e));
-  }, [auth.currentUser.uid]);
+  }, [auth.currentUser]);
 
   return (
     <div className="outlet_main">
