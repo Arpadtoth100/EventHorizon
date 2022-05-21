@@ -1,6 +1,5 @@
 import CardContainer from '../components/utilities/CardContainer';
 import CardContainerPaid from '../components/utilities/CardContainerPaid';
-import { eventCardData } from '../services/eventCardData';
 import Slider from '../services/Slider';
 import { readEvent } from '../services/crud';
 import { useState, useEffect } from 'react';
@@ -17,28 +16,23 @@ const imgSet = [
 ];
 
 const MainScreen = (props) => {
-
   const [eventList, setEventList] = useState([]);
 
-
   useEffect(() => {
-    readEvent()
-    .then(snapshot => setEventList(Object.entries(snapshot.val())));
-    
-  }, [])
-
+    readEvent().then((snapshot) =>
+      setEventList(Object.entries(snapshot.val()))
+    );
+  }, []);
 
   return (
     <div className="outlet_main">
       <Slider imgSet={imgSet} />
       <br />
-      <CardContainer
-        title={'Newest Events on the Horizon'}
+      <CardContainer title={'Newest Events on the Horizon'} data={eventList} />
+      <CardContainerPaid
+        title={'Featured Events on The Horizon'}
         data={eventList}
       />
-      <CardContainerPaid 
-      title={'Featured Events on The Horizon'}
-      data={eventList} />
     </div>
   );
 };

@@ -1,16 +1,37 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import JoinModal from './JoinModal';
 import { auth } from '../../config/firebase';
 import { useNavigate } from 'react-router-dom';
+import { deleteEvent } from '../../services/crud';
+import { onAuthStateChanged } from 'firebase/auth';
 
 export default function EventInfo({ eventData, eventId }) {
   const [showJoinModal, setShowJoinModal] = useState(false);
-  console.log(eventData);
+  const [correctUser, setCorrectUser] = useState(false);
+
   const navTo = useNavigate();
 
   const openJoinModal = () => {
     setShowJoinModal((prev) => !prev);
   };
+
+  function userCheck() {
+    if (auth.currentUser?.uid === eventData?.uid) {
+      setCorrectUser(true);
+    }
+  }
+  useEffect(() => {
+    userCheck();
+  }, [auth.currentUser?.uid, eventData?.uid]);
+
+  useEffect(() => {
+    onAuthStateChanged(auth, (user) => {
+      if (!user) {
+        setCorrectUser(false);
+      }
+    });
+  }, []);
+
   return (
     <div className="event-info">
       <h1 className="eventinfo-name">{eventData.title}</h1>
@@ -32,6 +53,15 @@ export default function EventInfo({ eventData, eventId }) {
       </div>
 
       <div className="eventinfo-button">
+        {correctUser && (
+          <button
+            className="joinEventBtn"
+            aria-label="Close modal"
+            onClick={() => deleteEvent(eventId)}
+          >
+            Delete Event
+          </button>
+        )}
         {auth.currentUser ? (
           <>
             <button className="joinEventBtn" onClick={openJoinModal}>

@@ -10,8 +10,6 @@ function Footer() {
     setMobileMenuActive((prev) => (prev ? undefined : 'act'));
   };
 
-  console.log(menuActive);
-
   return (
     <footer className="footer">
       <div className="footer_main">
