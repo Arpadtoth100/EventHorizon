@@ -5,6 +5,7 @@ import { readUser, createAttendee } from '../../services/crud';
 import { useState, useEffect, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Payment from '../Paypal/Payment';
+import { deleteEvent } from '../../services/crud';
 
 import { usePayPalScriptReducer } from '@paypal/react-paypal-js';
 
@@ -17,6 +18,7 @@ export default function JoinModal({
   const [userName, setUserName] = useState('');
   const [success, setSuccess] = useState(false);
   const [paidFor, setPaidFor] = useState(false);
+  const [correctUser, setCorrectUser] = useState(false);
 
   const [{ options }, dispatch] = usePayPalScriptReducer();
 
@@ -56,7 +58,22 @@ export default function JoinModal({
       setPaidFor(true);
     }
     priceCheck();
-  }, [eventData.currency]);
+  },   [eventData.currency]);
+
+  function userCheck()  {
+    console.log('eventid',eventId,)
+    console.log('eventuid',eventData.uid,)
+
+    if (auth.currentUser?.uid===eventData.uid) {
+
+     
+      setCorrectUser(true)
+
+    }
+  }
+  useEffect(()=>{
+    userCheck()
+  },[auth.currentUser])
 
   return (
     <>
@@ -93,13 +110,13 @@ export default function JoinModal({
                 <button className="ModalSendButton">Send Event</button>
               </div>
               <div>
-                <button
+                {correctUser  && <button
                   className="ModalDiscardButton"
                   aria-label="Close modal"
-                  onClick={() => setShowJoinModal((prev) => !prev)}
+                  onClick={() => deleteEvent(eventId)}
                 >
-                  Discard
-                </button>
+                  Delete Event
+                </button>}
                 <br />
                 {paidFor ? (
                   <button
