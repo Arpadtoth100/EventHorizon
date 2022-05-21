@@ -5,7 +5,7 @@ import {
   push,
   update,
   get,
-  // remove
+ remove,
 } from 'firebase/database';
 // import {
 //   onChildAdded,
@@ -68,3 +68,9 @@ export function readAttendee(id) {
   const refEvent = ref(database, eventAttendeeEndpoint);
   return get(refEvent);
 }
+
+export function deleteEvent(key){
+  const refEvent =ref(database, `${eventEndpoint}/${key}`);
+  return remove(refEvent)
+}
+
