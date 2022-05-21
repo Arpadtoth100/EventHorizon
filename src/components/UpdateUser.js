@@ -18,6 +18,7 @@ function UpdateUser() {
 
   const [imageToUpload, setImageToUpload] = useState(null);
   const [userData, setUserData] = useState(defValue);
+  const user = auth.currentUser;
 
   const navTo = useNavigate();
   const [error, setError] = useState('');
@@ -29,6 +30,15 @@ function UpdateUser() {
       );
     }
   }, []);
+
+  function getEmailAuth() {
+    if (user != null) {
+      const email = user.email;
+      return email
+    }
+  }
+
+  console.log(auth.currentUser)
 
   const submitHandler = (e) => {
     e.preventDefault();
@@ -117,6 +127,7 @@ function UpdateUser() {
         </label>
         <input
           type="text"
+          defaultValue={userData.username}
           placeholder="Username"
           name="username"
           id="su_username"
@@ -129,6 +140,7 @@ function UpdateUser() {
         </label>
         <input
           type="text"
+          defaultValue={getEmailAuth()}
           placeholder="Email"
           name="email"
           id="su_email"
@@ -165,6 +177,7 @@ function UpdateUser() {
         </label>
         <input
           type="text"
+          defaultValue={userData.location}
           placeholder="Your location"
           name="location"
           id="su_location"
