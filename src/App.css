@@ -19,7 +19,7 @@ html {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background-image: linear-gradient(#D6E7E9, 70%, #006D77);
+  background-color: #A0C7CC;
 }
 
 .header_main {
