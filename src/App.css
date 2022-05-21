@@ -276,10 +276,30 @@ form h3 {
 .event-card {
   cursor: pointer;
   width: 200px;
-  min-height: 300px;
+  min-height: 310px;
   border-radius: 9px;
   margin: 10px 0 10px 0;
   background-color: #8cdbe0;
+  position: relative;
+}
+
+.card-badge {
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  background-color: #8CDBE0;
+  padding: 1px 7px;
+  border-radius: 5px;
+  color: #5d662f;
+  background-color: rgb(247, 247, 59);
+  animation: flip 4s infinite;
+  animation-delay: calc(.2s * var(--i))
+  
+}
+@keyframes flip {
+  0%,80% {
+    transform: rotateY(360deg) 
+  }
 }
 
 .event-title {
@@ -301,7 +321,9 @@ form h3 {
 
 .event-venue {
   color: #2D3A40;
-  font-size: 12px;
+  font-size: 15px;
+  font-style: italic;
+  
 }
 
 /* UpdateUser Page*/
