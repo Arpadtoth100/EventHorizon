@@ -274,16 +274,24 @@ form h3 {
 }
 
 .event-card {
+  cursor: pointer;
+  width: 200px;
+  min-height: 300px;
+  border-radius: 9px;
   margin: 10px 0 10px 0;
+  background-color: #8cdbe0;
 }
 
 .event-title {
-  color: #3b3851;
+  color: #2F5866;
+  font-size: 16px;
+  
 }
 
 .event-date {
-  color: #d4501f;
-  font-size: 12px;
+  color: #18068b;
+  font-size: 14px;
+
 }
 
 .event-organizer {
@@ -292,7 +300,7 @@ form h3 {
 }
 
 .event-venue {
-  color: #d4501f;
+  color: #2D3A40;
   font-size: 12px;
 }
 
