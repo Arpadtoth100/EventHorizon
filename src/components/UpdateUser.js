@@ -110,9 +110,9 @@ function UpdateUser() {
   };
 
   return (
-    <div className="outlet_main">
-      <form className="settingsform" onSubmit={submitHandler}>
-        <label htmlFor="su_username" className="textlabel">
+    <div className="updateuser_main outlet_main">
+      <form className="updateuserform" onSubmit={submitHandler}>
+        <label htmlFor="su_username" className="su_username">
           Username
         </label>
         <input

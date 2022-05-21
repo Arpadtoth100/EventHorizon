@@ -201,6 +201,9 @@ form h3 {
   box-shadow: 0 0 5px rgba(8, 7, 16, 0.6);
   border-radius: 3px;
 }
+.su_username {
+  margin-top: 0px;
+}
 
 #checkbox_label {
   display: inline-block;
@@ -291,14 +294,23 @@ form h3 {
   font-size: 12px;
 }
 
-/* Settings Page*/
+/* UpdateUser Page*/
 
-.settingsform {
+.updateuserform {
   position: absolute;
+  height: 85vh;
   left: 50%;
   top: 50%;
+  background-color: #edf6f9;
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
+}
+
+.updateuser_main {
+  width: 100%;
+  background-color: #aeecef;
+  background-image: url(./images/updateprofileBg.jpg);
+  background-size: cover;
 }
 
 .paginationBtns {
