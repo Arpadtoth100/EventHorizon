@@ -38,12 +38,9 @@ function SignIn() {
   return (
     <div className="signin_main">
       <form className="signinform" onSubmit={submitHandler}>
-        {signInError && (
-          <div>
-            <p>Sign in failed, due to the following:</p>
-            {signInError}
-          </div>
-        )}
+        <div className="signError">
+          {signInError && <p>Incorrect E-mail or Password </p>}
+        </div>
         <h3>Sign In Here</h3>
 
         <label htmlFor="si_email" className="textlabel">

@@ -1,7 +1,6 @@
 import { readEvent } from '../services/crud';
 import { useState, useEffect } from 'react';
-import Pagination from '../services/Pagination';
-import UserNavigationMenu from '../components/utilities/UserNavigationMenu';
+// import Pagination from '../services/Pagination';
 import CardContainerMyCreated from '../components/utilities/CardContainerMyCreated';
 
 export default function MyEventsScreen(props) {
@@ -15,7 +14,6 @@ export default function MyEventsScreen(props) {
 
   return (
     <div className="outlet_main">
-      <UserNavigationMenu />
       <CardContainerMyCreated title={'Events Created By Me'} data={eventList} />
       {/* <Pagination /> */}
     </div>

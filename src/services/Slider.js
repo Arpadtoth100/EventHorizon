@@ -24,26 +24,6 @@ function Slider(props) {
     }
   };
 
-  const dotSet = () => {
-    return props.imgSet.map((item, ind) => {
-      return (
-        <span
-          className={`dot ${classNameHandler(ind)}`}
-          onClick={clickHandler(ind)}
-          key={item}
-        />
-      );
-    });
-  };
-
-  const clickHandler = (ind) => {
-    return () => setIndex(ind);
-  };
-
-  const classNameHandler = (ind) => {
-    if (ind === index) return 'active';
-  };
-
   return (
     <>
       <div className="main_slider_container">
@@ -56,7 +36,6 @@ function Slider(props) {
             <FontAwesomeIcon icon={faChevronRight} />
           </a>
         </div>
-        <div className="dotset">{dotSet()}</div>
       </div>
     </>
   );

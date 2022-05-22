@@ -9,7 +9,6 @@ import {
   query,
   orderByChild,
   equalTo,
-  onValue,
 } from 'firebase/database';
 // import {
 //   onChildAdded,
@@ -78,11 +77,20 @@ export function deleteEvent(key) {
   return remove(refEvent);
 }
 
-// export function filterFreeEvent() {
-//   const dbref = query(
-//     ref(database, eventEndpoint),
-//     orderByChild('free'),
-//     equalTo('true')
-//   );
-//   return get(dbref);
-// }
+export function filterFreeEvent() {
+  const dbref = query(
+    ref(database, eventEndpoint),
+    orderByChild('free'),
+    equalTo('true')
+  );
+  return get(dbref);
+}
+
+export function filterPaidEvent() {
+  const dbref = query(
+    ref(database, eventEndpoint),
+    orderByChild('free'),
+    equalTo('false')
+  );
+  return get(dbref);
+}

@@ -1,5 +1,5 @@
 import EventCard from '../EventComponents/EventCard';
-import { useContext, useState } from 'react';
+import { useContext } from 'react';
 import { AuthContext } from '../Context/AuthContext';
 import { useNavigate } from 'react-router-dom';
 

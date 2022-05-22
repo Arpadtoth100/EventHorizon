@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import JoinModal from './JoinModal';
 import { auth } from '../../config/firebase';
 import { useNavigate } from 'react-router-dom';
@@ -15,14 +15,15 @@ export default function EventInfo({ eventData, eventId }) {
     setShowJoinModal((prev) => !prev);
   };
 
-  function userCheck() {
+  const userCheck = useCallback(() => {
     if (auth.currentUser?.uid === eventData?.uid) {
       setCorrectUser(true);
     }
-  }
+  }, [eventData?.uid]);
+
   useEffect(() => {
     userCheck();
-  }, [auth.currentUser?.uid, eventData?.uid]);
+  }, [userCheck]);
 
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {

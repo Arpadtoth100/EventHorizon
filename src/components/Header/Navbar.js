@@ -1,7 +1,5 @@
 import { useState, useContext } from 'react';
 import { NavLink } from 'react-router-dom';
-import { auth } from '../../config/firebase';
-import { signOut } from 'firebase/auth';
 import { AuthContext } from '../Context/AuthContext';
 import SignOut from '../SignOut';
 import SunRiseIcon from './SunRiseIcon';
@@ -22,13 +20,12 @@ function Navbar(props) {
       <div className="header_main">
         <div>
           <i style={{ color: '#9ceaef', marginRight: '0.5rem' }}>
-            <SunRiseIcon width='36px' height='24px' />
+            <SunRiseIcon width="36px" height="24px" />
           </i>
         </div>
         <div>
-          <p className='logotext'>Event Horizon</p>
+          <p className="logotext">Event Horizon</p>
         </div>
-
 
         <ul className={`menu ${menuActive}`}>
           <li className="item">
