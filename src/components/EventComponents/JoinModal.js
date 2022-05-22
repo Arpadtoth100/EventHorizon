@@ -41,8 +41,13 @@ export default function JoinModal({
       );
     }
   }, []);
+  useEffect(() => {
+    if (eventData.free === 'true') {
+      setPaidFor(true);
+    }
+  }, [eventData.free]);
 
-  const priceCheck = useCallback(() => {
+  function priceCheck() {
     dispatch({
       type: 'resetOptions',
       value: {
@@ -50,14 +55,10 @@ export default function JoinModal({
         currency: eventData.currency,
       },
     });
-  }, []);
-
+  }
   useEffect(() => {
-    if (eventData.free) {
-      setPaidFor(true);
-    }
     priceCheck();
-  }, []);
+  }, [eventData.currency]);
 
   return (
     <>
