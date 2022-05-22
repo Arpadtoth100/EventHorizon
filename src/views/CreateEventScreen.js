@@ -129,10 +129,10 @@ function CreateEventScreen() {
           <option value="8">Hobbies</option>
         </select>
 
-        <label htmlFor="description" className="textlabel">
+        <label htmlFor="description" className="textlabel textarea">
           Description
         </label>
-        <input
+        <textarea
           type="textarea"
           placeholder="Description"
           name="description"
@@ -239,7 +239,7 @@ function CreateEventScreen() {
           <option value="EUR">EUR</option>
         </select>
 
-        <button type="submit" className="btn">
+        <button type="submit" className="btn createeventBtn">
           Create Event!
         </button>
       </form>

@@ -12,7 +12,6 @@ html {
   padding: 0;
   font-family: "Gill Sans", "Gill Sans MT", "Calibri", "Trebuchet MS",
     sans-serif;
-  
 }
 
 .themain {
@@ -22,17 +21,7 @@ html {
   background-color: white;
 }
 
-.header_main {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #006d77;
-  height: 80px;
-  position: fixed;
-  width: 100vw;
-  top: 0;
-  z-index: 999;
-}
+
 
 .logotext {
   font-size: 1.5rem;
@@ -74,7 +63,7 @@ html {
 }
 
 .signError {
-  height: 1.5rem
+  height: 1.5rem;
 }
 
 /* Infobox thankyou */
@@ -105,11 +94,24 @@ html {
   position: relative;
   left: 13rem;
 }
+
+.header_main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #006d77;
+  height: 80px;
+  position: fixed;
+  width: 100vw;
+  top: 0;
+  z-index: 999;
+}
+
 .footer_main {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
+  width: 100vw;
   height: 60px;
   background-color: #006d77;
   color: white;
@@ -120,16 +122,18 @@ html {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  width: 100%;
-  background-color: #aeecef;
+  width: 100vw;
   background-image: url(./images/background.jpg);
   background-size: cover;
+}
+
+#signinup_main{
+  margin: 0;
 }
 
 .outlet_main {
   min-height: calc(100vh - 140px);
   margin: 80px 120px 0;
-  
 }
 
 .background {
@@ -142,7 +146,6 @@ html {
 }
 
 form {
-  width: 400px;
   background-color: rgba(255, 255, 255, 0.13);
   border-radius: 10px;
   backdrop-filter: blur(10px);
@@ -156,6 +159,15 @@ form * {
   letter-spacing: 0.5px;
   outline: none;
   border: none;
+}
+.create_event_main {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+.create_event_form {
+  height: 950px;
+  padding: 1rem;
+  background-color: #edf6f9;
 }
 
 .signinform {
@@ -180,7 +192,7 @@ form h3 {
 
 .textlabel {
   display: block;
-  margin-top: 25px;
+  margin-top: 15px;
   font-size: 16px;
   font-weight: 500;
 }
@@ -233,7 +245,7 @@ form h3 {
   border-radius: 3px;
   cursor: pointer;
 }
-.signup_btn {
+.signup_btn{
   margin-top: 30px;
   width: 100%;
   background-color: #006d77;
@@ -255,16 +267,6 @@ form h3 {
   margin-left: 2%;
 }
 
-.footer_main {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 60px;
-  background-color: #006d77;
-  color: white;
-  margin-top: auto;
-}
 
 /* Event Card Container and Card */
 
@@ -287,17 +289,12 @@ form h3 {
   min-height: 310px;
   border-radius: 9px;
   margin: 10px 0 20px 0;
-  background-color: #C1DBDE;
+  background-color: #c1dbde;
   position: relative;
-   box-shadow:
-  0 2.8px 2.2px rgba(0, 0, 0, 0.034),
-  0 6.7px 5.3px rgba(0, 0, 0, 0.048),
-  0 12.5px 10px rgba(0, 0, 0, 0.06),
-  0 22.3px 17.9px rgba(0, 0, 0, 0.072),
-  0 41.8px 33.4px rgba(0, 0, 0, 0.086),
-  0 100px 80px rgba(0, 0, 0, 0.12)
-;
-
+  box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+    0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
+    0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+    0 100px 80px rgba(0, 0, 0, 0.12);
 }
 
 .card-badge {
@@ -307,27 +304,25 @@ form h3 {
   padding: 1px 7px;
   border-radius: 5px;
   color: #006d77;
-  background-color:#cbefed;
+  background-color: #cbefed;
   animation: flip 4s infinite;
-  animation-delay: calc(.2s * var(--i))
-  
+  animation-delay: calc(0.2s * var(--i));
 }
 @keyframes flip {
-  0%,80% {
-    transform: rotateY(360deg) 
+  0%,
+  80% {
+    transform: rotateY(360deg);
   }
 }
 
 .event-title {
-  color: #2F5866;
+  color: #2f5866;
   font-size: 16px;
-  
 }
 
 .event-date {
   color: #18068b;
   font-size: 14px;
-
 }
 
 .event-organizer {
@@ -336,10 +331,9 @@ form h3 {
 }
 
 .event-venue {
-  color: #2D3A40;
+  color: #2d3a40;
   font-size: 15px;
   font-style: italic;
-  
 }
 
 /* UpdateUser Page*/
@@ -368,28 +362,28 @@ form h3 {
 
 .paginationBtns a {
   padding: 2px 5px;
-  margin:  5px;
+  margin: 5px;
   border-radius: 3px;
   background-color: #aeecef;
-  color: #2F5866;
+  color: #2f5866;
   cursor: pointer;
 }
 
 .paginationBtns a:hover {
   color: white;
-  background-color: #2F5866;
+  background-color: #2f5866;
 }
 
 .paginationActive a {
   color: white;
-  background-color: #2F5866;
+  background-color: #2f5866;
 }
-.paginationDisabled a{
+.paginationDisabled a {
   color: #aeecef;
   background-color: #aeecef;
 }
 
-.main h1{
+.main h1 {
   color: #006d77;
   font-size: 2rem;
 }
@@ -477,28 +471,6 @@ form h3 {
   opacity: 0.8;
 }
 
-.dotset {
-  text-align: center;
-  position: absolute;
-  padding-top: 20.5%;
-}
-
-.dot {
-  cursor: pointer;
-  width: 15px;
-  height: 15px;
-  margin: 5px;
-  border-radius: 50%;
-  background-color: rgb(179, 175, 175);
-  display: inline-block;
-  transition: background-color 0.3s ease-in-out;
-}
-
-.dot:hover {
-  background-color: rgb(92, 92, 92);
-  transition: background-color 0.3s ease-in-out;
-}
-
 .active {
   background-color: #9ceaef;
   transition: background-color 0.3s ease-in-out;
@@ -578,6 +550,9 @@ form h3 {
 .joinEventBtn {
   font-size: 1.5rem;
   background: #05668d;
+}
+.createeventBtn{
+  margin-top: 1rem;
 }
 .ModalDiscardButton {
   margin-right: 20px;
@@ -667,6 +642,7 @@ form h3 {
 .userprofile_container {
   background-color: #edf6f9;
   box-sizing: border-box;
+  margin-right: 1rem;
 }
 
 .welcomeUser {
@@ -693,13 +669,17 @@ form h3 {
   list-style: none;
   font-size: 1.1rem;
   width: 100%;
+  margin-left: 20px;
 }
-.userNavmenu li{
-  display:inline-block;
+.userNavmenu li {
+  display: inline-block;
   padding: 1rem;
 }
 
-.userNavMenu_container{
+.userNavmenu a {
+  color: #006d77;
+}
+.userNavMenu_container {
   margin: 0;
   width: 700px;
 }
