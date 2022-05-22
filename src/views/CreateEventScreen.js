@@ -106,6 +106,7 @@ function CreateEventScreen() {
           name="title"
           id="title"
           className="textinput"
+          required
           onChange={createChangeHandler}
         />
 
@@ -113,6 +114,7 @@ function CreateEventScreen() {
           Category
         </label>
         <select
+        required
           className="create_event_select"
           name="category_id"
           id="category_id"
@@ -133,6 +135,7 @@ function CreateEventScreen() {
           Description
         </label>
         <textarea
+        required
           type="textarea"
           placeholder="Description"
           name="description"
@@ -145,6 +148,7 @@ function CreateEventScreen() {
           Upload Image
         </label>
         <input
+        required
           type="file"
           placeholder="Upload Image"
           name="upload"
@@ -157,6 +161,7 @@ function CreateEventScreen() {
           Online or Offline
         </label>
         <select
+        required
           className="create_event_select"
           name="event_type"
           id="event_type"
@@ -171,6 +176,7 @@ function CreateEventScreen() {
           Event Location
         </label>
         <input
+        required
           type="text"
           placeholder="Event Location"
           name="location"
@@ -180,7 +186,9 @@ function CreateEventScreen() {
         />
 
         <br />
+        <p>Please select the starting and closing dates:</p>
         <SelectDateFromTo
+        required
           startDate={startDate}
           setStartDate={setStartDate}
           endDate={endDate}
@@ -191,6 +199,7 @@ function CreateEventScreen() {
           Maximum Number of Participants
         </label>
         <input
+        required
           type="number"
           placeholder="Maximum Number of Participants"
           name="user_limit"
@@ -203,14 +212,15 @@ function CreateEventScreen() {
           Free or Paying
         </label>
         <select
+        required
           className="create_event_select"
           name="free"
           id="free"
           onChange={createChangeHandler}
         >
-          <option value={null}>Please Select one</option>
-          <option value={true}>Free</option>
-          <option value={false}>Paying</option>
+          <option value="null">Please Select one</option>
+          <option value="true">Free</option>
+          <option value="false">Paying</option>
         </select>
 
         <label htmlFor="price" className="textlabel">
