@@ -195,7 +195,7 @@ function UpdateUser() {
           onChange={imageHandler}
         />
 
-        <label htmlFor="su_organization" id="su_checkbox">
+        <label htmlFor="su_organization" id="checkbox_label">
           Organization
           <input
             type="checkbox"
@@ -214,7 +214,7 @@ function UpdateUser() {
           </div>
         )}
 
-        <button className="btn">Update</button>
+        <button className="update_btn">Update</button>
       </form>
     </div>
   );
