@@ -336,6 +336,7 @@ form h2 {
 .event-title {
   color: #2f5866;
   font-size: 16px;
+  margin: 5px;
 }
 
 .event-date {
@@ -352,6 +353,17 @@ form h2 {
   color: #2d3a40;
   font-size: 15px;
   font-style: italic;
+}
+.eventinfo-description {
+  color: #05ada8;
+  font-size: 22px;
+}
+.eventpage_img {
+  max-height: 350px;
+  margin: 5px;
+}
+.eventinfo-name {
+  color: #05ada8;
 }
 
 /* UpdateUser Page*/
@@ -571,6 +583,7 @@ form h2 {
 .joinEventBtn {
   font-size: 1.5rem;
   background: #05668d;
+  margin-top: 10px;
 }
 .createeventBtn {
   margin-top: 1rem;
