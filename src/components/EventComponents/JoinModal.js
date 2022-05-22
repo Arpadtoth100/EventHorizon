@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import { MdClose } from 'react-icons/md';
 import { auth } from '../../config/firebase';
 import { readUser, createAttendee } from '../../services/crud';
@@ -42,7 +42,7 @@ export default function JoinModal({
     }
   }, []);
 
-  function priceCheck() {
+  const priceCheck = useCallback(() => {
     dispatch({
       type: 'resetOptions',
       value: {
@@ -50,13 +50,14 @@ export default function JoinModal({
         currency: eventData.currency,
       },
     });
-  }
+  }, [dispatch, options, eventData.currency]);
+
   useEffect(() => {
     if (eventData.free) {
       setPaidFor(true);
     }
     priceCheck();
-  }, [eventData.currency]);
+  }, [eventData.free, priceCheck]);
 
   return (
     <>

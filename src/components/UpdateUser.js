@@ -34,11 +34,9 @@ function UpdateUser() {
   function getEmailAuth() {
     if (user != null) {
       const email = user.email;
-      return email
+      return email;
     }
   }
-
-  console.log(auth.currentUser)
 
   const submitHandler = (e) => {
     e.preventDefault();
@@ -120,7 +118,7 @@ function UpdateUser() {
   };
 
   return (
-    <div className="updateuser_main outlet_main">
+    <div id="updateuser_main">
       <form className="updateuserform" onSubmit={submitHandler}>
         <label htmlFor="su_username" className="su_username">
           Username

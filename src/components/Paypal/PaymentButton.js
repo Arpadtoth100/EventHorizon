@@ -1,5 +1,5 @@
 import { PayPalButtons } from '@paypal/react-paypal-js';
-import { useState, useContext } from 'react';
+import { useState } from 'react';
 
 const PaymentBtn = ({ product, paidFor, setPaidFor }) => {
   const [error, setError] = useState(null);

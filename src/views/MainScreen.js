@@ -1,28 +1,22 @@
-import CardContainer from '../components/utilities/CardContainer';
-import CardContainerPaid from '../components/utilities/CardContainerPaid';
-import Slider from '../services/Slider';
 import Pagination from '../services/Pagination';
-import { readEvent } from '../services/crud';
 import { useState, useEffect } from 'react';
+import { filterFreeEvent, filterPaidEvent } from '../services/crud';
 
 const MainScreen = (props) => {
-  const [eventList, setEventList] = useState([]);
-  //const [freeEventList, setFreeEventList] = useState([]);
-  //const [paidEventList, setPaidEventList] = useState([]);
+  const [freeEventList, setFreeEventList] = useState([]);
+  const [paidEventList, setPaidEventList] = useState([]);
 
   useEffect(() => {
-    readEvent().then((snapshot) =>
-      setEventList(Object.entries(snapshot.val()))
-    );
+    filterFreeEvent().then((snapshot) => {
+      setFreeEventList(Object.entries(snapshot.val()));
+    });
   }, []);
 
-  // useEffect(() => {
-  //   filterFreeEvent().then((snapshot) => {
-  //     snapshot.forEach((child) => {
-  //       console.log(child.val());
-  //     });
-  //   });
-  // }, []);
+  useEffect(() => {
+    filterPaidEvent().then((snapshot) => {
+      setPaidEventList(Object.entries(snapshot.val()));
+    });
+  }, []);
 
   return (
     <div className="outlet_main">
@@ -52,8 +46,11 @@ const MainScreen = (props) => {
       </div>
 
       <br />
-      <Pagination title={'Free Events on The Horizon'} data={eventList} />
-      <Pagination title={'Featured Events on The Horizon'} data={eventList} />
+      <Pagination title={'Free Events on The Horizon'} data={freeEventList} />
+      <Pagination
+        title={'Featured Events on The Horizon'}
+        data={paidEventList}
+      />
     </div>
   );
 };

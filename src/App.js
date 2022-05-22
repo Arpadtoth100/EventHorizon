@@ -62,7 +62,9 @@ function App() {
               <Route path="/main" element={<MainScreen />} />
               <Route path="/eventpage/:id" element={<Eventpage />} />
               <Route path="/about" element={<AboutUs />} />
-              <Route path="/search" element={<SearchScreen />} />
+              {!loggedUserID && (
+                <Route path="/search" element={<SearchScreen />} />
+              )}
               <Route path="/signin" element={<SignInUpScreen />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/faq" element={<FAQ />} />
@@ -75,6 +77,9 @@ function App() {
             </Route>
 
             <Route element={<UserMainLayout />}>
+              {loggedUserID && (
+                <Route path="/search" element={<SearchScreen />} />
+              )}
               <Route
                 path="/thankyou"
                 element={

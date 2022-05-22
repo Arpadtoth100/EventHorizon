@@ -34,9 +34,11 @@ function JoinedEvents() {
   });
 
   return (
-    <div>
-      <section className="cards-list">{eventsIHaveJoined}</section>
-    </div>
+    <>
+      <div>
+        <section className="cards-list">{eventsIHaveJoined}</section>
+      </div>
+    </>
   );
 }
 

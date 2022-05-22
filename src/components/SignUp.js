@@ -72,15 +72,10 @@ function SignUp() {
   return (
     <div className="signup_main">
       <form className="signupform" onSubmit={submitHandler}>
-        {signUpError && (
-          <div>
-            <p>Registration failed due to the following: </p>
-            {signUpError}
-            <p> Please try again</p>
-          </div>
-        )}
+        <div className="signError">
+          {signUpError && <p>Sign Up failed, please fill all data! </p>}
+        </div>
         <h3>Sign Up Here</h3>
-
         <label htmlFor="su_username" className="textlabel">
           Username
         </label>
@@ -91,8 +86,8 @@ function SignUp() {
           id="su_username"
           className="textinput"
           onChange={collectSignUpData}
+          required
         />
-
         <label htmlFor="su_email" className="textlabel">
           Email
         </label>
@@ -103,8 +98,8 @@ function SignUp() {
           id="su_email"
           className="textinput"
           onChange={collectSignUpData}
+          required
         />
-
         <label htmlFor="su_password" className="textlabel">
           Password
         </label>
@@ -115,8 +110,8 @@ function SignUp() {
           id="su_password"
           className="textinput"
           onChange={collectSignUpData}
+          required
         />
-
         <label htmlFor="su_confirmpassword" className="textlabel">
           Confirm Password
         </label>
@@ -127,6 +122,7 @@ function SignUp() {
           id="su_confirmpassword"
           className="textinput"
           onChange={collectSignUpData}
+          required
         />
         <label htmlFor="su_location" className="textlabel">
           Location
@@ -138,8 +134,8 @@ function SignUp() {
           id="su_location"
           className="textinput"
           onChange={collectSignUpData}
+          required
         />
-
         <input
           type="checkbox"
           name="organization"
@@ -149,7 +145,6 @@ function SignUp() {
         <label htmlFor="su_organization" id="checkbox_label">
           Organization
         </label>
-
         <button className="signup_btn">Sign Up</button>
       </form>
     </div>

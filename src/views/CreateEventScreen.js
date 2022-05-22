@@ -83,7 +83,7 @@ function CreateEventScreen() {
   return (
     <div className="outlet_main create_event_main">
       <form className="create_event_form" onSubmit={createEventHandler}>
-        <label htmlFor="status" className="textlabel">
+        {/* <label htmlFor="status" className="textlabel">
           Public or Draft
         </label>
         <select
@@ -95,7 +95,7 @@ function CreateEventScreen() {
           <option value="">Please Select one</option>
           <option value="public">Public</option>
           <option value="draft">Draft</option>
-        </select>
+        </select> */}
 
         <label htmlFor="title" className="textlabel">
           Event Title

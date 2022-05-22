@@ -9,7 +9,7 @@ function Pagination(props) {
     setPageNumber(selected);
   };
 
-  const perPage = 4;
+  const perPage = 5;
   const offset = pageNumber * perPage;
   const currentPageData = props.data.slice(offset, offset + perPage);
 
