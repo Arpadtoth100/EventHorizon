@@ -1,12 +1,12 @@
 import Map from '../components/GoogleMap/Map';
 import SearchBar from '../components/SearchBar';
-import FilterBar from '../components/utilities/FilterBar';
+// import FilterBar from '../components/utilities/FilterBar';
 
 function SearchScreen() {
   return (
-    <div className="outlet_main">
+    <div className="outlet_main search_container">
       <SearchBar />
-      <FilterBar />
+      {/* <FilterBar /> */}
       <div className="mapcontainer_div">
         <Map />
       </div>
