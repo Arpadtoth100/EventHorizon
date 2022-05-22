@@ -1,28 +1,24 @@
-import ThankYou from "../utilities/ThankYou";
+import ThankYou from '../utilities/ThankYou';
+import Slider from '../../services/Slider';
 
 function AboutUs() {
-  return <div className="outlet_main">
-    <div className="about-us_container">
-      <div className="aboutus-hero" >
-        <div className="aboutus-hero-img-wrapper">
-          <img className="aboutus-hero-img" src="./pexels-pixabay-207896 new color1.jpg" alt='' />
+  const imgSet = [
+    './celebration-Image by Pete Linforth from Pixabay magenta crop1 resized.jpg',
+    './moon Image by Gerd Altmann from Pixabay new color1 crop1 resized.jpg',
+    './sunset-Image by Gerd Altmann from Pixabay new color1 crop1.jpg',
+    './moon2 Image by Gerd Altmann from Pixabay new color1 crop1 resized.jpg',
+  ];
+
+  return (
+    <div className="outlet_main">
+      <Slider imgSet={imgSet} />
+      <div>
+        <div className="thankyouContainer2">
+          <ThankYou />
         </div>
-        <div className="aboutus-hero-text">
-          <p>There are always great events on the horizon!</p>
-          <p>Simply join!</p>
-        </div>
-      </div>
-      <div className="blabla">
-        <p>EventHorizon is the best lorem ipsum dolor sit amet consectetur, adipisicing elit. Cumque ratione est ut nisi nihil repudiandae officia pariatur voluptatem! Culpa eligendi vitae magni amet fugit nihil officiis harum, aliquid voluptas laudantium?</p>
       </div>
     </div>
-    <div>
-        <div className="thankyouContainer2">
-        < ThankYou />
-        </div>
-        
-      </div>
-  </div>;
+  );
 }
 
 export default AboutUs;

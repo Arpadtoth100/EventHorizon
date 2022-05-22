@@ -1,9 +1,8 @@
 import UserNavigationMenu from './utilities/UserNavigationMenu';
-import CardContainer from '../components/utilities/CardContainer';
-import CardContainerPaid from '../components/utilities/CardContainerPaid';
 import { readEvent, readUser } from '../services/crud';
 import { useState, useEffect } from 'react';
 import { auth } from '../config/firebase';
+import Pagination from '../services/Pagination';
 
 const ProfileScreen = () => {
   const [eventList, setEventList] = useState([]);
@@ -45,11 +44,8 @@ const ProfileScreen = () => {
           <UserNavigationMenu />
         </div>
       </section>
-      <CardContainer title={'Newest Events on the Horizon'} data={eventList} />
-      <CardContainerPaid
-        title={'Featured Events on The Horizon'}
-        data={eventList}
-      />
+      <Pagination title={'Free Events on The Horizon'} data={eventList} />
+      <Pagination title={'Featured Events on The Horizon'} data={eventList} />
     </div>
   );
 };

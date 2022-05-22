@@ -15,7 +15,7 @@ import Eventpage from './components/EventComponents/Eventpage';
 import Privacy from './components/Footer/Privacy';
 import UserMainLayout from './layouts/UserMainLayout';
 import ThankYouScreen from './views/ThankYouScreen';
-import EventCreatedScreen from './views/EventCreatedScreen'
+import EventCreatedScreen from './views/EventCreatedScreen';
 import SignInUpScreen from './views/SignInUpScreen';
 import ProfileScreen from './components/ProfileScreen';
 import Contact from './components/Footer/Contact';
@@ -44,7 +44,6 @@ function App() {
       } else {
         setLoggedUserID(null);
       }
-      console.log(loggedUserID);
     });
   }, [loggedUserID]);
 
@@ -93,13 +92,13 @@ function App() {
                 }
               />
               <Route
-              path="/event_created"
-              element={
-                <AuthProtected>
-                  <EventCreatedScreen />
-                </AuthProtected>
-              }
-            />
+                path="/event_created"
+                element={
+                  <AuthProtected>
+                    <EventCreatedScreen />
+                  </AuthProtected>
+                }
+              />
               <Route
                 path="/profile"
                 element={
