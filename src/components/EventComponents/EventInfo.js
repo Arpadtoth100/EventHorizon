@@ -36,8 +36,8 @@ export default function EventInfo({ eventData, eventId }) {
   return (
     <div className="event-info">
       <h1 className="eventinfo-name">{eventData.title}</h1>
-      <img src={eventData.image_url} alt="the event" />
-      <div className="eventinfo-venue">{eventData.description}</div>
+      <img className='eventpage_img' src={eventData.image_url} alt="the event" />
+      <div className="eventinfo-description">{eventData.description}</div>
       {eventData.price && (
         <div className="eventinfo-venue">
           Admission fee:
