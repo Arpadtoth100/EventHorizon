@@ -13,7 +13,7 @@ export default function JoinModal({ showJoinModal, setShowJoinModal, eventData, 
     const [userName, setUserName] = useState("");
 
     const toSignInUP = useNavigate()
-
+    
     const CloseModalButton = MdClose;
 
     const clickJoinHandler = (event) => {
