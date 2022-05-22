@@ -49,17 +49,13 @@ function CreateEventScreen() {
         date_to: endDate.toString(),
       }).then(() => {
         setEventData(defaultEventData);
-        console.log('es utanna', eventData);
         navTo('/event_created');
       });
     }
   };
 
-  console.log(eventData.image_url);
-
   const imageHandler = (event) => {
     setImageToUpload(event.target.files[0]);
-    console.log(event.target.files[0]);
   };
 
   const uploadImage = async (image) => {
@@ -68,24 +64,21 @@ function CreateEventScreen() {
     uploadBytes(storageRef, image)
       .then((uploadResult) => {
         console.log(uploadResult);
-        getDownloadURL(uploadResult.ref)
-          .then((url) => {
-            createEvent({
-              ...eventData,
-              uid: auth?.currentUser.uid,
-              date_from: startDate.toString(),
-              date_to: endDate.toString(),
-              image_url: url,
-            }).then(() => {
-              setEventData(defaultEventData);
-              navTo('/event_created');
-            });
-          })
-          .then((value) => console.log('eventdata first', eventData));
+        getDownloadURL(uploadResult.ref).then((url) => {
+          createEvent({
+            ...eventData,
+            uid: auth?.currentUser.uid,
+            date_from: startDate.toString(),
+            date_to: endDate.toString(),
+            image_url: url,
+          }).then(() => {
+            setEventData(defaultEventData);
+            navTo('/event_created');
+          });
+        });
       })
       .catch((e) => console.log(e));
   };
-
 
   return (
     <div className="outlet_main create_event_main">
@@ -215,9 +208,9 @@ function CreateEventScreen() {
           id="free"
           onChange={createChangeHandler}
         >
-          <option value="">Please Select one</option>
-          <option value="true">Free</option>
-          <option value="false">Paying</option>
+          <option value={null}>Please Select one</option>
+          <option value={true}>Free</option>
+          <option value={false}>Paying</option>
         </select>
 
         <label htmlFor="price" className="textlabel">

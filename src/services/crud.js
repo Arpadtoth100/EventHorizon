@@ -5,7 +5,11 @@ import {
   push,
   update,
   get,
- remove,
+  remove,
+  query,
+  orderByChild,
+  equalTo,
+  onValue,
 } from 'firebase/database';
 // import {
 //   onChildAdded,
@@ -19,9 +23,9 @@ const eventAttendeeEndpoint = 'eventAttendees';
 
 export function createUser(userId, username, organization, location) {
   set(ref(database, userEndpoint + userId), {
-    username,
-    organization,
-    location,
+    username: username,
+    organization: organization,
+    location: location,
   });
 }
 
@@ -69,8 +73,16 @@ export function readAttendee(id) {
   return get(refEvent);
 }
 
-export function deleteEvent(key){
-  const refEvent =ref(database, `${eventEndpoint}/${key}`);
-  return remove(refEvent)
+export function deleteEvent(key) {
+  const refEvent = ref(database, `${eventEndpoint}/${key}`);
+  return remove(refEvent);
 }
 
+// export function filterFreeEvent() {
+//   const dbref = query(
+//     ref(database, eventEndpoint),
+//     orderByChild('free'),
+//     equalTo('true')
+//   );
+//   return get(dbref);
+// }

@@ -27,9 +27,9 @@ html {
   align-items: center;
   justify-content: center;
   background-color: #006d77;
-  height: 60px;
+  height: 80px;
   position: fixed;
-  width: 100%;
+  width: 100vw;
   top: 0;
   z-index: 999;
 }
@@ -52,7 +52,7 @@ html {
   text-decoration: none;
   margin-left: 20px;
   margin-right: 20px;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   background-color: aliceblue;
   background-size: 100%;
   background-clip: text;
@@ -85,8 +85,8 @@ html {
 }
 
 .infoboxImg {
-  width: 30rem;
-  height: 20rem;
+  height: 25vh;
+  width: 20vw;
 }
 .thankyouContainer {
   display: flex;
@@ -123,7 +123,9 @@ html {
 }
 
 .outlet_main {
-  min-height: calc(100vh - 120px);
+  min-height: calc(100vh - 140px);
+  margin: 80px 120px 0;
+  
 }
 
 .background {
@@ -298,11 +300,10 @@ form h3 {
   position: absolute;
   top: 6px;
   left: 6px;
-  background-color: #8CDBE0;
   padding: 1px 7px;
   border-radius: 5px;
   color: #5d662f;
-  background-color: rgb(247, 247, 59);
+  background-color:#cbefed;
   animation: flip 4s infinite;
   animation-delay: calc(.2s * var(--i))
   
@@ -365,22 +366,26 @@ form h3 {
 }
 
 .paginationBtns a {
-  padding: 5px;
-  margin: 5px;
+  padding: 2px 5px;
+  margin:  5px;
   border-radius: 3px;
-  border: 1px solid #2b2eff;
-  color: #2b2eff;
+  background-color: #aeecef;
+  color: #2F5866;
   cursor: pointer;
 }
 
 .paginationBtns a:hover {
   color: white;
-  background-color: #2b2eff;
+  background-color: #2F5866;
 }
 
 .paginationActive a {
   color: white;
-  background-color: #2b2eff;
+  background-color: #2F5866;
+}
+.paginationDisabled a{
+  color: #aeecef;
+  background-color: #aeecef;
 }
 
 .map_text {
