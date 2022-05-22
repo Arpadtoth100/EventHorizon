@@ -50,14 +50,14 @@ export default function JoinModal({
         currency: eventData.currency,
       },
     });
-  }, [dispatch, options, eventData.currency]);
+  }, []);
 
   useEffect(() => {
     if (eventData.free) {
       setPaidFor(true);
     }
     priceCheck();
-  }, [eventData.free, priceCheck]);
+  }, []);
 
   return (
     <>
