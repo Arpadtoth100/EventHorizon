@@ -1,8 +1,8 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import { NavLink } from 'react-router-dom';
-import logo from '../../images/white-flag-svgrepo-com.svg';
-import {auth} from '../../config/firebase'
-import { signOut } from "firebase/auth";
+import { AuthContext } from '../Context/AuthContext';
+import SignOut from '../SignOut';
+import SunRiseIcon from './SunRiseIcon';
 
 function Navbar(props) {
   const [menuActive, setMenuActive] = useState('');
@@ -13,20 +13,20 @@ function Navbar(props) {
     setMobileMenuActive((prev) => (prev ? undefined : 'act'));
   };
 
-  console.log(menuActive);
-
-  const signOutHandler = () => {
-    signOut(auth).then(() => {
-      console.log("Signed out!")
-    }).catch((error) => {
-      console.log(`Error while signing out: ${error}`)
-    });
-  }
+  const authContext = useContext(AuthContext);
 
   return (
     <header className="header">
       <div className="header_main">
-        <img src={logo} alt="horizon" />
+        <div>
+          <i style={{ color: '#9ceaef', marginRight: '0.5rem' }}>
+            <SunRiseIcon width="36px" height="24px" />
+          </i>
+        </div>
+        <div>
+          <p className="logotext">Event Horizon</p>
+        </div>
+
         <ul className={`menu ${menuActive}`}>
           <li className="item">
             <NavLink to="/main" id="nav-mainpage" className="link">
@@ -43,8 +43,30 @@ function Navbar(props) {
               ABOUT US
             </NavLink>
           </li>
-          {props.loggedUserID ? <li className="item"><NavLink to="/profile" id="nav-profile" className="link">PROFILE</NavLink></li> : <li className="item"><NavLink to="/signin" id="nav-profile" className="link">PROFILE</NavLink></li>}
-          {props.loggedUserID ? <li className="item"><NavLink to="/signin" id="nav-login" className="link" onClick={signOutHandler}>SIGN OUT</NavLink></li> : <li className="item"><NavLink to="/signin" id="nav-login" className="link">SIGN IN</NavLink></li>}        
+          {authContext.loggedUserID ? (
+            <li className="item">
+              <NavLink to="/profile" id="nav-profile" className="link">
+                PROFILE
+              </NavLink>
+            </li>
+          ) : (
+            <li className="item">
+              <NavLink to="/signin" id="nav-profile" className="link">
+                PROFILE
+              </NavLink>
+            </li>
+          )}
+          {authContext.loggedUserID ? (
+            <li className="item">
+              <SignOut />
+            </li>
+          ) : (
+            <li className="item">
+              <NavLink to="/signin" id="nav-login" className="link">
+                SIGN IN
+              </NavLink>
+            </li>
+          )}
         </ul>
         <div
           className={`header_toggle ${mobileMenuActive}`}

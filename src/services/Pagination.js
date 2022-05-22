@@ -2,126 +2,22 @@ import { useState } from 'react';
 import ReactPaginate from 'react-paginate';
 import CardContainer from '../components/utilities/CardContainer';
 
-const perPage = 4;
-
-function Pagination() {
+function Pagination(props) {
   const [pageNumber, setPageNumber] = useState(0);
-  const data = [
-    {
-      id: 1,
-      image: 'https://www.stevensegallery.com/250/150',
-      title: 'Dog Surfing',
-      date: 'Monday, June 13 11:00 AM CEST',
-      venue: 'Maui, Hawaii',
-      organizer: 'The Notorious D.O.G.',
-    },
-    {
-      id: 2,
-      image: 'https://www.placecage.com/c/250/150',
-      title: 'Dog Surfing',
-      date: 'Monday, June 13 11:00 AM CEST',
-      venue: 'Maui, Hawaii',
-      organizer: 'The Notorious D.O.G.',
-    },
-    {
-      id: 3,
-      image:
-        'https://media.istockphoto.com/photos/dog-surfing-on-a-wave-picture-id912592258',
-      title: 'Dog Surfing',
-      date: 'Monday, June 13 11:00 AM CEST',
-      venue: 'Maui, Hawaii',
-      organizer: 'The Notorious D.O.G.',
-    },
-    {
-      id: 4,
-      image:
-        'https://media.istockphoto.com/photos/dog-surfing-on-a-wave-picture-id912592258',
-      title: 'Dog Surfing',
-      date: 'Monday, June 13 11:00 AM CEST',
-      venue: 'Maui, Hawaii',
-      organizer: 'The Notorious D.O.G.',
-    },
-    {
-      id: 1,
-      image: 'https://www.placecage.com/c/250/150',
-      title: 'Dog Surfing',
-      date: 'Monday, June 13 11:00 AM CEST',
-      venue: 'Maui, Hawaii',
-      organizer: 'The Notorious D.O.G.',
-    },
-    {
-      id: 2,
-      image:
-        'https://media.istockphoto.com/photos/dog-surfing-on-a-wave-picture-id912592258',
-      title: 'Dog Surfing',
-      date: 'Monday, June 13 11:00 AM CEST',
-      venue: 'Maui, Hawaii',
-      organizer: 'The Notorious D.O.G.',
-    },
-    {
-      id: 3,
-      image: 'https://www.stevensegallery.com/250/150',
-      title: 'Dog Surfing',
-      date: 'Monday, June 13 11:00 AM CEST',
-      venue: 'Maui, Hawaii',
-      organizer: 'The Notorious D.O.G.',
-    },
-    {
-      id: 4,
-      image: 'https://www.placecage.com/c/250/150',
-      title: 'Dog Surfing',
-      date: 'Monday, June 13 11:00 AM CEST',
-      venue: 'Maui, Hawaii',
-      organizer: 'The Notorious D.O.G.',
-    },
-    {
-      id: 1,
-      image:
-        'https://media.istockphoto.com/photos/dog-surfing-on-a-wave-picture-id912592258',
-      title: 'Dog Surfing',
-      date: 'Monday, June 13 11:00 AM CEST',
-      venue: 'Maui, Hawaii',
-      organizer: 'The Notorious D.O.G.',
-    },
-    {
-      id: 2,
-      image:
-        'https://media.istockphoto.com/photos/dog-surfing-on-a-wave-picture-id912592258',
-      title: 'Dog Surfing',
-      date: 'Monday, June 13 11:00 AM CEST',
-      venue: 'Maui, Hawaii',
-      organizer: 'The Notorious D.O.G.',
-    },
-    {
-      id: 3,
-      image: 'https://www.placecage.com/c/250/150',
-      title: 'Dog Surfing',
-      date: 'Monday, June 13 11:00 AM CEST',
-      venue: 'Maui, Hawaii',
-      organizer: 'The Notorious D.O.G.',
-    },
-    {
-      id: 4,
-      image: 'https://www.stevensegallery.com/250/150',
-      title: 'Dog Surfing',
-      date: 'Monday, June 13 11:00 AM CEST',
-      venue: 'Maui, Hawaii',
-      organizer: 'The Notorious D.O.G.',
-    },
-  ];
 
   const changePageHandler = ({ selected }) => {
     setPageNumber(selected);
   };
 
+  const perPage = 5;
   const offset = pageNumber * perPage;
-  const currentPageData = data.slice(offset, offset + perPage);
+  const currentPageData = props.data.slice(offset, offset + perPage);
 
-  const pageCount = Math.ceil(data.length / perPage);
+  const pageCount = Math.ceil(props.data.length / perPage);
 
   return (
     <>
-      <CardContainer title={'Results:'} data={currentPageData} />
+      <CardContainer title={props.title} data={currentPageData} />
       <ReactPaginate
         previousLabel={'Prev'}
         nextLabel={'Next'}

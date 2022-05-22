@@ -1,7 +1,8 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../config/firebase';
+import { AuthContext } from './Context/AuthContext';
 
 function SignIn() {
   const [signInData, setSignInData] = useState({
@@ -10,12 +11,14 @@ function SignIn() {
   });
   const [signInError, setSignInError] = useState('');
 
+  const authContext = useContext(AuthContext);
+
   const navigateTo = useNavigate();
   const submitHandler = (e) => {
     e.preventDefault();
     signInWithEmailAndPassword(auth, signInData.email, signInData.password)
       .then((authCredential) => {
-        console.log(authCredential.user);
+        authContext.setLoggedUserID(authCredential.user.uid);
         navigateTo('/profile');
       })
       .catch((e) => {
@@ -35,12 +38,9 @@ function SignIn() {
   return (
     <div className="signin_main">
       <form className="signinform" onSubmit={submitHandler}>
-        {signInError && (
-          <div>
-            <p>Sign in failed, due to the following:</p>
-            {signInError}
-          </div>
-        )}
+        <div className="signError">
+          {signInError && <p>Incorrect E-mail or Password </p>}
+        </div>
         <h3>Sign In Here</h3>
 
         <label htmlFor="si_email" className="textlabel">

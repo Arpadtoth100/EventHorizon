@@ -4,8 +4,8 @@ import Footer from '../components/Footer/Footer';
 
 function PublicLayout(props) {
   return (
-    <div className='themain'>
-      <Navbar loggedUserID={props.loggedUserID}/>
+    <div className="themain">
+      <Navbar />
       <Outlet />
       <Footer />
     </div>

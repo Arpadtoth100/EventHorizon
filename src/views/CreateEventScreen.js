@@ -3,13 +3,14 @@ import { storage } from '../config/firebase';
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 import { createEvent } from '../services/crud';
 import { auth } from '../config/firebase';
+import { useNavigate } from 'react-router-dom';
 
 import SelectDateFromTo from '../components/utilities/SelectDateFromTo';
 import Map from '../components/GoogleMap/Map';
 
 function CreateEventScreen() {
-  const [progress, setProgress] = useState(0);
   const [imageToUpload, setImageToUpload] = useState(null);
+  const navTo = useNavigate();
 
   const [startDate, setStartDate] = useState(new Date());
   const [endDate, setEndDate] = useState(new Date());
@@ -36,86 +37,53 @@ function CreateEventScreen() {
     setEventData((p) => ({ ...p, [e.target.name]: e.target.value }));
   }, []);
 
-  //Ezzel nem mukodik
-  // const setDate = () => {
-  //   console.log('date', startDate, endDate);
-  //   setEventData((p) => ({ ...p, date_from: startDate }));
-  //   setEventData((p) => ({ ...p, date_to: endDate }));
-  //   console.log('date', startDate, endDate);
-  // };
-
   const createEventHandler = async (e) => {
     e.preventDefault();
     if (imageToUpload) {
       await uploadImage(imageToUpload);
     } else {
-      console.log("third")
-      eventData.uid = auth?.currentUser.uid;
-      eventData.date_from = startDate.toString();
-      eventData.date_to = endDate.toString();
-      console.log('event feltoltes elott', eventData);
-      createEvent(eventData).then(() => {
+      createEvent({
+        ...eventData,
+        uid: auth?.currentUser.uid,
+        date_from: startDate.toString(),
+        date_to: endDate.toString(),
+      }).then(() => {
         setEventData(defaultEventData);
-        console.log('es utanna', eventData);
+        navTo('/event_created');
       });
     }
   };
 
-  console.log(eventData.image_url);
-
   const imageHandler = (event) => {
     setImageToUpload(event.target.files[0]);
-    console.log(event.target.files[0]);
   };
-
-  /* const uploadHandler = (event) => {
-    event.preventDefault();
-    uploadImage(imageToUpload)
-    console.log(eventData)
-  }; */
-
-  /* const uploadImage = async (image) => {
-    if (!image) return;
-    const storageRef = ref(storage, `/images/${image.name}`);
-    const uploadTask = uploadBytesResumable(storageRef, image);
-    uploadTask.on(
-      'state_changed',
-      ((snapshot) => {
-        const prog = Math.round(
-          (snapshot.bytesTransferred / snapshot.totalBytes) * 100
-        );
-        setProgress(prog);
-      },
-      (err) => console.log(err),
-      () => {
-        getDownloadURL(uploadTask.snapshot.ref).then((url) =>
-          setEventData((p) => ({ ...p, image_url: url }))
-        );
-      })
-    );
-  }; */
 
   const uploadImage = async (image) => {
     if (!image) return;
     const storageRef = ref(storage, `/images/${image.name}`);
     uploadBytes(storageRef, image)
-      .then(uploadResult => {
-        console.log(uploadResult)
-        getDownloadURL(uploadResult.ref)
-          .then(url => {
-            createEvent({...eventData, uid: auth?.currentUser.uid, date_from: startDate.toString(), date_to: endDate.toString(), image_url: url}).then(() => {
-              setEventData(defaultEventData);
-            });
-          })
-          .then(value => console.log("eventdata first", eventData))
+      .then((uploadResult) => {
+        console.log(uploadResult);
+        getDownloadURL(uploadResult.ref).then((url) => {
+          createEvent({
+            ...eventData,
+            uid: auth?.currentUser.uid,
+            date_from: startDate.toString(),
+            date_to: endDate.toString(),
+            image_url: url,
+          }).then(() => {
+            setEventData(defaultEventData);
+            navTo('/event_created');
+          });
+        });
       })
-      .catch(e => console.log(e))
-  }
+      .catch((e) => console.log(e));
+  };
 
   return (
     <div className="outlet_main create_event_main">
       <form className="create_event_form" onSubmit={createEventHandler}>
-        <label htmlFor="status" className="textlabel">
+        {/* <label htmlFor="status" className="textlabel">
           Public or Draft
         </label>
         <select
@@ -127,7 +95,7 @@ function CreateEventScreen() {
           <option value="">Please Select one</option>
           <option value="public">Public</option>
           <option value="draft">Draft</option>
-        </select>
+        </select> */}
 
         <label htmlFor="title" className="textlabel">
           Event Title
@@ -138,6 +106,7 @@ function CreateEventScreen() {
           name="title"
           id="title"
           className="textinput"
+          required
           onChange={createChangeHandler}
         />
 
@@ -145,6 +114,7 @@ function CreateEventScreen() {
           Category
         </label>
         <select
+        required
           className="create_event_select"
           name="category_id"
           id="category_id"
@@ -161,10 +131,11 @@ function CreateEventScreen() {
           <option value="8">Hobbies</option>
         </select>
 
-        <label htmlFor="description" className="textlabel">
+        <label htmlFor="description" className="textlabel textarea">
           Description
         </label>
-        <input
+        <textarea
+        required
           type="textarea"
           placeholder="Description"
           name="description"
@@ -177,6 +148,7 @@ function CreateEventScreen() {
           Upload Image
         </label>
         <input
+        required
           type="file"
           placeholder="Upload Image"
           name="upload"
@@ -184,14 +156,12 @@ function CreateEventScreen() {
           className="textinput"
           onChange={imageHandler}
         />
-        {/* <button className="btn" onClick={uploadHandler}>
-          Upload Image
-        </button> */}
 
         <label htmlFor="event_type" className="textlabel">
           Online or Offline
         </label>
         <select
+        required
           className="create_event_select"
           name="event_type"
           id="event_type"
@@ -206,6 +176,7 @@ function CreateEventScreen() {
           Event Location
         </label>
         <input
+        required
           type="text"
           placeholder="Event Location"
           name="location"
@@ -215,7 +186,9 @@ function CreateEventScreen() {
         />
 
         <br />
+        <p>Please select the starting and closing dates:</p>
         <SelectDateFromTo
+        required
           startDate={startDate}
           setStartDate={setStartDate}
           endDate={endDate}
@@ -226,6 +199,7 @@ function CreateEventScreen() {
           Maximum Number of Participants
         </label>
         <input
+        required
           type="number"
           placeholder="Maximum Number of Participants"
           name="user_limit"
@@ -238,12 +212,13 @@ function CreateEventScreen() {
           Free or Paying
         </label>
         <select
+        required
           className="create_event_select"
           name="free"
           id="free"
           onChange={createChangeHandler}
         >
-          <option value="">Please Select one</option>
+          <option value="null">Please Select one</option>
           <option value="true">Free</option>
           <option value="false">Paying</option>
         </select>
@@ -274,7 +249,7 @@ function CreateEventScreen() {
           <option value="EUR">EUR</option>
         </select>
 
-        <button type="submit" className="btn">
+        <button type="submit" className="btn createeventBtn">
           Create Event!
         </button>
       </form>

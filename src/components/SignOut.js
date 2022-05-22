@@ -1,16 +1,20 @@
 import { NavLink } from 'react-router-dom';
 import { auth } from '../config/firebase';
 import { signOut } from 'firebase/auth';
+import { AuthContext } from './Context/AuthContext';
+import { useContext } from 'react';
 
 function SignOut() {
+  const authContext = useContext(AuthContext);
+
+  const signOutHandler = () => {
+    signOut(auth);
+    authContext.setLoggedUserID(null);
+  };
+
   return (
-    <NavLink
-      to="/main"
-      onClick={() => {
-        signOut(auth);
-      }}
-    >
-      Sign Out
+    <NavLink to="/main" onClick={signOutHandler} className="link">
+      SIGN OUT
     </NavLink>
   );
 }
