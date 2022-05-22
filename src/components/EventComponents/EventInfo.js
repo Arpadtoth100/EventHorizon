@@ -19,11 +19,11 @@ export default function EventInfo({ eventData, eventId }) {
     if (auth.currentUser?.uid === eventData?.uid) {
       setCorrectUser(true);
     }
-  }, [eventData?.uid]);
+  }, []);
 
   useEffect(() => {
     userCheck();
-  }, [userCheck]);
+  }, []);
 
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {

@@ -10,7 +10,7 @@ function EventPage() {
 
   useEffect(() => {
     readEvent(params.id).then((snapshot) => setEvent(snapshot.val()));
-  }, [params.id]);
+  }, []);
 
   return (
     <div className="outlet_main">
