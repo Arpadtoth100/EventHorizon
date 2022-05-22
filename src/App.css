@@ -363,6 +363,7 @@ form h3 {
   list-style: none;
   display: flex;
   justify-content: center;
+  margin-bottom: 1rem;
 }
 
 .paginationBtns a {
@@ -386,6 +387,11 @@ form h3 {
 .paginationDisabled a{
   color: #aeecef;
   background-color: #aeecef;
+}
+
+.main h1{
+  color: #006d77;
+  font-size: 2rem;
 }
 
 .map_text {
@@ -653,8 +659,8 @@ form h3 {
 }
 
 .useravatar {
-  width: 10rem;
-  height: 10rem;
+  width: 5rem;
+  height: 5rem;
   border-radius: 50%;
 }
 
@@ -678,21 +684,28 @@ form h3 {
 }
 
 .userprofile_container div {
-  /* flex: 1; */
-  display: block;
-  margin-left: 10rem;
-  margin-right: 10rem;
+  display: inline-block;
   justify-content: center;
   align-items: center;
   text-align: center;
 }
 .userNavmenu {
   list-style: none;
-  font-size: 1.5rem;
+  font-size: 1.1rem;
+  width: 100%;
+}
+.userNavmenu li{
+  display:inline-block;
+  padding: 1rem;
+}
+
+.userNavMenu_container{
+  margin: 0;
+  width: 700px;
 }
 
 .userprofile_container p {
-  font-size: 1.5rem;
+  font-size: 1rem;
   font-weight: bold;
 }
 
