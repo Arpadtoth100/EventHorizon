@@ -1,4 +1,4 @@
-import { filterFreeEvent, filterPaidEvent } from '../services/crud';
+import { filterEvent } from '../services/crud';
 import { useState, useEffect } from 'react';
 import Pagination from '../services/Pagination';
 
@@ -7,13 +7,13 @@ const ProfileScreen = () => {
   const [paidEventList, setPaidEventList] = useState([]);
 
   useEffect(() => {
-    filterFreeEvent().then((snapshot) => {
+    filterEvent('true').then((snapshot) => {
       setFreeEventList(Object.entries(snapshot.val()));
     });
   }, []);
 
   useEffect(() => {
-    filterPaidEvent().then((snapshot) => {
+    filterEvent('false').then((snapshot) => {
       setPaidEventList(Object.entries(snapshot.val()));
     });
   }, []);
