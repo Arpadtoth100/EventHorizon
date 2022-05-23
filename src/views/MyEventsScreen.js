@@ -1,21 +1,28 @@
-import { readEvent } from '../services/crud';
-import { useState, useEffect } from 'react';
-// import Pagination from '../services/Pagination';
-import CardContainerMyCreated from '../components/utilities/CardContainerMyCreated';
+import { useState, useEffect, useContext } from 'react';
+import { filterMyCreatedEvent } from '../services/crud';
+import Pagination from '../services/Pagination';
+import { AuthContext } from '../components/Context/AuthContext';
+
+
 
 export default function MyEventsScreen(props) {
-  const [eventList, setEventList] = useState([]);
+  const authContext = useContext(AuthContext);
+  const [myCreatedEventList, setMyCreatedEventList] = useState([]);
 
   useEffect(() => {
-    readEvent().then((snapshot) =>
-      setEventList(Object.entries(snapshot.val()))
+
+    authContext.loggedUserID && filterMyCreatedEvent(authContext.loggedUserID).then((snapshot) =>
+      setMyCreatedEventList(Object.entries(snapshot.val()))
     );
   }, []);
 
   return (
     <div className="outlet_main">
-      <CardContainerMyCreated title={'Events Created By Me'} data={eventList} />
-      {/* <Pagination /> */}
+
+      <Pagination
+        title={'My Created Events'}
+        data={myCreatedEventList}
+      />
     </div>
   );
 }
