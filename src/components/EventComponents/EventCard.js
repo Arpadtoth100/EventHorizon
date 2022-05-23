@@ -1,3 +1,5 @@
+import format from "date-fns/format";
+
 export default function EventCard(props) {
   return (
     <div className="event-card">
@@ -12,7 +14,7 @@ export default function EventCard(props) {
       <h3 className="event-title">
         <p className="event-title">{props.title}</p>
       </h3>
-      <div className="event-date">{props.date_from}</div>
+      <div className="event-date">{format(new Date(props.date_from), "cccc yyyy/MM/dd h:mm aa")}</div>
       <div className="event-venue">{props.location}</div>
       <div className="event-organizer">{props.organizer}</div>
     </div>
