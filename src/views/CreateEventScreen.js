@@ -4,7 +4,6 @@ import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 import { createEvent } from '../services/crud';
 import { auth } from '../config/firebase';
 import { useNavigate } from 'react-router-dom';
-import moment from 'moment';
 
 import SelectDateFromTo from '../components/utilities/SelectDateFromTo';
 import MapCreate from '../components/GoogleMap/MapCreate';
@@ -202,9 +201,9 @@ function CreateEventScreen() {
         <p>Please select the starting and closing dates:</p>
         <SelectDateFromTo
           required
-          startDate={moment(startDate).format("dddd MMMM Do, yyyy h:mm a")}
+          startDate={startDate}
           setStartDate={setStartDate}
-          endDate={moment(endDate).format("dddd MMMM Do, yyyy h:mm a")}
+          endDate={endDate}
           setEndDate={setEndDate}
         />
 

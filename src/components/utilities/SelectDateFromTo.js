@@ -1,27 +1,27 @@
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
-import moment from "moment";
+import moment from 'moment';
 
 function SelectDateFromTo(props) {
   return (
     <>
       <DatePicker
-        selected={moment(props.startDate).format("dddd MMMM Do, yyyy h:mm a")}
+        selected={props.startDate}
         onChange={(date) => props.setStartDate(date)}
         selectsStart
         startDate={props.startDate}
         endDate={props.endDate}
-        // showTimeSelect
+        showTimeSelect
         dateFormat="Pp"
       />
       <DatePicker
-        selected={moment(props.endDate).format("dddd MMMM Do, yyyy h:mm a")}
+        selected={props.endDate}
         onChange={(date) => props.setEndDate(date)}
         selectsEnd
         startDate={props.startDate}
         endDate={props.endDate}
         minDate={props.startDate}
-        // showTimeSelect
+        showTimeSelect
         dateFormat="Pp"
       />
     </>
