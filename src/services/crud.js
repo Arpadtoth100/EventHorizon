@@ -1,4 +1,5 @@
 import { database } from '../config/firebase';
+import { auth } from '../config/firebase';
 import {
   ref,
   set,
@@ -15,6 +16,7 @@ import {
 //   onChildChanged,
 //   onChildRemoved,
 // } from 'firebase/database';
+
 
 const userEndpoint = 'userDetails/';
 const eventEndpoint = 'events';
@@ -91,6 +93,17 @@ export function filterPaidEvent() {
     ref(database, eventEndpoint),
     orderByChild('free'),
     equalTo('false')
+  );
+  return get(dbref);
+}
+
+export function filterMyCreatedEvent(currentUserId) {
+
+ 
+  const dbref = query(
+    ref(database, eventEndpoint),
+    orderByChild('uid'),
+    equalTo(currentUserId)
   );
   return get(dbref);
 }
