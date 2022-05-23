@@ -4,7 +4,6 @@ import { auth } from '../../config/firebase';
 import { useNavigate } from 'react-router-dom';
 import { deleteEvent } from '../../services/crud';
 import { onAuthStateChanged } from 'firebase/auth';
-import moment from 'moment';
 
 export default function EventInfo({ eventData, eventId }) {
   const [showJoinModal, setShowJoinModal] = useState(false);
@@ -37,7 +36,11 @@ export default function EventInfo({ eventData, eventId }) {
   return (
     <div className="event-info">
       <h1 className="eventinfo-name">{eventData.title}</h1>
-      <img className='eventpage_img' src={eventData.image_url} alt="the event" />
+      <img
+        className="eventpage_img"
+        src={eventData.image_url}
+        alt="the event"
+      />
       <div className="eventinfo-description">{eventData.description}</div>
       {eventData.price && (
         <div className="eventinfo-venue">
@@ -45,8 +48,8 @@ export default function EventInfo({ eventData, eventId }) {
           {eventData.price} {eventData.currency}
         </div>
       )}
-      <div className="eventinfo-date">Starting date: {moment(eventData.date_from).format("dddd MMMM Do, yyyy h:mm a")}</div>
-      <div className="eventinfo-date">Closing date: {moment(eventData.date_to).format("dddd MMMM Do, yyyy h:mm a")}</div>
+      <div className="eventinfo-date">Starting date: {eventData.date_from}</div>
+      <div className="eventinfo-date">Closing date: {eventData.date_to}</div>
       <div className="eventinfo-venue">
         Event Location: {eventData.location}
       </div>
