@@ -121,7 +121,11 @@ function UpdateUser() {
   return (
     <div id="updateuser_main">
       <form className="updateuserform" onSubmit={submitHandler}>
-        {success && <h2>Your information has been updated!</h2>}
+        {success && <h4>Your information has been updated!</h4>}
+        {error && (
+          <p className='updateform_p'>Invalid email and/or passwords do not match, please try again!</p>
+        )}
+        <br></br>
         <label htmlFor="su_username" className="su_username">
           Username
         </label>
@@ -196,26 +200,16 @@ function UpdateUser() {
           className="textinput"
           onChange={imageHandler}
         />
-
+        <input
+          type="checkbox"
+          name="organization"
+          id="su_organization"
+          onChange={collectUserData}
+          checked={userData.organization}
+        />
         <label htmlFor="su_organization" id="checkbox_label">
           Organization
-          </label>
-          <input
-            type="checkbox"
-            name="organization"
-            id="su_organization"
-            onChange={collectUserData}
-            checked={userData.organization}
-          />
-      
-
-        {error && (
-          <div>
-            <p>Updating profile failed due to the following: </p>
-            {error}
-            <p> Please try again</p>
-          </div>
-        )}
+        </label>
 
         <button className="update_btn">Update</button>
       </form>
