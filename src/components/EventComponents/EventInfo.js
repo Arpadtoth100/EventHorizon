@@ -35,28 +35,35 @@ export default function EventInfo({ eventData, eventId }) {
 
   return (
     <div className="event-info">
-      <h1 className="eventinfo-name">{eventData.title}</h1>
+      <div className='eventimage_container' style={{ backgroundImage: `url(${eventData.image_url})` }}>
+      </div>
       <img
-        className="eventpage_img"
-        src={eventData.image_url}
-        alt="the event"
-      />
+          className="eventpage_img"
+          src={eventData.image_url}
+          alt="the event"
+        />
+      <h1 className="eventinfo-name">{eventData.title}</h1>
+      <br></br>
       <div className="eventinfo-description">{eventData.description}</div>
+      <br></br>
       {eventData.price && (
-        <div className="eventinfo-venue">
+        <div className="eventinfo-fee">
           Admission fee:
-          {eventData.price} {eventData.currency}
+          {' ' + eventData.price} {eventData.currency}
         </div>
       )}
+      <br></br>
       <div className="eventinfo-date">Starting date: {eventData.date_from}</div>
       <div className="eventinfo-date">Closing date: {eventData.date_to}</div>
-      <div className="eventinfo-venue">
+      <br></br>
+      <div className="eventinfo-location">
         Event Location: {eventData.location}
       </div>
-      <div className="eventinfo-venue">
+      <br></br>
+      <div className="eventinfo-participants">
         Maximum number of participants: {eventData.user_limit}
       </div>
-
+      <br></br>
       <div className="eventinfo-button">
         {correctUser && (
           <button
