@@ -199,6 +199,7 @@ function UpdateUser() {
 
         <label htmlFor="su_organization" id="checkbox_label">
           Organization
+          </label>
           <input
             type="checkbox"
             name="organization"
@@ -206,7 +207,7 @@ function UpdateUser() {
             onChange={collectUserData}
             checked={userData.organization}
           />
-        </label>
+      
 
         {error && (
           <div>
