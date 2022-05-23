@@ -22,6 +22,7 @@ export default function JoinModal({
 
   const toSignIn = useNavigate();
 
+
   const CloseModalButton = MdClose;
 
   const clickJoinHandler = (event) => {
