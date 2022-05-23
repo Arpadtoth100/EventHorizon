@@ -356,18 +356,30 @@ form h2 {
 }
 .eventinfo-description {
   color: #05ada8;
-  font-size: 22px;
+  font-size: 24px;
+}
+.eventimage_container {
+  /* width: 100%; */
+  position: relative;
+  height: 30vh;
+  width: 50vw;
+  margin-left: 19vw;
+  filter: blur(50px) brightness(0.9);
 }
 .eventpage_img {
+  position: relative;
   max-height: 350px;
-  margin: 5px;
+  margin-top: -350px;
 }
 .eventinfo-name {
-  color: #05ada8;
+  color: #028090;
+  margin-top: 20px;
 }
-
-.eventwarningh3 {
-  color: #05ada8;
+.eventinfo-fee,
+.eventinfo-location,
+.eventinfo-participants {
+  font-size: 20px;
+  color:rgba(3, 3, 9, 0.6)
 }
 
 /* UpdateUser Page*/
