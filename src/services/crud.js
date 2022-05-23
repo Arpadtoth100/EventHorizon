@@ -77,20 +77,11 @@ export function deleteEvent(key) {
   return remove(refEvent);
 }
 
-export function filterFreeEvent() {
+export function filterEvent(searcParam) {
   const dbref = query(
     ref(database, eventEndpoint),
     orderByChild('free'),
-    equalTo('true')
-  );
-  return get(dbref);
-}
-
-export function filterPaidEvent() {
-  const dbref = query(
-    ref(database, eventEndpoint),
-    orderByChild('free'),
-    equalTo('false')
+    equalTo(searcParam)
   );
   return get(dbref);
 }
