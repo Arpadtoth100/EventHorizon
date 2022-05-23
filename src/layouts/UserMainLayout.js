@@ -32,7 +32,7 @@ function UserMainLayout(props) {
               alt="useravatar"
             />
             <p className="welcomeUser">
-              Welcome {user?.username }!
+              Hi {user?.username }!
             </p>
           </span>
           <div className="userNavMenu_container">

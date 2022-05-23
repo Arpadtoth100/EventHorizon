@@ -519,7 +519,6 @@ form h2 {
 
 .active {
   background-color: #9ceaef;
-  /* transition: background-color 0.3s ease-in-out; */
 }
 .sliderImg {
   width: 100%;
@@ -664,14 +663,17 @@ form h2 {
   top: -4rem;
 }
 .blabla {
-  padding: 100px;
+  padding: 20px;
   background: #2ec4b6;
   color: white;
   font-size: 24px;
   font-weight: bold;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
+  text-align: start;
+}
+.blabla h2 {
+  text-align: center;
 }
 
 .map_container {
@@ -771,9 +773,10 @@ form h2 {
 
   .menu.active {
     top: 0px;
-    background-color: #006d77;
+    /* background-color: #006d77; */
     transition: all 0.5s ease-in-out;
     height: 28vh;
+    text-decoration: underline;
   }
 
   .item:nth-child(1) {
