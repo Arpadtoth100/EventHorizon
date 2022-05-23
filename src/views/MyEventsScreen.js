@@ -8,7 +8,7 @@ import { AuthContext } from '../components/Context/AuthContext';
 export default function MyEventsScreen(props) {
   const authContext = useContext(AuthContext);
   const [myCreatedEventList, setMyCreatedEventList] = useState([]);
-
+  console.log(myCreatedEventList)
   useEffect(() => {
 
     authContext.loggedUserID && filterMyCreatedEvent(authContext.loggedUserID).then((snapshot) =>
