@@ -538,6 +538,7 @@ form h2 {
   align-items: center;
   z-index: 15;
   top: 0;
+  left: 0;
 }
 .ModalWrapper {
   width: 50rem;
