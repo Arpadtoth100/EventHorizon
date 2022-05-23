@@ -7,7 +7,18 @@ import { useNavigate } from 'react-router-dom';
 import moment from 'moment';
 
 import SelectDateFromTo from '../components/utilities/SelectDateFromTo';
-import Map from '../components/GoogleMap/Map';
+import MapCreate from '../components/GoogleMap/MapCreate';
+
+import usePlacesAutocomplete, {
+  getGeocode,
+  getLatLng,
+} from 'use-places-autocomplete';
+import {
+  GoogleMap,
+  useLoadScript,
+  Marker,
+  InfoWindow,
+} from '@react-google-maps/api';
 
 function CreateEventScreen() {
   const [imageToUpload, setImageToUpload] = useState(null);
@@ -28,12 +39,25 @@ function CreateEventScreen() {
     date_from: new Date(),
     date_to: new Date(),
     user_limit: null,
-    free: true,
+    free: 'true',
     price: null,
     currency: '',
+    coord: null,
   };
   const [eventData, setEventData] = useState(defaultEventData);
+  const [marker, setMarker] = useState();
 
+  const setCoords = () => {};
+
+  const onMapClick = useCallback((event) => {
+    setMarker({
+      coord: {
+        lat: event.latLng.lat(),
+        lng: event.latLng.lng(),
+      },
+      time: new Date(),
+    });
+  }, []);
   const createChangeHandler = useCallback((e) => {
     setEventData((p) => ({ ...p, [e.target.name]: e.target.value }));
   }, []);
@@ -48,6 +72,7 @@ function CreateEventScreen() {
         uid: auth?.currentUser.uid,
         date_from: startDate.toString(),
         date_to: endDate.toString(),
+        coord: marker.coord,
       }).then(() => {
         setEventData(defaultEventData);
         navTo('/event_created');
@@ -72,6 +97,7 @@ function CreateEventScreen() {
             date_from: startDate.toString(),
             date_to: endDate.toString(),
             image_url: url,
+            coord: marker.coord,
           }).then(() => {
             setEventData(defaultEventData);
             navTo('/event_created');
@@ -84,20 +110,6 @@ function CreateEventScreen() {
   return (
     <div className="outlet_main create_event_main">
       <form className="create_event_form" onSubmit={createEventHandler}>
-        {/* <label htmlFor="status" className="textlabel">
-          Public or Draft
-        </label>
-        <select
-          className="create_event_select"
-          name="status"
-          id="status"
-          onChange={createChangeHandler}
-        >
-          <option value="">Please Select one</option>
-          <option value="public">Public</option>
-          <option value="draft">Draft</option>
-        </select> */}
-
         <label htmlFor="title" className="textlabel">
           Event Title
         </label>
@@ -223,39 +235,49 @@ function CreateEventScreen() {
           <option value="true">Free</option>
           <option value="false">Paying</option>
         </select>
-
-        <label htmlFor="price" className="textlabel">
-          Price
-        </label>
-        <input
-          type="number"
-          placeholder="Price"
-          name="price"
-          id="price"
-          className="textinput"
-          onChange={createChangeHandler}
-        />
-        <label htmlFor="currency" className="textlabel">
-          Currency
-        </label>
-        <select
-          className="create_event_select"
-          name="currency"
-          id="currency"
-          onChange={createChangeHandler}
-        >
-          <option value="">Please Select one</option>
-          <option value="HUF">HUF</option>
-          <option value="USD">USD</option>
-          <option value="EUR">EUR</option>
-        </select>
+        {eventData.free === 'true' ? (
+          <></>
+        ) : (
+          <>
+            <label htmlFor="price" className="textlabel">
+              Price
+            </label>
+            <input
+              type="number"
+              placeholder="Price"
+              name="price"
+              id="price"
+              className="textinput"
+              onChange={createChangeHandler}
+            />
+            <label htmlFor="currency" className="textlabel">
+              Currency
+            </label>
+            <select
+              className="create_event_select"
+              name="currency"
+              id="currency"
+              onChange={createChangeHandler}
+            >
+              <option value="">Please Select one</option>
+              <option value="HUF">HUF</option>
+              <option value="USD">USD</option>
+              <option value="EUR">EUR</option>
+            </select>
+          </>
+        )}
 
         <button type="submit" className="btn createeventBtn">
           Create Event!
         </button>
       </form>
+      <h1>Please don't forget to click the map coordinates!</h1>
       <div className="map_container">
-        <Map />
+        <MapCreate
+          marker={marker}
+          eventData={eventData}
+          onMapClick={onMapClick}
+        />
       </div>
     </div>
   );

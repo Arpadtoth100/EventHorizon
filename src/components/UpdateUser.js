@@ -18,6 +18,7 @@ function UpdateUser() {
 
   const [imageToUpload, setImageToUpload] = useState(null);
   const [userData, setUserData] = useState(defValue);
+  const [success, setSucces] = useState(false);
   const user = auth.currentUser;
 
   const navTo = useNavigate();
@@ -55,7 +56,7 @@ function UpdateUser() {
         });
       })
       .then(() => {
-        navTo('/profile');
+        setSucces(true);
       })
       .catch((e) => {
         console.log('error', e);
@@ -120,6 +121,7 @@ function UpdateUser() {
   return (
     <div id="updateuser_main">
       <form className="updateuserform" onSubmit={submitHandler}>
+        {success && <h2>Your information has been updated!</h2>}
         <label htmlFor="su_username" className="su_username">
           Username
         </label>
