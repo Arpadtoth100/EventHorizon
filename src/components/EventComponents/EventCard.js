@@ -1,3 +1,5 @@
+import moment from "moment";
+
 export default function EventCard(props) {
 
   
@@ -8,7 +10,7 @@ export default function EventCard(props) {
       <h3 className="event-title">
         <p className="event-title">{props.title}</p>
       </h3>
-      <div className="event-date">{props.date_from}</div>
+      <div className="event-date">{moment(props.date_from).format("dddd MMMM Do, yyyy h:mm a")}</div>
       <div className="event-venue">{props.location}</div>
       <div className="event-organizer">{props.organizer}</div>
     </div>
