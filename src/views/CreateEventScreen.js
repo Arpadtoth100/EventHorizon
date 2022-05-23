@@ -270,7 +270,9 @@ function CreateEventScreen() {
           Create Event!
         </button>
       </form>
-      <h1>Please don't forget to click the map coordinates!</h1>
+      
+      <div>
+        <h3>Please don't forget to click the map coordinates!</h3>
       <div className="map_container">
         <MapCreate
           marker={marker}
@@ -278,6 +280,7 @@ function CreateEventScreen() {
           onMapClick={onMapClick}
         />
       </div>
+        </div>
     </div>
   );
 }

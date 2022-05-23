@@ -1,7 +1,7 @@
 function FilterBar() {
   return (
     <div>
-      <input type="text" placeholder="Filter Result" />
+      <input type="text" className="textinput" placeholder="Filter Result" />
     </div>
   );
 }
