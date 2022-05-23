@@ -302,11 +302,18 @@ form h2 {
   flex-wrap: nowrap;
   gap: 20px;
 }
-
-.event-card-image {
+.event-cardFix {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 200px;
   height: 200px;
+}
+.event-card-image {
   border-radius: 9px;
+  object-fit: cover;
+  width: 200px;
+  height: 200px;
 }
 
 .event-card {
@@ -384,7 +391,7 @@ form h2 {
 .eventinfo-location,
 .eventinfo-participants {
   font-size: 20px;
-  color:rgba(3, 3, 9, 0.6)
+  color: rgba(3, 3, 9, 0.6);
 }
 
 /* UpdateUser Page*/
@@ -406,11 +413,11 @@ form h2 {
   background-size: cover;
 }
 
-#updateuser_main{
+#updateuser_main {
   margin: 0;
 }
 
-.updateform_p{
+.updateform_p {
   margin-top: -20px;
 }
 
