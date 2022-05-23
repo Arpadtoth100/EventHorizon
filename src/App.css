@@ -366,6 +366,10 @@ form h2 {
   color: #05ada8;
 }
 
+.eventwarningh3 {
+  color: #05ada8;
+}
+
 /* UpdateUser Page*/
 
 .updateuserform {
@@ -506,7 +510,7 @@ form h2 {
 
 .active {
   background-color: #9ceaef;
-  transition: background-color 0.3s ease-in-out;
+  /* transition: background-color 0.3s ease-in-out; */
 }
 .sliderImg {
   width: 100%;
@@ -534,6 +538,7 @@ form h2 {
   align-items: center;
   z-index: 15;
   top: 0;
+  left: 0;
 }
 .ModalWrapper {
   width: 50rem;
@@ -575,6 +580,7 @@ form h2 {
 .ModalDiscardButton,
 .joinEventBtn {
   padding: 10px 24px;
+  margin: 10px;
   background: #006d77;
   color: #fff;
   border: none;

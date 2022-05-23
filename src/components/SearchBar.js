@@ -9,7 +9,7 @@ function SearchBar({ eventList, setFilteredList }) {
         <label htmlFor="city" className="textlabel">
           City
         </label>
-        <input type="text" placeholder="City" />
+        <input className="textinput" type="text" placeholder="City" />
         <p>Pick the date:</p>
         <DatePicker />
         <label htmlFor="se_price" className="textlabel">
@@ -30,7 +30,7 @@ function SearchBar({ eventList, setFilteredList }) {
           Category
         </label>
         <select className="se_select" name="se_category" id="se_category">
-          <option value="0">Please Select an option</option>
+          <option value="0">Please Select a Category</option>
           <option value="1">Music</option>
           <option value="2">Theatre</option>
           <option value="3">Travel</option>

@@ -1,6 +1,6 @@
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
-import moment from 'moment';
+
 
 function SelectDateFromTo(props) {
   return (
@@ -12,7 +12,7 @@ function SelectDateFromTo(props) {
         startDate={props.startDate}
         endDate={props.endDate}
         showTimeSelect
-        dateFormat="Pp"
+        dateFormat="MM/dd/yyyy h:mm aa"
       />
       <DatePicker
         selected={props.endDate}
@@ -22,7 +22,7 @@ function SelectDateFromTo(props) {
         endDate={props.endDate}
         minDate={props.startDate}
         showTimeSelect
-        dateFormat="Pp"
+        dateFormat="MM/dd/yyyy h:mm aa"
       />
     </>
   );

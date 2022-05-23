@@ -15,7 +15,7 @@ function UserMainLayout(props) {
         setUser(snapshot.val());
       })
       .catch((e) => console.log(e));
-  }, []);
+  }, [auth.currentUser]);
   return (
     <div className="themain">
       <Navbar />
@@ -32,7 +32,7 @@ function UserMainLayout(props) {
               alt="useravatar"
             />
             <p className="welcomeUser">
-              Welcome {user?.username && user?.username}!
+              Welcome {user?.username }!
             </p>
           </span>
           <div className="userNavMenu_container">
