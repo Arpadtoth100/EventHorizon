@@ -121,8 +121,8 @@ function UpdateUser() {
   return (
     <div id="updateuser_main">
       <form className="updateuserform" onSubmit={submitHandler}>
-        {success && <h4>Your information has been updated!</h4>}
-        {error && (
+        {success && <h4>Your information has been updated!</h4> ||
+        error && (
           <p className='updateform_p'>Invalid email and/or passwords do not match, please try again!</p>
         )}
         <br></br>

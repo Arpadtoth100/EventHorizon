@@ -373,7 +373,7 @@ form h2 {
 }
 .eventpage_img {
   position: relative;
-  max-height: 350px;
+  height: 350px;
   margin-top: -350px;
 }
 .eventinfo-name {
