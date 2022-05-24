@@ -4,6 +4,7 @@ import { AuthContext } from '../Context/AuthContext';
 import SignOut from '../SignOut';
 import SunRiseIcon from './SunRiseIcon';
 
+
 function Navbar(props) {
   const [menuActive, setMenuActive] = useState('');
   const [mobileMenuActive, setMobileMenuActive] = useState('');
@@ -50,11 +51,8 @@ function Navbar(props) {
               </NavLink>
             </li>
           ) : (
-            <li className="item">
-              <NavLink to="/signin" id="nav-profile" className="link">
-                PROFILE
-              </NavLink>
-            </li>
+            <>
+            </>
           )}
           {authContext.loggedUserID ? (
             <li className="item">

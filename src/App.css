@@ -40,13 +40,20 @@ html {
   margin-left: 20px;
   margin-right: 20px;
   font-size: 1.5rem;
-  background-color: white;
+  color: white;
+  /*background-color: white; */
   background-size: 100%;
   background-clip: text;
   -webkit-background-clip: text;
   -moz-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  /* -webkit-text-fill-color: transparent; */
   -moz-text-fill-color: transparent;
+}
+.active {
+  /* background-color: #9ceaef; */
+  text-decoration:dotted;
+  color: #e29578;
+  font-weight: bold;
 }
 
 #introduction_s {
@@ -341,6 +348,27 @@ form h2 {
   animation: flip 4s infinite;
   animation-delay: calc(0.2s * var(--i));
 }
+
+.like_container{
+  background-color: #edf6f9;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  bottom: -4px;
+  right: -4px;
+}
+
+.hearticon{
+  display:flex;
+  width: 20px;
+  height: 20px;
+}
+
+
 @keyframes flip {
   0%,
   80% {
@@ -543,9 +571,7 @@ form h2 {
   opacity: 0.8;
 }
 
-.active {
-  background-color: #9ceaef;
-}
+
 .sliderImg {
   width: 100%;
   max-height: 350px;
@@ -836,9 +862,9 @@ form h2 {
     height: 60px;
   }
 
-  .link {
+ /*  .link {
     font-size: 1.7rem;
-  }
+  } */
 
   #mobile-menu.act .bar:nth-child(2) {
     opacity: 0;
