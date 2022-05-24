@@ -3,26 +3,20 @@ import { filterMyCreatedEvent } from '../services/crud';
 import Pagination from '../services/Pagination';
 import { AuthContext } from '../components/Context/AuthContext';
 
-
-
 export default function MyEventsScreen(props) {
   const authContext = useContext(AuthContext);
   const [myCreatedEventList, setMyCreatedEventList] = useState([]);
-  console.log(myCreatedEventList)
+  console.log(myCreatedEventList);
   useEffect(() => {
-
-    authContext.loggedUserID && filterMyCreatedEvent(authContext.loggedUserID).then((snapshot) =>
-      setMyCreatedEventList(Object.entries(snapshot.val()))
-    );
-  }, []);
+    authContext?.loggedUserID &&
+      filterMyCreatedEvent(authContext.loggedUserID).then((snapshot) =>
+        setMyCreatedEventList(Object.entries(snapshot.val()))
+      );
+  }, [authContext.loggedUserID]);
 
   return (
     <div className="outlet_main">
-
-      <Pagination
-        title={'My Created Events'}
-        data={myCreatedEventList}
-      />
+      <Pagination title={'My Created Events'} data={myCreatedEventList} />
     </div>
   );
 }

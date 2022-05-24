@@ -1,14 +1,16 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useContext } from 'react';
 import JoinModal from './JoinModal';
 import { auth } from '../../config/firebase';
 import { useNavigate } from 'react-router-dom';
 import { deleteEvent } from '../../services/crud';
 import { onAuthStateChanged } from 'firebase/auth';
+import Map from '../GoogleMap/Map';
+import { AuthContext } from '../Context/AuthContext';
 
 export default function EventInfo({ eventData, eventId }) {
   const [showJoinModal, setShowJoinModal] = useState(false);
   const [correctUser, setCorrectUser] = useState(false);
-
+  const authContext = useContext(AuthContext);
   const navTo = useNavigate();
 
   const openJoinModal = () => {
@@ -16,14 +18,14 @@ export default function EventInfo({ eventData, eventId }) {
   };
 
   const userCheck = useCallback(() => {
-    if (auth.currentUser?.uid === eventData?.uid) {
+    if (authContext?.uid === eventData?.uid) {
       setCorrectUser(true);
     }
-  }, []);
+  }, [authContext?.uid]);
 
   useEffect(() => {
     userCheck();
-  }, []);
+  }, [authContext?.uid]);
 
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
@@ -35,13 +37,15 @@ export default function EventInfo({ eventData, eventId }) {
 
   return (
     <div className="event-info">
-      <div className='eventimage_container' style={{ backgroundImage: `url(${eventData.image_url})` }}>
-      </div>
+      <div
+        className="eventimage_container"
+        style={{ backgroundImage: `url(${eventData.image_url})` }}
+      ></div>
       <img
-          className="eventpage_img"
-          src={eventData.image_url}
-          alt="the event"
-        />
+        className="eventpage_img"
+        src={eventData.image_url}
+        alt="the event"
+      />
       <h1 className="eventinfo-name">{eventData.title}</h1>
       <br></br>
       <div className="eventinfo-description">{eventData.description}</div>
@@ -65,6 +69,7 @@ export default function EventInfo({ eventData, eventId }) {
       </div>
       <br></br>
       <div className="eventinfo-button">
+        <Map title={'Event Location'} eventData={eventData} />
         {correctUser && (
           <button
             className="joinEventBtn"
@@ -74,7 +79,8 @@ export default function EventInfo({ eventData, eventId }) {
             Delete Event
           </button>
         )}
-        {auth.currentUser ? (
+
+        {auth?.currentUser ? (
           <>
             <button className="joinEventBtn" onClick={openJoinModal}>
               Join Event
