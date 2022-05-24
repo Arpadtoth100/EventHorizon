@@ -13,7 +13,7 @@ function SignOut() {
   };
 
   return (
-    <NavLink to="/main" onClick={signOutHandler} className="link">
+    <NavLink to="/" onClick={signOutHandler} className="link">
       SIGN OUT
     </NavLink>
   );
