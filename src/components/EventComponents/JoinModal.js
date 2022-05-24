@@ -1,9 +1,9 @@
 import React, { useCallback } from 'react';
 import { MdClose } from 'react-icons/md';
 import { auth } from '../../config/firebase';
-import { readUser, createAttendee } from '../../services/crud';
+import { readUser, createAttendee, readAttendee, readEvent } from '../../services/crud';
 import { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import Payment from '../Paypal/Payment';
 
 import { usePayPalScriptReducer } from '@paypal/react-paypal-js';
@@ -17,8 +17,20 @@ export default function JoinModal({
   const [userName, setUserName] = useState('');
   const [success, setSuccess] = useState(false);
   const [paidFor, setPaidFor] = useState(false);
+  const [joinModalEvent, setJoinModalEvent] = useState([]);
+  const [attendee, setAttendee] = useState([]);
 
   const [{ options }, dispatch] = usePayPalScriptReducer();
+
+  let { id } = useParams()
+
+  useEffect(() => {
+    readEvent(id).then((snapshot) => setJoinModalEvent(snapshot.val() || {}));
+  }, []);
+
+  useEffect(() => {
+    readAttendee(id).then((snapshot) => setAttendee(Object.entries(snapshot.val() || {})));
+  }, []);
 
   const toSignIn = useNavigate();
 
@@ -95,6 +107,8 @@ export default function JoinModal({
                 ></input>
                 <button className="ModalSendButton">Send Event</button>
               </div>
+              {Number(joinModalEvent.user_limit) === attendee.length ? 
+              <h3>Event is full</h3> : 
               <div>
                 <br />
                 {paidFor ? (
@@ -116,7 +130,7 @@ export default function JoinModal({
                     />
                   </>
                 )}
-              </div>
+              </div>}
               {success && (
                 <p className="success">
                   Thank you, you successfully joined the event!
