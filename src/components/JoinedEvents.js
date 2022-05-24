@@ -7,7 +7,7 @@ function JoinedEvents() {
   const [attendee, setAttendee] = useState([]);
   const [events, setEvents] = useState([]);
   const authContext = useContext(AuthContext);
-  
+
 
   useEffect(() => {
     authContext.loggedUserID && readAttendee().then((snapshot) =>
@@ -31,13 +31,16 @@ function JoinedEvents() {
     }
   });
   const finalEvents = eventsIHaveJoined.filter(Boolean)
+
   return (
     <>
       <div>
-        <Pagination
-          title={'Events I have joined'}
-          data={finalEvents}
-        />
+        {finalEvents.length != 0 ?
+          <Pagination
+            title={'Events I have joined'}
+            data={finalEvents}
+          /> :
+          <h3>You have not joined any events yet!</h3>}
       </div>
     </>
   );
