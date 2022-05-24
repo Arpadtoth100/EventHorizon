@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { auth } from '../config/firebase';
 import { updateEmail, updatePassword } from 'firebase/auth';
 import { updateUser, readUser } from '../services/crud';
@@ -21,7 +20,6 @@ function UpdateUser() {
   const [success, setSucces] = useState(false);
   const user = auth.currentUser;
 
-  const navTo = useNavigate();
   const [error, setError] = useState('');
 
   useEffect(() => {
@@ -87,7 +85,6 @@ function UpdateUser() {
         organization: event.target.checked,
       }));
     }
-    console.log('user', userData);
   };
 
   const imageHandler = (event) => {
@@ -121,10 +118,12 @@ function UpdateUser() {
   return (
     <div id="updateuser_main">
       <form className="updateuserform" onSubmit={submitHandler}>
-        {success && <h4>Your information has been updated!</h4> ||
-        error && (
-          <p className='updateform_p'>Invalid email and/or passwords do not match, please try again!</p>
-        )}
+        {(success && <h4>Your information has been updated!</h4>) ||
+          (error && (
+            <p className="updateform_p">
+              Invalid email and/or passwords do not match, please try again!
+            </p>
+          ))}
         <br></br>
         <label htmlFor="su_username" className="su_username">
           Username

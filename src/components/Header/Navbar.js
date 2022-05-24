@@ -4,7 +4,6 @@ import { AuthContext } from '../Context/AuthContext';
 import SignOut from '../SignOut';
 import SunRiseIcon from './SunRiseIcon';
 
-
 function Navbar(props) {
   const [menuActive, setMenuActive] = useState('');
   const [mobileMenuActive, setMobileMenuActive] = useState('');
@@ -51,8 +50,7 @@ function Navbar(props) {
               </NavLink>
             </li>
           ) : (
-            <>
-            </>
+            <></>
           )}
           {authContext.loggedUserID ? (
             <li className="item">

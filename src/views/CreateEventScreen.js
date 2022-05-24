@@ -138,7 +138,7 @@ function CreateEventScreen() {
           <option value="3">Theatre</option>
           <option value="4">E-Sports</option>
           <option value="5">Outdoor activity</option>
-          <option value="6">Art & Culture</option>
+          <option value="6">{'Art & Culture'}</option>
           <option value="7">Games</option>
           <option value="8">Hobbies</option>
         </select>
@@ -270,17 +270,17 @@ function CreateEventScreen() {
           Create Event!
         </button>
       </form>
-      
+
       <div>
         <h3>Please don't forget to click the map coordinates!</h3>
-      <div className="map_container">
-        <MapCreate
-          marker={marker}
-          eventData={eventData}
-          onMapClick={onMapClick}
-        />
-      </div>
+        <div className="map_container">
+          <MapCreate
+            marker={marker}
+            eventData={eventData}
+            onMapClick={onMapClick}
+          />
         </div>
+      </div>
     </div>
   );
 }

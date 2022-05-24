@@ -2,7 +2,7 @@ import Pagination from '../services/Pagination';
 import { useState, useEffect } from 'react';
 import { filterEvent } from '../services/crud';
 
-const MainScreen = (props) => {
+const MainScreen = () => {
   const [freeEventList, setFreeEventList] = useState([]);
   const [paidEventList, setPaidEventList] = useState([]);
 
@@ -36,16 +36,23 @@ const MainScreen = (props) => {
           </div>
         </div>
         <div className="blabla">
-          <h2>Event Horizon is the best place for finding wonderful events you can join!</h2>
+          <h2>
+            Event Horizon is the best place for finding wonderful events you can
+            join!
+          </h2>
           <br></br>
           <p>
             EventHorizon is the best lorem ipsum dolor sit amet consectetur,
             adipisicing elit. Cumque ratione est ut nisi nihil repudiandae
             officia pariatur voluptatem! Culpa eligendi vitae magni amet fugit
             nihil officiis harum, aliquid voluptas laudantium?
-            <p>
-            At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum.
-            </p>
+          </p>
+          <p>
+            At vero eos et accusamus et iusto odio dignissimos ducimus qui
+            blanditiis praesentium voluptatum deleniti atque corrupti quos
+            dolores et quas molestias excepturi sint occaecati cupiditate non
+            provident, similique sunt in culpa qui officia deserunt mollitia
+            animi, id est laborum.
           </p>
         </div>
       </div>
