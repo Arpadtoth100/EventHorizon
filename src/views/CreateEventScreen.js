@@ -272,7 +272,8 @@ function CreateEventScreen() {
       </form>
 
       <div>
-        <h3>Please don't forget to click the map coordinates!</h3>
+        <h1 className="createevent_h1">You can create your events here</h1>
+        <h3>Fill in the form and please don't forget to click the map coordinates!</h3>
         <div className="map_container">
           <MapCreate
             marker={marker}

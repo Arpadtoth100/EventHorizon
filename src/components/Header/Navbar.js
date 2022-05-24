@@ -2,7 +2,7 @@ import { useState, useContext } from 'react';
 import { NavLink } from 'react-router-dom';
 import { AuthContext } from '../Context/AuthContext';
 import SignOut from '../SignOut';
-import SunRiseIcon from './SunRiseIcon';
+import SunRiseIcon from '../utilities/SunRiseIcon';
 
 function Navbar(props) {
   const [menuActive, setMenuActive] = useState('');

@@ -49,12 +49,6 @@ html {
   /* -webkit-text-fill-color: transparent; */
   -moz-text-fill-color: transparent;
 }
-.active {
-  /* background-color: #9ceaef; */
-  text-decoration:dotted;
-  color: #e29578;
-  font-weight: bold;
-}
 
 #introduction_s {
   width: 900px;
@@ -481,7 +475,8 @@ form h2 {
   background-color: #aeecef;
 }
 
-.main h1 {
+.main h1,
+.createevent_h1 {
   color: #006d77;
   font-size: 2rem;
 }
@@ -645,6 +640,7 @@ form h2 {
   color: #fff;
   border: none;
   border-radius: 5px;
+  cursor: pointer;
 }
 .joinEventBtn {
   font-size: 1.5rem;
@@ -781,15 +777,53 @@ form h2 {
 
 .userNavmenu a {
   color: #006d77;
+  text-decoration: none;
 }
+
 .userNavMenu_container {
   margin: 0;
-  width: 700px;
+  width: 800px;
 }
 
 .userprofile_container p {
   font-size: 1rem;
   font-weight: bold;
+}
+
+
+.active {
+  color: #e29578 !important;
+  font-weight: bold;}
+
+/* confirmation box */
+
+.confirmation__box{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 800px;
+  height: 250px;
+  background-color: white;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.confirmationQ{
+  font-size: 2rem;
+  color: #006d77;
+  margin-bottom: 25px;
+}
+
+.confirmationbutton__box{
+  margin-top: 25px;
+  width: 550px;
+  display: flex;
+  justify-content: space-around;
+
 }
 
 @media only screen and (max-width: 600px) {

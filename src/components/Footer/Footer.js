@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
+import SunriseIcon from '../utilities/SunRiseIcon';
 
 function Footer() {
   const [menuActive, setMenuActive] = useState('');
@@ -13,6 +14,12 @@ function Footer() {
   return (
     <footer className="footer">
       <div className="footer_main">
+      <div>
+          <i style={{ color: '#9ceaef', marginRight: '0.5rem' }}>
+            <SunriseIcon width="36px" height="24px" />
+          </i>
+        </div>
+
         <ul className={`menu ${menuActive}`}>
           <li className="item">
             <NavLink to="/contact" id="nav-contact" className="link">
@@ -39,7 +46,7 @@ function Footer() {
           <div className="bar"></div>
           <div className="bar"></div>
         </div>
-      </div>
+        </div>
     </footer>
   );
 }
