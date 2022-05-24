@@ -640,6 +640,7 @@ form h2 {
   color: #fff;
   border: none;
   border-radius: 5px;
+  cursor: pointer;
 }
 .joinEventBtn {
   font-size: 1.5rem;
@@ -789,9 +790,40 @@ form h2 {
   font-weight: bold;
 }
 
+
 .active {
   color: #e29578 !important;
   font-weight: bold;
+
+/* confirmation box */
+
+.confirmation__box{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 800px;
+  height: 250px;
+  background-color: white;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.confirmationQ{
+  font-size: 2rem;
+  color: #006d77;
+  margin-bottom: 25px;
+}
+
+.confirmationbutton__box{
+  margin-top: 25px;
+  width: 550px;
+  display: flex;
+  justify-content: space-around;
+
 }
 
 @media only screen and (max-width: 600px) {
