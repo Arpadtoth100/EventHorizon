@@ -40,7 +40,7 @@ const options = {
   zoomControl: true,
 };
 
-function Map() {
+function Map({ eventData, title }) {
   const { isLoaded, loadError } = useLoadScript({
     googleMapsApiKey: 'AIzaSyCQdxI7flTlfWCB0l-vdZPjY3J0P5jwRQk',
     libraries: libs,
@@ -76,7 +76,7 @@ function Map() {
   return (
     <div>
       <h1 className="map_text">
-        Events nearby{' '}
+        {title}
         <span role="img" aria-label="party">
           🎉
         </span>
