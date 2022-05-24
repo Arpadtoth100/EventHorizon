@@ -16,7 +16,11 @@ export default function MyEventsScreen(props) {
 
   return (
     <div className="outlet_main">
-      <Pagination title={'My Created Events'} data={myCreatedEventList} />
+      {myCreatedEventList.length != 0 ? (
+        <Pagination title={'My Created Events'} data={myCreatedEventList} />
+      ) : (
+        <h3>You have not created any events yet!</h3>
+      )}
     </div>
   );
 }

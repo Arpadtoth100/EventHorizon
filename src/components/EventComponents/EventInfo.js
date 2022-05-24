@@ -1,8 +1,8 @@
 import { useState, useEffect, useCallback, useContext } from 'react';
 import JoinModal from './JoinModal';
+import ConfirmationPopUp from './ConfirmationPupUp';
 import { auth } from '../../config/firebase';
 import { useNavigate } from 'react-router-dom';
-import { deleteEvent } from '../../services/crud';
 import { onAuthStateChanged } from 'firebase/auth';
 import Map from '../GoogleMap/Map';
 import { AuthContext } from '../Context/AuthContext';
@@ -11,10 +11,16 @@ export default function EventInfo({ eventData, eventId }) {
   const [showJoinModal, setShowJoinModal] = useState(false);
   const [correctUser, setCorrectUser] = useState(false);
   const authContext = useContext(AuthContext);
+  const [showConfirmationPopUp, setShowConfirmationPopUp] = useState(false);
+
   const navTo = useNavigate();
 
   const openJoinModal = () => {
     setShowJoinModal((prev) => !prev);
+  };
+
+  const openConfirmationPopUp = () => {
+    setShowConfirmationPopUp((prev) => !prev);
   };
 
   const userCheck = useCallback(() => {
@@ -74,7 +80,8 @@ export default function EventInfo({ eventData, eventId }) {
           <button
             className="joinEventBtn"
             aria-label="Close modal"
-            onClick={() => deleteEvent(eventId)}
+            onClick={openConfirmationPopUp}
+            /* onClick={() => deleteEvent(eventId)} */
           >
             Delete Event
           </button>
@@ -102,6 +109,15 @@ export default function EventInfo({ eventData, eventId }) {
           >
             Sign in to Join
           </button>
+        )}
+        {showConfirmationPopUp && (
+          <ConfirmationPopUp
+            eventId={eventId}
+            setShowConfirmationPopUp={setShowConfirmationPopUp}
+            confirmationQuestion="Are you sure you want to delete this event?"
+            remove="Delete"
+            cancel="Cancel"
+          />
         )}
       </div>
     </div>
