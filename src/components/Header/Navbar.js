@@ -50,11 +50,7 @@ function Navbar(props) {
               </NavLink>
             </li>
           ) : (
-            <li className="item">
-              <NavLink to="/signin" id="nav-profile" className="link">
-                PROFILE
-              </NavLink>
-            </li>
+            <></>
           )}
           {authContext.loggedUserID ? (
             <li className="item">

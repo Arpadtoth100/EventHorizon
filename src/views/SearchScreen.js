@@ -18,7 +18,11 @@ function SearchScreen() {
   return (
     <>
       <div className="outlet_main search_container">
-        <SearchBar eventList={eventList} setFilteredList={setFilteredList} />
+        <SearchBar
+          eventList={eventList}
+          setFilteredList={setFilteredList}
+          filteredList={filteredList}
+        />
         <div className="mapcontainer_div">
           <Map />
         </div>
