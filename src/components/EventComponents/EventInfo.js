@@ -24,14 +24,16 @@ export default function EventInfo({ eventData, eventId }) {
   };
 
   const userCheck = useCallback(() => {
-    if (authContext?.uid === eventData?.uid) {
+    if (authContext.loggedUserID === eventData?.uid) {
       setCorrectUser(true);
+    } else {
+      setCorrectUser(false);
     }
-  }, [authContext?.uid]);
+  }, [eventData, authContext.loggedUserID]);
 
   useEffect(() => {
     userCheck();
-  }, [authContext?.uid]);
+  }, [eventData?.uid]);
 
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
@@ -83,7 +85,6 @@ export default function EventInfo({ eventData, eventId }) {
             className="joinEventBtn"
             aria-label="Close modal"
             onClick={openConfirmationPopUp}
-            /* onClick={() => deleteEvent(eventId)} */
           >
             Delete Event
           </button>

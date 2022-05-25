@@ -1,7 +1,12 @@
-import React, { useCallback } from 'react';
+import React from 'react';
 import { MdClose } from 'react-icons/md';
 import { auth } from '../../config/firebase';
-import { readUser, createAttendee, readAttendee, readEvent } from '../../services/crud';
+import {
+  readUser,
+  createAttendee,
+  readAttendee,
+  readEvent,
+} from '../../services/crud';
 import { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import Payment from '../Paypal/Payment';
@@ -19,21 +24,23 @@ export default function JoinModal({
   const [paidFor, setPaidFor] = useState(false);
   const [joinModalEvent, setJoinModalEvent] = useState([]);
   const [attendee, setAttendee] = useState([]);
+  const [didPay, setDidPay] = useState(false);
 
   const [{ options }, dispatch] = usePayPalScriptReducer();
 
-  let { id } = useParams()
+  let { id } = useParams();
 
   useEffect(() => {
     readEvent(id).then((snapshot) => setJoinModalEvent(snapshot.val() || {}));
   }, []);
 
   useEffect(() => {
-    readAttendee(id).then((snapshot) => setAttendee(Object.entries(snapshot.val() || {})));
+    readAttendee(id).then((snapshot) =>
+      setAttendee(Object.entries(snapshot.val() || {}))
+    );
   }, []);
 
   const toSignIn = useNavigate();
-
 
   const CloseModalButton = MdClose;
 
@@ -73,6 +80,13 @@ export default function JoinModal({
     priceCheck();
   }, [eventData.currency]);
 
+  useEffect(() => {
+    if (didPay) {
+      createAttendee(eventId, auth.currentUser.uid, userName);
+      setSuccess(true);
+    }
+  }, [didPay]);
+
   return (
     <>
       {showJoinModal ? (
@@ -107,30 +121,33 @@ export default function JoinModal({
                 ></input>
                 <button className="ModalSendButton">Send Event</button>
               </div>
-              {Number(joinModalEvent.user_limit) === attendee.length ? 
-              <h3>Event is full</h3> : 
-              <div>
-                <br />
-                {paidFor ? (
-                  <button
-                    className="ModalJoinButton"
-                    onClick={clickJoinHandler}
-                  >
-                    Join Event
-                  </button>
-                ) : (
-                  <>
-                    <div>
-                      Event fee: {eventData.price} {eventData.currency}
-                    </div>
-                    <Payment
-                      product={eventData}
-                      paidfor={paidFor}
-                      setPaidFor={setPaidFor}
-                    />
-                  </>
-                )}
-              </div>}
+              {Number(joinModalEvent.user_limit) === attendee.length ? (
+                <h3>Event is full</h3>
+              ) : (
+                <div>
+                  <br />
+                  {paidFor ? (
+                    <button
+                      className="ModalJoinButton"
+                      onClick={clickJoinHandler}
+                    >
+                      Join Event
+                    </button>
+                  ) : (
+                    <>
+                      <div>
+                        Event fee: {eventData.price} {eventData.currency}
+                      </div>
+                      <Payment
+                        product={eventData}
+                        paidfor={paidFor}
+                        setPaidFor={setPaidFor}
+                        setDidPay={setDidPay}
+                      />
+                    </>
+                  )}
+                </div>
+              )}
               {success && (
                 <p className="success">
                   Thank you, you successfully joined the event!

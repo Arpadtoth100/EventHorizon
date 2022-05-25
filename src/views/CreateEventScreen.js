@@ -35,8 +35,6 @@ function CreateEventScreen() {
   const [eventData, setEventData] = useState(defaultEventData);
   const [marker, setMarker] = useState();
 
-  const setCoords = () => {};
-
   const onMapClick = useCallback((event) => {
     setMarker({
       coord: {

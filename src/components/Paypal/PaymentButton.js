@@ -1,14 +1,15 @@
 import { PayPalButtons } from '@paypal/react-paypal-js';
 import { useState } from 'react';
 
-const PaymentBtn = ({ product, paidFor, setPaidFor }) => {
+const PaymentBtn = ({ product, paidFor, setPaidFor, setDidPay }) => {
   const [error, setError] = useState(null);
-
+  const [alreadyPaidFor, setAlreadyPaidFor] = useState(false);
   const handleApprove = (orderId) => {
     // call backend to fulfull order
 
     // if response is success:
     setPaidFor(true);
+    setDidPay(true);
     // refresh users acc, subscription status
 
     //if response is error
@@ -16,21 +17,9 @@ const PaymentBtn = ({ product, paidFor, setPaidFor }) => {
     //setError("error message here")
   };
 
-  if (paidFor) {
-    //show success message, modal, redirect
-    alert('thank you for the purchase');
-  }
-
-  if (error) {
-    //display error msg, modal, redirect etc
-    alert(error);
-  }
-
   return (
     <PayPalButtons
       onClick={(data, actions) => {
-        // validate on button click on client or server side
-        const alreadyPaidFor = false;
         if (alreadyPaidFor) {
           setError('Already bought this');
           return actions.reject();
