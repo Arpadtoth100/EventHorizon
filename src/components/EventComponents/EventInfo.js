@@ -4,7 +4,7 @@ import ConfirmationPopUp from './ConfirmationPupUp';
 import { auth } from '../../config/firebase';
 import { useNavigate } from 'react-router-dom';
 import { onAuthStateChanged } from 'firebase/auth';
-import Map from '../GoogleMap/Map';
+import SimpleMap from '../GoogleMap/SimpleMap';
 import { AuthContext } from '../Context/AuthContext';
 
 export default function EventInfo({ eventData, eventId }) {
@@ -75,7 +75,9 @@ export default function EventInfo({ eventData, eventId }) {
       </div>
       <br></br>
       <div className="eventinfo-button">
-        <Map title={'Event Location'} eventData={eventData} />
+        {eventData.coord && (
+          <SimpleMap title={'Event Location'} eventData={eventData} />
+        )}
         {correctUser && (
           <button
             className="joinEventBtn"
