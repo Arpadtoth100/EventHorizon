@@ -8,17 +8,6 @@ import { useNavigate } from 'react-router-dom';
 import SelectDateFromTo from '../components/utilities/SelectDateFromTo';
 import MapCreate from '../components/GoogleMap/MapCreate';
 
-import usePlacesAutocomplete, {
-  getGeocode,
-  getLatLng,
-} from 'use-places-autocomplete';
-import {
-  GoogleMap,
-  useLoadScript,
-  Marker,
-  InfoWindow,
-} from '@react-google-maps/api';
-
 function CreateEventScreen() {
   const [imageToUpload, setImageToUpload] = useState(null);
   const navTo = useNavigate();
@@ -273,7 +262,9 @@ function CreateEventScreen() {
 
       <div>
         <h1 className="createevent_h1">You can create your events here</h1>
-        <h3>Fill in the form and please don't forget to click the map coordinates!</h3>
+        <h3>
+          Fill in the form and please don't forget to click the map coordinates!
+        </h3>
         <div className="map_container">
           <MapCreate
             marker={marker}
