@@ -8,16 +8,15 @@ export default function MyEventsScreen(props) {
   const [myCreatedEventList, setMyCreatedEventList] = useState([]);
 
   useEffect(() => {
-      authContext?.loggedUserID &&
-        filterMyCreatedEvent(authContext.loggedUserID).then((snapshot) =>
-          setMyCreatedEventList(Object.entries(snapshot.val() || {}))
-        );
-    }, [authContext.loggedUserID]);
+    authContext?.loggedUserID &&
+      filterMyCreatedEvent(authContext.loggedUserID).then((snapshot) =>
+        setMyCreatedEventList(Object.entries(snapshot.val() || {}))
+      );
+  }, [authContext.loggedUserID]);
 
-  
   return (
     <div className="outlet_main">
-      {myCreatedEventList.length != 0 ? (
+      {myCreatedEventList.length !== 0 ? (
         <Pagination title={'My Created Events'} data={myCreatedEventList} />
       ) : (
         <h3>You have not created any events yet!</h3>

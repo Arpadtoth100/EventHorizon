@@ -42,8 +42,6 @@ function SimpleMap({ eventData, title }) {
         lng: eventData.coord.lng,
       });
       setCenter(marker);
-      console.log('lat:', marker.lat);
-      console.log('lng:', marker.lng);
     }
   }, [eventData?.coord, isData]);
 
@@ -72,12 +70,6 @@ function SimpleMap({ eventData, title }) {
       >
         <Marker
           position={marker}
-          // icon={{
-          //   url: './party.png',
-          //   scaledSize: new window.google.maps.Size(30, 30),
-          //   origin: new window.google.maps.Point(0, 0),
-          //   anchor: new window.google.maps.Point(15, 15),
-          // }}
           onClick={() => {
             setSelected(marker);
           }}
