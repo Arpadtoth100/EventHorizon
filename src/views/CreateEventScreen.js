@@ -58,7 +58,7 @@ function CreateEventScreen() {
         uid: auth?.currentUser.uid,
         date_from: startDate.toString(),
         date_to: endDate.toString(),
-        coord: marker.coord,
+        coord: marker?.coord,
       }).then(() => {
         setEventData(defaultEventData);
         navTo('/event_created');
@@ -83,7 +83,7 @@ function CreateEventScreen() {
             date_from: startDate.toString(),
             date_to: endDate.toString(),
             image_url: url,
-            coord: marker.coord,
+            coord: marker?.coord,
           }).then(() => {
             setEventData(defaultEventData);
             navTo('/event_created');
@@ -175,7 +175,7 @@ function CreateEventScreen() {
           Event Location
         </label>
         <input
-          required
+          // required
           type="text"
           placeholder="Event Location"
           name="location"

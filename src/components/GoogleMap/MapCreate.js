@@ -93,8 +93,8 @@ function MapCreate({ eventData, marker, onMapClick }) {
       >
         {marker && (
           <Marker
-            key={marker.time.toISOString()}
-            position={{ lat: marker.coord.lat, lng: marker.coord.lng }}
+            key={marker?.time.toISOString()}
+            position={{ lat: marker?.coord.lat, lng: marker?.coord.lng }}
             icon={{
               url: './party.png',
               scaledSize: new window.google.maps.Size(30, 30),

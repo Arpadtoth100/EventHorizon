@@ -6,14 +6,23 @@ import { useNavigate } from 'react-router-dom';
 import { onAuthStateChanged } from 'firebase/auth';
 import SimpleMap from '../GoogleMap/SimpleMap';
 import { AuthContext } from '../Context/AuthContext';
+import { readAttendee } from '../../services/crud';
 
 export default function EventInfo({ eventData, eventId }) {
   const [showJoinModal, setShowJoinModal] = useState(false);
   const [correctUser, setCorrectUser] = useState(false);
-  const authContext = useContext(AuthContext);
   const [showConfirmationPopUp, setShowConfirmationPopUp] = useState(false);
+  const [attendee, setAttendee] = useState();
+  const [joined, setJoined] = useState(false);
+
+  const authContext = useContext(AuthContext);
 
   const navTo = useNavigate();
+
+  useEffect(() => {
+    readAttendee(eventId).then((snapshot) => setAttendee(snapshot.val()));
+    attendee?.hasOwnProperty(authContext.loggedUserID) && setJoined(true);
+  }, [eventData]);
 
   const openJoinModal = () => {
     setShowJoinModal((prev) => !prev);
@@ -92,6 +101,7 @@ export default function EventInfo({ eventData, eventId }) {
 
         {auth?.currentUser ? (
           <>
+            {joined ? <>Joined already</> : <>Not Joined</>}
             <button className="joinEventBtn" onClick={openJoinModal}>
               Join Event
             </button>

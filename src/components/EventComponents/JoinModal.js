@@ -24,7 +24,7 @@ export default function JoinModal({
   const [paidFor, setPaidFor] = useState(false);
   const [joinModalEvent, setJoinModalEvent] = useState([]);
   const [attendee, setAttendee] = useState([]);
-  const [didPay, setDidPay] = useState(false);
+  const [free, setFree] = useState(false);
 
   const [{ options }, dispatch] = usePayPalScriptReducer();
 
@@ -39,6 +39,12 @@ export default function JoinModal({
       setAttendee(Object.entries(snapshot.val() || {}))
     );
   }, []);
+
+  useEffect(() => {
+    if (eventData?.free === 'free') {
+      setFree(true);
+    }
+  }, [eventData]);
 
   const toSignIn = useNavigate();
 
@@ -80,18 +86,11 @@ export default function JoinModal({
     priceCheck();
   }, [eventData.currency]);
 
-  useEffect(() => {
-    if (didPay) {
-      createAttendee(eventId, auth.currentUser.uid, userName);
-      setSuccess(true);
-    }
-  }, [didPay]);
-
   return (
     <>
       {showJoinModal ? (
         <div className="modal-background">
-          <div className="ModalWrapper" showJoinModal={showJoinModal}>
+          <div className="ModalWrapper">
             <img
               className="ModalImg"
               src={
@@ -126,7 +125,7 @@ export default function JoinModal({
               ) : (
                 <div>
                   <br />
-                  {paidFor ? (
+                  {free ? (
                     <button
                       className="ModalJoinButton"
                       onClick={clickJoinHandler}
@@ -142,7 +141,6 @@ export default function JoinModal({
                         product={eventData}
                         paidfor={paidFor}
                         setPaidFor={setPaidFor}
-                        setDidPay={setDidPay}
                       />
                     </>
                   )}
