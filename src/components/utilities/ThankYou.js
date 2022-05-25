@@ -7,10 +7,10 @@ export default function ThankYou() {
       <div className="thankyou">
         <div className="thankyouTitle">
           <br />
-          <h1>Welcome to Event Horizon!</h1>
+          <h1 className="thankyoutext">Welcome to Event Horizon!</h1>
           <br />
           <div className="thankyouQuestion">
-            <h2>What do you want to do next?</h2>
+            <h2 className="thankyoutext">What do you want to do next?</h2>
             <br />
           </div>
         </div>

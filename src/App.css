@@ -88,6 +88,10 @@ html {
   left: 13rem;
 }
 
+.thankyoutext{
+  color: #086375;
+}
+
 .header_main {
   display: flex;
   align-items: center;
@@ -301,7 +305,7 @@ form h2 {
   display: flex;
   justify-content: center;
   flex-wrap: nowrap;
-  gap: 20px;
+  gap: 100px;
 }
 .event-cardFix {
   display: flex;
@@ -343,25 +347,9 @@ form h2 {
   animation-delay: calc(0.2s * var(--i));
 }
 
-.like_container{
-  background-color: #edf6f9;
-  display:flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  width: 30px;
-  height: 30px;
-  position: absolute;
-  bottom: -4px;
-  right: -4px;
+.cardlist-title{
+  margin: 20px;
 }
-
-.hearticon{
-  display:flex;
-  width: 20px;
-  height: 20px;
-}
-
 
 @keyframes flip {
   0%,
@@ -602,7 +590,6 @@ form h2 {
   background: #fff;
   color: #000;
   display: flex;
-  /* grid-template-columns: 1fr 1fr; */
   position: relative;
   z-index: 10;
   border-radius: 10px;
@@ -790,10 +777,13 @@ form h2 {
   font-weight: bold;
 }
 
-
 .active {
-  color: #e29578 !important;
+  color: #e29578;
   font-weight: bold;}
+  
+  a.active{
+    color: #e29578
+  }
 
 /* confirmation box */
 
@@ -804,13 +794,14 @@ form h2 {
   transform: translate(-50%, -50%);
   width: 800px;
   height: 250px;
-  background-color: white;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: #edf6f9;
 }
+ 
 
 .confirmationQ{
   font-size: 2rem;
@@ -823,7 +814,6 @@ form h2 {
   width: 550px;
   display: flex;
   justify-content: space-around;
-
 }
 
 @media only screen and (max-width: 600px) {

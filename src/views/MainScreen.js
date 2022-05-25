@@ -59,10 +59,12 @@ const MainScreen = () => {
 
       <br />
       <Pagination title={'Free Events on The Horizon'} data={freeEventList} />
+      <br></br>
       <Pagination
         title={'Featured Events on The Horizon'}
         data={paidEventList}
       />
+      <br></br>
     </div>
   );
 };
