@@ -7,10 +7,10 @@ export default function ThankYouEvent(props) {
             <div className="thankyou">
                 <div className="thankyouTitle">
                     <br />
-                    <h1>You successfully created your event!</h1>
+                    <h1 className="thankyoutext">You successfully created your event!</h1>
                     <br />
                     <div className="thankyouQuestion">
-                        <h2>What do you want to do next?</h2>
+                        <h2 className="thankyoutext">What do you want to do next?</h2>
                         <br />
                     </div>
                 </div>
