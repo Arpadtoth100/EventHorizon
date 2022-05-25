@@ -17,6 +17,8 @@ export default function EventInfo({ eventData, eventId }) {
 
   const authContext = useContext(AuthContext);
 
+  const authContext = useContext(AuthContext);
+
   const navTo = useNavigate();
 
   useEffect(() => {
@@ -89,13 +91,21 @@ export default function EventInfo({ eventData, eventId }) {
         {eventData.coord && (
           <SimpleMap title={'Event Location'} eventData={eventData} />
         )}
-        {correctUser && (
+        {correctUser ? (
           <button
             className="joinEventBtn"
             aria-label="Close modal"
             onClick={openConfirmationPopUp}
           >
             Delete Event
+          </button>
+        ) : (
+          <button
+            className="joinEventBtn"
+            aria-label="Close modal"
+            onClick={openConfirmationPopUp}
+          >
+            Remove Event
           </button>
         )}
 
@@ -125,10 +135,11 @@ export default function EventInfo({ eventData, eventId }) {
         )}
         {showConfirmationPopUp && (
           <ConfirmationPopUp
+            correctUser={correctUser}
             eventId={eventId}
             setShowConfirmationPopUp={setShowConfirmationPopUp}
-            confirmationQuestion="Are you sure you want to delete this event?"
-            remove="Delete"
+            confirmationQuestion={ correctUser ? "Are you sure you want to delete this event?" : "Are you sure you don't want to participate?" }
+            remove={ correctUser ? "Delete" : "Remove"}
             cancel="Cancel"
           />
         )}

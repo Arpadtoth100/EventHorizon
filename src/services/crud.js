@@ -94,3 +94,8 @@ export function filterMyCreatedEvent(currentUserId) {
   );
   return get(dbref);
 }
+
+export function deleteAttandee(eventID, key) {
+  const refEvent = ref(database, `${eventAttendeeEndpoint}/${eventID}/${key}`);
+  return remove(refEvent);
+}

@@ -74,18 +74,9 @@ html {
   height: 25vh;
   width: 20vw;
 }
-.thankyouContainer {
-  display: flex;
-  height: 25vh;
-  position: fixed;
-  top: 15rem;
-  left: 13rem;
-}
 
-.thankyouContainer2 {
-  display: flex;
-  position: relative;
-  left: 13rem;
+.thankyoutext {
+  color: #086375;
 }
 
 .header_main {
@@ -301,7 +292,7 @@ form h2 {
   display: flex;
   justify-content: center;
   flex-wrap: nowrap;
-  gap: 20px;
+  gap: 100px;
 }
 .event-cardFix {
   display: flex;
@@ -343,25 +334,9 @@ form h2 {
   animation-delay: calc(0.2s * var(--i));
 }
 
-.like_container{
-  background-color: #edf6f9;
-  display:flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  width: 30px;
-  height: 30px;
-  position: absolute;
-  bottom: -4px;
-  right: -4px;
+.cardlist-title {
+  margin: 20px;
 }
-
-.hearticon{
-  display:flex;
-  width: 20px;
-  height: 20px;
-}
-
 
 @keyframes flip {
   0%,
@@ -449,7 +424,8 @@ form h2 {
   list-style: none;
   display: flex;
   justify-content: center;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
 }
 
 .paginationBtns a {
@@ -566,7 +542,6 @@ form h2 {
   opacity: 0.8;
 }
 
-
 .sliderImg {
   width: 100%;
   max-height: 350px;
@@ -602,7 +577,6 @@ form h2 {
   background: #fff;
   color: #000;
   display: flex;
-  /* grid-template-columns: 1fr 1fr; */
   position: relative;
   z-index: 10;
   border-radius: 10px;
@@ -719,6 +693,7 @@ form h2 {
   display: flex;
   flex-direction: column;
   text-align: start;
+  margin-bottom: 20px;
 }
 .blabla h2 {
   text-align: center;
@@ -790,49 +765,109 @@ form h2 {
   font-weight: bold;
 }
 
-
 .active {
-  color: #e29578 !important;
-  font-weight: bold;}
+  color: #e29578;
+}
+
+a.active {
+  color: #e29578;
+}
 
 /* confirmation box */
 
-.confirmation__box{
+.confirmation__box {
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
   width: 800px;
   height: 250px;
-  background-color: white;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: #edf6f9;
 }
 
-.confirmationQ{
+.confirmationQ {
   font-size: 2rem;
   color: #006d77;
   margin-bottom: 25px;
 }
 
-.confirmationbutton__box{
+.confirmationbutton__box {
   margin-top: 25px;
   width: 550px;
   display: flex;
   justify-content: space-around;
+}
 
+.privacy_head {
+  height: 25vh;
+  background-image: url(./images/PrivacyBg3.jpg);
+  opacity: 0.8;
+  color: white;
+}
+
+.privacy_icon_container {
+  display: inline-flex;
+  margin-top: 3rem;
+  align-items: center;
+  justify-content: center;
+  height: 4rem;
+  width: 4rem;
+  background-color: #006d77;
+  border-radius: 50%;
+}
+.privacy_head_title {
+  margin-top: 1rem;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.privacy_text {
+  margin: 2rem;
+  text-align: justify;
+}
+
+.privacy_text p {
+  font-size: 18px;
+}
+
+.privacy_text h3 {
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+
+.privacy_title {
+  margin-top: 1rem;
+}
+
+.contactlink {
+  color: blue;
+}
+
+.contactus_head {
+  height: 25vh;
+  background-image: url(./images/PrivacyBg4.jpg);
+  opacity: 0.8;
+  color: white;
+}
+
+.faq_head {
+  height: 25vh;
+  background-image: url(./images/faqBg1.jpg);
+  color: white;
 }
 
 @media only screen and (max-width: 600px) {
-  .dot {
+  /*  .dot {
     width: 10px;
   }
   .dot {
     height: 10px;
-  }
+  } */
   .right_arrow,
   .left_arrow {
     font-size: 1rem;
@@ -859,10 +894,10 @@ form h2 {
 
   .menu.active {
     top: 0px;
-    /* background-color: #006d77; */
     transition: all 0.5s ease-in-out;
     height: 28vh;
     text-decoration: underline;
+    background-color: #086375;
   }
 
   .item:nth-child(1) {
@@ -896,7 +931,7 @@ form h2 {
     height: 60px;
   }
 
- /*  .link {
+  /*  .link {
     font-size: 1.7rem;
   } */
 

@@ -5,9 +5,7 @@ function ThankYouScreen() {
     <div className="outlet_main">
       <div>
         
-        <div className="thankyouContainer">
         < ThankYou />
-        </div>
         
       </div>
     </div>

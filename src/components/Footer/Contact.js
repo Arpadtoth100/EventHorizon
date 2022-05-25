@@ -1,7 +1,21 @@
+import SunriseIcon from '../utilities/SunRiseIcon';
+import { NavLink } from 'react-router-dom';
 
 function Contact() {
     return (
         <div className="outlet_main">
+            <div className="contactus_head">
+      <div>
+        <div className='privacy_icon_container'>
+          <i style={{ color: '#9ceaef', paddingBottom: '10px' }}>
+            <SunriseIcon width="60px" height="48px" />
+          </i>
+        </div>
+        <div>
+        </div>
+        <p className='privacy_head_title'>Contact Us</p>
+      </div>
+    </div>
             <h1>Contact Us</h1>
             <p>Most contact pages are designed with function in mind.</p>
 

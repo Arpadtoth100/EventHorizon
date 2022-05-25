@@ -33,7 +33,7 @@ function Footer() {
           </li>
           <li className="item">
             <NavLink to="/privacy" id="nav-privacy" className="link">
-              Data Privacy
+              Privacy
             </NavLink>
           </li>
         </ul>
