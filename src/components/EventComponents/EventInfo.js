@@ -10,8 +10,9 @@ import { AuthContext } from '../Context/AuthContext';
 export default function EventInfo({ eventData, eventId }) {
   const [showJoinModal, setShowJoinModal] = useState(false);
   const [correctUser, setCorrectUser] = useState(false);
-  const authContext = useContext(AuthContext);
   const [showConfirmationPopUp, setShowConfirmationPopUp] = useState(false);
+
+  const authContext = useContext(AuthContext);
 
   const navTo = useNavigate();
 
