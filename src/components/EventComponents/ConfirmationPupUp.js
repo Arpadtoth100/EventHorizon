@@ -1,8 +1,12 @@
+import { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { MdClose } from 'react-icons/md';
-import { deleteEvent } from '../../services/crud';
+import { deleteEvent, deleteAttandee } from '../../services/crud';
+import { AuthContext } from '../Context/AuthContext';
 
-function ConfirmationPopUp({ setShowConfirmationPopUp, remove, cancel, confirmationQuestion, eventId }) {
+function ConfirmationPopUp({ setShowConfirmationPopUp, remove, cancel, confirmationQuestion, eventId, correctUser }) {
+
+    const authContext = useContext(AuthContext);
 
     const CloseModalButton = MdClose;
 
@@ -13,6 +17,13 @@ function ConfirmationPopUp({ setShowConfirmationPopUp, remove, cancel, confirmat
         deleteEvent(eventId)
         setShowConfirmationPopUp((prev) => !prev)
         toMyEvents('/my_events')
+    }
+
+    const removeUserHandler = (event) => {
+        event.preventDefault()
+        deleteAttandee(eventId, authContext.loggedUserID)
+        setShowConfirmationPopUp((prev) => !prev)
+        toMyEvents('/joined_events')
     }
 
     return (
@@ -26,7 +37,7 @@ function ConfirmationPopUp({ setShowConfirmationPopUp, remove, cancel, confirmat
                 <div className='confirmationQ'>{confirmationQuestion}</div>
                 <div className='confirmationbutton__box'>
                     <button className='confirmationbutton joinEventBtn'
-                        onClick={deleteEventHandler}>
+                        onClick={correctUser ? deleteEventHandler : removeUserHandler}>
                         {remove}
                     </button>
                     <button className='confirmationbutton joinEventBtn'
