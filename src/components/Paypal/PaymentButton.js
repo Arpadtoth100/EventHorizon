@@ -1,13 +1,24 @@
 import { PayPalButtons } from '@paypal/react-paypal-js';
 import { useState } from 'react';
+import { createAttendee } from '../../services/crud';
+import { auth } from '../../config/firebase';
 
-const PaymentBtn = ({ product, paidFor, setPaidFor }) => {
+const PaymentBtn = ({
+  product,
+  paidFor,
+  setPaidFor,
+  setSuccess,
+  eventId,
+  userName,
+}) => {
   const [error, setError] = useState(null);
   const handleApprove = (orderId) => {
     // call backend to fulfull order
 
     // if response is success:
     setPaidFor(true);
+    createAttendee(eventId, auth.currentUser.uid, userName);
+    setSuccess(true);
     // refresh users acc, subscription status
 
     //if response is error
