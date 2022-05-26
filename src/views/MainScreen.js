@@ -25,7 +25,7 @@ const MainScreen = () => {
           <div className="aboutus-hero-img-wrapper">
             <img
               className="aboutus-hero-img"
-              src="./pexels-pixabay-207896 new color1.jpg"
+              src="./pexels-pixabay-207896 new color kisebb.jpg"
               alt=""
             />
           </div>
