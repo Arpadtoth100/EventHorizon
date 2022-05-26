@@ -16,9 +16,8 @@ function FAQ() {
         </div>
       </div>
       <br />
-      <h1>FAQ</h1>
-      <br />
-      <h3>How much does it cost to use Event Horizon?</h3>
+      <div className='faq_text'>
+      <h2>How much does it cost to use Event Horizon?</h2>
       <p>
         It is a long established fact that a reader will be distracted by the
         readable content of a page when looking at its layout. The point of
@@ -31,7 +30,7 @@ function FAQ() {
         accident, sometimes on purpose (injected humour and the like).
       </p>
       <br />
-      <h3>Can I use Event Horizon for free events?</h3>
+      <h2>Can I use Event Horizon for free events?</h2>
       <p>
         It is a long established fact that a reader will be distracted by the
         readable content of a page when looking at its layout. The point of
@@ -44,7 +43,7 @@ function FAQ() {
         accident, sometimes on purpose (injected humour and the like).
       </p>
       <br />
-      <h3>How do I sell tickets on Event Horizon?</h3>
+      <h2>How do I pay on Event Horizon?</h2>
       <p>
         It is a long established fact that a reader will be distracted by the
         readable content of a page when looking at its layout. The point of
@@ -57,7 +56,7 @@ function FAQ() {
         accident, sometimes on purpose (injected humour and the like).
       </p>
       <br />
-      <h3>How much does it cost to use Event Horizon?</h3>
+      <h2>How much does it cost to use Event Horizon?</h2>
       <p>
         It is a long established fact that a reader will be distracted by the
         readable content of a page when looking at its layout. The point of
@@ -69,6 +68,8 @@ function FAQ() {
         infancy. Various versions have evolved over the years, sometimes by
         accident, sometimes on purpose (injected humour and the like).
       </p>
+      </div>
+      
     </div>
   );
 }

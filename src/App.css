@@ -826,6 +826,7 @@ a.active {
 .privacy_icon_container {
   display: inline-flex;
   margin-top: 3rem;
+  margin-right: 1rem;
   align-items: center;
   justify-content: center;
   height: 4rem;
@@ -837,14 +838,17 @@ a.active {
   margin-top: 1rem;
   font-size: 2.5rem;
   font-weight: bold;
+  color: white;
 }
 
-.privacy_text {
+.privacy_text,
+.faq_text {
   margin: 3rem 6rem 3rem 6rem;
   text-align: justify;
 }
 
-.privacy_text p {
+.privacy_text p,
+.faq_text p {
   font-size: 18px;
 }
 
@@ -866,24 +870,26 @@ a.active {
   text-align: left;
 }
 
-.contactus_head {
-  height: 25vh;
-  background-image: url(./images/PrivacyBg4.jpg);
-  opacity: 0.8;
-  color: white;
-}
-
 .faq_head {
   height: 25vh;
   background-image: url(./images/faqBg2.jpg);
   color: white;
 }
+.faq_text h2 {
+  margin-bottom: 5px;
+  margin-top: 5px;
+  color: #006d77;
+}
 
-/* .contactus_main{
-  background-image: url(./images/spaceBg1.jpg);
-  opacity:0.8;
-} */
-
+.contactus_main {
+  background-image: url(./images/contact6.jpg);
+}
+.contact_head_title {
+  margin-top: 1rem;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #006d77;
+}
 .contactus_title {
   margin-top: -10rem;
   margin-bottom: 4rem;
@@ -901,24 +907,24 @@ a.active {
   color: #006d77;
 }
 
-.contactus_text h2{
+.contactus_text h2 {
   margin-bottom: 40px;
   margin-top: 40px;
 }
-.contactus_text h3{
+.contactus_text h3 {
   margin-top: 40px;
   margin-bottom: 20px;
 }
-.contactus_text h4{
+.contactus_text h4 {
   margin-bottom: 10px;
   margin-top: 40px;
 }
 
-#panama{
+#panama {
   margin-top: 0px;
 }
 
-.email{
+.email {
   color: blue;
 }
 
@@ -941,6 +947,9 @@ a.active {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.contactmessage_btn {
+  margin-bottom: 15px;
 }
 
 @media only screen and (max-width: 600px) {
