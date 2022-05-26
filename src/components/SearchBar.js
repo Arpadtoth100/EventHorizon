@@ -1,44 +1,47 @@
-import DatePicker from 'react-datepicker';
+import SelectDate from '../components/utilities/SelectDate';
 import FilterBar from './utilities/FilterBar';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
-function SearchBar({ eventList, setFilteredList, filteredList }) {
-  const [searchValue, setSearchValue] = useState({});
+function SearchBar({ eventList, setFilteredList }) {
+  const [dateValue, setDateValue] = useState('');
+  const [searchValue, setSearchValue] = useState({
+    location: '',
+    free: '',
+    event_type: '',
+    category_id: '',
+    date_from: '',
+  });
 
   function changeHandler(event) {
-    let temp;
-    if (event.target.name === 'loc') {
+    setSearchValue((p) => ({
+      ...p,
+      date_from: dateValue,
+      [event.target.name]: event.target.value,
+    }));
+  }
+
+  useEffect(() => {
+    eventList &&
       setFilteredList(
-        eventList.filter((fe) => {
-          return fe[1].location
-            .toLowerCase()
-            .includes(event.target.value.toLowerCase());
+        eventList?.filter((filtered) => {
+          return (
+            filtered[1].location
+              .toLowerCase()
+              .includes(searchValue?.location.toLowerCase()) &&
+            filtered[1].free
+              .toLowerCase()
+              .includes(searchValue?.free.toLowerCase()) &&
+            filtered[1].event_type
+              .toLowerCase()
+              .includes(searchValue?.event_type.toLowerCase()) &&
+            filtered[1].category_id.includes(searchValue?.category_id) &&
+            filtered[1].date_from
+              .toLowerCase()
+              .includes(searchValue?.date_from.toLowerCase())
+          );
         })
       );
-      // } else if (event.target.name === 'se_price') {
-      //   temp = eventList.map((ev) => {
-      //     if (event.target.value === ev[1].free) {
-      //       return ev;
-      //     }
-      //   });
-      //   setFilteredList(temp.filter(Boolean));
-      // } else if (event.target.name === 'se_type') {
-      //   temp = eventList.map((ev) => {
-      //     if (event.target.value === ev[1].event_type) {
-      //       return ev;
-      //     }
-      //   });
-      //   setFilteredList(temp.filter(Boolean));
-      // } else if (event.target.name === 'se_category') {
-      //   temp = eventList.map((ev) => {
-      //     if (event.target.value === ev[1].category_id) {
-      //       return ev;
-      //     }
-      //   });
-      //   console.log(temp);
-      //   setFilteredList(temp.filter(Boolean));
-    }
-  }
+  }, [searchValue]);
 
   return (
     <div>
@@ -49,21 +52,21 @@ function SearchBar({ eventList, setFilteredList, filteredList }) {
         </label>
         <input
           id="loc"
-          name="loc"
+          name="location"
           className="textinput"
           type="text"
           placeholder="City"
           onChange={changeHandler}
         />
         <p>Pick the date:</p>
-        <DatePicker />
+        <SelectDate setDateValue={setDateValue} dateValue={dateValue} />
         <label htmlFor="se_price" className="textlabel">
           Admission
         </label>
         <select
           onChange={changeHandler}
           className="search_event_select"
-          name="se_price"
+          name="free"
           id="se_price"
         >
           <option value="">Please Choose an option</option>
@@ -76,7 +79,7 @@ function SearchBar({ eventList, setFilteredList, filteredList }) {
         <select
           onChange={changeHandler}
           className="search_event_select"
-          name="se_type"
+          name="event_type"
           id="se_type"
         >
           <option value="">Please Choose an option</option>
@@ -89,7 +92,7 @@ function SearchBar({ eventList, setFilteredList, filteredList }) {
         <select
           onChange={changeHandler}
           className="se_select"
-          name="se_category"
+          name="category_id"
           id="se_category"
         >
           <option value="">Please Select one</option>
