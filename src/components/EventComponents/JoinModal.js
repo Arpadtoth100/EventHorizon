@@ -121,25 +121,33 @@ export default function JoinModal({
                 <div>
                   <br />
                   {free ? (
-                    <button
-                      className="ModalJoinButton"
-                      onClick={clickJoinHandler}
-                    >
-                      Join Event
-                    </button>
+                    <>
+                      {!success && (
+                        <button
+                          className="ModalJoinButton"
+                          onClick={clickJoinHandler}
+                        >
+                          Join Event
+                        </button>
+                      )}
+                    </>
                   ) : (
                     <>
-                      <div>
-                        Event fee: {eventData.price} {eventData.currency}
-                      </div>
-                      <Payment
-                        product={eventData}
-                        paidfor={paidFor}
-                        setPaidFor={setPaidFor}
-                        setSuccess={setSuccess}
-                        eventId={eventId}
-                        userName={userName}
-                      />
+                      {!success && (
+                        <>
+                          <div>
+                            Event fee: {eventData.price} {eventData.currency}
+                          </div>
+                          <Payment
+                            product={eventData}
+                            paidfor={paidFor}
+                            setPaidFor={setPaidFor}
+                            setSuccess={setSuccess}
+                            eventId={eventId}
+                            userName={userName}
+                          />
+                        </>
+                      )}
                     </>
                   )}
                 </div>
