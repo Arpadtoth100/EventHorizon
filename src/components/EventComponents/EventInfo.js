@@ -14,6 +14,7 @@ export default function EventInfo({ eventData, eventId }) {
   const [showConfirmationPopUp, setShowConfirmationPopUp] = useState(false);
   const [attendee, setAttendee] = useState();
   const [joined, setJoined] = useState(false);
+  const [deleteOrRemove, setDeleteOrRemove] = useState(false)
 
   const authContext = useContext(AuthContext);
 
@@ -28,8 +29,9 @@ export default function EventInfo({ eventData, eventId }) {
     setShowJoinModal((prev) => !prev);
   };
 
-  const openConfirmationPopUp = () => {
+  const openConfirmationPopUp = (event) => {
     setShowConfirmationPopUp((prev) => !prev);
+    event.target.value === "delete" ? setDeleteOrRemove(true) : setDeleteOrRemove(false)
   };
 
   const userCheck = useCallback(() => {
@@ -94,6 +96,7 @@ export default function EventInfo({ eventData, eventId }) {
             className="joinEventBtn"
             aria-label="Close modal"
             onClick={openConfirmationPopUp}
+            value="delete"
           >
             Delete Event
           </button>
@@ -106,6 +109,7 @@ export default function EventInfo({ eventData, eventId }) {
             className="joinEventBtn"
             aria-label="Close modal"
             onClick={openConfirmationPopUp}
+            value="unsubscribe"
           >
             Unsubscribe
           </button>
@@ -139,15 +143,16 @@ export default function EventInfo({ eventData, eventId }) {
 
         {showConfirmationPopUp && (
           <ConfirmationPopUp
+            deleteOrRemove={deleteOrRemove}
             correctUser={correctUser}
             eventId={eventId}
             setShowConfirmationPopUp={setShowConfirmationPopUp}
             confirmationQuestion={
-              correctUser
+              deleteOrRemove
                 ? 'Are you sure you want to delete this event?'
                 : "Are you sure you don't want to participate?"
             }
-            remove={correctUser ? 'Delete' : 'Remove'}
+            remove={deleteOrRemove ? 'Delete' : 'Unsubscribe'}
             cancel="Cancel"
           />
         )}

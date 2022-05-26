@@ -11,6 +11,7 @@ function ConfirmationPopUp({
   confirmationQuestion,
   eventId,
   correctUser,
+  deleteOrRemove,
 }) {
   const authContext = useContext(AuthContext);
 
@@ -32,8 +33,6 @@ function ConfirmationPopUp({
     toMyEvents('/joined_events');
   };
 
-  console.log(correctUser);
-
   return (
     <div className="modal-background">
       <div className="confirmation__box">
@@ -46,7 +45,7 @@ function ConfirmationPopUp({
         <div className="confirmationbutton__box">
           <button
             className="confirmationbutton joinEventBtn"
-            onClick={correctUser ? deleteEventHandler : removeUserHandler}
+            onClick={deleteOrRemove ? deleteEventHandler : removeUserHandler}
           >
             {remove}
           </button>
