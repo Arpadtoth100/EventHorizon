@@ -14,11 +14,11 @@ const PaymentBtn = ({
   const [error, setError] = useState(null);
   const handleApprove = (orderId) => {
     // call backend to fulfull order
-
     // if response is success:
     setPaidFor(true);
     createAttendee(eventId, auth.currentUser.uid, userName);
     setSuccess(true);
+
     // refresh users acc, subscription status
 
     //if response is error

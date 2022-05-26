@@ -24,7 +24,7 @@ function SearchScreen() {
           filteredList={filteredList}
         />
         <div className="mapcontainer_div">
-          <Map />
+          <Map eventList={filteredList} title={"Let's Explore"} />
         </div>
       </div>
       <div>

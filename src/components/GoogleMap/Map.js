@@ -1,4 +1,4 @@
-import { useState, useCallback, useRef } from 'react';
+import { useState, useCallback, useRef, useEffect, useNavigate } from 'react';
 import {
   GoogleMap,
   useLoadScript,
@@ -40,7 +40,7 @@ const options = {
   zoomControl: true,
 };
 
-function Map({ eventData, title }) {
+function Map({ eventList, title }) {
   const { isLoaded, loadError } = useLoadScript({
     googleMapsApiKey: 'AIzaSyCQdxI7flTlfWCB0l-vdZPjY3J0P5jwRQk',
     libraries: libs,
@@ -49,16 +49,27 @@ function Map({ eventData, title }) {
   const [markers, setMarkers] = useState([]);
   const [selected, setSelected] = useState(null);
 
-  const onMapClick = useCallback((event) => {
-    setMarkers((prev) => [
-      ...prev,
-      {
-        lat: event.latLng.lat(),
-        lng: event.latLng.lng(),
-        time: new Date(),
-      },
-    ]);
-  }, []);
+  const createMarkers = useCallback(() => {
+    eventList?.map((event) => {
+      console.log(event);
+      event[1].coord &&
+        setMarkers((prev) => [
+          ...prev,
+          {
+            lat: event[1].coord.lat,
+            lng: event[1].coord.lng,
+            time: new Date(),
+            title: event[1].title,
+            location: event[1].location,
+            date: event[1].date_from,
+          },
+        ]);
+    });
+  }, [eventList]);
+
+  useEffect(() => {
+    createMarkers();
+  }, [eventList]);
 
   const mapRef = useRef();
   const onMapLoad = useCallback((map) => {
@@ -75,15 +86,8 @@ function Map({ eventData, title }) {
 
   return (
     <div>
-      <h1 className="map_text">
-        {title}
-        <span role="img" aria-label="party">
-          🎉
-        </span>
-      </h1>
-
+      <h1 className="map_text">{title}</h1>
       <Search panTo={panTo} />
-
       <Locate
         panTo={panTo}
         onClick={() => {
@@ -95,18 +99,16 @@ function Map({ eventData, title }) {
           );
         }}
       />
-
       <GoogleMap
         mapContainerStyle={mapContainerStyle}
         zoom={11}
         center={center}
         options={options}
-        onClick={onMapClick}
         onLoad={onMapLoad}
       >
-        {markers.map((marker) => (
+        {markers.map((marker, i) => (
           <Marker
-            key={marker.time.toISOString()}
+            key={i}
             position={{ lat: marker.lat, lng: marker.lng }}
             icon={{
               url: './party.png',
@@ -127,8 +129,9 @@ function Map({ eventData, title }) {
             }}
           >
             <div>
-              <h2>Party FOUND!</h2>
-              <p>created: {formatRelative(selected.time, new Date())}</p>
+              <h2>{selected.title}</h2>
+              <p>Location: {selected.location}</p>
+              <p>Date of event: {selected.date}</p>
             </div>
           </InfoWindow>
         ) : null}
