@@ -30,7 +30,7 @@ function SimpleMap({ eventData, title }) {
   const [isData, setIsData] = useState();
   const [marker, setMarker] = useState([]);
   const [selected, setSelected] = useState(null);
-  const [center, setCenter] = useState({});
+  const [center, setCenter] = useState();
 
   useEffect(() => {
     if (!eventData?.coord?.lat) {
