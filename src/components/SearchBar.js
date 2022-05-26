@@ -9,7 +9,6 @@ function SearchBar({ eventList, setFilteredList }) {
     free: '',
     event_type: '',
     category_id: '',
-    date_from: '',
   });
 
   function changeHandler(event) {

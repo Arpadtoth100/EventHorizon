@@ -29,10 +29,6 @@ const mapContainerStyle = {
   width: '50vw',
   height: '50vh',
 };
-const center = {
-  lat: 47.497913,
-  lng: 19.040236,
-};
 
 const options = {
   styles: mapStyles,
@@ -48,6 +44,7 @@ function Map({ eventList, title }) {
 
   const [markers, setMarkers] = useState([]);
   const [selected, setSelected] = useState(null);
+  const [center, setCenter] = useState({ lat: 47.497913, lng: 19.040236 });
 
   const createMarkers = useCallback(() => {
     eventList?.map((event) => {
