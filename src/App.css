@@ -190,6 +190,11 @@ form * {
   padding-top: 1rem;
 }
 
+.contactusform {
+  background-color: #edf6f9;
+  margin: 20px;
+}
+
 form h3 {
   font-size: 28px;
   font-weight: 500;
@@ -228,13 +233,18 @@ form h2 {
   color: #e5e5e5;
 }
 
-#su_organization {
+#su_organization,
+#cu_moreinfo {
   margin-top: 30px;
   margin-right: 10px;
   width: 15px;
   height: 15px;
   box-shadow: 0 0 5px rgba(8, 7, 16, 0.6);
   border-radius: 3px;
+}
+
+#cu_moreinfo {
+  margin-top: 10px;
 }
 .su_username {
   margin-top: 0px;
@@ -245,6 +255,7 @@ form h2 {
   margin-top: 30px;
   font-size: 16px;
   font-weight: 500;
+  text-align: left;
 }
 
 .btn {
@@ -668,7 +679,7 @@ form h2 {
   position: absolute;
   width: 100%;
   height: 100%;
-  z-index: 1;
+  /* z-index: 1; */
 }
 .aboutus-hero-img {
   width: 100%;
@@ -803,6 +814,8 @@ a.active {
   justify-content: space-around;
 }
 
+/* privacy faq contactus */
+
 .privacy_head {
   height: 25vh;
   background-image: url(./images/PrivacyBg3.jpg);
@@ -827,7 +840,7 @@ a.active {
 }
 
 .privacy_text {
-  margin: 2rem;
+  margin: 3rem 6rem 3rem 6rem;
   text-align: justify;
 }
 
@@ -844,8 +857,13 @@ a.active {
   margin-top: 1rem;
 }
 
-.contactlink {
+.contactlink,
+.privacylink {
   color: blue;
+}
+
+.privacylink {
+  text-align: left;
 }
 
 .contactus_head {
@@ -857,8 +875,72 @@ a.active {
 
 .faq_head {
   height: 25vh;
-  background-image: url(./images/faqBg1.jpg);
+  background-image: url(./images/faqBg2.jpg);
   color: white;
+}
+
+/* .contactus_main{
+  background-image: url(./images/spaceBg1.jpg);
+  opacity:0.8;
+} */
+
+.contactus_title {
+  margin-top: -10rem;
+  margin-bottom: 4rem;
+  color: #006d77;
+}
+
+.contactus_content {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.contactus_text {
+  text-align: left;
+  color: #006d77;
+}
+
+.contactus_text h2{
+  margin-bottom: 40px;
+  margin-top: 40px;
+}
+.contactus_text h3{
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+.contactus_text h4{
+  margin-bottom: 10px;
+  margin-top: 40px;
+}
+
+#panama{
+  margin-top: 0px;
+}
+
+.email{
+  color: blue;
+}
+
+#cu_checkbox_label {
+  display: block;
+  padding-left: 15px;
+  text-indent: -15px;
+}
+#cu_moreinfo {
+  width: 15px;
+  height: 15px;
+  padding: 0;
+  margin-top: 25px;
+  vertical-align: bottom;
+  position: relative;
+  top: -1px;
+}
+
+.contactus_form_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 @media only screen and (max-width: 600px) {
