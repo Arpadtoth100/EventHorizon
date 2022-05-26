@@ -153,6 +153,7 @@ form * {
   outline: none;
   border: none;
 }
+
 .create_event_main {
   margin-top: 1rem;
   margin-bottom: 1rem;
@@ -246,6 +247,7 @@ form h2 {
 #cu_moreinfo {
   margin-top: 10px;
 }
+
 .su_username {
   margin-top: 0px;
 }
@@ -270,6 +272,7 @@ form h2 {
   border-radius: 3px;
   cursor: pointer;
 }
+
 .signup_btn,
 .update_btn {
   margin-top: 30px;
@@ -293,7 +296,7 @@ form h2 {
   height: 500px;
 }
 
-.infoboxcolumn + .infoboxcolumn {
+.infoboxcolumn+.infoboxcolumn {
   margin-left: 2%;
 }
 
@@ -305,6 +308,7 @@ form h2 {
   flex-wrap: nowrap;
   gap: 100px;
 }
+
 .event-cardFix {
   display: flex;
   justify-content: center;
@@ -312,6 +316,7 @@ form h2 {
   width: 200px;
   height: 200px;
 }
+
 .event-card-image {
   border-radius: 9px;
   object-fit: cover;
@@ -350,6 +355,7 @@ form h2 {
 }
 
 @keyframes flip {
+
   0%,
   80% {
     transform: rotateY(360deg);
@@ -377,24 +383,29 @@ form h2 {
   font-size: 15px;
   font-style: italic;
 }
+
 .eventinfo-description {
   color: #05ada8;
   font-size: 24px;
 }
+
 .eventimage_container {
   position: relative;
   height: 41vh;
   filter: blur(50px) brightness(0.9);
 }
+
 .eventpage_img {
   position: relative;
   height: 350px;
   margin-top: -350px;
 }
+
 .eventinfo-name {
   color: #028090;
   margin-top: 20px;
 }
+
 .eventinfo-fee,
 .eventinfo-location,
 .eventinfo-participants {
@@ -457,6 +468,7 @@ form h2 {
   color: white;
   background-color: #2f5866;
 }
+
 .paginationDisabled a {
   color: #aeecef;
   background-color: #aeecef;
@@ -569,6 +581,7 @@ form h2 {
   padding: 0;
   font-family: "Arial", sans-serif;
 }
+
 .modal-background {
   width: 100vw;
   height: 100vh;
@@ -581,6 +594,7 @@ form h2 {
   top: 0;
   left: 0;
 }
+
 .ModalWrapper {
   width: 50rem;
   height: 35rem;
@@ -600,6 +614,7 @@ form h2 {
   border-radius: 10px 10px 10px 10px;
   background: white;
 }
+
 .ModalContent {
   display: flex;
   flex-direction: column;
@@ -615,6 +630,7 @@ form h2 {
   color: #fff;
   border: none;
 }
+
 .ModalJoinButton,
 .ModalSendButton,
 .ModalDiscardButton,
@@ -627,25 +643,31 @@ form h2 {
   border-radius: 5px;
   cursor: pointer;
 }
+
 .joinEventBtn {
   font-size: 1.5rem;
   background: #05668d;
   margin-top: 10px;
 }
+
 .createeventBtn {
   margin-top: 1rem;
 }
+
 .ModalDiscardButton {
   margin-right: 20px;
   background: #023e8a;
   margin: 10px;
 }
+
 .ModalSendButton {
   margin: 20px;
 }
+
 .JoinModalInput {
   font-size: 16px;
 }
+
 .CloseModalButton {
   cursor: pointer;
   position: absolute;
@@ -656,6 +678,7 @@ form h2 {
   padding: 0;
   z-index: 10;
 }
+
 .success {
   background-color: #3dccc7;
   margin-top: 10px;
@@ -675,17 +698,20 @@ form h2 {
   align-items: center;
   position: relative;
 }
+
 .aboutus-hero-img-wrapper {
   position: absolute;
   width: 100%;
   height: 100%;
   /* z-index: 1; */
 }
+
 .aboutus-hero-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
+
 .aboutus-hero-text {
   color: white;
   font-size: 48px;
@@ -695,6 +721,7 @@ form h2 {
   position: relative;
   top: -4rem;
 }
+
 .blabla {
   padding: 20px;
   background: #2ec4b6;
@@ -706,6 +733,7 @@ form h2 {
   text-align: start;
   margin-bottom: 20px;
 }
+
 .blabla h2 {
   text-align: center;
 }
@@ -724,6 +752,51 @@ form h2 {
   border-radius: 50%;
 }
 
+/* Joined Events Profile Images*/
+
+.useravatar_joinedeventsuserimage {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+}
+
+.joinedeventsuserimage_container {
+  display: flex;
+  justify-content: center;
+}
+
+.img_wrap_joinedeventsuserimage {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  margin-top: 20px;
+}
+
+.img_description_joinedeventsuserimage {
+  position: absolute;
+  background: #05668D;
+  color: white;
+  font-size: 120%;
+  top: 0px;
+  right: 50%;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: visibility 0s, opacity 0.5s linear;
+  transition: visibility 0s, opacity 0.5s linear;
+}
+
+.img_wrap_joinedeventsuserimage:hover {
+  cursor: pointer;
+  
+}
+
+.img_wrap_joinedeventsuserimage:hover div {
+  padding: 8px 15px;
+  visibility: visible;
+  opacity: 0.7;
+}
+
+/* Joined Events Profile Images ENDING */
 .userprofile_container {
   background-color: #edf6f9;
   box-sizing: border-box;
@@ -750,12 +823,14 @@ form h2 {
   align-items: center;
   text-align: center;
 }
+
 .userNavmenu {
   list-style: none;
   font-size: 1.1rem;
   width: 100%;
   margin-left: 20px;
 }
+
 .userNavmenu li {
   display: inline-block;
   padding: 1rem;
@@ -833,6 +908,7 @@ a.active {
   background-color: #006d77;
   border-radius: 50%;
 }
+
 .privacy_head_title {
   margin-top: 1rem;
   font-size: 2.5rem;
@@ -901,24 +977,26 @@ a.active {
   color: #006d77;
 }
 
-.contactus_text h2{
+.contactus_text h2 {
   margin-bottom: 40px;
   margin-top: 40px;
 }
-.contactus_text h3{
+
+.contactus_text h3 {
   margin-top: 40px;
   margin-bottom: 20px;
 }
-.contactus_text h4{
+
+.contactus_text h4 {
   margin-bottom: 10px;
   margin-top: 40px;
 }
 
-#panama{
+#panama {
   margin-top: 0px;
 }
 
-.email{
+.email {
   color: blue;
 }
 
@@ -927,6 +1005,7 @@ a.active {
   padding-left: 15px;
   text-indent: -15px;
 }
+
 #cu_moreinfo {
   width: 15px;
   height: 15px;
@@ -944,6 +1023,7 @@ a.active {
 }
 
 @media only screen and (max-width: 600px) {
+
   /*  .dot {
     width: 10px;
   }
@@ -955,6 +1035,7 @@ a.active {
     font-size: 1rem;
   }
 }
+
 @media screen and (max-width: 960px) {
   .header_main {
     display: flex;
