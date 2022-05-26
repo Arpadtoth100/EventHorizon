@@ -2,18 +2,18 @@ import { useState } from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 
-function SelectDate({ setDateValue }) {
-  const [startDate, setStartDate] = useState(new Date());
-
+function SelectDate({ setDateValue, dateValue }) {
   return (
     <DatePicker
-      selected={startDate}
-      onChange={(date) => setStartDate(date)}
-      onSelect={(date) => setDateValue(date.toString().slice(4, 15))}
-      startDate={startDate}
+      selected={dateValue}
+      onChange={(date) => setDateValue(date)}
+      onSelect={(date) => setDateValue(date)}
+      startDate={dateValue}
       dateFormat="MM/dd/yyyy"
     />
   );
 }
 
 export default SelectDate;
+
+//

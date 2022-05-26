@@ -15,7 +15,6 @@ function SearchBar({ eventList, setFilteredList }) {
   function changeHandler(event) {
     setSearchValue((p) => ({
       ...p,
-      date_from: dateValue,
       [event.target.name]: event.target.value,
     }));
   }
@@ -37,11 +36,11 @@ function SearchBar({ eventList, setFilteredList }) {
             filtered[1].category_id.includes(searchValue?.category_id) &&
             filtered[1].date_from
               .toLowerCase()
-              .includes(searchValue?.date_from.toLowerCase())
+              .includes(dateValue.toString().slice(4, 15).toLowerCase())
           );
         })
       );
-  }, [searchValue]);
+  }, [searchValue, dateValue]);
 
   return (
     <div>
