@@ -41,10 +41,10 @@ export default function JoinModal({
   }, []);
 
   useEffect(() => {
-    if (eventData?.free === 'free') {
+    if (eventData?.free === 'true') {
       setFree(true);
     }
-  }, [eventData]);
+  }, [eventData.free]);
 
   const toSignIn = useNavigate();
 
@@ -67,11 +67,6 @@ export default function JoinModal({
       );
     }
   }, []);
-  useEffect(() => {
-    if (eventData.free === 'true') {
-      setPaidFor(true);
-    }
-  }, [eventData.free]);
 
   function priceCheck() {
     dispatch({
@@ -141,15 +136,16 @@ export default function JoinModal({
                         product={eventData}
                         paidfor={paidFor}
                         setPaidFor={setPaidFor}
+                        setSuccess={setSuccess}
+                        eventId={eventId}
+                        userName={userName}
                       />
                     </>
                   )}
                 </div>
               )}
               {success && (
-                <p className="success">
-                  Thank you, you successfully joined the event!
-                </p>
+                <p className="success">You successfully joined the event!</p>
               )}
             </div>
             <CloseModalButton

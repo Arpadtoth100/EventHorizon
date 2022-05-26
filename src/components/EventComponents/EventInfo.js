@@ -17,14 +17,12 @@ export default function EventInfo({ eventData, eventId }) {
 
   const authContext = useContext(AuthContext);
 
-  const authContext = useContext(AuthContext);
-
   const navTo = useNavigate();
 
   useEffect(() => {
     readAttendee(eventId).then((snapshot) => setAttendee(snapshot.val()));
     attendee?.hasOwnProperty(authContext.loggedUserID) && setJoined(true);
-  }, [eventData]);
+  }, [eventData, authContext.loggedUserID]);
 
   const openJoinModal = () => {
     setShowJoinModal((prev) => !prev);
@@ -100,46 +98,56 @@ export default function EventInfo({ eventData, eventId }) {
             Delete Event
           </button>
         ) : (
+          <></>
+        )}
+
+        {joined ? (
           <button
             className="joinEventBtn"
             aria-label="Close modal"
             onClick={openConfirmationPopUp}
           >
-            Remove Event
+            Unsubscribe
           </button>
+        ) : (
+          <>
+            {authContext.loggedUserID ? (
+              <>
+                <button className="joinEventBtn" onClick={openJoinModal}>
+                  Join Event
+                </button>
+                <JoinModal
+                  showJoinModal={showJoinModal}
+                  setShowJoinModal={setShowJoinModal}
+                  eventData={eventData}
+                  eventId={eventId}
+                />
+              </>
+            ) : (
+              <button
+                className="joinEventBtn"
+                type="button"
+                onClick={() => {
+                  navTo('/signin');
+                }}
+              >
+                Sign in to Join
+              </button>
+            )}
+          </>
         )}
 
-        {auth?.currentUser ? (
-          <>
-            {joined ? <>Joined already</> : <>Not Joined</>}
-            <button className="joinEventBtn" onClick={openJoinModal}>
-              Join Event
-            </button>
-            <JoinModal
-              showJoinModal={showJoinModal}
-              setShowJoinModal={setShowJoinModal}
-              eventData={eventData}
-              eventId={eventId}
-            />
-          </>
-        ) : (
-          <button
-            className="joinEventBtn"
-            type="button"
-            onClick={() => {
-              navTo('/signin');
-            }}
-          >
-            Sign in to Join
-          </button>
-        )}
         {showConfirmationPopUp && (
           <ConfirmationPopUp
             correctUser={correctUser}
             eventId={eventId}
             setShowConfirmationPopUp={setShowConfirmationPopUp}
-            confirmationQuestion={ correctUser ? "Are you sure you want to delete this event?" : "Are you sure you don't want to participate?" }
-            remove={ correctUser ? "Delete" : "Remove"}
+            confirmationQuestion={
+              correctUser
+                ? 'Are you sure you want to delete this event?'
+                : "Are you sure you don't want to participate?"
+            }
+            remove={correctUser ? 'Delete' : 'Remove'}
             cancel="Cancel"
           />
         )}
