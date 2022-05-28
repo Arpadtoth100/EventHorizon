@@ -3,7 +3,8 @@ import { NavLink } from 'react-router-dom';
 
 function FAQ() {
   return (
-    <div className="outlet_main">
+    // <div className="outlet_main">
+      <div>
       <div className="faq_head">
         <div>
           <div className="privacy_icon_container">
@@ -56,7 +57,7 @@ function FAQ() {
         accident, sometimes on purpose (injected humour and the like).
       </p>
       <br />
-      <h2>How much does it cost to use Event Horizon?</h2>
+      <h2>How many events can I create for free at Event Horizon?</h2>
       <p>
         It is a long established fact that a reader will be distracted by the
         readable content of a page when looking at its layout. The point of
@@ -69,6 +70,8 @@ function FAQ() {
         accident, sometimes on purpose (injected humour and the like).
       </p>
       </div>
+      
+      {/* </div> */}
       
     </div>
   );

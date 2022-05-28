@@ -153,6 +153,7 @@ function CreateEventScreen() {
           name="upload"
           id="ce_upload"
           className="textinput"
+          accept="image/*"
           onChange={imageHandler}
         />
 

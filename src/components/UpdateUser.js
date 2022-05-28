@@ -196,6 +196,7 @@ function UpdateUser() {
           placeholder="Upload Image"
           name="upload"
           id="uu_upload"
+          accept="image/*"
           className="textinput"
           onChange={imageHandler}
         />
