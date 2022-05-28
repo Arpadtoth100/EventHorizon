@@ -17,7 +17,6 @@ const mapContainerStyle = {
 
 const options = {
   styles: mapStyles,
-  //disableDefaultUI: true,
   zoomControl: true,
 };
 
@@ -38,8 +37,8 @@ function SimpleMap({ eventData, title }) {
     } else {
       setIsData(true);
       setMarker({
-        lat: eventData.coord.lat,
-        lng: eventData.coord.lng,
+        lat: parseFloat(eventData?.coord.lat),
+        lng: Number(eventData?.coord.lng),
       });
       setCenter(marker);
     }
@@ -55,12 +54,6 @@ function SimpleMap({ eventData, title }) {
 
   return (
     <div>
-      <h1 className="map_text">
-        {title}
-        <span role="img" aria-label="party">
-          🎉
-        </span>
-      </h1>
       <GoogleMap
         mapContainerStyle={mapContainerStyle}
         zoom={13}

@@ -30,6 +30,7 @@ const PaymentBtn = ({
     <>
       {error && <div>We have encountered an error</div>}
       <PayPalButtons
+        fundingSource="paypal"
         onClick={(data, actions) => {
           if (paidFor) {
             setError('Already bought this');

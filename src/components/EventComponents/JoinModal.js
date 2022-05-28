@@ -46,7 +46,7 @@ export default function JoinModal({
     }
   }, [eventData.free]);
 
-  const toSignIn = useNavigate();
+  const navTo = useNavigate();
 
   const CloseModalButton = MdClose;
 
@@ -55,8 +55,9 @@ export default function JoinModal({
     if (auth.currentUser) {
       createAttendee(eventId, auth.currentUser.uid, userName);
       setSuccess(true);
+      navTo('/search');
     } else {
-      toSignIn('/signin');
+      navTo('/signin');
     }
   };
 
@@ -89,9 +90,7 @@ export default function JoinModal({
             <img
               className="ModalImg"
               src={
-                eventData.image_url
-                  ? eventData.image_url
-                  : 'https://picsum.photos/200'
+                eventData.image_url ? eventData.image_url : './blackhole.png'
               }
               alt="the event"
             />
