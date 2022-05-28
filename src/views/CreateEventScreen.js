@@ -15,9 +15,10 @@ function CreateEventScreen() {
   const [startDate, setStartDate] = useState(new Date());
   const [endDate, setEndDate] = useState(new Date());
 
+  const [isClicked, setIsClicked] = useState(false);
+
   const defaultEventData = {
     uid: '',
-    status: '',
     title: '',
     description: '',
     category_id: null,
@@ -50,19 +51,31 @@ function CreateEventScreen() {
 
   const createEventHandler = async (e) => {
     e.preventDefault();
+    setIsClicked(true);
     if (imageToUpload) {
       await uploadImage(imageToUpload);
     } else {
-      createEvent({
-        ...eventData,
-        uid: auth?.currentUser.uid,
-        date_from: startDate.toString(),
-        date_to: endDate.toString(),
-        coord: marker?.coord,
-      }).then(() => {
-        setEventData(defaultEventData);
-        navTo('/event_created');
-      });
+      eventData.coord
+        ? createEvent({
+            ...eventData,
+            uid: auth?.currentUser.uid,
+            date_from: startDate.toString(),
+            date_to: endDate.toString(),
+
+            coord: marker?.coord,
+          }).then(() => {
+            setEventData(defaultEventData);
+            navTo('/event_created');
+          })
+        : createEvent({
+            ...eventData,
+            uid: auth?.currentUser.uid,
+            date_from: startDate.toString(),
+            date_to: endDate.toString(),
+          }).then(() => {
+            setEventData(defaultEventData);
+            navTo('/event_created');
+          });
     }
   };
 
@@ -71,23 +84,34 @@ function CreateEventScreen() {
   };
 
   const uploadImage = async (image) => {
+    setIsClicked(true);
     if (!image) return;
     const storageRef = ref(storage, `/images/${image.name}`);
     uploadBytes(storageRef, image)
       .then((uploadResult) => {
-        console.log(uploadResult);
         getDownloadURL(uploadResult.ref).then((url) => {
-          createEvent({
-            ...eventData,
-            uid: auth?.currentUser.uid,
-            date_from: startDate.toString(),
-            date_to: endDate.toString(),
-            image_url: url,
-            coord: marker?.coord,
-          }).then(() => {
-            setEventData(defaultEventData);
-            navTo('/event_created');
-          });
+          eventData.coord
+            ? createEvent({
+                ...eventData,
+                uid: auth?.currentUser.uid,
+                date_from: startDate.toString(),
+                date_to: endDate.toString(),
+                image_url: url,
+                coord: marker?.coord,
+              }).then(() => {
+                setEventData(defaultEventData);
+                navTo('/event_created');
+              })
+            : createEvent({
+                ...eventData,
+                uid: auth?.currentUser.uid,
+                date_from: startDate.toString(),
+                date_to: endDate.toString(),
+                image_url: url,
+              }).then(() => {
+                setEventData(defaultEventData);
+                navTo('/event_created');
+              });
         });
       })
       .catch((e) => console.log(e));
@@ -107,6 +131,7 @@ function CreateEventScreen() {
           className="textinput"
           required
           onChange={createChangeHandler}
+          maxLength="20"
         />
 
         <label htmlFor="category_id" className="textlabel">
@@ -141,6 +166,7 @@ function CreateEventScreen() {
           id="description"
           className="textinput"
           onChange={createChangeHandler}
+          maxLength="50"
         />
 
         <label htmlFor="ce_upload" className="textlabel">
@@ -183,6 +209,7 @@ function CreateEventScreen() {
           id="location"
           className="textinput"
           onChange={createChangeHandler}
+          maxLength="50"
         />
 
         <br />
@@ -201,6 +228,7 @@ function CreateEventScreen() {
         <input
           required
           type="number"
+          min="1"
           placeholder="Maximum Number of Participants"
           name="user_limit"
           id="user_limit"
@@ -236,6 +264,7 @@ function CreateEventScreen() {
               id="price"
               className="textinput"
               onChange={createChangeHandler}
+              min="0"
             />
             <label htmlFor="currency" className="textlabel">
               Currency
@@ -254,7 +283,11 @@ function CreateEventScreen() {
           </>
         )}
 
-        <button type="submit" className="btn createeventBtn">
+        <button
+          type="submit"
+          className="btn createeventBtn"
+          disabled={isClicked}
+        >
           Create Event!
         </button>
       </form>

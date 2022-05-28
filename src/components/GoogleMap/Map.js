@@ -1,4 +1,5 @@
-import { useState, useCallback, useRef, useEffect, useNavigate } from 'react';
+import { useState, useCallback, useRef, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import {
   GoogleMap,
   useLoadScript,
@@ -48,7 +49,6 @@ function Map({ eventList, title }) {
 
   const createMarkers = useCallback(() => {
     eventList?.map((event) => {
-      console.log(event);
       event[1].coord &&
         setMarkers((prev) => [
           ...prev,
@@ -59,14 +59,33 @@ function Map({ eventList, title }) {
             title: event[1].title,
             location: event[1].location,
             date: event[1].date_from,
+            key: event[0],
           },
         ]);
     });
   }, [eventList]);
 
+  const navTo = useNavigate();
+
   useEffect(() => {
     createMarkers();
   }, [eventList]);
+
+  useEffect(() => {
+    navigator.geolocation.getCurrentPosition(
+      (position) => {
+        setCenter({
+          lat: position.coords.latitude,
+          lng: position.coords.longitude,
+        });
+      },
+      () => null
+    );
+  }, []);
+
+  const clickHandler = useCallback((key) => {
+    navTo(`/eventpage/${key}`);
+  }, []);
 
   const mapRef = useRef();
   const onMapLoad = useCallback((map) => {
@@ -105,7 +124,7 @@ function Map({ eventList, title }) {
       >
         {markers.map((marker, i) => (
           <Marker
-            key={i}
+            key={marker.lat * i}
             position={{ lat: marker.lat, lng: marker.lng }}
             icon={{
               url: './party.png',
@@ -129,6 +148,14 @@ function Map({ eventList, title }) {
               <h2>{selected.title}</h2>
               <p>Location: {selected.location}</p>
               <p>Date of event: {selected.date}</p>
+              <br />
+              <h4
+                onClick={() => {
+                  clickHandler(selected.key);
+                }}
+              >
+                Jump to the Event!
+              </h4>
             </div>
           </InfoWindow>
         ) : null}

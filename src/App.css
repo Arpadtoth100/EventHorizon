@@ -933,7 +933,18 @@ a.active {
   justify-content: space-around;
 }
 
-/* privacy faq contactus */
+/* privacy faq contactus nocontent*/
+
+.nocontent_head{
+  height: 60vh;
+  background-image: url(./images/blackhole.png);
+  background-size: cover; 
+  opacity: 0.8;
+  color: white;
+  background-repeat: no-repeat;
+
+  }
+
 
 .privacy_head {
   height: 25vh;

@@ -1,4 +1,4 @@
-import { useState, useCallback, useRef } from 'react';
+import { useState, useCallback, useRef, useEffect } from 'react';
 import {
   GoogleMap,
   useLoadScript,
@@ -62,13 +62,6 @@ function MapCreate({ eventData, marker, onMapClick }) {
 
   return (
     <div>
-      <h1 className="map_text">
-        Events nearby{' '}
-        <span role="img" aria-label="party">
-          🎉
-        </span>
-      </h1>
-
       <Search panTo={panTo} />
 
       <Locate

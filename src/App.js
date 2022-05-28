@@ -24,6 +24,7 @@ import UpdateUserScreen from './views/UpdateUserScreen';
 import CreateEventScreen from './views/CreateEventScreen';
 import JoinedEventsScreen from './views/JoinedEventsScreen';
 import MyEventsScreen from './views/MyEventsScreen';
+import NoContent from './components/NoContent';
 
 function App() {
   const [loggedUserID, setLoggedUserID] = useState();
@@ -70,16 +71,18 @@ function App() {
               <Route path="/faq" element={<FAQ />} />
               <Route path="/privacy" element={<Privacy />} />
               <Route path="/eventpage" element={<Eventpage />} />
-              <Route
-                path="*"
-                element={<div className="outlet_main">No content found</div>}
-              />
+              <Route path="*" element={<NoContent />} />
             </Route>
 
             <Route element={<UserMainLayout />}>
-              {loggedUserID && (
-                <Route path="/search" element={<SearchScreen />} />
-              )}
+              <Route
+                path="/search"
+                element={
+                  <AuthProtected>
+                    <SearchScreen />
+                  </AuthProtected>
+                }
+              />
               <Route
                 path="/thankyou"
                 element={
