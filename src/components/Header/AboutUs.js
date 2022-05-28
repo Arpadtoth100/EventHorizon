@@ -14,7 +14,7 @@ function AboutUs() {
     <div className="outlet_main  videomain">
       <video className='video' src={videoBg} autoPlay loop muted />
       <div className="title">
-        <h1>There are always great experiences</h1>
+        <h1>There are always great events</h1>
         <h1>on the Horizon.</h1>
         <p>Our mission is to help you catch them.</p>
         <div className='team'>

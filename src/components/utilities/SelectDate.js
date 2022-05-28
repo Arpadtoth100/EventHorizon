@@ -3,6 +3,8 @@ import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 
 function SelectDate({ setDateValue, dateValue }) {
+
+
   return (
     <DatePicker
       selected={dateValue}
@@ -10,6 +12,7 @@ function SelectDate({ setDateValue, dateValue }) {
       onSelect={(date) => setDateValue(date)}
       startDate={dateValue}
       dateFormat="MM/dd/yyyy"
+      className="datepickerinput"
     />
   );
 }

@@ -21,7 +21,7 @@ function FilterBar({ eventList, setFilteredList }) {
     <div>
       <input
         type="text"
-        className="textinput"
+        className="textinput2"
         placeholder="Filter Result"
         onChange={onChangeHandler}
       />

@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 
 function Privacy() {
   return (
-    <div className="outlet_main">
+    <div>
       <div className="privacy_head">
         <div>
           <div className="privacy_icon_container">
@@ -23,10 +23,7 @@ function Privacy() {
           income at all, you might be surprised to discover that you still need
           a privacy policy. Basically, if your website collects personal data,
           you need a privacy policy that informs your users about this according
-          to privacy laws in most jurisdictions, including the EU and the US.
-          Almost all modern websites function with the use of cookies, so
-          chances are high that your website is collecting personal data, for
-          example for statistical, functional or marketing purposes.
+          to privacy laws in most jurisdictions, including the EU and US.
         </p>
         <br />
         <h3>Do we need a privacy policy for websites?</h3>

@@ -16,29 +16,31 @@ function Contact() {
   }
 
   return (
-    <div className="outlet_main contactus_main">
-        <div className='privacy_icon_container'>
-          <i style={{ color: '#9ceaef', paddingBottom: '10px' }}>
-            <SunriseIcon width="60px" height="48px" />
-          </i>
-        </div>
-        <span className='contact_head_title'>Contact Us</span>
+    <div className='contactus_main'>
+      <div className='contactus_icon_container'>
+        <i style={{ color: '#9ceaef', paddingBottom: '10px' }}>
+          <SunriseIcon width="60px" height="48px" />
+        </i>
+      </div>
+      <span className='contact_head_title'>Contact Us</span>
       <div>
         <div className='contactus_content'>
           <div className='contactus_text'>
-            <h1 className='contactus_title'>Let's start a conversation!</h1>
-            <h2>Points of contact</h2>
-            <h3>Hungary | Event Horizon</h3>
-            <p>1000 Budapest</p>
-            <p>Progmatic utca 7.</p>
-            <p>Tel: +36-30-123-4567</p>
-            <h4>Information</h4>
-            <p className='email'>information@eventhorizon.com</p>
-            <h4>Support</h4>
-            <p className='email'>support@eventhorizon.com</p>
-            <h3>Additional office location</h3>
-            <h4 id="panama">Panama</h4>
-            <p>Via Argentina Galerias Alvear 2</p>
+            <div className='contactustextbox'>
+              <h2>Points of contact</h2>
+              <h3>Hungary | Event Horizon</h3>
+              <p>1000 Budapest</p>
+              <p>Progmatic utca 7.</p>
+              <p>Tel: +36-30-123-4567</p>
+              <h4>Information</h4>
+              <p className='email'>information@eventhorizon.com</p>
+              <h4>Support</h4>
+              <p className='email'>support@eventhorizon.com</p>
+              <h3>Additional office location</h3>
+              <h4 id="panama">Panama</h4>
+              <p>Via Argentina Galerias Alvear 2</p>
+            </div>
+
           </div>
           <div className='contactus_form_container'>
             <form className='contactusform' onSubmit={submitHandler}>
@@ -66,15 +68,15 @@ function Contact() {
                 type="tel"
                 className='textinput'
                 placeholder="+12-34-567-8910"
-                // pattern="[+][0-9]{2}-[0-9]{2}-[0-9]{3}-[0-9]{4}"
+                pattern="[+][0-9]{2}-[0-9]{2}-[0-9]{3}-[0-9]{4}"
                 required />
               <br></br>
-              <label htmlFor="cu_country" className='textlabel'>Country</label>
+              <label htmlFor="cu_country" className='textlabel'>E-mail</label>
               <input
-                type="text"
-                placeholder="Country"
-                name="country"
-                id="cu_country"
+                type="email"
+                placeholder="email"
+                name="email"
+                id="cu_email"
                 className="textinput"
                 required
               />
@@ -107,12 +109,8 @@ function Contact() {
               <ContactPopUp showContactPopUp={showContactPopUp} setShowContactPopUp={showContactPopUp} />
             </form>
           </div>
-
         </div>
-
       </div>
-
-
     </div>
   )
 }

@@ -174,8 +174,8 @@ form * {
 
 .search_form {
   background-color: #edf6f9;
-  padding: 1rem;
-  width: 25rem;
+  padding: 1vh;
+  width: 12vw;;
 }
 
 .signinform {
@@ -213,13 +213,55 @@ form h2 {
 .textlabel {
   display: block;
   margin-top: 15px;
-  font-size: 16px;
-  font-weight: 500;
+  margin-bottom: 15px;
+  font-size: 18px;
+  font-weight: bold;
 }
+
 
 .textinput {
   display: block;
   height: 50px;
+  width: 100%;
+  background-color: white;
+  border-radius: 3px;
+  padding: 0 10px;
+  margin-top: 6px;
+  font-size: 16px;
+  font-weight: 600;
+  box-shadow: 0 0 5px rgba(8, 7, 16, 0.6);
+}
+
+.textinput2 {
+  display: block;
+  height: 30px;
+  width: 100%;
+  background-color: white;
+  border-radius: 3px;
+  padding: 0 10px;
+  margin-top: 6px;
+  font-size: 16px;
+  font-weight: 600;
+  box-shadow: 0 0 5px rgba(8, 7, 16, 0.6);
+}
+
+.select{
+  display: block;
+  height: 25px;
+  width: 80%;
+  background-color: white;
+  border-radius: 3px;
+  padding: 0 10px;
+  margin-top: 6px;
+  margin: 0 auto;
+  font-size: 14px;
+  font-weight: 600;
+  box-shadow: 0 0 5px rgba(8, 7, 16, 0.6);
+}
+
+.datepickerinput{
+  display: block;
+  height: 25px;
   width: 100%;
   background-color: white;
   border-radius: 3px;
@@ -231,7 +273,7 @@ form h2 {
 }
 
 ::placeholder {
-  color: #e5e5e5;
+  color: rgb(186, 182, 182)
 }
 
 #su_organization,
@@ -693,6 +735,8 @@ form h2 {
 /*about us*/
 .aboutus-hero {
   height: 75vh;
+  width: 100vw;
+  margin-left: 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -731,7 +775,7 @@ form h2 {
   display: flex;
   flex-direction: column;
   text-align: start;
-  margin-bottom: 20px;
+  /* margin-bottom: 20px; */
 }
 
 .blabla h2 {
@@ -893,9 +937,12 @@ a.active {
 
 .privacy_head {
   height: 25vh;
+  width: 100vw;
   background-image: url(./images/PrivacyBg3.jpg);
   opacity: 0.8;
   color: white;
+  margin-left: 0;
+  margin-top: 8vh;
 }
 
 .privacy_icon_container {
@@ -925,21 +972,29 @@ a.active {
 
 .privacy_text p,
 .faq_text p {
-  font-size: 18px;
+  font-size: 16px;
+  line-height: 1.6; 
+  margin-left: 5vw;
+  margin-right: 5vw;
 }
 
 .privacy_text h3 {
   margin-bottom: 5px;
   margin-top: 5px;
+  margin-left: 4vw;
 }
 
 .privacy_title {
   margin-top: 1rem;
 }
 
-.contactlink,
+.contactlink {
+  color: blue;
+  margin-left: 5vw;
+}
 .privacylink {
   color: blue;
+  margin-left: 5vw;
 }
 
 .privacylink {
@@ -948,17 +1003,38 @@ a.active {
 
 .faq_head {
   height: 25vh;
+  width: 100vw;
   background-image: url(./images/faqBg2.jpg);
   color: white;
+  margin-top: 8vh;
 }
+
 .faq_text h2 {
   margin-bottom: 5px;
   margin-top: 5px;
   color: #006d77;
+  margin-left: 4vw;
+}
+
+.contactus_icon_container{
+  display: inline-flex;
+  margin-top: 3rem;
+  margin-right: 1rem;
+  align-items: center;
+  justify-content: center;
+  height: 4rem;
+  width: 4rem;
+  background-color: #006d77;
+  border-radius: 50%;
+  margin-bottom: 2vh;
 }
 
 .contactus_main {
+  width: 100vw;
+  margin-top: 8vh;
+  margin-left: auto;
   background-image: url(./images/contact6.jpg);
+  background-size: 4000px;
 }
 .contact_head_title {
   margin-top: 1rem;
@@ -966,16 +1042,22 @@ a.active {
   font-weight: bold;
   color: #006d77;
 }
-.contactus_title {
-  margin-top: -10rem;
-  margin-bottom: 4rem;
+
+.contactustextbox{
+  margin-top: -20rem;
+  margin-bottom: 2rem;
   color: #006d77;
+  background-color: rgba(255, 255, 255, 0.4);
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
 }
 
 .contactus_content {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
 .contactus_text {
@@ -1026,6 +1108,7 @@ a.active {
   display: flex;
   align-items: center;
   justify-content: center;
+  opacity: 0.9;
 }
 .contactmessage_btn {
   margin-bottom: 15px;
