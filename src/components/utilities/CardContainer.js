@@ -20,7 +20,7 @@ function CardContainer(props) {
 
   return (
     <div className="main">
-      <h1 className='cardlist-title'>{props.title}</h1>
+      <h1 className="cardlist-title">{props.title}</h1>
       <section className="cards-list">{cards}</section>
     </div>
   );

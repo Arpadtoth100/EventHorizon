@@ -1,0 +1,25 @@
+-Main page kép full széles legyen
+-Contact us email  country helyett / bal szöveg olvasható legyen jobban
+-Privacy/faq text szebb legyen, header full széles
+-Header/footer ikon kattintható, main pagere
+-Reset search?
+-Sign in / up ne jelenjen meg egyszerre
+-Footerben ne legyen mobilmenü
+-Created events egyből látszódjon valahogy
+-Created / Joined menu ne legyen, egyből azt listázzák a kártyák
+-Browse se kell a profilemenube
+-Profileba esetleg plusz useradatot kitenni
+-Ha már létező emailcímmel akar sign up-olni, error message jó legyen
+-lekezelni, ha nem kattint mapen createkor.
+-lekezelni, h tul hosszuak a szovegek
+-inputok egyszegesitese
+-csak kep feltoltese legyen lehetseges
+-szovegek balra helyezese
+-ne lehessen negativ szam az event dija
+-join utan navigaljon el kereseshez, unsubscribe utan navigacio?
+-disable create gomb az elso kattintas utan
+-profile update adatok ellenorzese
+-nem letezo eventoldal lekezelese
+-kereso oldalon whitespace eltuntetes
+-profil on sajat eventjeim latszodjanak
+
