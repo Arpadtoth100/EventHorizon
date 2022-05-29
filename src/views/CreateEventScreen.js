@@ -217,7 +217,7 @@ function CreateEventScreen() {
           Event Location
         </label>
         <input
-          // required
+          required={eventData.event_type === 'online' ? false : true}
           type="text"
           placeholder="Event Location"
           name="location"

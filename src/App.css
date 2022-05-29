@@ -570,6 +570,12 @@ form h2 {
   background-color: #aeecef;
 }
 
+.paginationDisabled a:hover {
+  color: #aeecef;
+  background-color: #aeecef;
+  cursor:default;
+}
+
 .main h1,
 .createevent_h1 {
   color: #006d77;
