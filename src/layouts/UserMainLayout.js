@@ -27,7 +27,7 @@ function UserMainLayout(props) {
               src={
                 user?.profile_url
                   ? user?.profile_url
-                  : 'https://picsum.photos/100'
+                  : 'https://i.pravatar.cc/300'
               }
               alt="useravatar"
             />

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import SunriseIcon from '../utilities/SunRiseIcon';
 
 function Footer() {
@@ -11,12 +11,18 @@ function Footer() {
     setMobileMenuActive((prev) => (prev ? undefined : 'act'));
   };
 
+  const navTo = useNavigate();
+
+  const clickHandler = () => {
+    navTo('/main');
+  }
+
   return (
     <footer className="footer">
       <div className="footer_main">
       <div>
           <i style={{ color: '#9ceaef', marginRight: '0.5rem' }}>
-            <SunriseIcon width="36px" height="24px" />
+            <SunriseIcon width="36px" height="24px" onClick={clickHandler} />
           </i>
         </div>
 

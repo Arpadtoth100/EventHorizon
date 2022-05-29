@@ -6,6 +6,7 @@ function SelectDateFromTo(props) {
   return (
     <>
       <DatePicker
+      className="textlabel datepickerinput"
         selected={props.startDate}
         onChange={(date) => props.setStartDate(date)}
         selectsStart
@@ -15,6 +16,7 @@ function SelectDateFromTo(props) {
         dateFormat="MM/dd/yyyy h:mm aa"
       />
       <DatePicker
+      className="textlabel datepickerinput"
         selected={props.endDate}
         onChange={(date) => props.setEndDate(date)}
         selectsEnd

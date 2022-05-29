@@ -160,7 +160,9 @@ form * {
 }
 
 .create_event_form {
-  height: 950px;
+  width: 20vw;
+  max-height: 110vh;
+  max-width: 20vw;
   padding: 1rem;
   background-color: #edf6f9;
 }
@@ -175,7 +177,28 @@ form * {
 .search_form {
   background-color: #edf6f9;
   padding: 1vh;
-  width: 12vw;;
+  width: 12vw;
+  margin-right: 4vw;
+}
+
+.pagination_search{
+  margin-top: -10vh;
+}
+
+.pagination_search h2{
+  color:#086375;
+}
+
+.pagination_search h1{
+  color:#086375;
+}
+#nosuchevents{
+  color: #03045e;
+}
+
+.search_title{
+  margin-bottom: 8vh;
+  line-height: 1.6; 
 }
 
 .signinform {
@@ -270,6 +293,7 @@ form h2 {
   font-size: 18px;
   font-weight: 600;
   box-shadow: 0 0 5px rgba(8, 7, 16, 0.6);
+  cursor: pointer;
 }
 
 ::placeholder {
@@ -318,6 +342,7 @@ form h2 {
 .signup_btn,
 .update_btn {
   margin-top: 30px;
+  margin-bottom: 10px;
   width: 100%;
   background-color: #006d77;
   color: #edf6f9;
@@ -461,7 +486,8 @@ form h2 {
   position: reative;
   margin-left: 300px;
   margin-top: 25px;
-  max-height: 750px;
+  margin-bottom: 25px;
+  height: 90vh;
   width: 25em;
   left: 60px;
   background-color: #edf6f9;
@@ -480,6 +506,34 @@ form h2 {
 
 .updateform_p {
   margin-top: -20px;
+}
+
+.imagepreview_container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -10vh;
+  margin-left: 18vw;
+}
+
+.imagepreview_containerEvent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -10vh;
+  margin-left: 9vw;
+}
+
+.imagepreview{
+  height: 80px;
+}
+
+.removeimage_button{
+  cursor: pointer;
+  display: flex;
+  height: 80px;
+  padding: 15px;
+  color: #d81159;
 }
 
 .paginationBtns {
@@ -562,11 +616,28 @@ form h2 {
 }
 
 .mapcontainer_div {
+  display: flex;
   position: relative;
   width: 50vw;
   height: 50vh;
   margin-left: 5rem;
   margin-top: -1.5rem;
+}
+
+.mapcontainer_div_search {
+  display: flex;
+  position: relative;
+  width: 50vw;
+  height: 50vh;
+  margin-left: 26vw;
+  margin-top: -6vh;
+  margin-bottom: 6vh;
+}
+
+.searchmap{
+  display: flex;
+  margin-left: 35vw;
+  margin-top: -20vh;
 }
 
 .create_event_main {

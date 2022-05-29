@@ -115,6 +115,10 @@ function UpdateUser() {
       .catch((e) => console.log(e));
   };
 
+const removeImageToUpload = () => {
+  setImageToUpload();
+}
+
   return (
     <div id="updateuser_main">
       <form className="updateuserform" onSubmit={submitHandler}>
@@ -125,7 +129,7 @@ function UpdateUser() {
             </p>
           ))}
         <br></br>
-        <label htmlFor="su_username" className="su_username">
+        <label htmlFor="su_username" className="textlabel">
           Username
         </label>
         <input
@@ -189,7 +193,7 @@ function UpdateUser() {
         />
 
         <label htmlFor="uu_upload" className="textlabel">
-          Upload Image
+          Choose Image to Upload with Update
         </label>
         <input
           type="file"
@@ -200,6 +204,18 @@ function UpdateUser() {
           className="textinput"
           onChange={imageHandler}
         />
+        {imageToUpload &&
+          <div className="imagepreview_container">
+            <img className="imagepreview"
+              src={URL.createObjectURL(imageToUpload)}
+              alt="newuseravatar"
+            />
+            <button className="removeimage_button" onClick={removeImageToUpload}>
+              Remove this image
+            </button>
+          </div>
+        }
+
         <input
           type="checkbox"
           name="organization"

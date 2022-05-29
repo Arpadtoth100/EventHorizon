@@ -56,7 +56,11 @@ function SearchBar({ eventList, setFilteredList }) {
           placeholder="City"
           onChange={changeHandler}
         />
+<<<<<<< HEAD
         <p className="textlabel">Pick the date:</p>
+=======
+        <p className='textlabel datepick'>Pick the date:</p>
+>>>>>>> main
         <SelectDate setDateValue={setDateValue} dateValue={dateValue} />
         <label htmlFor="se_price" className="textlabel">
           Admission
@@ -69,7 +73,7 @@ function SearchBar({ eventList, setFilteredList }) {
         >
           <option value="">Select one</option>
           <option value="true">Free</option>
-          <option value="false">Paid</option>
+          <option value="false">Paying</option>
         </select>
         <label htmlFor="se_type" className="textlabel">
           Event type

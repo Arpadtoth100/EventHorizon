@@ -117,6 +117,10 @@ function CreateEventScreen() {
       .catch((e) => console.log(e));
   };
 
+  const removeImageToUpload = () => {
+    setImageToUpload();
+  }
+
   return (
     <div className="outlet_main create_event_main">
       <form className="create_event_form" onSubmit={createEventHandler}>
@@ -139,7 +143,7 @@ function CreateEventScreen() {
         </label>
         <select
           required
-          className="create_event_select"
+          className="select"
           name="category_id"
           id="category_id"
           onChange={createChangeHandler}
@@ -170,7 +174,7 @@ function CreateEventScreen() {
         />
 
         <label htmlFor="ce_upload" className="textlabel">
-          Upload Image
+          Choose Image to Upload
         </label>
         <input
           required
@@ -182,13 +186,24 @@ function CreateEventScreen() {
           accept="image/*"
           onChange={imageHandler}
         />
+        {imageToUpload &&
+          <div className="imagepreview_containerEvent">
+            <img className="imagepreview"
+              src={URL.createObjectURL(imageToUpload)}
+              alt="newuseravatar"
+            />
+            <button className="removeimage_button" onClick={removeImageToUpload}>
+              Remove this image
+            </button>
+          </div>
+        }
 
         <label htmlFor="event_type" className="textlabel">
           Online or Offline
         </label>
         <select
           required
-          className="create_event_select"
+          className="select"
           name="event_type"
           id="event_type"
           onChange={createChangeHandler}
@@ -213,7 +228,7 @@ function CreateEventScreen() {
         />
 
         <br />
-        <p>Please select the starting and closing dates:</p>
+        <p className='textlabel datepick'>Please select the starting and closing dates:</p>
         <SelectDateFromTo
           required
           startDate={startDate}
@@ -241,7 +256,7 @@ function CreateEventScreen() {
         </label>
         <select
           required
-          className="create_event_select"
+          className="select"
           name="free"
           id="free"
           onChange={createChangeHandler}
