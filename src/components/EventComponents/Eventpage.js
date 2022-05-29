@@ -35,7 +35,7 @@ function EventPage() {
   const profileImages = finalList.map((item) => {
     const key = item[0]
     return <div key={key} className='img_wrap_joinedeventsuserimage'>
-      <img className="useravatar_joinedeventsuserimage" src={item[1].profile_url}></img>
+      <img className="useravatar_joinedeventsuserimage" src={item[1].profile_url ? item[1].profile_url : 'https://i.pravatar.cc/300' }></img>
       <div className='img_description_joinedeventsuserimage'>{item[1].username}</div>
     </div>
   })
