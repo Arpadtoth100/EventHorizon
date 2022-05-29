@@ -29,13 +29,10 @@ function SearchScreen() {
           />
           <div className="pagination_search">
             <div className='search_title'>
-              <h1>You can search for events here, please fill in the form!</h1>
-              <h2>Before you start searching, we offer you some events.</h2>
-              <h2>After your search the results will appear below.</h2>
+            <h1 id='nosuchevents'>There are no such events yet!</h1>
+            <h1>You can search for other options, please fill in the form again!</h1>
             </div>
-            <Pagination
-              title={'There are no such events yet!'} 
-              data={filteredList} />
+            
           </div>
         </div>
         <div className="mapcontainer_div_search">

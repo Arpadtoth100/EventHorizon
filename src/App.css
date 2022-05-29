@@ -185,8 +185,15 @@ form * {
   margin-top: -10vh;
 }
 
-.pagination_search h2, h1{
+.pagination_search h2{
   color:#086375;
+}
+
+.pagination_search h1{
+  color:#086375;
+}
+#nosuchevents{
+  color: #03045e;
 }
 
 .search_title{
