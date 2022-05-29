@@ -55,7 +55,9 @@ export default function JoinModal({
     if (auth.currentUser) {
       createAttendee(eventId, auth.currentUser.uid, userName);
       setSuccess(true);
-      navTo('/search');
+      setTimeout(() => {
+        navTo('/profile');
+      }, 4000);
     } else {
       navTo('/signin');
     }
@@ -152,7 +154,10 @@ export default function JoinModal({
                 </div>
               )}
               {success && (
-                <p className="success">You successfully joined the event!</p>
+                <div className="success">
+                  <p>You successfully joined the event!</p>
+                  <p>Redirecting you to your Profile</p>
+                </div>
               )}
             </div>
             <CloseModalButton

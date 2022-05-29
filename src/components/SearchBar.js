@@ -56,7 +56,7 @@ function SearchBar({ eventList, setFilteredList }) {
           placeholder="City"
           onChange={changeHandler}
         />
-        <p className='textlabel'>Pick the date:</p>
+        <p className="textlabel">Pick the date:</p>
         <SelectDate setDateValue={setDateValue} dateValue={dateValue} />
         <label htmlFor="se_price" className="textlabel">
           Admission
@@ -67,7 +67,7 @@ function SearchBar({ eventList, setFilteredList }) {
           name="free"
           id="se_price"
         >
-          <option value="">Please Choose an option</option>
+          <option value="">Select one</option>
           <option value="true">Free</option>
           <option value="false">Paid</option>
         </select>
@@ -80,7 +80,7 @@ function SearchBar({ eventList, setFilteredList }) {
           name="event_type"
           id="se_type"
         >
-          <option value="">Please Choose an option</option>
+          <option value="">Select one</option>
           <option value="online">Online</option>
           <option value="offline">In Person</option>
         </select>
@@ -93,7 +93,7 @@ function SearchBar({ eventList, setFilteredList }) {
           name="category_id"
           id="se_category"
         >
-          <option value="">Please Select one</option>
+          <option value="">Select one</option>
           <option value="1">Music</option>
           <option value="2">Flash Mob</option>
           <option value="3">Theatre</option>
@@ -104,7 +104,7 @@ function SearchBar({ eventList, setFilteredList }) {
           <option value="8">Hobbies</option>
           <option value="8">Other</option>
         </select>
-        <h2 className='textlabel'>Filter result:</h2>
+        <h2 className="textlabel">Filter result:</h2>
         <FilterBar eventList={eventList} setFilteredList={setFilteredList} />
       </form>
     </div>
