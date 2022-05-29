@@ -69,6 +69,12 @@ function FAQ() {
         infancy. Various versions have evolved over the years, sometimes by
         accident, sometimes on purpose (injected humour and the like).
       </p>
+      <br />
+        <h2>Do you have another question?</h2>
+        <p>Feel free to reach out and</p>
+        <NavLink to="/contact" className="contactlink">
+          Contact Us
+        </NavLink>
       </div>
       
       {/* </div> */}
