@@ -119,48 +119,47 @@ function CreateEventScreen() {
 
   const removeImageToUpload = () => {
     setImageToUpload();
-  }
+  };
 
   return (
     <div className="create_event_main">
       <form className="create_event_form" onSubmit={createEventHandler}>
-        <div className='createform_row'>
-        <label htmlFor="title" className="textlabel">
-          Event Title
-        </label>
-        <input
-          type="text"
-          placeholder="Event title"
-          name="title"
-          id="title"
-          className="textinput"
-          required
-          onChange={createChangeHandler}
-          maxLength="50"
-        />
+        <div className="createform_row">
+          <label htmlFor="title" className="textlabel">
+            Event Title
+          </label>
+          <input
+            type="text"
+            placeholder="Event title"
+            name="title"
+            id="title"
+            className="textinput"
+            required
+            onChange={createChangeHandler}
+            maxLength="50"
+          />
 
-        <label htmlFor="category_id" className="textlabel">
-          Category
-        </label>
-        <select
-          required
-          className="select"
-          name="category_id"
-          id="category_id"
-          onChange={createChangeHandler}
-        >
-          <option value="">Please Select one</option>
-          <option value="1">Music</option>
-          <option value="2">Flash Mob</option>
-          <option value="3">Theatre</option>
-          <option value="4">E-Sports</option>
-          <option value="5">Outdoor activity</option>
-          <option value="6">{'Art & Culture'}</option>
-          <option value="7">Games</option>
-          <option value="8">Hobbies</option>
-        </select>
+          <label htmlFor="category_id" className="textlabel">
+            Category
+          </label>
+          <select
+            required
+            className="select"
+            name="category_id"
+            id="category_id"
+            onChange={createChangeHandler}
+          >
+            <option value="">Please Select one</option>
+            <option value="1">Music</option>
+            <option value="2">Flash Mob</option>
+            <option value="3">Theatre</option>
+            <option value="4">E-Sports</option>
+            <option value="5">Outdoor activity</option>
+            <option value="6">{'Art & Culture'}</option>
+            <option value="7">Games</option>
+            <option value="8">Hobbies</option>
+          </select>
         </div>
-        
 
         <label htmlFor="description" className="textlabel textarea">
           Description
@@ -190,17 +189,21 @@ function CreateEventScreen() {
           accept="image/*"
           onChange={imageHandler}
         />
-        {imageToUpload &&
+        {imageToUpload && (
           <div className="imagepreview_containerEvent">
-            <img className="imagepreview"
+            <img
+              className="imagepreview"
               src={URL.createObjectURL(imageToUpload)}
               alt="neweventimage"
             />
-            <button className="removeimage_button" onClick={removeImageToUpload}>
+            <button
+              className="removeimage_button"
+              onClick={removeImageToUpload}
+            >
               Remove this image
             </button>
           </div>
-        }
+        )}
 
         <label htmlFor="event_type" className="textlabel">
           Online or Offline
@@ -232,7 +235,9 @@ function CreateEventScreen() {
         />
 
         <br />
-        <p className='textlabel datepick'>Please select the starting and closing dates:</p>
+        <p className="textlabel datepick">
+          Please select the starting and closing dates:
+        </p>
         <SelectDateFromTo
           required
           startDate={startDate}

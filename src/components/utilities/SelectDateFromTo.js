@@ -1,12 +1,11 @@
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 
-
 function SelectDateFromTo(props) {
   return (
     <>
       <DatePicker
-      className="textlabel datepickerinput"
+        className="textlabel datepickerinput"
         selected={props.startDate}
         onChange={(date) => props.setStartDate(date)}
         selectsStart
@@ -14,9 +13,10 @@ function SelectDateFromTo(props) {
         endDate={props.endDate}
         showTimeSelect
         dateFormat="MM/dd/yyyy h:mm aa"
+        minDate={new Date()}
       />
       <DatePicker
-      className="textlabel datepickerinput"
+        className="textlabel datepickerinput"
         selected={props.endDate}
         onChange={(date) => props.setEndDate(date)}
         selectsEnd

@@ -46,7 +46,7 @@ function Map({ eventList, title }) {
   const [selected, setSelected] = useState(null);
   const [center, setCenter] = useState({ lat: 47.497913, lng: 19.040236 });
 
-  const createMarkers = useCallback(() => {
+  const createMarkers = () => {
     eventList?.map((event) => {
       event[1].coord &&
         setMarkers((prev) => [
@@ -62,7 +62,25 @@ function Map({ eventList, title }) {
           },
         ]);
     });
-  }, [eventList]);
+  };
+
+  // const createMarkers = useCallback(() => {
+  //   eventList?.map((event) => {
+  //     event[1].coord &&
+  //       setMarkers((prev) => [
+  //         ...prev,
+  //         {
+  //           lat: event[1].coord.lat,
+  //           lng: event[1].coord.lng,
+  //           time: new Date(),
+  //           title: event[1].title,
+  //           location: event[1].location,
+  //           date: event[1].date_from,
+  //           key: event[0],
+  //         },
+  //       ]);
+  //   });
+  // }, [eventList]);
 
   const navTo = useNavigate();
 
@@ -225,8 +243,8 @@ const Search = ({ panTo }) => {
         <ComboboxPopover>
           <ComboboxList>
             {status === 'OK' &&
-              data.map(({ id, description }) => (
-                <ComboboxOption key={id} value={description} />
+              data.map(({ id, description }, idx) => (
+                <ComboboxOption key={idx} value={description} />
               ))}
           </ComboboxList>
         </ComboboxPopover>
