@@ -1,7 +1,7 @@
 import EventCard from '../EventComponents/EventCard';
 import { useNavigate } from 'react-router-dom';
 
-function CardContainer(props) {
+function CardContainer({ title, data, searchscreen_class }) {
   const navTo = useNavigate();
 
   const clickHandler = (key) => (event) => {
@@ -9,7 +9,7 @@ function CardContainer(props) {
     navTo(`/eventpage/${key}`);
   };
 
-  const cards = props.data.map((item) => {
+  const cards = data.map((item) => {
     const key = item[0];
     return (
       <div key={key} onClick={clickHandler(key)}>
@@ -19,8 +19,10 @@ function CardContainer(props) {
   });
 
   return (
-    <div className="main">
-      <h1 className="cardlist-title">{props.title}</h1>
+    <div>
+      {title && (
+        <h1 className={`cardlist-title ${searchscreen_class}`}>{title}</h1>
+      )}
       <section className="cards-list">{cards}</section>
     </div>
   );

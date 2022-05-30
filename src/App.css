@@ -168,17 +168,32 @@ form * {
 }
 
 .search_container {
+  width: 100%-240px;
   display: flex;
   justify-content: center;
-  align-items: center;
+  
+}
+
+.search_map{
+  position: relative
 }
 
 .search_form {
   background-color: #edf6f9;
-  padding: 1vh;
-  width: 12vw;
-  margin-right: 4vw;
-  margin-top: -10vh;
+  padding: 1rem;
+  height: 80vh;
+  min-width: 10vw;
+  margin-right: 2rem;
+}
+
+.search_output{
+  max-width: 480px;
+  min-width: 480px;
+  display: flex;
+  flex-wrap: wrap;
+  height: auto;
+  margin: 0px;
+  margin-right: 2rem;
 }
 
 .pagination_search{
@@ -192,12 +207,19 @@ form * {
 .pagination_search h1{
   color:#086375;
 }
+
 #nosuchevents{
-  color: #03045e;
+  margin-top: 5rem;
+  margin-right: 2rem;
+  min-width: 480px;
+  max-width: 480px;
+  color: #086375;
 }
 
 .search_title{
-  margin-bottom: 8vh;
+  color: #086375;
+  margin: 80px 120px 0; 
+  height: 20vh;
   line-height: 1.6; 
 }
 
@@ -271,7 +293,7 @@ form h2 {
 .select{
   display: block;
   height: 25px;
-  width: 80%;
+  width: 100%;
   background-color: white;
   border-radius: 3px;
   padding: 0 10px;
@@ -283,7 +305,6 @@ form h2 {
 }
 
 .datepickerinput{
-  display: block;
   height: 25px;
   width: 100%;
   background-color: white;
@@ -373,8 +394,8 @@ form h2 {
 .cards-list {
   display: flex;
   justify-content: center;
-  flex-wrap: nowrap;
-  gap: 100px;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
 .event-cardFix {
@@ -593,9 +614,14 @@ form h2 {
   position: absolute;
   top: 1rem;
   left: 50%;
-  height: 2rem;
+  transform: translateX(-50%);
+  height: 1rem;
   max-width: 600px;
   z-index: 10;
+}
+
+.combo_search input {
+  font-size: 1.5rem;
 }
 
 #locate {
@@ -618,23 +644,6 @@ form h2 {
   width: 50vw;
   height: 50vh;
   margin-left: 5rem;
-  margin-top: -1.5rem;
-}
-
-.mapcontainer_div_search {
-  display: flex;
-  position: relative;
-  width: 50vw;
-  height: 50vh;
-  margin-left: 26vw;
-  margin-top: -6vh;
-  margin-bottom: 6vh;
-}
-
-.searchmap{
-  display: flex;
-  margin-left: 35vw;
-  margin-top: -20vh;
 }
 
 .create_event_main {
@@ -685,6 +694,8 @@ form h2 {
   width: 100%;
   max-height: 350px;
 }
+
+
 
 /* Join Modal*/
 .ModalWrapper,
@@ -1205,6 +1216,16 @@ a.active {
  cursor: pointer;
  color:#006d77;
 }
+
+.searchscreen_class {
+  display: flex;
+  justify-content: center;
+  flex-wrap: nowrap;
+  grid-gap: 20px;
+  gap: 20px;
+}
+
+
 @media only screen and (max-width: 600px) {
 
   /*  .dot {

@@ -2,7 +2,7 @@ import { useState } from 'react';
 import ReactPaginate from 'react-paginate';
 import CardContainer from '../components/utilities/CardContainer';
 
-function Pagination({ title, data }) {
+function Pagination({ title, data, searchscreen_class }) {
   const [pageNumber, setPageNumber] = useState(0);
 
   const changePageHandler = ({ selected }) => {
@@ -17,7 +17,11 @@ function Pagination({ title, data }) {
 
   return (
     <>
-      <CardContainer title={title} data={currentPageData} />
+      <CardContainer
+        title={title}
+        data={currentPageData}
+        searchscreen_class={searchscreen_class}
+      />
       <ReactPaginate
         previousLabel={'Prev'}
         nextLabel={'Next'}
