@@ -22,8 +22,6 @@ import Contact from './components/Footer/Contact';
 import FAQ from './components/Footer/FAQ';
 import UpdateUserScreen from './views/UpdateUserScreen';
 import CreateEventScreen from './views/CreateEventScreen';
-import JoinedEventsScreen from './views/JoinedEventsScreen';
-import MyEventsScreen from './views/MyEventsScreen';
 import NoContent from './components/NoContent';
 
 function App() {
@@ -120,22 +118,6 @@ function App() {
                 element={
                   <AuthProtected>
                     <UpdateUserScreen />
-                  </AuthProtected>
-                }
-              />
-              <Route
-                path="/joined_events"
-                element={
-                  <AuthProtected>
-                    <JoinedEventsScreen />
-                  </AuthProtected>
-                }
-              />
-              <Route
-                path="/my_events"
-                element={
-                  <AuthProtected>
-                    <MyEventsScreen />
                   </AuthProtected>
                 }
               />
