@@ -19,18 +19,20 @@ function Navbar(props) {
 
   const clickHandler = () => {
     navTo('/main');
-  }
+  };
 
   return (
     <header className="header">
       <div className="header_main">
         <div>
           <i style={{ color: '#9ceaef', marginRight: '0.5rem' }}>
-            <SunRiseIcon width="36px" height="24px" onClick={clickHandler}/>
+            <SunRiseIcon width="36px" height="24px" onClick={clickHandler} />
           </i>
         </div>
         <div>
-          <p className="logotext" onClick={clickHandler}>Event Horizon</p>
+          <p className="logotext" onClick={clickHandler}>
+            Event Horizon
+          </p>
         </div>
 
         <ul className={`menu ${menuActive}`}>

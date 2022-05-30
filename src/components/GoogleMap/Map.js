@@ -26,8 +26,8 @@ import mapStyles from './mapStyles';
 const libs = ['places'];
 
 const mapContainerStyle = {
-  width: '50vw',
-  height: '50vh',
+  width: '35vw',
+  height: '80vh',
 };
 
 const options = {
@@ -36,7 +36,7 @@ const options = {
   zoomControl: true,
 };
 
-function Map({ eventList, title }) {
+function Map({ eventList }) {
   const { isLoaded, loadError } = useLoadScript({
     googleMapsApiKey: 'AIzaSyCQdxI7flTlfWCB0l-vdZPjY3J0P5jwRQk',
     libraries: libs,
@@ -46,7 +46,8 @@ function Map({ eventList, title }) {
   const [selected, setSelected] = useState(null);
   const [center, setCenter] = useState({ lat: 47.497913, lng: 19.040236 });
 
-  const createMarkers = () => {
+  const createMarkers = useCallback(() => {
+    setMarkers([]);
     eventList?.map((event) => {
       event[1].coord &&
         setMarkers((prev) => [
@@ -62,25 +63,7 @@ function Map({ eventList, title }) {
           },
         ]);
     });
-  };
-
-  // const createMarkers = useCallback(() => {
-  //   eventList?.map((event) => {
-  //     event[1].coord &&
-  //       setMarkers((prev) => [
-  //         ...prev,
-  //         {
-  //           lat: event[1].coord.lat,
-  //           lng: event[1].coord.lng,
-  //           time: new Date(),
-  //           title: event[1].title,
-  //           location: event[1].location,
-  //           date: event[1].date_from,
-  //           key: event[0],
-  //         },
-  //       ]);
-  //   });
-  // }, [eventList]);
+  }, [eventList]);
 
   const navTo = useNavigate();
 
@@ -119,7 +102,6 @@ function Map({ eventList, title }) {
 
   return (
     <div>
-      <h1 className="map_text">{title}</h1>
       <Search panTo={panTo} />
       <Locate
         panTo={panTo}
