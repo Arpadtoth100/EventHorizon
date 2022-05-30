@@ -40,7 +40,9 @@
 
 .followus {
   display: flex;
-  margin-top: 47vh;
+  margin-top: 42vh;
+  align-items: center;
+  justify-content: center;
 }
 
 .team {
