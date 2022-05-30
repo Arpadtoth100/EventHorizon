@@ -3,7 +3,7 @@ import { filterMyCreatedEvent } from '../services/crud';
 import Pagination from '../services/Pagination';
 import { AuthContext } from '../components/Context/AuthContext';
 
-export default function MyEventsScreen(props) {
+export default function MyEvents() {
   const authContext = useContext(AuthContext);
   const [myCreatedEventList, setMyCreatedEventList] = useState([]);
 
@@ -15,12 +15,12 @@ export default function MyEventsScreen(props) {
   }, [authContext.loggedUserID]);
 
   return (
-    <div className="outlet_main">
+    <>
       {myCreatedEventList.length !== 0 ? (
         <Pagination title={'Events I have Created'} data={myCreatedEventList} />
       ) : (
         <h3>You have not created any events yet!</h3>
       )}
-    </div>
+    </>
   );
 }

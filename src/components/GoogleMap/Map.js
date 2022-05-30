@@ -21,7 +21,6 @@ import {
 } from '@reach/combobox';
 import '@reach/combobox/styles.css';
 
-import { formatRelative } from 'date-fns';
 import mapStyles from './mapStyles';
 
 const libs = ['places'];
@@ -149,13 +148,15 @@ function Map({ eventList, title }) {
               <p>Location: {selected.location}</p>
               <p>Date of event: {selected.date}</p>
               <br />
-              <h4
-                onClick={() => {
-                  clickHandler(selected.key);
-                }}
-              >
-                Jump to the Event!
-              </h4>
+              <div className="infoBox_link">
+                <h4
+                  onClick={() => {
+                    clickHandler(selected.key);
+                  }}
+                >
+                  Jump to the Event!
+                </h4>
+              </div>
             </div>
           </InfoWindow>
         ) : null}
