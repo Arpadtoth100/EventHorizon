@@ -178,6 +178,7 @@ form * {
   padding: 1vh;
   width: 12vw;
   margin-right: 4vw;
+  margin-top: -10vh;
 }
 
 .pagination_search{
@@ -234,22 +235,22 @@ form h2 {
 
 .textlabel {
   display: block;
-  margin-top: 15px;
-  margin-bottom: 15px;
-  font-size: 18px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 16px;
   font-weight: bold;
 }
 
 
 .textinput {
   display: block;
-  height: 50px;
+  height: 30px;
   width: 100%;
   background-color: white;
   border-radius: 3px;
-  padding: 0 10px;
+  padding: 0 5px;
   margin-top: 6px;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 600;
   box-shadow: 0 0 5px rgba(8, 7, 16, 0.6);
 }
@@ -262,7 +263,7 @@ form h2 {
   border-radius: 3px;
   padding: 0 10px;
   margin-top: 6px;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 600;
   box-shadow: 0 0 5px rgba(8, 7, 16, 0.6);
 }
@@ -301,7 +302,7 @@ form h2 {
 
 #su_organization,
 #cu_moreinfo {
-  margin-top: 30px;
+  margin-top: 12px;
   margin-right: 10px;
   width: 15px;
   height: 15px;
@@ -319,7 +320,7 @@ form h2 {
 
 #checkbox_label {
   display: inline-block;
-  margin-top: 30px;
+  margin-top: -15px;
   font-size: 16px;
   font-weight: 500;
   text-align: left;
@@ -342,7 +343,8 @@ form h2 {
 .update_btn {
   margin-top: 30px;
   margin-bottom: 10px;
-  width: 100%;
+  margin-left: 15px;
+  width: 40%;
   background-color: #006d77;
   color: #edf6f9;
   padding: 15px 0;
@@ -482,12 +484,12 @@ form h2 {
 /* UpdateUser Page*/
 
 .updateuserform {
-  position: reative;
-  margin-left: 300px;
-  margin-top: 25px;
-  margin-bottom: 25px;
-  height: 90vh;
-  width: 25em;
+  position: relative;
+  margin-left: 7vw;
+  margin-top: 4vh;
+  margin-bottom: 4vh;
+  height: 68vh;
+  width: 18vw;
   left: 60px;
   background-color: #edf6f9;
 }
@@ -499,12 +501,8 @@ form h2 {
   background-size: cover;
 }
 
-#updateuser_main {
-  margin: 0;
-}
-
 .updateform_p {
-  margin-top: -20px;
+  margin-top: -10px;
 }
 
 .imagepreview_container{
