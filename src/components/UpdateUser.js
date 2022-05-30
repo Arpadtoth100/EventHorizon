@@ -120,7 +120,7 @@ const removeImageToUpload = () => {
 }
 
   return (
-    <div id="updateuser_main">
+    <div className="updateuser_main">
       <form className="updateuserform" onSubmit={submitHandler}>
         {(success && <h4>Your information has been updated!</h4>) ||
           (error && (
@@ -193,7 +193,7 @@ const removeImageToUpload = () => {
         />
 
         <label htmlFor="uu_upload" className="textlabel">
-          Choose Image to Upload with Update
+          Avatar
         </label>
         <input
           type="file"
