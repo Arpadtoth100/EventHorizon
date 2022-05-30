@@ -35,13 +35,11 @@ function JoinedEvents() {
 
   return (
     <>
-      <div>
-        {finalEvents.length !== 0 ? (
-          <Pagination title={'Events I have Joined'} data={finalEvents} />
-        ) : (
-          <h3>You have not joined any events yet!</h3>
-        )}
-      </div>
+      {finalEvents.length !== 0 ? (
+        <Pagination title={'Events I have Joined'} data={finalEvents} />
+      ) : (
+        <h3>You have not joined any events yet!</h3>
+      )}
     </>
   );
 }

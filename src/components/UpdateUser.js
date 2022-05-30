@@ -115,9 +115,9 @@ function UpdateUser() {
       .catch((e) => console.log(e));
   };
 
-const removeImageToUpload = () => {
-  setImageToUpload();
-}
+  const removeImageToUpload = () => {
+    setImageToUpload();
+  };
 
   return (
     <div className="updateuser_main">
@@ -204,17 +204,21 @@ const removeImageToUpload = () => {
           className="textinput"
           onChange={imageHandler}
         />
-        {imageToUpload &&
+        {imageToUpload && (
           <div className="imagepreview_container">
-            <img className="imagepreview"
+            <img
+              className="imagepreview"
               src={URL.createObjectURL(imageToUpload)}
               alt="newuseravatar"
             />
-            <button className="removeimage_button" onClick={removeImageToUpload}>
+            <button
+              className="removeimage_button"
+              onClick={removeImageToUpload}
+            >
               Remove this image
             </button>
           </div>
-        }
+        )}
 
         <input
           type="checkbox"

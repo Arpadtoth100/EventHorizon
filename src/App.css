@@ -1200,6 +1200,11 @@ a.active {
   margin-bottom: 15px;
 }
 
+
+.infoBox_link :hover{
+ cursor: pointer;
+ color:#006d77;
+}
 @media only screen and (max-width: 600px) {
 
   /*  .dot {
