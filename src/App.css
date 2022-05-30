@@ -833,12 +833,12 @@ form h2 {
 
 .aboutus-hero-text {
   color: white;
-  font-size: 48px;
+  font-size: 24px;
   font-weight: bold;
   flex: 1;
   z-index: 2;
   position: relative;
-  top: -4rem;
+  top: -65vh;
 }
 
 .blabla {

@@ -1,6 +1,11 @@
 import Pagination from '../services/Pagination';
 import { useState, useEffect } from 'react';
 import { filterEvent } from '../services/crud';
+import '../Video.css';
+import videoBg3 from '../images/videoBg3.mp4';
+import { FaFacebookF } from 'react-icons/fa';
+import { FaTwitter } from 'react-icons/fa';
+import { FaInstagram } from 'react-icons/fa';
 
 const MainScreen = () => {
   const [freeEventList, setFreeEventList] = useState([]);
@@ -20,18 +25,23 @@ const MainScreen = () => {
 
   return (
     <div>
-      <div div className="aboutus-hero">
-        <div className="aboutus-hero-img-wrapper">
-          <img
-            className="aboutus-hero-img"
-            src="./pexels-pixabay-207896 new color kisebb.jpg"
-            alt=""
-          />
-        </div>
+      <div className="videomain">
+        <video className="video" src={videoBg3} autoPlay loop muted />
         <div className="aboutus-hero-text">
-          <p>There are always great events on the horizon!</p>
-          <br />
-          <p>Let's Explore!</p>
+            <h1>There are always great events on the horizon!</h1>
+            <br />
+            <h1>Let's Explore!</h1>
+          <span className="followus">
+            <div className="icon">
+              <FaFacebookF size={'1.5em'} />
+            </div>
+            <div className="icon">
+              <FaTwitter size={'1.5em'} />
+            </div>
+            <div className="icon">
+              <FaInstagram size={'1.5em'} />{' '}
+            </div>
+          </span>
         </div>
       </div>
       <div className="blabla">

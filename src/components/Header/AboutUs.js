@@ -8,8 +8,7 @@ function AboutUs() {
   return (
     <>
       <div>
-        <div className="overlay"></div>
-        <div className="videomain">
+        {/* <div className="videomain">
           <video className="video" src={videoBg3} autoPlay loop muted />
           <div className="title">
             <h1>There are always great events</h1>
@@ -27,7 +26,32 @@ function AboutUs() {
               </div>
             </span>
           </div>
+        </div> */}
+        <div div className="aboutus-hero">
+          <div className="aboutus-hero-img-wrapper">
+            <img
+              className="aboutus-hero-img"
+              src="./pexels-pixabay-207896 new color kisebb.jpg"
+              alt=""
+            />
+            <div className="aboutus-hero-text">
+            <h1>There are always great events</h1>
+          <h1>on the Horizon.</h1>
+          <p>Our mission is to help you catch them.</p>
+          <span className="followus">
+            <div className="icon">
+              <FaFacebookF size={'1.5em'} />
+            </div>
+            <div className="icon">
+              <FaTwitter size={'1.5em'} />
+            </div>
+            <div className="icon">
+              <FaInstagram size={'1.5em'} />{' '}
+            </div>
+          </span>
         </div>
+        </div>
+          </div>
         <div className="team">
           <div>
             <p>Meet the team</p>
