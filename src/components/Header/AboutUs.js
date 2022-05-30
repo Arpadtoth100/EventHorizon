@@ -1,5 +1,5 @@
 import '../../Video.css';
-import videoBg from '../../images/videoBg.mp4'
+import videoBg3 from '../../images/videoBg3.mp4'
 import { FaFacebookF } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
@@ -11,14 +11,12 @@ function AboutUs() {
     <>
       <div>
         <div className="overlay"></div>
-        <div className="outlet_main  videomain">
-          <video className='video' src={videoBg} autoPlay loop muted />
+        <div className="videomain">
+          <video className='video' src={videoBg3} autoPlay loop muted />
           <div className="title">
             <h1>There are always great events</h1>
             <h1>on the Horizon.</h1>
             <p>Our mission is to help you catch them.</p>
-            <div className='followus'>
-            </div>
             <span className='followus'>
               <div className="icon"><FaFacebookF size={'2em'} /></div>
               <div className="icon"><FaTwitter size={'2em'} /></div>
