@@ -122,8 +122,9 @@ function CreateEventScreen() {
   }
 
   return (
-    <div className="outlet_main create_event_main">
+    <div className="create_event_main">
       <form className="create_event_form" onSubmit={createEventHandler}>
+        <div className='createform_row'>
         <label htmlFor="title" className="textlabel">
           Event Title
         </label>
@@ -135,7 +136,7 @@ function CreateEventScreen() {
           className="textinput"
           required
           onChange={createChangeHandler}
-          maxLength="20"
+          maxLength="50"
         />
 
         <label htmlFor="category_id" className="textlabel">
@@ -158,6 +159,8 @@ function CreateEventScreen() {
           <option value="7">Games</option>
           <option value="8">Hobbies</option>
         </select>
+        </div>
+        
 
         <label htmlFor="description" className="textlabel textarea">
           Description
@@ -170,7 +173,8 @@ function CreateEventScreen() {
           id="description"
           className="textinput"
           onChange={createChangeHandler}
-          maxLength="50"
+          rows="4"
+          maxLength="500"
         />
 
         <label htmlFor="ce_upload" className="textlabel">
@@ -190,7 +194,7 @@ function CreateEventScreen() {
           <div className="imagepreview_containerEvent">
             <img className="imagepreview"
               src={URL.createObjectURL(imageToUpload)}
-              alt="newuseravatar"
+              alt="neweventimage"
             />
             <button className="removeimage_button" onClick={removeImageToUpload}>
               Remove this image
