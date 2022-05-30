@@ -169,7 +169,6 @@ form * {
 
 .search_container {
   display: flex;
-  margin-top: 0;
   justify-content: center;
   align-items: center;
 }
@@ -732,6 +731,7 @@ form h2 {
   margin: 50px;
   border-radius: 10px 10px 10px 10px;
   background: white;
+  object-fit: cover;
 }
 
 .ModalContent {
@@ -844,7 +844,7 @@ form h2 {
 }
 
 .blabla {
-  padding: 20px;
+  padding: 20px 120px;
   background: #2ec4b6;
   color: white;
   font-size: 24px;

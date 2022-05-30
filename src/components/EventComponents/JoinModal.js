@@ -44,7 +44,7 @@ export default function JoinModal({
     if (eventData?.free === 'true') {
       setFree(true);
     }
-  }, [eventData.free]);
+  }, [eventData?.free]);
 
   const navTo = useNavigate();
 
@@ -82,7 +82,7 @@ export default function JoinModal({
   }
   useEffect(() => {
     priceCheck();
-  }, [eventData.currency]);
+  }, [eventData?.currency]);
 
   return (
     <>
@@ -99,8 +99,8 @@ export default function JoinModal({
             <div className="ModalContent">
               <h1>{eventData.title}</h1>
 
-              <h4>Event location: {eventData.location}</h4>
-              <h4>Event date: </h4>
+              <h4>{eventData.location}</h4>
+              <br />
               <p>{eventData.date_from} </p>
               <br></br>
               <div>

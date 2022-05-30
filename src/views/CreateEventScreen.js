@@ -119,7 +119,7 @@ function CreateEventScreen() {
 
   const removeImageToUpload = () => {
     setImageToUpload();
-  }
+  };
 
   return (
     <div className="outlet_main create_event_main">
@@ -135,7 +135,7 @@ function CreateEventScreen() {
           className="textinput"
           required
           onChange={createChangeHandler}
-          maxLength="20"
+          maxLength="40"
         />
 
         <label htmlFor="category_id" className="textlabel">
@@ -170,7 +170,7 @@ function CreateEventScreen() {
           id="description"
           className="textinput"
           onChange={createChangeHandler}
-          maxLength="50"
+          maxLength="100"
         />
 
         <label htmlFor="ce_upload" className="textlabel">
@@ -186,17 +186,21 @@ function CreateEventScreen() {
           accept="image/*"
           onChange={imageHandler}
         />
-        {imageToUpload &&
+        {imageToUpload && (
           <div className="imagepreview_containerEvent">
-            <img className="imagepreview"
+            <img
+              className="imagepreview"
               src={URL.createObjectURL(imageToUpload)}
               alt="newuseravatar"
             />
-            <button className="removeimage_button" onClick={removeImageToUpload}>
+            <button
+              className="removeimage_button"
+              onClick={removeImageToUpload}
+            >
               Remove this image
             </button>
           </div>
-        }
+        )}
 
         <label htmlFor="event_type" className="textlabel">
           Online or Offline
@@ -228,7 +232,9 @@ function CreateEventScreen() {
         />
 
         <br />
-        <p className='textlabel datepick'>Please select the starting and closing dates:</p>
+        <p className="textlabel datepick">
+          Please select the starting and closing dates:
+        </p>
         <SelectDateFromTo
           required
           startDate={startDate}

@@ -30,7 +30,8 @@ function AboutUs() {
         </div>
         <div className="team">
           <div>
-            <h2>The team behind the Horizon</h2>
+            <p>Meet the team</p>
+            <h1>Behind the Horizon</h1>
           </div>
           <div className="team_container">
             <div className="memberdetails">

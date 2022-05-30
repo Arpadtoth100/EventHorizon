@@ -14,7 +14,7 @@ export default function EventInfo({ eventData, eventId }) {
   const [showConfirmationPopUp, setShowConfirmationPopUp] = useState(false);
   const [attendee, setAttendee] = useState();
   const [joined, setJoined] = useState(false);
-  const [deleteOrRemove, setDeleteOrRemove] = useState(false)
+  const [deleteOrRemove, setDeleteOrRemove] = useState(false);
 
   const authContext = useContext(AuthContext);
 
@@ -31,7 +31,9 @@ export default function EventInfo({ eventData, eventId }) {
 
   const openConfirmationPopUp = (event) => {
     setShowConfirmationPopUp((prev) => !prev);
-    event.target.value === "delete" ? setDeleteOrRemove(true) : setDeleteOrRemove(false)
+    event.target.value === 'delete'
+      ? setDeleteOrRemove(true)
+      : setDeleteOrRemove(false);
   };
 
   const userCheck = useCallback(() => {
@@ -58,37 +60,39 @@ export default function EventInfo({ eventData, eventId }) {
     <div className="event-info">
       <div
         className="eventimage_container"
-        style={{ backgroundImage: `url(${eventData.image_url})` }}
+        style={{ backgroundImage: `url(${eventData?.image_url})` }}
       ></div>
       <img
         className="eventpage_img"
-        src={eventData.image_url}
+        src={eventData?.image_url}
         alt="the event"
       />
-      <h1 className="eventinfo-name">{eventData.title}</h1>
+      <h1 className="eventinfo-name">{eventData?.title}</h1>
       <br></br>
-      <div className="eventinfo-description">{eventData.description}</div>
+      <div className="eventinfo-description">{eventData?.description}</div>
       <br></br>
-      {eventData.price && (
+      {eventData?.price && (
         <div className="eventinfo-fee">
           Admission fee:
-          {' ' + eventData.price} {eventData.currency}
+          {' ' + eventData?.price} {eventData?.currency}
         </div>
       )}
       <br></br>
-      <div className="eventinfo-date">Starting date: {eventData.date_from}</div>
-      <div className="eventinfo-date">Closing date: {eventData.date_to}</div>
+      <div className="eventinfo-date">
+        Starting date: {eventData?.date_from}
+      </div>
+      <div className="eventinfo-date">Closing date: {eventData?.date_to}</div>
       <br></br>
       <div className="eventinfo-location">
-        Event Location: {eventData.location}
+        Event Location: {eventData?.location}
       </div>
       <br></br>
       <div className="eventinfo-participants">
-        Maximum number of participants: {eventData.user_limit}
+        Maximum number of participants: {eventData?.user_limit}
       </div>
       <br></br>
       <div className="eventinfo-button">
-        {eventData.coord && (
+        {eventData?.coord && (
           <SimpleMap title={'Event Location'} eventData={eventData} />
         )}
         {correctUser ? (

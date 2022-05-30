@@ -23,14 +23,14 @@ function ConfirmationPopUp({
     event.preventDefault();
     deleteEvent(eventId);
     setShowConfirmationPopUp((prev) => !prev);
-    toMyEvents('/my_events');
+    toMyEvents('/profile');
   };
 
   const removeUserHandler = (event) => {
     event.preventDefault();
     deleteAttandee(eventId, authContext.loggedUserID);
     setShowConfirmationPopUp((prev) => !prev);
-    toMyEvents('/joined_events');
+    toMyEvents('/profile');
   };
 
   return (
