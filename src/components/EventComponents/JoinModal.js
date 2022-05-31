@@ -10,8 +10,11 @@ import {
 import { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import Payment from '../Paypal/Payment';
-
 import { usePayPalScriptReducer } from '@paypal/react-paypal-js';
+import format from "date-fns/format";
+import { FaFacebookF } from 'react-icons/fa';
+import { FaTwitter } from 'react-icons/fa';
+import { FaInstagram } from 'react-icons/fa';
 
 export default function JoinModal({
   showJoinModal,
@@ -100,20 +103,15 @@ export default function JoinModal({
 
               <h4>{eventData.location}</h4>
               <br />
-              <p>{eventData.date_from} </p>
+              <p>{format(new Date(eventData.date_from), "cccc, dd MMMM yyyy h:mm aa")} </p>
               <br></br>
               <div>
-                <label htmlFor="email">
-                  Send this event to your friend, enter their email:
-                </label>
-                <input
-                  className="JoinModalInput"
-                  type="email"
-                  id="email"
-                  placeholder="email"
-                  required
-                ></input>
-                <button className="ModalSendButton">Send Event</button>
+                <p> Share this event on social media</p>
+                <span className="joinmodal_icons">
+                  <div className='iconcontainer'><FaFacebookF size={'1.5em'} /></div>
+                  <div className='iconcontainer'><FaTwitter size={'1.5em'} /></div>
+                  <div className='iconcontainer'><FaInstagram size={'1.5em'} />{' '}</div>
+                </span>
               </div>
               {Number(joinModalEvent.user_limit) === attendee.length ? (
                 <h3>Event is full</h3>

@@ -28,7 +28,7 @@ const MainScreen = () => {
       <div className="videomain">
         <video className="video" src={videoBg3} autoPlay loop muted />
         <div className="aboutus-hero-text">
-            <h1>There are always great events on the horizon!</h1>
+            <h1>Every Day There Are New Events on the Horizon!</h1>
             <br />
             <h1>Let's Explore!</h1>
           <span className="followus">

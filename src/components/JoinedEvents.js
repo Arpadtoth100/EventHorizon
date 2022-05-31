@@ -2,11 +2,13 @@ import { readEvent, readAttendee } from '../services/crud';
 import { useState, useEffect, useContext } from 'react';
 import Pagination from '../services/Pagination';
 import { AuthContext } from '../components/Context/AuthContext';
+import { filterEvent } from '../services/crud';
 
 function JoinedEvents() {
   const [attendee, setAttendee] = useState([]);
   const [events, setEvents] = useState([]);
   const authContext = useContext(AuthContext);
+  const [eventList, setEventList] = useState([]);
 
   useEffect(() => {
     authContext.loggedUserID &&
@@ -33,12 +35,22 @@ function JoinedEvents() {
   });
   const finalEvents = eventsIHaveJoined.filter(Boolean);
 
+  useEffect(() => {
+    readEvent().then((snapshot) => {
+      setEventList(Object.entries(snapshot.val()));
+    });
+  }, []);
+
   return (
     <>
       {finalEvents.length !== 0 ? (
         <Pagination title={'Events I have Joined'} data={finalEvents} />
       ) : (
-        <h3>You have not joined any events yet!</h3>
+        <>
+          <h2 className='warning'>You have not joined any events yet!</h2>
+          <Pagination title={'Check Theese Events on The Horizon'} data={eventList} />
+      <br></br>
+        </>
       )}
     </>
   );

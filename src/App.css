@@ -196,16 +196,16 @@ form * {
   margin-right: 2rem;
 }
 
-.pagination_search{
+.pagination_search {
   margin-top: -10vh;
 }
 
-.pagination_search h2{
-  color:#086375;
+.pagination_search h2 {
+  color: #086375;
 }
 
-.pagination_search h1{
-  color:#086375;
+.pagination_search h1 {
+  color: #086375;
 }
 
 #nosuchevents{
@@ -220,7 +220,7 @@ form * {
   color: #086375;
   margin: 80px 120px 0; 
   height: 20vh;
-  line-height: 1.6; 
+  line-height: 1.6;
 }
 
 .signinform {
@@ -238,7 +238,14 @@ form * {
 
 .contactusform {
   background-color: #edf6f9;
+  width: 18vw;
   margin: 20px;
+
+}
+
+.rowForm {
+  margin: 18px 0;
+  display: flex;
 }
 
 form h3 {
@@ -262,7 +269,6 @@ form h2 {
   font-size: 16px;
   font-weight: bold;
 }
-
 
 .textinput {
   display: block;
@@ -290,7 +296,7 @@ form h2 {
   box-shadow: 0 0 5px rgba(8, 7, 16, 0.6);
 }
 
-.select{
+.select {
   display: block;
   height: 25px;
   width: 100%;
@@ -304,7 +310,9 @@ form h2 {
   box-shadow: 0 0 5px rgba(8, 7, 16, 0.6);
 }
 
+
 .datepickerinput{
+
   height: 25px;
   width: 100%;
   background-color: white;
@@ -318,7 +326,7 @@ form h2 {
 }
 
 ::placeholder {
-  color: rgb(186, 182, 182)
+  color: rgb(186, 182, 182);
 }
 
 #su_organization,
@@ -385,7 +393,7 @@ form h2 {
   height: 500px;
 }
 
-.infoboxcolumn+.infoboxcolumn {
+.infoboxcolumn + .infoboxcolumn {
   margin-left: 2%;
 }
 
@@ -444,7 +452,6 @@ form h2 {
 }
 
 @keyframes flip {
-
   0%,
   80% {
     transform: rotateY(360deg);
@@ -497,7 +504,8 @@ form h2 {
 
 .eventinfo-fee,
 .eventinfo-location,
-.eventinfo-participants {
+.eventinfo-participants,
+.eventinfo-date {
   font-size: 20px;
   color: rgba(3, 3, 9, 0.6);
 }
@@ -526,7 +534,7 @@ form h2 {
   margin-top: -10px;
 }
 
-.imagepreview_container{
+.imagepreview_container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -542,11 +550,11 @@ form h2 {
   margin-left: 9vw;
 }
 
-.imagepreview{
+.imagepreview {
   height: 80px;
 }
 
-.removeimage_button{
+.removeimage_button {
   cursor: pointer;
   display: flex;
   height: 80px;
@@ -591,13 +599,23 @@ form h2 {
 .paginationDisabled a:hover {
   color: #aeecef;
   background-color: #aeecef;
-  cursor:default;
+  cursor: default;
 }
 
 .main h1,
 .createevent_h1 {
   color: #006d77;
   font-size: 2rem;
+}
+
+.createvent_link {
+  cursor: pointer;
+  font-size: 22px;
+  margin-top: 3vh;
+}
+
+.warning {
+  color: #d81159;
 }
 
 .map_text {
@@ -644,6 +662,23 @@ form h2 {
   width: 50vw;
   height: 50vh;
   margin-left: 5rem;
+  margin-top: -1.5rem;
+}
+
+.mapcontainer_div_search {
+  display: flex;
+  position: relative;
+  width: 50vw;
+  height: 50vh;
+  margin-left: 26vw;
+  margin-top: -6vh;
+  margin-bottom: 6vh;
+}
+
+.searchmap {
+  display: flex;
+  margin-left: 35vw;
+  margin-top: -20vh;
 }
 
 .create_event_main {
@@ -726,7 +761,7 @@ form h2 {
   width: 50rem;
   height: 35rem;
   box-shadow: 0 5px 16px rgba(0, 0, 0, 0.2);
-  background: #fff;
+  background: #c1dbde;
   color: #000;
   display: flex;
   position: relative;
@@ -778,18 +813,51 @@ form h2 {
   margin-top: 10px;
 }
 
+.iconcontainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translate(-50%, -50%);
+  width: 37px;
+  height: 37px;
+  background: white;
+  border-radius: 50%;
+  place-items: center;
+  transition: 0.5s;
+  border: none;
+  margin-top: 25px;
+}
+
+.iconcontainer:before {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 0%;
+  border-radius: 50%;
+  background: #05668d;
+  z-index: -1;
+  transition: 0.5s;
+}
+
+.iconcontainer:hover {
+  color: white;
+}
+
+.iconcontainer:hover:before {
+  width: calc(100% - 5px);
+  height: calc(100% - 5px);
+}
+
+.joinmodal_icons {
+  display: flex;
+  gap: 25px;
+  justify-content: center;
+  align-items: center;
+  margin-left: 25px;
+}
+
 .createeventBtn {
   margin-top: 1rem;
-}
-
-.ModalDiscardButton {
-  margin-right: 20px;
-  background: #023e8a;
-  margin: 10px;
-}
-
-.ModalSendButton {
-  margin: 20px;
 }
 
 .JoinModalInput {
@@ -849,7 +917,7 @@ form h2 {
   flex: 1;
   z-index: 2;
   position: relative;
-  top: -65vh;
+  top: -55vh;
 }
 
 .blabla {
@@ -904,7 +972,7 @@ form h2 {
 
 .img_description_joinedeventsuserimage {
   position: absolute;
-  background: #05668D;
+  background: #05668d;
   color: white;
   font-size: 120%;
   top: 0px;
@@ -917,7 +985,6 @@ form h2 {
 
 .img_wrap_joinedeventsuserimage:hover {
   cursor: pointer;
-  
 }
 
 .img_wrap_joinedeventsuserimage:hover div {
@@ -1021,16 +1088,14 @@ a.active {
 
 /* privacy faq contactus nocontent*/
 
-.nocontent_head{
+.nocontent_head {
   height: 60vh;
   background-image: url(./images/blackhole.png);
-  background-size: cover; 
+  background-size: cover;
   opacity: 0.8;
   color: white;
   background-repeat: no-repeat;
-
-  }
-
+}
 
 .privacy_head {
   height: 25vh;
@@ -1070,7 +1135,7 @@ a.active {
 .privacy_text p,
 .faq_text p {
   font-size: 16px;
-  line-height: 1.6; 
+  line-height: 1.6;
   margin-left: 5vw;
   margin-right: 5vw;
 }
@@ -1091,12 +1156,8 @@ a.active {
 }
 .privacylink {
   color: blue;
-  margin-left: 5vw;
 }
 
-.privacylink {
-  text-align: left;
-}
 
 .faq_head {
   height: 25vh;
@@ -1113,7 +1174,7 @@ a.active {
   margin-left: 4vw;
 }
 
-.contactus_icon_container{
+.contactus_icon_container {
   display: inline-flex;
   margin-top: 3rem;
   margin-right: 1rem;
@@ -1130,7 +1191,7 @@ a.active {
   width: 100vw;
   margin-top: 8vh;
   margin-left: auto;
-  background-image: url(./images/contact6.jpg);
+  background-image: url(./images/contact7.jpg);
   background-size: 4000px;
 }
 .contact_head_title {
@@ -1140,8 +1201,8 @@ a.active {
   color: #006d77;
 }
 
-.contactustextbox{
-  margin-top: -20rem;
+.contactustextbox {
+  margin-top: -10rem;
   margin-bottom: 2rem;
   color: #006d77;
   background-color: rgba(255, 255, 255, 0.4);
@@ -1208,6 +1269,7 @@ a.active {
   opacity: 0.9;
 }
 .contactmessage_btn {
+  width: 60%;
   margin-bottom: 15px;
 }
 
@@ -1225,20 +1287,6 @@ a.active {
   gap: 20px;
 }
 
-
-@media only screen and (max-width: 600px) {
-
-  /*  .dot {
-    width: 10px;
-  }
-  .dot {
-    height: 10px;
-  } */
-  .right_arrow,
-  .left_arrow {
-    font-size: 1rem;
-  }
-}
 
 @media screen and (max-width: 960px) {
   .header_main {

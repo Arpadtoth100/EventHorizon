@@ -45,6 +45,9 @@ function Contact() {
           <div className='contactus_form_container'>
             <form className='contactusform' onSubmit={submitHandler}>
               <h4>Please note: all fields are required.</h4>
+              <div className='formRow'>
+
+              </div>
               <label htmlFor="cu_firstname" className='textlabel'>First Name</label>
               <input
                 type="text"
