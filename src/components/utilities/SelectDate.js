@@ -1,7 +1,13 @@
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
+import { useEffect } from 'react';
 
 function SelectDate({ setDateValue, dateValue }) {
+  useEffect(() => {
+    if (dateValue === null) {
+      setDateValue('');
+    }
+  }, [dateValue]);
   return (
     <DatePicker
       selected={dateValue}
