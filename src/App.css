@@ -114,11 +114,13 @@ html {
 .signin_main {
   margin-top: 30px;
   margin-bottom: 30px;
+  width: 275px;
 }
 
 .signup_main {
   margin-bottom: 30px;
   margin-top: 30px;
+  width: 275px;
 }
 
 #signinup_main {
@@ -234,6 +236,10 @@ form * {
   margin: 100px 0;
   background-color: #edf6f9;
   padding-top: 1rem;
+}
+
+.signupsign{
+  margin-top: 70px;
 }
 
 .contactusform {

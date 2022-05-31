@@ -26,7 +26,7 @@ function SignUp() {
     e.preventDefault();
 
     if (signUpData.password !== signUpData.confirmpassword) {
-      return signUpError('Passwords do not match');
+      return setSignUpError('Sign Up failed: passwords do not match!');
     }
 
     createUserWithEmailAndPassword(auth, signUpData.email, signUpData.password)
@@ -43,7 +43,7 @@ function SignUp() {
       })
       .catch((e) => {
         console.log('error', e);
-        setSignUpError(e?.message);
+        setSignUpError("Sign Up failed: username or email address is already in use!");
       });
   };
 
@@ -73,9 +73,9 @@ function SignUp() {
     <div className="signup_main">
       <form className="signupform" onSubmit={submitHandler}>
         <div className="signError">
-          {signUpError && <p>Sign Up failed, please fill all data! </p>}
+          {signUpError && <p>{signUpError}</p>}
         </div>
-        <h3>Sign Up Here</h3>
+        <h3 className='signupsign'>Sign Up Here</h3>
         <label htmlFor="su_username" className="textlabel">
           Username
         </label>
