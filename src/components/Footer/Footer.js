@@ -15,12 +15,12 @@ function Footer() {
 
   const clickHandler = () => {
     navTo('/main');
-  }
+  };
 
   return (
     <footer className="footer">
       <div className="footer_main">
-      <div>
+        <div>
           <i style={{ color: '#9ceaef', marginRight: '0.5rem' }}>
             <SunriseIcon width="36px" height="24px" onClick={clickHandler} />
           </i>
@@ -52,7 +52,7 @@ function Footer() {
           <div className="bar"></div>
           <div className="bar"></div>
         </div>
-        </div>
+      </div>
     </footer>
   );
 }

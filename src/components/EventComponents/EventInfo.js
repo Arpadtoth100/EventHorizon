@@ -15,6 +15,7 @@ export default function EventInfo({ eventData, eventId }) {
   const [attendee, setAttendee] = useState();
   const [joined, setJoined] = useState(false);
   const [deleteOrRemove, setDeleteOrRemove] = useState(false);
+  const [success, setSuccess] = useState(false);
 
   const authContext = useContext(AuthContext);
 
@@ -106,7 +107,7 @@ export default function EventInfo({ eventData, eventId }) {
           <></>
         )}
 
-        {joined ? (
+        {joined || success ? (
           <button
             className="joinEventBtn"
             aria-label="Close modal"
@@ -127,6 +128,8 @@ export default function EventInfo({ eventData, eventId }) {
                   setShowJoinModal={setShowJoinModal}
                   eventData={eventData}
                   eventId={eventId}
+                  success={success}
+                  setSuccess={setSuccess}
                 />
               </>
             ) : (
