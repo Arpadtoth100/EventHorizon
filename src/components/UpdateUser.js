@@ -193,7 +193,7 @@ function UpdateUser() {
         />
 
         <label htmlFor="uu_upload" className="textlabel">
-          Avatar
+          Profile Picture
         </label>
         <input
           type="file"

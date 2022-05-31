@@ -16,7 +16,7 @@ export default function EventCard(props) {
       <h3 className="event-title">
         <p className="event-title">{props.title}</p>
       </h3>
-      <div className="event-date">{format(new Date(props.date_from), "cccc yyyy/MM/dd h:mm aa")}</div>
+      <div className="event-date">{format(new Date(props.date_from), "cccc, dd MMMM yyyy h:mm aa")}</div>
       <div className="event-venue">{props.location}</div>
       <div className="event-organizer">{props.organizer}</div>
     </div>
