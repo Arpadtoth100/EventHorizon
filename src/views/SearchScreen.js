@@ -15,32 +15,6 @@ function SearchScreen() {
     });
   }, []);
 
-  // if (filteredList.length === 0) {
-  //   return (
-  //     <>
-  // {
-  /* <div className="outlet_main search_container">
-          <SearchBar
-            eventList={eventList}
-            setFilteredList={setFilteredList}
-            filteredList={filteredList}
-          />
-          <div className="pagination_search">
-            <div className="search_title">
-              <h1 id="nosuchevents">There are no such events yet!</h1>
-              <h1>
-                You can search for other options, please fill in the form again!
-              </h1>
-            </div>
-          </div>
-        </div>
-        <div>
-          <Map eventList={filteredList} />
-        </div> */
-  // }
-  //     </>
-  //   );
-  // } else
   return (
     <>
       <div className="outlet_main">

@@ -35,7 +35,7 @@ function SearchBar({ eventList, setFilteredList }) {
             filtered[1].category_id.includes(searchValue?.category_id) &&
             filtered[1].date_from
               .toLowerCase()
-              .includes(dateValue.toString().slice(4, 15).toLowerCase())
+              .includes(dateValue?.toString().slice(4, 15).toLowerCase())
           );
         })
       );
