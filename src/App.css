@@ -1371,4 +1371,11 @@ a.active {
   .cards-list {
     flex-direction: column;
   }
+
+  .aboutus-hero-text {
+    margin: 15px;
+    font-size: 90%;
+    z-index: 0;
+  }
+
 }
