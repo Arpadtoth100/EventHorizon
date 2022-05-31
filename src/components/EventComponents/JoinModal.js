@@ -21,9 +21,11 @@ export default function JoinModal({
   setShowJoinModal,
   eventData,
   eventId,
+  success,
+  setSuccess,
 }) {
   const [userName, setUserName] = useState('');
-  const [success, setSuccess] = useState(false);
+
   const [paidFor, setPaidFor] = useState(false);
   const [joinModalEvent, setJoinModalEvent] = useState([]);
   const [attendee, setAttendee] = useState([]);
@@ -58,9 +60,6 @@ export default function JoinModal({
     if (auth.currentUser) {
       createAttendee(eventId, auth.currentUser.uid, userName);
       setSuccess(true);
-      setTimeout(() => {
-        navTo('/profile');
-      }, 4000);
     } else {
       navTo('/signin');
     }

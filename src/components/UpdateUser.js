@@ -52,9 +52,11 @@ function UpdateUser() {
           location: userData.location,
           organization: userData.organization,
         });
+        console.log('userdata1', userData);
       })
       .then(() => {
         setSucces(true);
+        console.log('userdata2', userData);
       })
       .catch((e) => {
         console.log('error', e);
@@ -102,13 +104,6 @@ function UpdateUser() {
           updateUser(auth.currentUser.uid, {
             ...userData,
             profile_url: url,
-          }).then(() => {
-            setUserData({
-              username: '',
-              organization: false,
-              location: '',
-              profile_url: '',
-            });
           });
         });
       })
