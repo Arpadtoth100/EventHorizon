@@ -84,3 +84,10 @@
 .footer_main {
   z-index: 999;
 }
+
+@media screen and (max-width: 960px) {
+  .followus {
+    margin-top: 8vh;;
+  }
+  
+}
