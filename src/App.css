@@ -130,6 +130,7 @@ html {
 .outlet_main {
   min-height: calc(100vh - 135px);
   margin: 80px 120px 0;
+  background-color: #dcf1f5;
 }
 
 .background {
@@ -218,7 +219,15 @@ form * {
 }
 
 .nojoinedevents {
-  color: #086375;
+  color: #00a896;
+}
+
+.greentitle{
+  color: #028090;
+}
+
+.mainbackground{
+  background-color: #dcf1f5;
 }
 
 .search_title {
@@ -242,8 +251,7 @@ form * {
   padding-top: 1rem;
 }
 
-
-.signupsign{
+.signupsign {
   margin-top: 70px;
 }
 
@@ -251,7 +259,6 @@ form * {
   background-color: #edf6f9;
   width: 18vw;
   margin: 20px;
-
 }
 
 .rowForm {
@@ -444,11 +451,6 @@ form h2 {
     0 100px 80px rgba(0, 0, 0, 0.12);
   text-overflow: ellipsis;
   overflow: hidden;
-
-
-
-
-
 }
 
 .card-badge {
@@ -533,7 +535,7 @@ form h2 {
   margin-left: 7vw;
   margin-top: 4vh;
   margin-bottom: 4vh;
-  height: 68vh;
+  height: 80vh;
   width: 18vw;
   left: 60px;
   background-color: #edf6f9;
@@ -554,16 +556,12 @@ form h2 {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: -10vh;
-  margin-left: 18vw;
 }
 
 .imagepreview_containerEvent {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: -10vh;
-  margin-left: 9vw;
 }
 
 .imagepreview {
@@ -1185,7 +1183,7 @@ a.active {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 5vw;
+  gap: 12vw;
   margin-left: 20px;
   margin-right: 20px;
 }
@@ -1219,14 +1217,12 @@ a.active {
   margin-top: 200px;
 }
 
-#cu_form{
+#cu_form {
+  width: 30vw;
   margin-top: 20px;
+  padding: 20px;
   background-color: #edf6f9;
-}
-
-.contactusform {
-  background-color: #edf6f9;
-  margin-bottom: 50px;
+  text-align: left;
 }
 
 .cu_textlabel {
@@ -1254,13 +1250,15 @@ a.active {
 
 .contactpopup {
   display: block;
+  width: 15%;
   background-color: yellowgreen;
   font-size: 20px;
-  margin: 10px;
+  margin-left: 54vw;
+  margin-top: 10px;
 }
 
 .input-field {
-  width: 340px;
+  width: 250px;
   height: 30px;
   border-radius: 3px;
   padding: 0 5px;
@@ -1273,9 +1271,8 @@ a.active {
 }
 
 .input-field-message {
-  width: 96%;
+  width: 540px;
   margin: 5px 10px 0px 0px;
-  width: 100%;
   background-color: white;
   border-radius: 3px;
   padding: 0 5px;
@@ -1297,19 +1294,6 @@ a.active {
   display: inline-block;
 }
 
-#other-subject {
-  display: none;
-}
-
-.subject-option {
-  margin-bottom: 8px;
-  margin: 4px 10px 6px 0px;
-}
-
-.text-center {
-  text-align: center;
-}
-
 .contact-message {
   display: flex;
   justify-content: center;
@@ -1321,10 +1305,18 @@ a.active {
     background-image: url(./images/contact8.jpg);
     background-size: 700px;
   }
+  #cu_form {
+    width: 70vw;
+    margin-left: -7.5vw;
+  }
 
   .cu_form-container {
     width: 300px;
     margin-bottom: 50px;
+
+  }
+  .input-field-message{
+    width: 315px;
   }
   .contactus_content {
     display: flex;
@@ -1341,7 +1333,7 @@ a.active {
   }
 
   .input-field {
-    width: 200px;
+    width: 305px;
   }
 
   .contactmessage_btn {
@@ -1353,9 +1345,11 @@ a.active {
 
   .contactpopup {
     display: block;
+    width: 50%;
     background-color: yellowgreen;
-    font-size: 12px;
-    margin: 10px;
+    font-size: 16px;
+    margin-top: -4vh;
+    margin-left: 25vw;
   }
 }
 
@@ -1457,5 +1451,4 @@ a.active {
     font-size: 90%;
     z-index: 0;
   }
-
 }

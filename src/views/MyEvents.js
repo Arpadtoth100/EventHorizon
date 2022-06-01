@@ -19,11 +19,13 @@ export default function MyEvents() {
   return (
     <>
       {myCreatedEventList.length !== 0 ? (
+        <div className="greentitle">
         <Pagination
           title={'Events I have Created'}
           data={myCreatedEventList}
           perPage={perPage}
         />
+        </div>
       ) : (
         <>
           <h2 className="warning">You have not created any events yet!</h2>
