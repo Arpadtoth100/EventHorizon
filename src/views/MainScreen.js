@@ -45,6 +45,7 @@ const MainScreen = () => {
           </span>
         </div>
       </div>
+      <div className='mainbackground'>
       <div className="blabla">
         <h2>
           Event Horizon is the best place for finding wonderful events you can
@@ -68,19 +69,23 @@ const MainScreen = () => {
 
       <br></br>
       <br></br>
-
+      <div className="greentitle">
       <Pagination
         title={'Free Events on The Horizon'}
         data={freeEventList}
         perPage={perPage}
       />
+      </div>
       <br></br>
+      <div className="greentitle">
       <Pagination
         title={'Featured Events on The Horizon'}
         data={paidEventList}
         perPage={perPage}
       />
+      </div>
       <br></br>
+      </div>
     </div>
   );
 };

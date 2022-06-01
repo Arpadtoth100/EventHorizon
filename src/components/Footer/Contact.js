@@ -120,15 +120,11 @@ function Contact() {
                   <div>
                     <button type="submit" class="contactmessage_btn">Send Message</button>
                   </div>
-                  <div >
-                  <ContactPopUp showContactPopUp={showContactPopUp} setShowContactPopUp={showContactPopUp} />
-                  </div>
-               
                 </div>
               </form>
-              
             </div>
           </div>
+          <ContactPopUp showContactPopUp={showContactPopUp} setShowContactPopUp={showContactPopUp} />
         </div>
       </div>
 

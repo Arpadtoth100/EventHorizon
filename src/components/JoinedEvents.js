@@ -45,11 +45,13 @@ function JoinedEvents() {
   return (
     <>
       {finalEvents.length !== 0 ? (
-        <Pagination
-          title={'Events I have Joined'}
+        <div className="greentitle">
+        <Pagination 
+          title= {'Events I have Joined'}
           data={finalEvents}
           perPage={perPage}
         />
+        </div>
       ) : (
         <>
           <h2 className="warning">You have not joined any events yet!</h2>
