@@ -290,6 +290,7 @@ form h2 {
   padding: 0 5px;
   margin-top: 6px;
   font-size: 14px;
+  font-weight: bold;
   box-shadow: 0 0 5px rgba(8, 7, 16, 0.6);
 }
 
@@ -302,7 +303,7 @@ form h2 {
   padding: 0 10px;
   margin-top: 6px;
   font-size: 14px;
-  font-weight: 600;
+  font-weight: bold;
   box-shadow: 0 0 5px rgba(8, 7, 16, 0.6);
 }
 
@@ -890,6 +891,7 @@ form h2 {
 }
 
 .blabla {
+  width: 100vw;
   padding: 20px 120px;
   background: #2ec4b6;
   color: white;

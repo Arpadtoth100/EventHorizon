@@ -7,6 +7,7 @@ import { NavLink } from 'react-router-dom';
 export default function MyEvents() {
   const authContext = useContext(AuthContext);
   const [myCreatedEventList, setMyCreatedEventList] = useState([]);
+  const perPage = 6;
 
   useEffect(() => {
     authContext?.loggedUserID &&
@@ -18,16 +19,19 @@ export default function MyEvents() {
   return (
     <>
       {myCreatedEventList.length !== 0 ? (
-        <Pagination title={'Events I have Created'} data={myCreatedEventList} />
+        <Pagination
+          title={'Events I have Created'}
+          data={myCreatedEventList}
+          perPage={perPage}
+        />
       ) : (
         <>
-          <h2 className='warning'>You have not created any events yet!</h2>
+          <h2 className="warning">You have not created any events yet!</h2>
           <div className="createvent_link">
-          <NavLink to="/create_event" className="createvent_link">
-            Create Event
-          </NavLink>
+            <NavLink to="/create_event" className="createvent_link">
+              Create Event
+            </NavLink>
           </div>
-          
         </>
       )}
     </>

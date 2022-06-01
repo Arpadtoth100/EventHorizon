@@ -7,7 +7,7 @@ import { onAuthStateChanged } from 'firebase/auth';
 import SimpleMap from '../GoogleMap/SimpleMap';
 import { AuthContext } from '../Context/AuthContext';
 import { readAttendee } from '../../services/crud';
-import format from "date-fns/format";
+import format from 'date-fns/format';
 
 export default function EventInfo({ eventData, eventId }) {
   const [showJoinModal, setShowJoinModal] = useState(false);
@@ -21,7 +21,6 @@ export default function EventInfo({ eventData, eventId }) {
   const authContext = useContext(AuthContext);
 
   const navTo = useNavigate();
-  
 
   useEffect(() => {
     readAttendee(eventId).then((snapshot) => setAttendee(snapshot.val()));
@@ -82,13 +81,22 @@ export default function EventInfo({ eventData, eventId }) {
       )}
       <br></br>
       <div className="eventinfo-date">
-        ide kell a dátum
-        {/* <p>{format(new Date(`${eventData.date_from}`), "cccc, dd MMMM yyyy h:mm aa")} to {format(new Date(`${eventData.date_to}`), "h:mm aa")}</p> */}
+        {eventData.date_from && (
+          <p>
+            {format(
+              new Date(`${eventData.date_from}`),
+              'cccc, dd MMMM yyyy h:mm aa'
+            )}{' '}
+            to{' '}
+            {format(
+              new Date(`${eventData.date_to}`),
+              'cccc, dd MMMM yyyy h:mm aa'
+            )}
+          </p>
+        )}
       </div>
       <br></br>
-      <div className="eventinfo-location">
-        {eventData?.location}
-      </div>
+      <div className="eventinfo-location">{eventData?.location}</div>
       <br></br>
       <div className="eventinfo-participants">
         Maximum number of participants: {eventData.user_limit}

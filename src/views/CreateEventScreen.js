@@ -36,15 +36,18 @@ function CreateEventScreen() {
   const [eventData, setEventData] = useState(defaultEventData);
   const [marker, setMarker] = useState();
 
-  const onMapClick = useCallback((event) => {
-    setMarker({
-      coord: {
-        lat: event.latLng.lat(),
-        lng: event.latLng.lng(),
-      },
-      time: new Date(),
-    });
-  }, [setMarker]);
+  const onMapClick = useCallback(
+    (event) => {
+      setMarker({
+        coord: {
+          lat: event.latLng.lat(),
+          lng: event.latLng.lng(),
+        },
+        time: new Date(),
+      });
+    },
+    [setMarker]
+  );
 
   const createChangeHandler = useCallback((e) => {
     setEventData((p) => ({ ...p, [e.target.name]: e.target.value }));
@@ -53,6 +56,7 @@ function CreateEventScreen() {
   const createEventHandler = async (e) => {
     e.preventDefault();
     setIsClicked(true);
+    console.log(eventData);
     if (imageToUpload) {
       await uploadImage(imageToUpload);
     } else {
@@ -62,7 +66,6 @@ function CreateEventScreen() {
             uid: auth?.currentUser.uid,
             date_from: startDate.toString(),
             date_to: endDate.toString(),
-
             coord: marker?.coord,
           }).then(() => {
             setEventData(defaultEventData);
@@ -85,13 +88,15 @@ function CreateEventScreen() {
   };
 
   const uploadImage = async (image) => {
-    setIsClicked(true);
     if (!image) return;
+    setIsClicked(true);
+    console.log(eventData);
+
     const storageRef = ref(storage, `/images/${image.name}`);
     uploadBytes(storageRef, image)
       .then((uploadResult) => {
         getDownloadURL(uploadResult.ref).then((url) => {
-          marker.coord
+          marker?.coord
             ? createEvent({
                 ...eventData,
                 uid: auth?.currentUser.uid,
