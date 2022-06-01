@@ -781,6 +781,52 @@ form h2 {
   margin-top: 10px;
 }
 
+.about_iconcontainer{
+  display: flex;
+  gap: 50px;
+  justify-content: center;
+  align-items: center;
+  transform: translate(-50%, -50%);
+  width: 50px;
+  height: 50px;
+  background: white;
+  color: black;
+  border-radius: 50%;
+  place-items: center;
+  transition: 0.5s;
+  border: none;
+  margin-top: 25px;
+}
+
+.about_icons{
+  display: flex;
+  gap: 65px;
+  justify-content: center;
+  align-items: center;
+  margin-top:33vh;
+  margin-left: 25px;
+}
+
+.about_iconcontainer:before {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 0%;
+  border-radius: 50%;
+  background: black;
+  z-index: -1;
+  transition: 0.5s;
+}
+
+.about_iconcontainer:hover {
+  color: white;
+}
+
+.about_iconcontainer:hover:before {
+  width: calc(100% - 5px);
+  height: calc(100% - 5px);
+}
+
 .mp_iconcontainer{
   display: flex;
   gap: 50px;

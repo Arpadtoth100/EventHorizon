@@ -8,26 +8,7 @@ function AboutUs() {
   return (
     <>
       <div>
-        {/* <div className="videomain">
-          <video className="video" src={videoBg3} autoPlay loop muted />
-          <div className="title">
-            <h1>There are always great events</h1>
-            <h1>on the Horizon.</h1>
-            <p>Our mission is to help you catch them.</p>
-            <span className="followus">
-              <div className="icon">
-                <FaFacebookF size={'2em'} />
-              </div>
-              <div className="icon">
-                <FaTwitter size={'2em'} />
-              </div>
-              <div className="icon">
-                <FaInstagram size={'2em'} />{' '}
-              </div>
-            </span>
-          </div>
-        </div> */}
-        <div div className="aboutus-hero">
+      <div div className="aboutus-hero">
           <div className="aboutus-hero-img-wrapper">
             <img
               className="aboutus-hero-img"
@@ -38,14 +19,14 @@ function AboutUs() {
             <h1>There are always great events</h1>
           <h1>on the Horizon.</h1>
           <p>Our mission is to help you catch them.</p>
-          <span className="followus">
-            <div className="icon">
+          <span className="about_icons">
+            <div className='about_iconcontainer'>
               <FaFacebookF size={'1.5em'} />
             </div>
-            <div className="icon">
+            <div className='about_iconcontainer'>
               <FaTwitter size={'1.5em'} />
             </div>
-            <div className="icon">
+            <div className='about_iconcontainer'>
               <FaInstagram size={'1.5em'} />{' '}
             </div>
           </span>
