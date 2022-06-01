@@ -17,7 +17,7 @@ function SearchScreen() {
 
   return (
     <>
-      <div className="outlet_main">
+      <div className="inner_search">
         <div className="search_title">
           <h1>Explore the Horizon!</h1>
           <h2>Hundreds of great Events are waiting for You!</h2>

@@ -223,11 +223,12 @@ form * {
 
 .search_title {
   color: #086375;
-  margin: 80px 120px 0;
-  height: 20vh;
+  margin: 40px 120px 40px;
   line-height: 1.6;
 }
-
+.inner_search {
+  margin-bottom: 100px;
+}
 .signinform {
   height: 450px;
   background-color: #edf6f9;
@@ -440,13 +441,13 @@ form h2 {
     0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
     0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086),
     0 100px 80px rgba(0, 0, 0, 0.12);
-  text-overflow: ellipsis;  
+  text-overflow: ellipsis;
   overflow: hidden;
-  
-  
-  
-  
-  
+
+
+
+
+
 }
 
 .card-badge {
@@ -1336,7 +1337,7 @@ a.active {
     align-items: center;
     justify-content: center;
   }
-  
+
   .input-field {
     width: 200px;
   }
