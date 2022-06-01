@@ -68,7 +68,7 @@ export default function JoinModal({
   useEffect(() => {
     if (auth?.currentUser?.uid) {
       readUser(auth.currentUser.uid).then((snapshot) =>
-        setUserName(snapshot.val().username)
+        setUserName(snapshot.val()?.username)
       );
     }
   }, []);

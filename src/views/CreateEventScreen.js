@@ -44,7 +44,8 @@ function CreateEventScreen() {
       },
       time: new Date(),
     });
-  }, []);
+  }, [setMarker]);
+
   const createChangeHandler = useCallback((e) => {
     setEventData((p) => ({ ...p, [e.target.name]: e.target.value }));
   }, []);
@@ -55,7 +56,7 @@ function CreateEventScreen() {
     if (imageToUpload) {
       await uploadImage(imageToUpload);
     } else {
-      eventData.coord
+      marker?.coord
         ? createEvent({
             ...eventData,
             uid: auth?.currentUser.uid,
@@ -90,7 +91,7 @@ function CreateEventScreen() {
     uploadBytes(storageRef, image)
       .then((uploadResult) => {
         getDownloadURL(uploadResult.ref).then((url) => {
-          eventData.coord
+          marker.coord
             ? createEvent({
                 ...eventData,
                 uid: auth?.currentUser.uid,
