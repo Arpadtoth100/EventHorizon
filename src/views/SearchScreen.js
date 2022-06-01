@@ -7,6 +7,7 @@ import { useEffect, useState } from 'react';
 function SearchScreen() {
   const [eventList, setEventList] = useState([]);
   const [filteredList, setFilteredList] = useState([]);
+  const perPage = 4;
 
   useEffect(() => {
     readEvent().then((snapshot) => {
@@ -40,6 +41,7 @@ function SearchScreen() {
               <Pagination
                 data={filteredList}
                 searchscreen_class={'searchscreen_class'}
+                perPage={perPage}
               />
             </div>
           )}

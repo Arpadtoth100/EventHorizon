@@ -10,6 +10,7 @@ import { FaInstagram } from 'react-icons/fa';
 const MainScreen = () => {
   const [freeEventList, setFreeEventList] = useState([]);
   const [paidEventList, setPaidEventList] = useState([]);
+  const perPage = 5;
 
   useEffect(() => {
     filterEvent('true').then((snapshot) => {
@@ -28,9 +29,9 @@ const MainScreen = () => {
       <div className="videomain">
         <video className="video" src={videoBg3} autoPlay loop muted />
         <div className="aboutus-hero-text">
-            <h1>Every Day There Are New Events on the Horizon!</h1>
-            <br />
-            <h1>Let's Explore!</h1>
+          <h1>Every Day There Are New Events on the Horizon!</h1>
+          <br />
+          <h1>Let's Explore!</h1>
           <span className="followus">
             <div className="icon">
               <FaFacebookF size={'1.5em'} />
@@ -68,11 +69,16 @@ const MainScreen = () => {
       <br></br>
       <br></br>
 
-      <Pagination title={'Free Events on The Horizon'} data={freeEventList} />
+      <Pagination
+        title={'Free Events on The Horizon'}
+        data={freeEventList}
+        perPage={perPage}
+      />
       <br></br>
       <Pagination
         title={'Featured Events on The Horizon'}
         data={paidEventList}
+        perPage={perPage}
       />
       <br></br>
     </div>
