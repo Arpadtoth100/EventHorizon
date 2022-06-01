@@ -48,7 +48,9 @@ function JoinedEvents() {
       ) : (
         <>
           <h2 className='warning'>You have not joined any events yet!</h2>
+          <div className="nojoinedevents">
           <Pagination title={'Check Theese Events on The Horizon'} data={eventList} />
+          </div>
       <br></br>
         </>
       )}
