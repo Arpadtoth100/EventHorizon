@@ -48,6 +48,7 @@ function CreateEventScreen() {
     },
     [setMarker]
   );
+
   const createChangeHandler = useCallback((e) => {
     setEventData((p) => ({ ...p, [e.target.name]: e.target.value }));
   }, []);
