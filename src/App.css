@@ -114,11 +114,13 @@ html {
 .signin_main {
   margin-top: 30px;
   margin-bottom: 30px;
+  width: 275px;
 }
 
 .signup_main {
   margin-bottom: 30px;
   margin-top: 30px;
+  width: 275px;
 }
 
 #signinup_main {
@@ -237,6 +239,18 @@ form * {
   margin: 100px 0;
   background-color: #edf6f9;
   padding-top: 1rem;
+}
+
+
+.signupsign{
+  margin-top: 70px;
+}
+
+.contactusform {
+  background-color: #edf6f9;
+  width: 18vw;
+  margin: 20px;
+
 }
 
 .rowForm {
@@ -426,6 +440,13 @@ form h2 {
     0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
     0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086),
     0 100px 80px rgba(0, 0, 0, 0.12);
+  text-overflow: ellipsis;  
+  overflow: hidden;
+  
+  
+  
+  
+  
 }
 
 .card-badge {
@@ -1427,4 +1448,11 @@ a.active {
   .cards-list {
     flex-direction: column;
   }
+
+  .aboutus-hero-text {
+    margin: 15px;
+    font-size: 90%;
+    z-index: 0;
+  }
+
 }
