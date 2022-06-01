@@ -32,14 +32,14 @@ const MainScreen = () => {
           <h1>Every Day There Are New Events on the Horizon!</h1>
           <br />
           <h1>Let's Explore!</h1>
-          <span className="followus">
-            <div className="icon">
+          <span className="mp_icons">
+            <div className='mp_iconcontainer'>
               <FaFacebookF size={'1.5em'} />
             </div>
-            <div className="icon">
+            <div className='mp_iconcontainer'>
               <FaTwitter size={'1.5em'} />
             </div>
-            <div className="icon">
+            <div className='mp_iconcontainer'>
               <FaInstagram size={'1.5em'} />{' '}
             </div>
           </span>
