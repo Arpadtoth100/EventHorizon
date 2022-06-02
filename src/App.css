@@ -99,7 +99,7 @@ textarea{
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100vw;
+  width: 120vw;
   height: 60px;
   background-color: #006d77;
   color: white;
@@ -1572,6 +1572,7 @@ a.active {
   width: 76vw;
   align-items: center;
   margin-left: -13vw;
+  margin-top: 20vh;
   z-index: 99;
 }
 
@@ -1665,13 +1666,14 @@ a.active {
 }
 
 .eventdescription-container {
-  height: 20vh;
+  height: 40vh;
   width: 55vw;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: flex-start;
   background-color: white;
+  overflow: auto;
 }
 
 .eventpagedescription {
@@ -1681,24 +1683,27 @@ a.active {
 
 .eventinfo-description2 {
   color: #05ada8;
-  font-size: 22px;
+  font-size: 20px;
+  line-height: 1.6;
   margin: 10px;
-  color: #2d3a40;
+  color: #5d737e;
 }
 
 .eventpagetop {
   margin-top: 10vh;
 }
 
-.eventinfo-date {
+.eventinfo-date,
+.eventinfo-location {
   margin-bottom: 10px;
+  margin-left: 10px;
 }
 
 .simplemap_container {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 8vh;
+  margin-top: 28vh;
   width: 55vw;
   margin-left: 16vw;
   background-color: white;;
