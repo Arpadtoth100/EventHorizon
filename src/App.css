@@ -222,11 +222,11 @@ form * {
   color: #00a896;
 }
 
-.greentitle{
+.greentitle {
   color: #028090;
 }
 
-.mainbackground{
+.mainbackground {
   background-color: #dcf1f5;
 }
 
@@ -249,10 +249,6 @@ form * {
   margin: 100px 0;
   background-color: #edf6f9;
   padding-top: 1rem;
-}
-
-.signupsign {
-  margin-top: 70px;
 }
 
 .contactusform {
@@ -399,6 +395,10 @@ form h2 {
   border-radius: 3px;
   cursor: pointer;
 }
+.signup_btn {
+  width: 100%;
+  margin-left: 0;
+}
 
 .update_btn {
   margin-top: 15px;
@@ -506,6 +506,7 @@ form h2 {
 .eventimage_container {
   position: relative;
   height: 41vh;
+  width: 80vw;
   filter: blur(50px) brightness(0.9);
 }
 
@@ -556,6 +557,7 @@ form h2 {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 5px;
 }
 
 .imagepreview_containerEvent {
@@ -783,7 +785,7 @@ form h2 {
   margin-top: 10px;
 }
 
-.about_iconcontainer{
+.about_iconcontainer {
   display: flex;
   gap: 50px;
   justify-content: center;
@@ -800,12 +802,12 @@ form h2 {
   margin-top: 25px;
 }
 
-.about_icons{
+.about_icons {
   display: flex;
   gap: 65px;
   justify-content: center;
   align-items: center;
-  margin-top:33vh;
+  margin-top: 33vh;
   margin-left: 25px;
 }
 
@@ -829,7 +831,7 @@ form h2 {
   height: calc(100% - 5px);
 }
 
-.mp_iconcontainer{
+.mp_iconcontainer {
   display: flex;
   gap: 50px;
   justify-content: center;
@@ -846,12 +848,12 @@ form h2 {
   margin-top: 25px;
 }
 
-.mp_icons{
+.mp_icons {
   display: flex;
   gap: 40px;
   justify-content: center;
   align-items: center;
-  margin-top:30vh;
+  margin-top: 30vh;
   margin-left: 25px;
 }
 
@@ -1024,6 +1026,7 @@ form h2 {
 .joinedeventsuserimage_container {
   display: flex;
   justify-content: center;
+  margin-top: 50px;
 }
 
 .img_wrap_joinedeventsuserimage {
@@ -1407,9 +1410,8 @@ a.active {
   .cu_form-container {
     width: 300px;
     margin-bottom: 50px;
-
   }
-  .input-field-message{
+  .input-field-message {
     width: 315px;
   }
   .contactus_content {
@@ -1545,4 +1547,162 @@ a.active {
     font-size: 90%;
     z-index: 0;
   }
+}
+
+/***********Eventpage**********/
+
+.eventpage_main {
+  display: flex;
+  flex: 1;
+  position: absolute;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 76vw;
+  align-items: center;
+  margin-left: -13vw;
+  z-index: 99;
+}
+
+.eventimagebg_container {
+  width: 80%;
+  height: 100%;
+  margin-left: -13vw;
+  filter: blur(50px) brightness(0.9);
+}
+
+.eventimage-hero {
+  height: 60vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.eventpage_img {
+  display: inline-block;
+  margin-top: 0vh;
+  object-fit: cover;
+}
+
+.topcontainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.box1 {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  width: 35vw;
+  justify-content: flex-start;
+  align-items: flex-start;
+  height: 400px;
+  background-color: #aed9e0;
+}
+
+.box2 {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  width: 20vw;
+  justify-content: flex-start;
+  align-items: flex-start;
+  height: 400px;
+  background-color: #aed9e0;
+  padding: 20px;
+  text-align: left;
+}
+
+.eventpage_price {
+  color: #3a506b;
+  margin-top: 20px;
+}
+
+.eventpage_smalldate {
+  color: #8f2d56;
+}
+
+.eventinfo-name {
+  color: #028090;
+  margin-top: 40px;
+  text-align: left;
+}
+
+.organizeravatar {
+  display: block;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-top: 2vh;
+}
+
+.organizer {
+  display: block;
+  color: #0077b6;
+}
+
+.joinbutton-container {
+  height: 10vh;
+  width: 55vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: #b2f7ef;
+}
+
+.eventdescription-container {
+  height: 20vh;
+  width: 55vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  background-color: #d8f6fc;
+}
+
+.eventpagedescription {
+  margin: 20px;
+  text-align: left;
+}
+
+.eventinfo-description2 {
+  color: #05ada8;
+  font-size: 24px;
+  margin: 10px;
+}
+
+.eventpagetop {
+  margin-top: 10vh;
+}
+
+.eventinfo-date {
+  margin-bottom: 10px;
+}
+
+.simplemap_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 7vh;
+}
+
+.mp_iconcontainer2 {
+  margin-top: -25vh;
+  margin-left: -2vh;
+}
+
+.attendees {
+  display: flex;
+  flex-direction: row;
+}
+
+.attendeetitle {
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+  color: #05668d;
+  font-weight: bold;
 }

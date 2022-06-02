@@ -106,7 +106,7 @@ export default function JoinModal({
               <p>{format(new Date(eventData.date_from), "cccc, dd MMMM yyyy h:mm aa")} </p>
               <br></br>
               <div>
-                <p> Share this event on social media</p>
+                <p> Share with friends</p>
                 <span className="joinmodal_icons">
                   <div className='iconcontainer'><FaFacebookF size={'1.5em'} /></div>
                   <div className='iconcontainer'><FaTwitter size={'1.5em'} /></div>
