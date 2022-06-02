@@ -14,6 +14,10 @@ html {
     sans-serif;
 }
 
+textarea{
+  resize: none;
+}
+
 .themain {
   display: flex;
   flex-direction: column;
@@ -297,6 +301,8 @@ form h2 {
   font-weight: bold;
   box-shadow: 0 0 5px rgba(8, 7, 16, 0.6);
 }
+
+
 
 .textinput2 {
   display: block;
