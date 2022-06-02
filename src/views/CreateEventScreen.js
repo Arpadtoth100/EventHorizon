@@ -180,6 +180,7 @@ function CreateEventScreen() {
           onChange={createChangeHandler}
           rows="4"
           maxLength="500"
+          resize:n
         />
 
         <label htmlFor="ce_upload" className="textlabel">
