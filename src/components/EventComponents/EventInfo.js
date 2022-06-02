@@ -218,7 +218,7 @@ export default function EventInfo({ eventData, eventId }) {
                   )}
                   <div className="eventinfo-location">{eventData?.location}</div>
                 </div>
-                <h2>About this event</h2>
+                <h2 className='greentitle'>About this event</h2>
                 <p className="eventinfo-description2">{eventData.description}</p>
               </section>
             </div>

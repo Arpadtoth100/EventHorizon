@@ -1023,8 +1023,12 @@ form h2 {
 
 .joinedeventsuserimage_container {
   display: flex;
+  align-items: center;
   justify-content: center;
-  margin-top: 50px;
+  width: 55vw;
+  background-color: white;
+  margin-left: 16vw;
+  margin-top: 5px;
 }
 
 .img_wrap_joinedeventsuserimage {
@@ -1581,6 +1585,7 @@ a.active {
   display: inline-block;
   margin-top: 0vh;
   object-fit: cover;
+  background-color: white;
 }
 
 .topcontainer {
@@ -1594,10 +1599,9 @@ a.active {
   flex-direction: column;
   flex: 1;
   width: 35vw;
+  height: 420px;
   justify-content: flex-start;
   align-items: flex-start;
-  height: 400px;
-  background-color: #aed9e0;
 }
 
 .box2 {
@@ -1607,8 +1611,8 @@ a.active {
   width: 20vw;
   justify-content: flex-start;
   align-items: flex-start;
-  height: 400px;
-  background-color: #aed9e0;
+  height: 420px;
+  background-color: white;
   padding: 20px;
   text-align: left;
 }
@@ -1648,7 +1652,7 @@ a.active {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  background-color: #b2f7ef;
+  background-color: #dcf1f5;
 }
 
 .eventdescription-container {
@@ -1658,7 +1662,7 @@ a.active {
   flex-direction: row;
   justify-content: flex-start;
   align-items: flex-start;
-  background-color: #d8f6fc;
+  background-color: white;
 }
 
 .eventpagedescription {
@@ -1668,8 +1672,9 @@ a.active {
 
 .eventinfo-description2 {
   color: #05ada8;
-  font-size: 24px;
+  font-size: 22px;
   margin: 10px;
+  color: #2d3a40;
 }
 
 .eventpagetop {
@@ -1684,7 +1689,11 @@ a.active {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 7vh;
+  margin-top: 8vh;
+  width: 55vw;
+  margin-left: 16vw;
+  background-color: white;;
+
 }
 
 .mp_iconcontainer2 {
@@ -1703,4 +1712,5 @@ a.active {
   margin-bottom: 10px;
   color: #05668d;
   font-weight: bold;
+  margin-top: 20px;
 }
