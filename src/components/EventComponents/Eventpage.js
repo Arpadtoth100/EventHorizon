@@ -43,7 +43,17 @@ function EventPage() {
     <div className="outlet_main">
       <EventInfo eventData={event} eventId={params.id} />
       <div className='joinedeventsuserimage_container'>
-        {profileImages}
+        <div >
+          <div className='attendeetitle'>
+          <h2>Attendees</h2>
+          </div>
+          <div className='attendees'>
+          {profileImages}
+          </div>
+         
+        </div>
+        
+        
       </div>
     </div>
   );
