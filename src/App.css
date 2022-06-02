@@ -951,8 +951,13 @@ form h2 {
 }
 
 .success {
-  background-color: #3dccc7;
-  margin-top: 10px;
+  height: 2rem;
+  width: 55vw;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  background-color: #b2f7ef;
+  font-size: 1.4rem;
 }
 
 .ModalContent label {
