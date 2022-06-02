@@ -14,7 +14,7 @@ html {
     sans-serif;
 }
 
-textarea{
+textarea {
   resize: none;
 }
 
@@ -239,10 +239,12 @@ form * {
   margin: 40px 120px 40px;
   line-height: 1.6;
 }
+
 .inner_search {
   margin-bottom: 100px;
   margin-top: 80px;
 }
+
 .signinform {
   height: 450px;
   background-color: #edf6f9;
@@ -402,6 +404,7 @@ form h2 {
   border-radius: 3px;
   cursor: pointer;
 }
+
 .signup_btn {
   width: 100%;
   margin-left: 0;
@@ -416,7 +419,7 @@ form h2 {
   height: 500px;
 }
 
-.infoboxcolumn + .infoboxcolumn {
+.infoboxcolumn+.infoboxcolumn {
   margin-left: 2%;
 }
 
@@ -477,6 +480,7 @@ form h2 {
 }
 
 @keyframes flip {
+
   0%,
   80% {
     transform: rotateY(360deg);
@@ -1037,8 +1041,12 @@ form h2 {
 
 .joinedeventsuserimage_container {
   display: flex;
+  align-items: center;
   justify-content: center;
-  margin-top: 50px;
+  width: 55vw;
+  background-color: white;
+  margin-left: 16vw;
+  margin-top: 5px;
 }
 
 .img_wrap_joinedeventsuserimage {
@@ -1232,6 +1240,7 @@ a.active {
   color: blue;
   margin-left: 5vw;
 }
+
 .privacylink {
   color: blue;
 }
@@ -1414,6 +1423,7 @@ a.active {
     background-image: url(./images/contact8.jpg);
     background-size: 700px;
   }
+
   #cu_form {
     width: 70vw;
     margin-left: -7.5vw;
@@ -1423,17 +1433,21 @@ a.active {
     width: 300px;
     margin-bottom: 50px;
   }
+
   .input-field-message {
     width: 315px;
   }
+
   .contactus_content {
     display: flex;
     flex-wrap: wrap;
   }
+
   .formRow {
     margin: 10px;
     display: inline-block;
   }
+
   .cu_textlabel {
     color: #006d77;
     align-items: center;
@@ -1447,6 +1461,7 @@ a.active {
   .contactmessage_btn {
     width: 200px;
   }
+
   .responsive {
     margin-top: 20px;
   }
@@ -1458,6 +1473,16 @@ a.active {
     font-size: 16px;
     margin-top: -4vh;
     margin-left: 25vw;
+  }
+
+  .blabla {
+    padding: 20px 20px;
+  }
+
+  .privacy_text,
+  .faq_text {
+    margin: 1rem 3rem 1rem 3rem;
+    text-align: justify;
   }
 }
 
@@ -1552,6 +1577,7 @@ a.active {
 
   .cards-list {
     flex-direction: column;
+    align-items: center;
   }
 
   .aboutus-hero-text {
@@ -1573,6 +1599,7 @@ a.active {
   width: 76vw;
   align-items: center;
   margin-left: -13vw;
+  margin-top: 20vh;
   z-index: 99;
 }
 
@@ -1595,6 +1622,7 @@ a.active {
   display: inline-block;
   margin-top: 0vh;
   object-fit: cover;
+  background-color: white;
 }
 
 .topcontainer {
@@ -1608,10 +1636,9 @@ a.active {
   flex-direction: column;
   flex: 1;
   width: 35vw;
+  height: 420px;
   justify-content: flex-start;
   align-items: flex-start;
-  height: 400px;
-  background-color: #aed9e0;
 }
 
 .box2 {
@@ -1621,8 +1648,8 @@ a.active {
   width: 20vw;
   justify-content: flex-start;
   align-items: flex-start;
-  height: 400px;
-  background-color: #aed9e0;
+  height: 420px;
+  background-color: white;
   padding: 20px;
   text-align: left;
 }
@@ -1662,17 +1689,18 @@ a.active {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  background-color: #b2f7ef;
+  background-color: #dcf1f5;
 }
 
 .eventdescription-container {
-  height: 20vh;
+  height: 40vh;
   width: 55vw;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: flex-start;
-  background-color: #d8f6fc;
+  background-color: white;
+  overflow: auto;
 }
 
 .eventpagedescription {
@@ -1682,23 +1710,32 @@ a.active {
 
 .eventinfo-description2 {
   color: #05ada8;
-  font-size: 24px;
+  font-size: 20px;
+  line-height: 1.6;
   margin: 10px;
+  color: #5d737e;
 }
 
 .eventpagetop {
   margin-top: 10vh;
 }
 
-.eventinfo-date {
+.eventinfo-date,
+.eventinfo-location {
   margin-bottom: 10px;
+  margin-left: 10px;
 }
 
 .simplemap_container {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 7vh;
+  margin-top: 28vh;
+  width: 55vw;
+  margin-left: 16vw;
+  background-color: white;
+  ;
+
 }
 
 .mp_iconcontainer2 {
@@ -1717,4 +1754,5 @@ a.active {
   margin-bottom: 10px;
   color: #05668d;
   font-weight: bold;
+  margin-top: 20px;
 }

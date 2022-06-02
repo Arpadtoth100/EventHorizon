@@ -8,9 +8,8 @@ import SimpleMap from '../GoogleMap/SimpleMap';
 import { AuthContext } from '../Context/AuthContext';
 import { readAttendee, readUser } from '../../services/crud';
 import format from 'date-fns/format';
-import { FaFacebookF } from 'react-icons/fa';
-import { FaTwitter } from 'react-icons/fa';
-import { FaInstagram } from 'react-icons/fa';
+import { FaFacebookF, FaTwitter, FaInstagram } from 'react-icons/fa';
+import { MdDateRange, MdLocationPin } from 'react-icons/md';
 
 export default function EventInfo({ eventData, eventId }) {
   const [showJoinModal, setShowJoinModal] = useState(false);
@@ -206,29 +205,36 @@ export default function EventInfo({ eventData, eventId }) {
                 />
               )}
             </div>
+
             <div className="eventdescription-container">
               <section className="eventpagedescription">
-                <div className="eventinfo-date">
-                  {eventData.date_from && (
-                    <p className="eventinfo-date">
-                      {format(
-                        new Date(`${eventData.date_from}`),
-                        'cccc, dd MMMM yyyy h:mm aa'
-                      )}{' '}
-                      to{' '}
-                      {format(
-                        new Date(`${eventData.date_to}`),
-                        'cccc, dd MMMM yyyy h:mm aa'
-                      )}
-                    </p>
-                  )}
-                  <div className="eventinfo-location">
-                    {eventData?.location}
+                <div className="dateLocation">
+                  <div className="eventinfo-date">
+                    <MdDateRange size={'1.5em'} />
+                    {eventData.date_from && (
+                      <h4 className="eventinfo-date">
+                        {format(
+                          new Date(`${eventData.date_from}`),
+                          'cccc, dd MMMM yyyy h:mm aa'
+                        )}{' '}
+                        to{' '}
+                        {format(
+                          new Date(`${eventData.date_to}`),
+                          'cccc, dd MMMM yyyy h:mm aa'
+                        )}
+                      </h4>
+                    )}
+                    <div className="eventlocation">
+                      <MdLocationPin size={'1.5em'} />
+                      <h4 className="eventinfo-location">
+                        {eventData?.location}
+                      </h4>
+                    </div>
                   </div>
                 </div>
-                <h2>About this event</h2>
+                <h1 className="greentitle">About this event</h1>
                 <p className="eventinfo-description2">
-                  {eventData?.description}
+                  {eventData.description}
                 </p>
               </section>
             </div>

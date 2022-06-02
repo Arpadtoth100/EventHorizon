@@ -62,24 +62,24 @@ function CreateEventScreen() {
     } else {
       marker?.coord
         ? createEvent({
-            ...eventData,
-            uid: auth?.currentUser.uid,
-            date_from: startDate.toString(),
-            date_to: endDate.toString(),
-            coord: marker?.coord,
-          }).then(() => {
-            setEventData(defaultEventData);
-            navTo('/event_created');
-          })
+          ...eventData,
+          uid: auth?.currentUser.uid,
+          date_from: startDate.toString(),
+          date_to: endDate.toString(),
+          coord: marker?.coord,
+        }).then(() => {
+          setEventData(defaultEventData);
+          navTo('/event_created');
+        })
         : createEvent({
-            ...eventData,
-            uid: auth?.currentUser.uid,
-            date_from: startDate.toString(),
-            date_to: endDate.toString(),
-          }).then(() => {
-            setEventData(defaultEventData);
-            navTo('/event_created');
-          });
+          ...eventData,
+          uid: auth?.currentUser.uid,
+          date_from: startDate.toString(),
+          date_to: endDate.toString(),
+        }).then(() => {
+          setEventData(defaultEventData);
+          navTo('/event_created');
+        });
     }
   };
 
@@ -98,26 +98,26 @@ function CreateEventScreen() {
         getDownloadURL(uploadResult.ref).then((url) => {
           marker?.coord
             ? createEvent({
-                ...eventData,
-                uid: auth?.currentUser.uid,
-                date_from: startDate.toString(),
-                date_to: endDate.toString(),
-                image_url: url,
-                coord: marker?.coord,
-              }).then(() => {
-                setEventData(defaultEventData);
-                navTo('/event_created');
-              })
+              ...eventData,
+              uid: auth?.currentUser.uid,
+              date_from: startDate.toString(),
+              date_to: endDate.toString(),
+              image_url: url,
+              coord: marker?.coord,
+            }).then(() => {
+              setEventData(defaultEventData);
+              navTo('/event_created');
+            })
             : createEvent({
-                ...eventData,
-                uid: auth?.currentUser.uid,
-                date_from: startDate.toString(),
-                date_to: endDate.toString(),
-                image_url: url,
-              }).then(() => {
-                setEventData(defaultEventData);
-                navTo('/event_created');
-              });
+              ...eventData,
+              uid: auth?.currentUser.uid,
+              date_from: startDate.toString(),
+              date_to: endDate.toString(),
+              image_url: url,
+            }).then(() => {
+              setEventData(defaultEventData);
+              navTo('/event_created');
+            });
         });
       })
       .catch((e) => console.log(e));
@@ -179,7 +179,7 @@ function CreateEventScreen() {
           className="textinput"
           onChange={createChangeHandler}
           rows="4"
-          maxLength="500"
+          maxLength="1200"
         />
 
         <label htmlFor="ce_upload" className="textlabel">
