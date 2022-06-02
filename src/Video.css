@@ -7,7 +7,7 @@
   width: 100vw;
   height: 70vh;
   margin-left: 0;
-  margin-top: 8vh;
+  margin-top: 6vh;
 }
 
 .video {
@@ -88,6 +88,9 @@
 @media screen and (max-width: 960px) {
   .followus {
     margin-top: 8vh;;
+  }
+  .team_container {
+    flex-direction: column;
   }
   
 }
