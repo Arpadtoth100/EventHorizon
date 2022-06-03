@@ -110,9 +110,6 @@ function UpdateUser() {
       .catch((e) => console.log(e));
   };
 
-  const removeImageToUpload = () => {
-    setImageToUpload();
-  };
 
   return (
     <div className="updateuser_main">
@@ -206,12 +203,6 @@ function UpdateUser() {
               src={URL.createObjectURL(imageToUpload)}
               alt="newuseravatar"
             />
-            <button
-              className="removeimage_button"
-              onClick={removeImageToUpload}
-            >
-              Remove this image
-            </button>
           </div>
         )}
 
@@ -225,7 +216,7 @@ function UpdateUser() {
         <label htmlFor="su_organization" id="checkbox_label">
           Organization
         </label>
-
+        <br></br>
         <button className="update_btn">Update</button>
       </form>
     </div>

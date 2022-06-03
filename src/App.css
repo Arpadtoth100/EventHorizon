@@ -153,7 +153,7 @@ form {
   border: 2px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 0 20px rgba(8, 7, 16, 0.6);
   padding: 50px 35px;
-  text-align:left;
+  text-align: left;
 }
 
 form * {
@@ -163,9 +163,9 @@ form * {
   border: none;
 }
 
-.formh4{
+.formh4 {
   text-align: center;
-  color: #8f2d56
+  color: #8f2d56;
 }
 
 .create_event_main {
@@ -249,12 +249,10 @@ form * {
   margin: 40px 120px 40px;
   line-height: 1.6;
 }
-
 .inner_search {
   margin-bottom: 100px;
   margin-top: 80px;
 }
-
 .signinform {
   height: 50vh;
   width: 17vw;
@@ -303,7 +301,7 @@ form h2 {
   font-weight: bold;
 }
 
-.textlabel2{
+.textlabel2 {
   display: block;
   margin-top: 8px;
   margin-bottom: 10px;
@@ -408,6 +406,7 @@ form h2 {
   font-size: 16px;
   font-weight: 500;
   text-align: left;
+  font-weight: bold;
 }
 
 .btn {
@@ -438,14 +437,14 @@ form h2 {
   border-radius: 3px;
   cursor: pointer;
 }
-
 .signup_btn {
   width: 100%;
   margin-left: 0;
 }
 
 .update_btn {
-  margin-top: 15px;
+  margin-top: 20px;
+  margin-left: 4vw;
 }
 
 .infoboxcolumn {
@@ -453,7 +452,7 @@ form h2 {
   height: 500px;
 }
 
-.infoboxcolumn+.infoboxcolumn {
+.infoboxcolumn + .infoboxcolumn {
   margin-left: 2%;
 }
 
@@ -514,7 +513,6 @@ form h2 {
 }
 
 @keyframes flip {
-
   0%,
   80% {
     transform: rotateY(360deg);
@@ -676,7 +674,7 @@ form h2 {
   margin-left: 4vw;
 }
 
-.createevent_h3{
+.createevent_h3 {
   text-align: left;
   margin-left: 4vw;
 }
@@ -997,13 +995,8 @@ form h2 {
 }
 
 .success {
-  height: 2rem;
-  width: 55vw;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  background-color: #b2f7ef;
-  font-size: 1.4rem;
+  background-color: #3dccc7;
+  margin-top: 10px;
 }
 
 .ModalContent label {
@@ -1286,7 +1279,6 @@ a.active {
   color: blue;
   margin-left: 5vw;
 }
-
 .privacylink {
   color: blue;
 }
@@ -1470,7 +1462,6 @@ a.active {
     background-image: url(./images/contact8.jpg);
     background-size: 700px;
   }
-
   #cu_form {
     width: 70vw;
     margin-left: -7.5vw;
@@ -1480,22 +1471,18 @@ a.active {
     width: 300px;
     margin-bottom: 50px;
   }
-
   .input-field-message {
     width: 305px;
     margin-left: 10px;
   }
-
   .contactus_content {
     display: flex;
     flex-wrap: wrap;
   }
-
   .formRow {
     margin: 10px;
     display: inline-block;
   }
-
   .cu_textlabel {
     color: #006d77;
     margin-top: 6px;
@@ -1511,7 +1498,6 @@ a.active {
   .contactmessage_btn {
     width: 200px;
   }
-
   .responsive {
     margin-top: 20px;
   }
@@ -1523,16 +1509,6 @@ a.active {
     font-size: 16px;
     margin-top: -4vh;
     margin-left: 25vw;
-  }
-
-  .blabla {
-    padding: 20px 20px;
-  }
-
-  .privacy_text,
-  .faq_text {
-    margin: 1rem 3rem 1rem 3rem;
-    text-align: justify;
   }
 }
 
@@ -1627,7 +1603,6 @@ a.active {
 
   .cards-list {
     flex-direction: column;
-    align-items: center;
   }
 
   .aboutus-hero-text {
