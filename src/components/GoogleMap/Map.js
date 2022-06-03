@@ -5,6 +5,7 @@ import {
   useLoadScript,
   Marker,
   InfoWindow,
+  MarkerClusterer,
 } from '@react-google-maps/api';
 
 import usePlacesAutocomplete, {
@@ -121,21 +122,26 @@ function Map({ eventList }) {
         options={options}
         onLoad={onMapLoad}
       >
-        {markers.map((marker, i) => (
-          <Marker
-            key={marker.lat * i}
-            position={{ lat: marker.lat, lng: marker.lng }}
-            icon={{
-              url: './sunrise.png',
-              scaledSize: new window.google.maps.Size(30, 30),
-              origin: new window.google.maps.Point(0, 0),
-              anchor: new window.google.maps.Point(15, 15),
-            }}
-            onClick={() => {
-              setSelected(marker);
-            }}
-          />
-        ))}
+        <MarkerClusterer>
+          {(clusterer) =>
+            markers.map((marker, i) => (
+              <Marker
+                key={marker.lat * i}
+                position={{ lat: marker.lat, lng: marker.lng }}
+                icon={{
+                  url: './sunrise.png',
+                  scaledSize: new window.google.maps.Size(30, 30),
+                  origin: new window.google.maps.Point(0, 0),
+                  anchor: new window.google.maps.Point(15, 15),
+                }}
+                onClick={() => {
+                  setSelected(marker);
+                }}
+                clusterer={clusterer}
+              />
+            ))
+          }
+        </MarkerClusterer>
         {selected ? (
           <InfoWindow
             position={{ lat: selected.lat, lng: selected.lng }}
