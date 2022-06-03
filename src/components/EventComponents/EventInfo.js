@@ -9,7 +9,7 @@ import { AuthContext } from '../Context/AuthContext';
 import { readAttendee, readUser } from '../../services/crud';
 import format from 'date-fns/format';
 import { FaFacebookF, FaTwitter, FaInstagram } from 'react-icons/fa';
-import { MdDateRange, MdLocationPin } from "react-icons/md";
+import { MdDateRange, MdLocationPin } from 'react-icons/md';
 
 export default function EventInfo({ eventData, eventId }) {
   const [showJoinModal, setShowJoinModal] = useState(false);
@@ -19,7 +19,7 @@ export default function EventInfo({ eventData, eventId }) {
   const [joined, setJoined] = useState(false);
   const [deleteOrRemove, setDeleteOrRemove] = useState(false);
   const [success, setSuccess] = useState(false);
-  const [organizer, setOrganizer] = useState("");
+  const [organizer, setOrganizer] = useState('');
 
   const authContext = useContext(AuthContext);
 
@@ -65,69 +65,75 @@ export default function EventInfo({ eventData, eventId }) {
     readUser(eventData.uid).then((snapshot) => setOrganizer(snapshot.val()));
   }, [eventData?.uid]);
 
-
-  console.log(eventData.uid, organizer.username, organizer.profile_url)
+  console.log(eventData.uid, organizer.username, organizer.profile_url);
 
   return (
     <>
-      <div className='eventpagetop'>
+      <div className="eventpagetop">
         <div className="eventimage-hero">
-          <div className="eventimagebg_container"
-            style={{ backgroundImage: `url(${eventData.image_url})` }}>
-          </div>
+          <div
+            className="eventimagebg_container"
+            style={{ backgroundImage: `url(${eventData?.image_url})` }}
+          ></div>
           <div className="eventpage_main">
-            <div className='topcontainer'>
+            <div className="topcontainer">
               <img
                 className="box1 eventpage_img"
                 src={eventData?.image_url}
                 alt="the event"
               />
-              <div className='box2'>
+              <div className="box2">
                 <h2 className="eventpage_smalldate">
                   {eventData.date_from && (
                     <p>
                       {format(
-                        new Date(`${eventData.date_from}`),
+                        new Date(`${eventData?.date_from}`),
                         'cccc, dd MMMM'
                       )}
                     </p>
                   )}
                 </h2>
-                <h1 className="eventinfo-name">{eventData.title}</h1>
+                <h1 className="eventinfo-name">{eventData?.title}</h1>
                 <br></br>
                 <div>
-                  <h4 className="organizer">Organized by: {organizer?.username}</h4>
-                  <img className="organizeravatar"
-                    src={
-                      organizer?.profile_url
-                    }
+                  <h4 className="organizer">
+                    Organized by: {organizer?.username}
+                  </h4>
+                  <img
+                    className="organizeravatar"
+                    src={organizer?.profile_url}
                     alt="organizeravatar"
                   />
                 </div>
                 <br></br>
                 <div className="eventinfo-participants">
-                  Maximum number of participants: {eventData.user_limit}
+                  Maximum number of participants: {eventData?.user_limit}
                 </div>
                 <br></br>
-                <h2 className='eventpage_price'>
+                <h2 className="eventpage_price">
                   {eventData.price ? (
                     <>
                       Admission fee:
-                      {' ' + eventData.price} {eventData?.currency}
+                      {' ' + eventData?.price} {eventData?.currency}
                     </>
-                  ) : "Free"}
+                  ) : (
+                    'Free'
+                  )}
                 </h2>
               </div>
             </div>
-            <div className='joinbutton-container'>
+            <div className="success">
+              {success && <p>You successfully joined the event!</p>}
+            </div>
+            <div className="joinbutton-container">
               <span className="mp_icons">
-                <div className='mp_iconcontainer mp_iconcontainer2'>
+                <div className="mp_iconcontainer mp_iconcontainer2">
                   <FaFacebookF size={'1.5em'} />
                 </div>
-                <div className='mp_iconcontainer mp_iconcontainer2'>
+                <div className="mp_iconcontainer mp_iconcontainer2">
                   <FaTwitter size={'1.5em'} />
                 </div>
-                <div className='mp_iconcontainer mp_iconcontainer2'>
+                <div className="mp_iconcontainer mp_iconcontainer2">
                   <FaInstagram size={'1.5em'} />{' '}
                 </div>
               </span>
@@ -200,14 +206,13 @@ export default function EventInfo({ eventData, eventId }) {
               )}
             </div>
 
-            <div className='eventdescription-container'>
+            <div className="eventdescription-container">
               <section className="eventpagedescription">
-                <div className='dateLocation'>
+                <div className="dateLocation">
                   <div className="eventinfo-date">
-                  <MdDateRange size={'1.5em'}/>
+                    <MdDateRange size={'1.5em'} />
                     {eventData.date_from && (
                       <h4 className="eventinfo-date">
-
                         {format(
                           new Date(`${eventData.date_from}`),
                           'cccc, dd MMMM yyyy h:mm aa'
@@ -219,20 +224,23 @@ export default function EventInfo({ eventData, eventId }) {
                         )}
                       </h4>
                     )}
-                    <div className='eventlocation'>
-                        <MdLocationPin size={'1.5em'}/>
-                      <h4 className="eventinfo-location">{eventData?.location}</h4>
+                    <div className="eventlocation">
+                      <MdLocationPin size={'1.5em'} />
+                      <h4 className="eventinfo-location">
+                        {eventData?.location}
+                      </h4>
                     </div>
                   </div>
-
                 </div>
-                <h1 className='greentitle'>About this event</h1>
-                <p className="eventinfo-description2">{eventData.description}</p>
+                <h1 className="greentitle">About this event</h1>
+                <p className="eventinfo-description2">
+                  {eventData.description}
+                </p>
               </section>
             </div>
           </div>
         </div>
-        <div className='simplemap_container'>
+        <div className="simplemap_container">
           <div className="eventinfo-simplemap">
             {eventData?.coord && (
               <SimpleMap title={'Event Location'} eventData={eventData} />
