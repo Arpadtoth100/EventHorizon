@@ -60,7 +60,8 @@ textarea {
 }
 
 .signError {
-  height: 1.5rem;
+  height: 4rem;
+  color: #d81159;
 }
 
 /* Infobox thankyou */
@@ -152,6 +153,7 @@ form {
   border: 2px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 0 20px rgba(8, 7, 16, 0.6);
   padding: 50px 35px;
+  text-align:left;
 }
 
 form * {
@@ -161,16 +163,23 @@ form * {
   border: none;
 }
 
+.formh4{
+  text-align: center;
+  color: #8f2d56
+}
+
 .create_event_main {
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
 
 .create_event_form {
-  width: 20vw;
+  width: 30vw;
   max-height: 110vh;
-  max-width: 20vw;
+  max-width: 40vw;
   padding: 1rem;
+  margin-left: 2vw;
+  margin-top: 2vh;
   background-color: #edf6f9;
 }
 
@@ -232,6 +241,7 @@ form * {
 
 .mainbackground {
   background-color: #dcf1f5;
+  width: 100vw;
 }
 
 .search_title {
@@ -246,13 +256,15 @@ form * {
 }
 
 .signinform {
-  height: 450px;
+  height: 50vh;
+  width: 17vw;
   background-color: #edf6f9;
   padding-top: 2.5rem;
 }
 
 .signupform {
-  height: 750px;
+  height: 75vh;
+  width: 17vw;
   margin: 100px 0;
   background-color: #edf6f9;
   padding-top: 1rem;
@@ -285,7 +297,15 @@ form h2 {
 
 .textlabel {
   display: block;
-  margin-top: 10px;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.textlabel2{
+  display: block;
+  margin-top: 8px;
   margin-bottom: 10px;
   font-size: 16px;
   font-weight: bold;
@@ -294,17 +314,30 @@ form h2 {
 .textinput {
   display: inline-block;
   height: 30px;
-  width: 100%;
+  width: 13.4vw;
+  max-width: 20vw;
   background-color: white;
   border-radius: 3px;
   padding: 0 5px;
   margin-top: 6px;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: bold;
   box-shadow: 0 0 5px rgba(8, 7, 16, 0.6);
 }
 
-
+.cr_textinput {
+  display: inline-block;
+  height: 30px;
+  width: 28vw;
+  max-width: 30vw;
+  background-color: white;
+  border-radius: 3px;
+  padding: 0 5px;
+  margin-top: 6px;
+  font-size: 16px;
+  font-weight: bold;
+  box-shadow: 0 0 5px rgba(8, 7, 16, 0.6);
+}
 
 .textinput2 {
   display: block;
@@ -314,33 +347,34 @@ form h2 {
   border-radius: 3px;
   padding: 0 10px;
   margin-top: 6px;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: bold;
   box-shadow: 0 0 5px rgba(8, 7, 16, 0.6);
 }
 
 .select {
   display: block;
-  height: 25px;
-  width: 100%;
+  height: 30px;
+  width: 13.4vw;
+  max-width: 20vw;
   background-color: white;
   border-radius: 3px;
   padding: 0 10px;
   margin-top: 6px;
-  margin: 0 auto;
   font-size: 14px;
   font-weight: 600;
   box-shadow: 0 0 5px rgba(8, 7, 16, 0.6);
 }
 
 .datepickerinput {
-  height: 25px;
-  width: 100%;
+  height: 30px;
+  width: 13.4vw;
+  max-width: 20vw;
   background-color: white;
   border-radius: 3px;
   padding: 0 10px;
   margin-top: 6px;
-  font-size: 18px;
+  font-size: 16px;
   box-shadow: 0 0 5px rgba(8, 7, 16, 0.6);
   cursor: pointer;
 }
@@ -578,7 +612,7 @@ form h2 {
 }
 
 .imagepreview {
-  height: 80px;
+  height: 150px;
 }
 
 .removeimage_button {
@@ -633,6 +667,18 @@ form h2 {
 .createevent_h1 {
   color: #006d77;
   font-size: 2rem;
+}
+
+.createevent_h1 {
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+  text-align: left;
+  margin-left: 4vw;
+}
+
+.createevent_h3{
+  text-align: left;
+  margin-left: 4vw;
 }
 
 .createvent_link {
@@ -1344,8 +1390,8 @@ a.active {
 }
 
 .cu_textlabel {
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin-top: 6px;
+  margin-bottom: 6px;
   font-size: 16px;
   font-weight: bold;
 }
@@ -1384,7 +1430,7 @@ a.active {
   box-sizing: border-box;
   margin: 5px 10px 0px 0px;
   margin-top: 6px;
-  font-size: 14px;
+  font-size: 16px;
   box-shadow: 0 0 5px rgba(8, 7, 16, 0.6);
 }
 
@@ -1395,7 +1441,8 @@ a.active {
   border-radius: 3px;
   padding: 0 5px;
   margin-top: 6px;
-  font-size: 14px;
+  font-size: 16px;
+  font-weight: bold;
   box-shadow: 0 0 5px rgba(8, 7, 16, 0.6);
 }
 
@@ -1435,7 +1482,8 @@ a.active {
   }
 
   .input-field-message {
-    width: 315px;
+    width: 305px;
+    margin-left: 10px;
   }
 
   .contactus_content {
@@ -1450,6 +1498,8 @@ a.active {
 
   .cu_textlabel {
     color: #006d77;
+    margin-top: 6px;
+    margin-bottom: 6px;
     align-items: center;
     justify-content: center;
   }
@@ -1667,6 +1717,7 @@ a.active {
   color: #028090;
   margin-top: 40px;
   text-align: left;
+  overflow-wrap: anywhere;
 }
 
 .organizeravatar {
@@ -1734,8 +1785,6 @@ a.active {
   width: 55vw;
   margin-left: 16vw;
   background-color: white;
-  ;
-
 }
 
 .mp_iconcontainer2 {
