@@ -50,55 +50,63 @@ function Contact() {
               <form id="cu_form" onSubmit={submitHandler}>
                 <div className="formRow">
                   <div className="inline-block right-margin">
-                    <div className="cu_textlabel" id="cu_textlabel2">
+                    <label htmlFor="FirstName" className="cu_textlabel">
                       First Name
-                    </div>
+                    </label>
                     <input
                       type="text"
                       className="input-field"
+                      name="FirstName"
+                      id="FirstName"
                       required
                     />
                   </div>
                   <div className="inline-block responsive right-margin">
-                    <div className="cu_textlabel" id="cu_textlabel2">
+                    <label htmlFor="LastName" className="cu_textlabel">
                       Last Name
-                    </div>
+                    </label>
                     <input
                       type="text"
                       className="input-field"
+                      name="LastName"
+                      id="LastName"
                       required
                     />
                   </div>
                 </div>
                 <div className="formRow">
                   <div className="inline-block right-margin">
-                    <div className="cu_textlabel" id="cu_textlabel2">
+                    <label htmlFor="email" className="cu_textlabel">
                       Email
-                    </div>
+                    </label>
                     <input
                       type="email"
                       className="input-field"
+                      name="email"
+                      id="email"
                     />
                   </div>
                   <div className="inline-block responsive right-margin">
-                    <div className="cu_textlabel" id="cu_textlabel2">
+                    <label htmlFor="Phone" className="cu_textlabel">
                       Phone
-                    </div>
+                    </label>
                     <input
                       type="text"
                       className="input-field"
+                      name="Phone"
+                      id="Phone"
                       required
                     />
                   </div>
                 </div>
-                <div className="cu_textlabel" id="cu_textlabel2">
-                  Message <span id="message-info" class="info"></span>
-                </div>
+                <label htmlFor="contact-message" className="cu_textlabel right-margin">
+                  Message
+                </label>
                 <div className="responsive">
                   <textarea
                     name="contact-message"
                     id="contact-message"
-                    className="input-field-message"
+                    className="input-field-message right-margin"
                     cols="60"
                     rows="6"
                     required

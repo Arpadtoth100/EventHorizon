@@ -72,8 +72,9 @@ function SignUp() {
   return (
     <div className="signup_main">
       <form className="signupform" onSubmit={submitHandler}>
+        <h4 className='formh4'>New to Event Horizon?</h4>
         <div className="signError">
-          {signUpError && <p>{signUpError}</p>}
+          { signUpError && <p>{signUpError}</p>}
         </div>
         <h3 className='signupsign'>Sign Up Here</h3>
         <label htmlFor="su_username" className="textlabel">
