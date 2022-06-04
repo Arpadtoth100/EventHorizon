@@ -54,11 +54,6 @@ textarea {
   -moz-text-fill-color: transparent;
 }
 
-#introduction_s {
-  width: 900px;
-  margin: auto;
-}
-
 .signError {
   height: 4rem;
   color: #d81159;
@@ -1052,8 +1047,13 @@ form h2 {
   /* margin-bottom: 20px; */
 }
 
-.blabla h2 {
+.blabla h2,
+.blabla p {
   text-align: center;
+}
+
+.blabla p {
+  margin-bottom: 1vh;
 }
 
 .map_container {
@@ -1414,7 +1414,7 @@ a.active {
 }
 
 .input-field {
-  width: 250px;
+  width: 13vw;
   height: 30px;
   border-radius: 3px;
   padding: 0 5px;
@@ -1427,7 +1427,8 @@ a.active {
 }
 
 .input-field-message {
-  width: 540px;
+  width: 28vw;
+  max-width: 30vw;
   margin: 5px 10px 0px 0px;
   background-color: white;
   border-radius: 3px;
@@ -1637,7 +1638,8 @@ a.active {
 
 .eventimage-hero {
   height: 60vh;
-  width: 100vw;
+  width: 85vw;
+  margin-left: 7.5vw;
   display: flex;
   justify-content: center;
   align-items: center;
