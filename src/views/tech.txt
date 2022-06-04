@@ -1,0 +1,44 @@
+Meet@six:
+fontawesome
+
+google maps react wrapper
+
+stripe
+
+swiper
+
+***********************************************************
+copy paste
+
+fontawesome
+
+paypal
+reach ui combobox
+
+google maps api
+
+date-fns
+
+datepicker
+
+react-icons
+
+react paginate
+
+
+use places autocomplete
+
+******************
+palhub
+
+paypal, 
+
+reach combobox
+
+datepicker
+
+remove - 
+
+swiper
+
+use places autocomplete
