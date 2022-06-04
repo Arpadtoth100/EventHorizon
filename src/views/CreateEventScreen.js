@@ -125,6 +125,9 @@ function CreateEventScreen() {
   };
 
   return (
+    <>
+    <h1 className="createevent_h1">Create new event</h1>
+        <h3 className="createevent_h3"> Fill in the form and please don't forget to click the map coordinates!</h3>
     <div className="create_event_main">
       <div className="create_form-container">
         <form className="create_event_form" onSubmit={createEventHandler}>
@@ -335,8 +338,7 @@ function CreateEventScreen() {
 
       </div>
       <div>
-        <h1 className="createevent_h1">Create new event</h1>
-        <h3 className="createevent_h3"> Fill in the form and please don't forget to click the map coordinates!</h3>
+        
         <div>
           <div className="map_container map-create">
             <MapCreate
@@ -349,6 +351,7 @@ function CreateEventScreen() {
 
       </div>
     </div>
+    </>
   );
 }
 

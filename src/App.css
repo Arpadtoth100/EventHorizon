@@ -175,7 +175,13 @@ form * {
   padding: 1rem;
   margin-left: 2vw;
   margin-top: 2vh;
+  margin-bottom: 2vh;
   background-color: #edf6f9;
+}
+
+.map-create{
+  margin-left: -2vw;
+  margin-top: -6vh;
 }
 
 .search_container {
@@ -665,13 +671,13 @@ form h2 {
 .createevent_h1 {
   margin-top: 5vh;
   margin-bottom: 5vh;
-  text-align: left;
-  margin-left: 4vw;
+  text-align: center;
+  /* margin-left: 4vw; */
 }
 
 .createevent_h3 {
-  text-align: left;
-  margin-left: 4vw;
+  text-align: center;
+  /* margin-left: 4vw; */
 }
 
 .createvent_link {
