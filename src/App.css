@@ -86,7 +86,7 @@ textarea {
   background-color: #006d77;
   height: 80px;
   position: fixed;
-/*   width: 100vw; */
+  /*   width: 100vw; */
   width: 100%;
   top: 0;
   z-index: 999;
@@ -96,7 +96,7 @@ textarea {
   display: flex;
   justify-content: center;
   align-items: center;
-/*   width: 100vw; */
+  /*   width: 100vw; */
   height: 60px;
   background-color: #006d77;
   color: white;
@@ -107,7 +107,7 @@ textarea {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-/*   width: 100vw; */
+  /*   width: 100vw; */
   background-image: url(./images/background.jpg);
   background-size: cover;
 }
@@ -180,7 +180,7 @@ form * {
   background-color: #edf6f9;
 }
 
-.map-create{
+.map-create {
   margin-left: -2vw;
   margin-top: -6vh;
 }
@@ -243,7 +243,7 @@ form * {
 
 .mainbackground {
   background-color: #dcf1f5;
-/*   width: 100vw; */
+  /*   width: 100vw; */
 }
 
 .search_title {
@@ -491,8 +491,7 @@ form h2 {
   background-color: #c1dbde;
   position: relative;
   box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
-    0 6.7px 5.3px rgba(0, 0, 0, 0.048),
-     0 12.5px 10px rgba(0, 0, 0, 0.06),
+    0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
     0 22.3px 17.9px rgba(0, 0, 0, 0.072);
 
   text-overflow: ellipsis;
@@ -559,7 +558,6 @@ form h2 {
 .eventpage_img {
   position: relative;
   height: 350px;
-  margin-top: -350px;
 }
 
 .eventinfo-name {
@@ -632,14 +630,14 @@ form h2 {
   color: #2f5866;
 }
 
-ul.paginationBtns{
+ul.paginationBtns {
   margin: 0 auto;
   max-width: 480px;
   height: 3rem;
   align-self: flex-end;
 }
 
-.paginationBtns li{
+.paginationBtns li {
   margin: 1rem 1rem;
 }
 
@@ -668,7 +666,7 @@ ul.paginationBtns{
 .paginationDisabled a:hover {
   cursor: default;
   background-color: #dcf1f5;
-  color: #dcf1f5
+  color: #dcf1f5;
 }
 
 .main h1,
@@ -686,7 +684,7 @@ ul.paginationBtns{
 
 .createevent_h3 {
   text-align: center;
-  color: #006d77
+  color: #006d77;
 }
 
 .createvent_link {
@@ -782,7 +780,7 @@ ul.paginationBtns{
 }
 
 .modal-background {
-/*   width: 100vw; */
+  /*   width: 100vw; */
   height: 100vh;
   background: rgba(0, 0, 0, 0.8);
   position: fixed;
@@ -1024,7 +1022,7 @@ ul.paginationBtns{
 /*about us*/
 .aboutus-hero {
   height: 75vh;
-/*   width: 100vw; */
+  /*   width: 100vw; */
   margin-left: 0;
   display: flex;
   justify-content: center;
@@ -1056,7 +1054,7 @@ ul.paginationBtns{
 }
 
 .blabla {
-/*   width: 100vw; */
+  /*   width: 100vw; */
   padding: 20px 120px;
   background: #2ec4b6;
   color: white;
@@ -1105,8 +1103,9 @@ ul.paginationBtns{
   justify-content: center;
   width: 55vw;
   background-color: white;
-  margin-left: 16vw;
-  margin-top: 5px;
+  margin-left: 16.5rem;
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
 }
 
 .img_wrap_joinedeventsuserimage {
@@ -1245,7 +1244,7 @@ a.active {
 
 .privacy_head {
   height: 25vh;
-/*   width: 100vw; */
+  /*   width: 100vw; */
   background-image: url(./images/PrivacyBg3.jpg);
   opacity: 0.8;
   color: white;
@@ -1306,7 +1305,7 @@ a.active {
 
 .faq_head {
   height: 25vh;
-/*   width: 100vw; */
+  /*   width: 100vw; */
   background-image: url(./images/faqBg2.jpg);
   color: white;
   margin-top: 8vh;
@@ -1333,7 +1332,7 @@ a.active {
 }
 
 .contactus_main {
-/*   width: 100vw; */
+  /*   width: 100vw; */
   margin-top: 8vh;
   margin-left: auto;
   background-image: url(./images/contact7.jpg);
@@ -1632,22 +1631,19 @@ a.active {
   align-items: center;
   width: 100%;
   align-items: center;
-/*   margin-left: -13vw; */
-  margin-top: 20vh;
+  margin-top: 10rem;
   z-index: 99;
 }
 
 .eventimagebg_container {
-  width: 80%;
+  width: 90%;
   height: 100%;
-  margin-left: -13vw;
   filter: blur(50px) brightness(0.9);
+  margin-top: -15rem;
 }
 
 .eventimage-hero {
   height: 60vh;
-/*   width: 85vw; */
- /*  margin-left: 7.5vw; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1655,7 +1651,6 @@ a.active {
 
 .eventpage_img {
   display: inline-block;
-  margin-top: 0vh;
   object-fit: cover;
   background-color: white;
 }
@@ -1719,7 +1714,7 @@ a.active {
 }
 
 .joinbutton-container {
-  height: 10vh;
+  height: 6rem;
   width: 55vw;
   display: flex;
   flex-direction: row;
@@ -1729,7 +1724,7 @@ a.active {
 }
 
 .eventdescription-container {
-  height: 40vh;
+  height: 23rem;
   width: 55vw;
   display: flex;
   flex-direction: row;
@@ -1740,8 +1735,8 @@ a.active {
 }
 
 .eventpagedescription {
-  margin: 20px;
-  text-align: left;
+  margin: 3rem;
+  text-align: justify;
 }
 
 .eventinfo-description2 {
@@ -1753,7 +1748,7 @@ a.active {
 }
 
 .eventpagetop {
-  margin-top: 10vh;
+  margin-top: 10rem;
 }
 
 .eventinfo-date,
@@ -1766,9 +1761,11 @@ a.active {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 28vh;
   width: 55vw;
-  margin-left: 16vw;
+  margin-top: 20rem;
+  margin-left: 16.5rem;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
   background-color: white;
 }
 
@@ -1789,4 +1786,87 @@ a.active {
   color: #006d77;
   font-weight: bold;
   margin-top: 20px;
+}
+/*****************eventpage eddig******************/
+
+/*******************video*******************/
+.videomain {
+  height: 70vh;
+  margin-left: 0;
+  margin-top: 80px;
+}
+
+.video {
+  width: 100%;
+  height: 70vh;
+  object-fit: cover;
+}
+
+.title {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-top: 13vh;
+  align-items: center;
+  color: white;
+}
+
+.followus {
+  display: flex;
+  margin-top: 32vh;
+  align-items: center;
+  justify-content: center;
+}
+
+.team {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #368f8b;
+  background-color: white;
+  padding-top: 3vh;
+}
+
+.team_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6vw;
+  margin-bottom: 3vh;
+  margin-top: 3vh;
+  background-color: white;
+}
+
+.teammember {
+  width: 10vh;
+  height: 10vh;
+  margin-bottom: 1.5vh;
+  border-radius: 50%;
+}
+
+.memberdetails {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.icon {
+  width: 100px;
+}
+
+.footer_main {
+  z-index: 999;
+}
+
+@media screen and (max-width: 960px) {
+  .followus {
+    margin-top: 8vh;
+  }
+  .team_container {
+    flex-direction: column;
+  }
 }

@@ -1,7 +1,6 @@
 import Pagination from '../services/Pagination';
 import { useState, useEffect } from 'react';
 import { filterEvent } from '../services/crud';
-import '../Video.css';
 import videoBg3 from '../images/videoBg3.mp4';
 import { FaFacebookF } from 'react-icons/fa';
 import { FaTwitter } from 'react-icons/fa';
