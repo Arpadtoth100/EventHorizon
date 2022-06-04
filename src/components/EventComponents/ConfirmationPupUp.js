@@ -10,7 +10,6 @@ function ConfirmationPopUp({
   cancel,
   confirmationQuestion,
   eventId,
-  correctUser,
   deleteOrRemove,
 }) {
   const authContext = useContext(AuthContext);
