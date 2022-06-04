@@ -1,19 +1,16 @@
 import SunriseIcon from '../utilities/SunRiseIcon';
 import { NavLink } from 'react-router-dom';
 import { useState } from 'react';
-import ContactPopUp from './ContactPopUp';
 
 function Contact() {
-  const [showContactPopUp, setShowContactPopUp] = useState(false)
-
-  const openContactPopUp = () => {
-    setShowContactPopUp(prev => !prev)
-  }
+  const [feedback, setFeedback] = useState(false);
 
   const submitHandler = (e) => {
     e.preventDefault();
-    openContactPopUp();
+    setFeedback(true);
   }
+
+
 
   return (
     <div className='outlet_main contactus_main'>
@@ -31,7 +28,7 @@ function Contact() {
           <div className='contactus_content'>
             <div className='contactus_text'>
               <div className='contactustextbox'>
-                <h2>Points of contact</h2>
+                <h2 className='cu_h2'>Points of contact</h2>
                 <h3>Hungary | Event Horizon</h3>
                 <p>1000 Budapest</p>
                 <p>Progmatic utca 7.</p>
@@ -129,10 +126,14 @@ function Contact() {
                     <button type="submit" class="contactmessage_btn">Send Message</button>
                   </div>
                 </div>
+                <div>
+                </div>
+                <div id="feedback">
+                  {feedback && <p>Thank you for your message!</p>}
+                </div>
               </form>
             </div>
           </div>
-          <ContactPopUp showContactPopUp={showContactPopUp} setShowContactPopUp={showContactPopUp} />
         </div>
       </div>
 
