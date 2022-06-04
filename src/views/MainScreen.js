@@ -48,15 +48,19 @@ const MainScreen = () => {
       <div className='mainbackground'>
       <div className="blabla">
         <h2>
-          Event Horizon is the best place for finding wonderful events you can
-          join!
+          Event Horizon is the best place for finding wonderful events!
         </h2>
         <br />
         <p>
-          EventHorizon is the best lorem ipsum dolor sit amet consectetur,
-          adipisicing elit. Cumque ratione est ut nisi nihil repudiandae officia
-          pariatur voluptatem! Culpa eligendi vitae magni amet fugit nihil
-          officiis harum, aliquid voluptas laudantium?
+        Events. Programs. Where to go. Today. Tomorrow. Next week.
+        </p>
+        
+        <p>
+          You find it all here!
+        </p>
+        
+        <p>
+        We offer the best things to do and you can help us to offer even more if you create new events. Or simply join.
         </p>
         {/*<p>
           At vero eos et accusamus et iusto odio dignissimos ducimus qui
