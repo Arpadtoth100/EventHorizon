@@ -9,7 +9,7 @@ function JoinedEvents() {
   const [events, setEvents] = useState([]);
   const authContext = useContext(AuthContext);
   const [eventList, setEventList] = useState([]);
-  const perPage = 4;
+  const perPage = 5;
 
   useEffect(() => {
     authContext.loggedUserID &&
@@ -46,11 +46,11 @@ function JoinedEvents() {
     <>
       {finalEvents.length !== 0 ? (
         <div className="greentitle">
-        <Pagination 
-          title= {'Events I have Joined'}
-          data={finalEvents}
-          perPage={perPage}
-        />
+          <Pagination
+            title={'Events I have Joined'}
+            data={finalEvents}
+            perPage={perPage}
+          />
         </div>
       ) : (
         <>

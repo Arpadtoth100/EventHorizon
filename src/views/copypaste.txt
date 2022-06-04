@@ -1,0 +1,38 @@
+ALT PROJEKT
+
+kihivasok:
+    * ido management / RL
+    * GIT verziokovetes
+    * 3rd party APIk
+    * masok altal irt kod felhasznalasa beepitese
+
+
+
+
+
+csapatmunka
+    *lemorzsolodas
+    *folyamatos kommunikacio slacken
+    *alapvetoen egyenileg dolgoztunk, de folyamatos volt a kommunikacio es a segitsegnyujtas as masiknak
+
+
+
+
+
+mit tanultatok:
+    *adatbazis kezeles, osszehasonlitas
+    * GIT verziokovetes
+    *csapatmunka , koordinacio
+    onallosag, -3rd party cuccok dokumentacio alapjan
+    kommunikacio
+
+
+
+FF:
+
+* eventek kedvencekbe tevese
+* eventek modositasa, 
+* admin felulet, felhasznalok kezelesere, statisztikara
+* kulonbozo nyelvi beallitasok
+* kulonbozo temak (dark/light/colorful)
+* full responsive design (tablet landscape, portrait breakpoint)

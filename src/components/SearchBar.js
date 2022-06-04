@@ -69,7 +69,7 @@ function SearchBar({ eventList, setFilteredList }) {
         >
           <option value="">Select one</option>
           <option value="true">Free</option>
-          <option value="false">Paying</option>
+          <option value="false">Paid</option>
         </select>
         <label htmlFor="se_type" className="textlabel">
           Event type

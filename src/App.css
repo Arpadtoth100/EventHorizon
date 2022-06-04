@@ -217,11 +217,11 @@ form * {
 }
 
 .pagination_search h2 {
-  color: #086375;
+  color: #006d77;
 }
 
 .pagination_search h1 {
-  color: #086375;
+  color: #006d77;
 }
 
 #nosuchevents {
@@ -229,15 +229,15 @@ form * {
   margin-right: 2rem;
   min-width: 480px;
   max-width: 480px;
-  color: #086375;
+  color: #006d77;
 }
 
 .nojoinedevents {
-  color: #00a896;
+  color: #006d77;
 }
 
 .greentitle {
-  color: #028090;
+  color: #006d77;
 }
 
 .mainbackground {
@@ -625,19 +625,27 @@ form h2 {
 
 .paginationBtns {
   width: 100%;
-  height: 20px;
   list-style: none;
   display: flex;
   justify-content: center;
-  margin-bottom: 2rem;
-  margin-top: 2rem;
+  color: #2f5866;
+}
+
+ul.paginationBtns{
+  margin: 0 auto;
+  max-width: 480px;
+  height: 3rem;
+  align-self: flex-end;
+}
+
+.paginationBtns li{
+  margin: 1rem 1rem;
 }
 
 .paginationBtns a {
-  padding: 2px 5px;
-  margin: 5px;
+  padding: 5px;
+  font-size: 1.3rem;
   border-radius: 3px;
-  background-color: #aeecef;
   color: #2f5866;
   cursor: pointer;
 }
@@ -653,14 +661,13 @@ form h2 {
 }
 
 .paginationDisabled a {
-  color: #aeecef;
-  background-color: #aeecef;
+  color: #dcf1f5;
 }
 
 .paginationDisabled a:hover {
-  color: #aeecef;
-  background-color: #aeecef;
   cursor: default;
+  background-color: #dcf1f5;
+  color: #dcf1f5
 }
 
 .main h1,
@@ -678,7 +685,7 @@ form h2 {
 
 .createevent_h3 {
   text-align: center;
-  /* margin-left: 4vw; */
+  color: #006d77
 }
 
 .createvent_link {
@@ -997,8 +1004,14 @@ form h2 {
 }
 
 .success {
-  background-color: #3dccc7;
-  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #006d77;
+  background-color: #dcf1f5;
+  height: 2rem;
+  font-size: 1.5rem;
+  width: 55vw;
 }
 
 .ModalContent label {
@@ -1571,19 +1584,6 @@ a.active {
     z-index: 999;
   }
 
-  .header_toggle {
-    margin-right: 5%;
-    z-index: 999;
-  }
-
-  .header_toggle .bar {
-    width: 25px;
-    height: 3px;
-    margin: 5px auto;
-    transition: all 0.3s ease-in-out;
-    background: white;
-  }
-
   #mobile-menu {
     cursor: pointer;
   }
@@ -1689,7 +1689,7 @@ a.active {
 }
 
 .eventpage_price {
-  color: #3a506b;
+  color: #006d77;
   margin-top: 20px;
 }
 
@@ -1785,7 +1785,7 @@ a.active {
   align-items: center;
   justify-content: center;
   margin-bottom: 10px;
-  color: #05668d;
+  color: #006d77;
   font-weight: bold;
   margin-top: 20px;
 }
