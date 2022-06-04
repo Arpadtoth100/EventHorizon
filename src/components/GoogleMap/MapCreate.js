@@ -26,7 +26,8 @@ const libs = ['places'];
 
 const mapContainerStyle = {
   width: '50vw',
-  height: '50vh',
+  height: '95vh',
+  borderRadius: '1%'
 };
 const center = {
   lat: 47.497913,

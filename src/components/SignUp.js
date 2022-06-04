@@ -72,81 +72,101 @@ function SignUp() {
   return (
     <div className="signup_main">
       <form className="signupform" onSubmit={submitHandler}>
-        <h4 className='formh4'>New to Event Horizon?</h4>
         <div className="signError">
-          { signUpError && <p>{signUpError}</p>}
+          {signUpError && <p>{signUpError}</p>}
         </div>
-        <h3 className='signupsign'>Sign Up Here</h3>
-        <label htmlFor="su_username" className="textlabel">
-          Username
-        </label>
-        <input
-          type="text"
-          placeholder="Username"
-          name="username"
-          id="su_username"
-          className="textinput"
-          onChange={collectSignUpData}
-          required
-        />
-        <label htmlFor="su_email" className="textlabel">
-          Email
-        </label>
-        <input
-          type="email"
-          placeholder="Email"
-          name="email"
-          id="su_email"
-          className="textinput"
-          onChange={collectSignUpData}
-          required
-        />
-        <label htmlFor="su_password" className="textlabel">
-          Password
-        </label>
-        <input
-          type="password"
-          placeholder="Password"
-          name="password"
-          id="su_password"
-          className="textinput"
-          onChange={collectSignUpData}
-          required
-        />
-        <label htmlFor="su_confirmpassword" className="textlabel">
-          Confirm Password
-        </label>
-        <input
-          type="password"
-          placeholder="Confirm Password"
-          name="confirmpassword"
-          id="su_confirmpassword"
-          className="textinput"
-          onChange={collectSignUpData}
-          required
-        />
-        <label htmlFor="su_location" className="textlabel">
-          Location
-        </label>
-        <input
-          type="text"
-          placeholder="Location"
-          name="location"
-          id="su_location"
-          className="textinput"
-          onChange={collectSignUpData}
-          required
-        />
-        <input
-          type="checkbox"
-          name="organization"
-          id="su_organization"
-          onChange={collectSignUpData}
-        />
-        <label htmlFor="su_organization" id="checkbox_label">
-          Organization
-        </label>
-        <button className="signup_btn">Sign Up</button>
+        <div className="formRow">
+          <div className="inline-block right-margin">
+            <label htmlFor="su_username" className="textlabel">
+              Username
+            </label>
+            <input
+              type="text"
+              placeholder="Username"
+              name="username"
+              id="su_username"
+              className="textinput"
+              onChange={collectSignUpData}
+              required
+            />
+          </div>
+          <div className="inline-block responsive right-margin">
+            <label htmlFor="su_email" className="textlabel">
+              Email
+            </label>
+            <input
+              type="email"
+              placeholder="Email"
+              name="email"
+              id="su_email"
+              className="textinput"
+              onChange={collectSignUpData}
+              required
+            />
+          </div>
+
+
+        </div>
+        <div className="formRow">
+          <div className="inline-block right-margin">
+            <label htmlFor="su_password" className="textlabel">
+              Password
+            </label>
+            <input
+              type="password"
+              placeholder="Password"
+              name="password"
+              id="su_password"
+              className="textinput"
+              onChange={collectSignUpData}
+              required
+            />
+          </div>
+          <div className="inline-block responsive right-margin">
+            <label htmlFor="su_confirmpassword" className="textlabel">
+              Confirm Password
+            </label>
+            <input
+              type="password"
+              placeholder="Confirm Password"
+              name="confirmpassword"
+              id="su_confirmpassword"
+              className="textinput"
+              onChange={collectSignUpData}
+              required
+            />
+          </div>
+
+
+        </div>
+        <div className="formRow">
+          <div className="inline-block right-margin">
+            <label htmlFor="su_location" className="textlabel">
+              Location
+            </label>
+            <input
+              type="text"
+              placeholder="Location"
+              name="location"
+              id="su_location"
+              className="textinput"
+              onChange={collectSignUpData}
+              required
+            />
+          </div>
+          <div className="inline-block responsive right-margin">
+            <input
+              type="checkbox"
+              name="organization"
+              id="su_organization"
+              onChange={collectSignUpData}
+            />
+            <label htmlFor="su_organization" id="checkbox_label2">
+              Organization
+            </label>
+          </div>
+        </div>
+        <button id="signupbtn" className="signup_btn">Sign Up</button>
       </form>
     </div>
   );

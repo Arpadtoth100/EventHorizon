@@ -44,7 +44,7 @@ const MainScreen = () => {
           </span>
         </div>
       </div>
-      <div className="mainbackground">
+      <div>
         <div className="blabla">
           <h2>Event Horizon is the best place for finding wonderful events!</h2>
           <br />
