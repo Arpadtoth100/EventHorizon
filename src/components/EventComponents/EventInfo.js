@@ -36,6 +36,7 @@ export default function EventInfo({ eventData, eventId }) {
 
   const openConfirmationPopUp = (event) => {
     setShowConfirmationPopUp((prev) => !prev);
+    console.log('click on ', event.target.value);
     event.target.value === 'delete'
       ? setDeleteOrRemove(true)
       : setDeleteOrRemove(false);
@@ -64,8 +65,6 @@ export default function EventInfo({ eventData, eventId }) {
   useEffect(() => {
     readUser(eventData.uid).then((snapshot) => setOrganizer(snapshot.val()));
   }, [eventData?.uid]);
-
-  console.log(eventData.uid, organizer.username, organizer.profile_url);
 
   return (
     <>

@@ -95,7 +95,7 @@ function Map({ eventList }) {
 
   const panTo = useCallback(({ lat, lng }) => {
     mapRef.current.panTo({ lat, lng });
-    mapRef.current.setZoom(14);
+    mapRef.current.setZoom(12);
   }, []);
 
   if (loadError) return 'Error Loading maps';

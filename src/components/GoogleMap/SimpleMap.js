@@ -18,6 +18,7 @@ const mapContainerStyle = {
 const options = {
   styles: mapStyles,
   zoomControl: true,
+  disableDefaultUI: true,
 };
 
 function SimpleMap({ eventData, title }) {
@@ -65,6 +66,12 @@ function SimpleMap({ eventData, title }) {
           position={marker}
           onClick={() => {
             setSelected(marker);
+          }}
+          icon={{
+            url: './sunrise.png',
+            scaledSize: new window.google.maps.Size(30, 30),
+            origin: new window.google.maps.Point(0, 0),
+            anchor: new window.google.maps.Point(15, 15),
           }}
         />
         {selected ? (
