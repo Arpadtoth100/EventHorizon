@@ -241,7 +241,7 @@ export default function EventInfo({ eventData, eventId }) {
           </div>
         </div>
         <div className="simplemap_container">
-          <div className="eventinfo-simplemap">
+          <div>
             {eventData?.coord && (
               <SimpleMap title={'Event Location'} eventData={eventData} />
             )}
