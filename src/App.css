@@ -86,7 +86,6 @@ textarea {
   background-color: #006d77;
   height: 80px;
   position: fixed;
-  /*   width: 100vw; */
   width: 100%;
   top: 0;
   z-index: 999;
@@ -814,7 +813,7 @@ ul.paginationBtns {
 }
 
 .modal-background {
-  /*   width: 100vw; */
+  width: 100%;
   height: 100vh;
   background: rgba(0, 0, 0, 0.8);
   position: fixed;
@@ -1086,7 +1085,7 @@ ul.paginationBtns {
 }
 
 .blabla {
-  /*   width: 100vw; */
+  width: 100%;
   padding: 20px 120px;
   background: #2ec4b6;
   color: white;
@@ -1135,9 +1134,7 @@ ul.paginationBtns {
   justify-content: center;
   width: 55vw;
   background-color: white;
-  margin-left: 16.5rem;
-  margin-top: 2.5rem;
-  margin-bottom: 2.5rem;
+  margin: 2.5rem auto;
 }
 
 .img_wrap_joinedeventsuserimage {
@@ -1276,7 +1273,6 @@ a.active {
 
 .privacy_head {
   height: 25vh;
-  /*   width: 100vw; */
   background-image: url(./images/PrivacyBg3.jpg);
   opacity: 0.8;
   color: white;
@@ -1337,7 +1333,6 @@ a.active {
 
 .faq_head {
   height: 25vh;
-  /*   width: 100vw; */
   background-image: url(./images/faqBg2.jpg);
   color: white;
   margin-top: 8vh;
@@ -1808,8 +1803,7 @@ a.active {
   align-items: center;
   justify-content: center;
   width: 55vw;
-  margin-top: 20rem;
-  margin-left: 16.5rem;
+  margin: 20rem auto 0;
   padding-top: 3rem;
   padding-bottom: 3rem;
   background-color: white;
