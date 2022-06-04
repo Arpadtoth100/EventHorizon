@@ -38,13 +38,11 @@ function SignIn() {
   return (
     <div className="signin_main">
       <form className="signinform" onSubmit={submitHandler}>
-        <h4 className='formh4'>Already a member?</h4>
         <div className="signError">
           {signInError && <p>Incorrect E-mail or Password </p>}
         </div>
-        <h3>Sign In Here</h3>
-
-        <label htmlFor="si_email" className="textlabel">
+        
+        <label htmlFor="si_email" className="textlabel" id="si_email_label">
           Email
         </label>
         <input
@@ -52,11 +50,11 @@ function SignIn() {
           placeholder="Email"
           name="email"
           id="si_email"
-          className="textinput"
+          className="si_textinput"
           onChange={collectSignInData}
         />
 
-        <label htmlFor="si_password" className="textlabel">
+        <label htmlFor="si_password" className="textlabel" id="si_pw_label">
           Password
         </label>
         <input
@@ -68,7 +66,7 @@ function SignIn() {
           onChange={collectSignInData}
         />
 
-        <button className="btn">Sign In</button>
+        <button id="signinbtn" className="btn">Sign In</button>
       </form>
     </div>
   );
