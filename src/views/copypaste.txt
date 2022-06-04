@@ -36,3 +36,4 @@ FF:
 * kulonbozo nyelvi beallitasok
 * kulonbozo temak (dark/light/colorful)
 * full responsive design (tablet landscape, portrait breakpoint)
+* Fizetes kozvetlenul az esemeny letrehozojanak.

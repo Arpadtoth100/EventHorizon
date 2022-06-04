@@ -191,6 +191,7 @@ form * {
   justify-content: center;
 }
 
+
 .search_map {
   position: relative;
 }
@@ -208,7 +209,7 @@ form * {
   min-width: 480px;
   display: flex;
   flex-wrap: wrap;
-  height: auto;
+  height: 704px;
   margin: 0px;
   margin-right: 2rem;
 }
@@ -487,7 +488,6 @@ form h2 {
   width: 200px;
   min-height: 310px;
   border-radius: 9px;
-  margin: 10px 0 20px 0;
   background-color: #c1dbde;
   position: relative;
   box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),

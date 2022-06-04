@@ -42,3 +42,31 @@ remove -
 swiper
 
 use places autocomplete
+
+
+Backend mock:
+    * Firebase Hosting - Weboldal host
+    * Firebase RealTime Database - applikacio adatbazis
+    * Firebase Store - felhasznaloi eroforrasok (kep tarolasa)
+    * Firebase Authentication - autentikacios szolgaltatas, - adatbazis
+
+Technologia stack:
+    * HTML5 / CSS3 - weboldal struktura
+    * JavaScript(ES5 / ES6 / ES7) - progamozasi nyelv
+    * React 17.0.2 - (17, mert 18nak meg nem eleg szeles a tamogatottsaga, sok 3rd party szolgaltatas nem mukodik alatta.)
+    * Firebase SDK (Software Development Kit) - firebase szolgaltatasok eleresehez, kezelesehez hasznalt tool
+    * React Router 6 - "oldalak" kozotti navigazciohoz hasznaljuk
+
+Third-party szolgaltatasok:
+    * Google Maps ( Google Maps Api, UsePlaces Autocomplete,)
+    * Paypal / Stripe fizetesi rendszerek integracioja
+    * FontAwesome - ui elemekhez, ikonokhoz
+    * Reach UI Combobox - google maps keresojehez hasznalt input/autocomplete lista
+    * React DatePicker - datum eleresehez, kinyeresehez hasznalt 3rd party cuccok
+
+
+    - Egyeb, egyenileg hasznalt 3rd party szolgaltataspl:
+        * Swiper - caroussel (lapozo) megjelenitese
+        * React Paginate - pagination/lapozo komponens
+        * Date fns - datum formazashoz hasznalt 3rd party cuccok
+        * React Remove - DOM manipulalashoz hasznalt alkalmazas
