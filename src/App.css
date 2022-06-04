@@ -245,7 +245,7 @@ form * {
 }
 
 .signinform {
-  height: 25rem;
+  height: 27rem;
   width: 20rem;
   margin-left: -3rem;
   margin-top: 6rem;
@@ -254,7 +254,7 @@ form * {
 }
 
 .signupform {
-  height: 25rem;
+  height: 27rem;
   width: 36rem;
   margin-left: -17rem;
   margin-top: 6rem;
@@ -1434,6 +1434,7 @@ a.active {
   padding: 20px;
   background-color: #edf6f9;
   text-align: left;
+  opacity: 0.9;
   box-shadow: 0 0 20px rgba(8, 7, 16, 0.6);
 }
 
