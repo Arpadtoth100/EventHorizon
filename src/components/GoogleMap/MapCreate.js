@@ -26,8 +26,8 @@ const libs = ['places'];
 
 const mapContainerStyle = {
   width: '45vw',
-  height: '120vh',
-  borderRadius: '1%'
+  height: '100%',
+  borderRadius: '1%',
 };
 const center = {
   lat: 47.497913,
@@ -62,7 +62,7 @@ function MapCreate({ eventData, marker, onMapClick }) {
   if (!isLoaded) return 'Loading Maps';
 
   return (
-    <div>
+    <>
       <Search panTo={panTo} />
 
       <Locate
@@ -115,7 +115,7 @@ function MapCreate({ eventData, marker, onMapClick }) {
           </InfoWindow>
         ) : null}
       </GoogleMap>
-    </div>
+    </>
   );
 }
 

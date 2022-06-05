@@ -157,29 +157,37 @@ form * {
 .create_event_main {
   margin-top: 1rem;
   margin-bottom: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.create_event-container {
+  height: 70vh;
+  margin: 3rem 0;
+  display: flex;
+  justify-content: center;
 }
 
 .create_event_form {
   width: 33rem;
-  height: 60rem;
+  height: 100%;
   padding: 1rem;
   margin-left: 3rem;
-  margin-top: 1rem;
-  margin-bottom: 2rem;
   margin-right: 3rem;
   background-color: #edf6f9;
 }
 
-.map-create {
+/* .map-create {
   margin-left: -2vw;
   margin-top: -6vh;
   height: 50rem;
-}
+} */
 
 .search_container {
   width: 100%-240px;
   display: flex;
   justify-content: center;
+  height: 60vh
 }
 
 
@@ -190,9 +198,17 @@ form * {
 .search_form {
   background-color: #edf6f9;
   padding: 1rem;
-  height: 80vh;
   min-width: 10vw;
   margin-right: 2rem;
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.search_form > h3,
+.search_form > .textlabel{
+align-self: flex-start;
 }
 
 .search_output {
@@ -200,7 +216,6 @@ form * {
   min-width: 480px;
   display: flex;
   flex-wrap: wrap;
-  height: 704px;
   margin: 0px;
   margin-right: 2rem;
 }
@@ -235,7 +250,7 @@ form * {
 
 .search_title {
   color: #086375;
-  margin: 40px 120px 40px;
+  margin: 40px 120px;
   line-height: 1.6;
 }
 
@@ -318,15 +333,7 @@ form h2 {
   display: block;
   margin-top: 6px;
   margin-bottom: 6px;
-  font-size: 16px;
-  font-weight: bold;
-}
-
-.textlabel2 {
-  display: block;
-  margin-top: 8px;
-  margin-bottom: 10px;
-  font-size: 16px;
+  font-size: 1.2rem;
   font-weight: bold;
 }
 
@@ -542,6 +549,8 @@ form h2 {
 
   text-overflow: ellipsis;
   overflow: hidden;
+  margin-left:1rem;
+  margin-bottom: 1rem;
 }
 
 .card-badge {
@@ -1124,9 +1133,9 @@ ul.paginationBtns {
 .map_container {
   display: flex;
   justify-content: center;
-  position: relative;
+  /* position: relative;
   top: 4rem;
-  left: 4rem;
+  left: 4rem; */
 }
 
 .useravatar {
@@ -1449,13 +1458,6 @@ a.active {
   box-shadow: 0 0 20px rgba(8, 7, 16, 0.6);
 }
 
-.cu_textlabel {
-  margin-top: 6px;
-  margin-bottom: 6px;
-  font-size: 16px;
-  font-weight: bold;
-}
-
 .email {
   color: blue;
 }
@@ -1494,7 +1496,7 @@ a.active {
 }
 
 .input-field-message {
-  width: 28vw;
+  width: 100%;
   margin: 5px 10px 0px 0px;
   background-color: white;
   border-radius: 3px;
@@ -1524,179 +1526,8 @@ a.active {
   align-items: center;
 }
 
-@media only screen and (max-width: 600px) {
-  .contactus_main {
-    background-image: url(./images/contact8.jpg);
-    background-size: 700px;
-  }
-
-  .contactustextbox {
-    margin-top: 3rem;
-    margin-left: 1rem;
-  }
-
-  #cu_form {
-    margin-left: 1rem;
-    width: 18rem;
-    height: 45rem;
-  }
-
-  .cu_form-container {
-    width: 20rem;
-    margin-bottom: 50px;
-  }
-
-  .input-field-message,
-  #contact-message {
-    width: 14.5rem;
-    margin-left: 10px;
-  }
-
-  .contactus_content {
-    display: flex;
-    flex-wrap: wrap;
-  }
-
-  .formRow {
-    margin: 10px;
-    display: inline-block;
-  }
-
-  .cu_textlabel {
-    color: #006d77;
-    margin-top: 6px;
-    margin-bottom: 6px;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .input-field {
-    width: 14.5rem;
-  }
-
-  .contactmessage_btn {
-    width: 200px;
-  }
-
-  .responsive {
-    margin-top: 20px;
-  }
-
-  .contactpopup {
-    display: block;
-    width: 50%;
-    background-color: yellowgreen;
-    font-size: 16px;
-    margin-top: -4vh;
-    margin-left: 25vw;
-  }
-
-  #feedback {
-    margin-left: 3rem;
-  }
-
-  .privacy_head_title {
-    font-size: 1.5rem;
-  }
-
-  .privacy_text,
-  .faq_text {
-    margin: 1rem 3rem 1rem 3rem;
-    text-align: justify;
-  }
-}
 
 /*************************************/
-
-.infoBox_link :hover {
-  cursor: pointer;
-  color: #006d77;
-}
-
-.searchscreen_class {
-  display: flex;
-  justify-content: center;
-  flex-wrap: nowrap;
-  grid-gap: 20px;
-  gap: 20px;
-}
-
-.blabla {
-  padding: 20px 20px;
-}
-
-@media screen and (max-width: 960px) {
-  .header_main {
-    display: flex;
-    justify-content: space-between;
-    z-index: 1;
-    width: 100%;
-    max-width: 1300px;
-    padding: 0;
-  }
-
-  .menu {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    position: absolute;
-    top: -1000px;
-    transition: all 0.5s ease-in-out;
-  }
-
-  .menu.active {
-    top: 0px;
-    transition: all 0.5s ease-in-out;
-    height: 28vh;
-    text-decoration: underline;
-    background-color: #086375;
-  }
-
-  .item:nth-child(1) {
-    margin-top: 27px;
-  }
-
-  .header_main img {
-    margin-left: 25px;
-    z-index: 999;
-  }
-
-  #mobile-menu {
-    cursor: pointer;
-  }
-
-  .item {
-    text-align: center;
-    height: 60px;
-  }
-
-  /*  .link {
-    font-size: 1.7rem;
-  } */
-
-  #mobile-menu.act .bar:nth-child(2) {
-    opacity: 0;
-  }
-
-  #mobile-menu.act .bar:nth-child(1) {
-    transform: translateY(8px) rotate(45deg);
-  }
-
-  #mobile-menu.act .bar:nth-child(3) {
-    transform: translateY(-8px) rotate(-45deg);
-  }
-
-  .cards-list {
-    flex-direction: column;
-    align-content: center;
-  }
-
-  .aboutus-hero-text {
-    margin: 15px;
-    font-size: 90%;
-    z-index: 0;
-  }
-}
 
 /***********Eventpage**********/
 
@@ -1867,3 +1698,211 @@ a.active {
 }
 
 /*****************eventpage eddig******************/
+
+.infoBox_link :hover {
+  cursor: pointer;
+  color: #006d77;
+}
+
+.searchscreen_class {
+  display: flex;
+  justify-content: center;
+  flex-wrap: nowrap;
+}
+
+.blabla {
+  padding: 20px 20px;
+}
+
+@media screen and  (max-width: 960px) {
+  .header_main {
+    display: flex;
+    justify-content: space-between;
+    z-index: 1;
+    width: 100vw;
+    max-width: 1300px;
+    padding: 0;
+  }
+
+  .menu {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+    top: -1000px;
+    transition: all 0.5s ease-in-out;
+  }
+
+  .menu.active {
+    top: 0px;
+    transition: all 0.5s ease-in-out;
+    height: 28vh;
+    text-decoration: underline;
+    background-color: #086375;
+  }
+
+  .item:nth-child(1) {
+    margin-top: 27px;
+  }
+
+  .header_main img {
+    margin-left: 25px;
+    z-index: 999;
+  }
+
+  #mobile-menu {
+    cursor: pointer;
+  }
+
+  .item {
+    text-align: center;
+    height: 60px;
+  }
+
+  /*  .link {
+    font-size: 1.7rem;
+  } */
+
+  #mobile-menu.act .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  #mobile-menu.act .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  #mobile-menu.act .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  .cards-list {
+    flex-direction: column;
+    align-content: center;
+  }
+
+  .aboutus-hero-text {
+    margin: 15px;
+    font-size: 90%;
+    z-index: 0;
+  }
+}
+
+
+
+@media only screen and (max-width: 600px) {
+
+  .header_main {
+    display: flex;
+    justify-content: space-around;
+    z-index: 1;
+    padding: 0;
+  }
+
+  .contactus_main {
+    background-image: url(./images/contact8.jpg);
+    background-size: 700px;
+  }
+
+  .contactustextbox {
+    margin-top: 3rem;
+    margin-left: 1rem;
+  }
+
+  #cu_form {
+    margin-left: 1rem;
+    width: 18rem;
+    height: 45rem;
+  }
+
+  .cu_form-container {
+    width: 20rem;
+    margin-bottom: 50px;
+  }
+
+  .input-field-message,
+  #contact-message {
+    width: 14.5rem;
+    margin-left: 10px;
+  }
+
+  .contactus_content {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .formRow {
+    margin: 10px;
+    display: inline-block;
+  }
+
+  .cu_textlabel {
+    color: #006d77;
+    margin-top: 6px;
+    margin-bottom: 6px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .input-field {
+    width: 14.5rem;
+  }
+
+  .contactmessage_btn {
+    width: 200px;
+  }
+
+  .responsive {
+    margin-top: 20px;
+  }
+
+  .contactpopup {
+    display: block;
+    width: 50%;
+    background-color: yellowgreen;
+    font-size: 16px;
+    margin-top: -4vh;
+    margin-left: 25vw;
+  }
+
+  #feedback {
+    margin-left: 3rem;
+  }
+
+  .privacy_head_title {
+    font-size: 1.5rem;
+  }
+
+  .privacy_text,
+  .faq_text {
+    margin: 1rem 3rem 1rem 3rem;
+    text-align: justify;
+  }
+
+  .outlet_main {
+    margin: 0;
+  }
+
+  .userprofile_container {
+    width: 100%;
+    margin: 80px auto 0;
+    padding: 1rem;
+  }
+
+  .search_title {
+    color: #086375;
+    margin: 40px auto;
+    line-height: 1.6;
+  }
+
+  .search_container {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+  }
+
+  .search_container .select {
+    width: 100%;
+    max-width: 100%;
+  }
+}
