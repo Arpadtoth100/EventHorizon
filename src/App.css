@@ -263,11 +263,11 @@ form * {
   padding-top: 1rem;
 }
 
-#si_email_label{
+#si_email_label {
   margin-top: 1.3rem;
 }
 
-#si_pw_label{
+#si_pw_label {
   margin-top: 4rem;
 }
 
@@ -275,7 +275,7 @@ form * {
   margin-top: 5.5rem;
 }
 
-#signupbtn{
+#signupbtn {
   width: 18rem;
   margin-left: 7rem;
 }
@@ -446,7 +446,7 @@ form h2 {
   font-weight: bold;
 }
 
-#update_checkbox_label{
+#update_checkbox_label {
   display: inline-block;
   margin-top: -15px;
   font-size: 16px;
@@ -484,6 +484,7 @@ form h2 {
   border-radius: 3px;
   cursor: pointer;
 }
+
 .signup_btn {
   width: 100%;
   margin-left: 0;
@@ -500,7 +501,7 @@ form h2 {
   height: 500px;
 }
 
-.infoboxcolumn + .infoboxcolumn {
+.infoboxcolumn+.infoboxcolumn {
   margin-left: 2%;
 }
 
@@ -560,6 +561,7 @@ form h2 {
 }
 
 @keyframes flip {
+
   0%,
   80% {
     transform: rotateY(360deg);
@@ -1340,6 +1342,7 @@ a.active {
   color: blue;
   margin-left: 5vw;
 }
+
 .privacylink {
   color: blue;
 }
@@ -1531,6 +1534,7 @@ a.active {
     margin-top: 3rem;
     margin-left: 1rem;
   }
+
   #cu_form {
     margin-left: 1rem;
     width: 18rem;
@@ -1541,15 +1545,18 @@ a.active {
     width: 20rem;
     margin-bottom: 50px;
   }
+
   .input-field-message,
   #contact-message {
     width: 14.5rem;
     margin-left: 10px;
   }
+
   .contactus_content {
     display: flex;
     flex-wrap: wrap;
   }
+
   .formRow {
     margin: 10px;
     display: inline-block;
@@ -1570,6 +1577,7 @@ a.active {
   .contactmessage_btn {
     width: 200px;
   }
+
   .responsive {
     margin-top: 20px;
   }
@@ -1582,8 +1590,19 @@ a.active {
     margin-top: -4vh;
     margin-left: 25vw;
   }
+
   #feedback {
     margin-left: 3rem;
+  }
+
+  .privacy_head_title {
+    font-size: 1.5rem;
+  }
+
+  .privacy_text,
+  .faq_text {
+    margin: 1rem 3rem 1rem 3rem;
+    text-align: justify;
   }
 }
 
@@ -1600,6 +1619,10 @@ a.active {
   flex-wrap: nowrap;
   grid-gap: 20px;
   gap: 20px;
+}
+
+.blabla {
+  padding: 20px 20px;
 }
 
 @media screen and (max-width: 960px) {
@@ -1665,6 +1688,7 @@ a.active {
 
   .cards-list {
     flex-direction: column;
+    align-content: center;
   }
 
   .aboutus-hero-text {
@@ -1840,4 +1864,5 @@ a.active {
   font-weight: bold;
   margin-top: 20px;
 }
+
 /*****************eventpage eddig******************/
