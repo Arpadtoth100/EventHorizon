@@ -608,6 +608,7 @@ form h2 {
 .eventinfo-name {
   color: #028090;
   margin-top: 20px;
+  font-size: 1.65rem;
 }
 
 .eventinfo-fee,
@@ -908,7 +909,6 @@ ul.paginationBtns {
   place-items: center;
   transition: 0.5s;
   border: none;
-  margin-top: 25px;
 }
 
 .about_icons {
@@ -1741,6 +1741,7 @@ a.active {
 .eventpage_price {
   color: #006d77;
   margin-top: 20px;
+  font-size: 1.3rem;
 }
 
 .eventpage_smalldate {

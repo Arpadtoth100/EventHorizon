@@ -96,7 +96,7 @@ export default function EventInfo({ eventData, eventId }) {
                 <br></br>
                 <div>
                   <h4 className="organizer">
-                    Organized by: {organizer?.username}
+                    Organized by: {' ' + ' ' + organizer?.username}
                   </h4>
                   <img
                     className="organizeravatar"
