@@ -128,11 +128,10 @@ function CreateEventScreen() {
     <>
       <h1 className="createevent_h1">Create new event</h1>
       <h3 className="createevent_h3">
-        {' '}
         Fill in the form and please don't forget to add the location on the map!
       </h3>
       <div className="create_event_main">
-        <div className="create_form-container">
+        <div className="create_event-container">
           <form className="create_event_form" onSubmit={createEventHandler}>
             <label htmlFor="title" className="textlabel">
               Event Title
@@ -291,9 +290,8 @@ function CreateEventScreen() {
                 />
               </div>
               <div className="inline-block responsive right-margin">
-                <label htmlFor="free" className="textlabel2">
-                  Free or Paying
-                  <br></br>
+                <label htmlFor="free" className="textlabel">
+                  Admission fee
                 </label>
                 <select
                   required
@@ -304,7 +302,7 @@ function CreateEventScreen() {
                 >
                   <option value="null">Please Select one</option>
                   <option value="true">Free</option>
-                  <option value="false">Paying</option>
+                  <option value="false">Paid</option>
                 </select>
                 {eventData.free === 'true' ? (
                   <></>
@@ -322,16 +320,16 @@ function CreateEventScreen() {
                       onChange={createChangeHandler}
                       min="0"
                     />
-                    <label htmlFor="currency" className="cu_textlabel">
+                    <label htmlFor="currency" className="textlabel">
                       Currency
                     </label>
                     <select
-                      className="create_event_select"
+                      className="select"
                       name="currency"
                       id="currency"
                       onChange={createChangeHandler}
                     >
-                      <option value="">Please Select one</option>
+                      <option value="">Please Select Currency</option>
                       <option value="HUF">HUF</option>
                       <option value="USD">USD</option>
                       <option value="EUR">EUR</option>
@@ -349,16 +347,12 @@ function CreateEventScreen() {
               Create Event!
             </button>
           </form>
-        </div>
-        <div>
-          <div>
-            <div className="map_container map-create">
-              <MapCreate
-                marker={marker}
-                eventData={eventData}
-                onMapClick={onMapClick}
-              />
-            </div>
+          <div className="map_container map-create">
+            <MapCreate
+              marker={marker}
+              eventData={eventData}
+              onMapClick={onMapClick}
+            />
           </div>
         </div>
       </div>

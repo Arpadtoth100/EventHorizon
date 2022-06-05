@@ -42,7 +42,7 @@ function SearchBar({ eventList, setFilteredList }) {
   }, [searchValue, dateValue]);
 
   return (
-    <div>
+    <>
       <form className="search_form">
         <h3>Search for events:</h3>
         <label htmlFor="loc" className="textlabel">
@@ -107,7 +107,7 @@ function SearchBar({ eventList, setFilteredList }) {
         <h2 className="textlabel">Filter result:</h2>
         <FilterBar eventList={eventList} setFilteredList={setFilteredList} />
       </form>
-    </div>
+    </>
   );
 }
 export default SearchBar;

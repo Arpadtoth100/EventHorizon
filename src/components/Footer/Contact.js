@@ -8,34 +8,32 @@ function Contact() {
   const submitHandler = (e) => {
     e.preventDefault();
     setFeedback(true);
-  }
-
-
+  };
 
   return (
-    <div className='outlet_main contactus_main'>
-      <div className='contactus_icon_container'>
+    <div className="outlet_main contactus_main">
+      <div className="contactus_icon_container">
         <i style={{ color: '#9ceaef', paddingBottom: '10px' }}>
           <SunriseIcon width="60px" height="48px" />
         </i>
       </div>
       <div>
-        <div className='contact_head_title'>
-          <span className='contact_head_title2'>Contact Us</span>
+        <div className="contact_head_title">
+          <span className="contact_head_title2">Contact Us</span>
         </div>
         <div>
-          <div className='contactus_content'>
-            <div className='contactus_text'>
-              <div className='contactustextbox'>
-                <h2 className='cu_h2'>Points of contact</h2>
+          <div className="contactus_content">
+            <div className="contactus_text">
+              <div className="contactustextbox">
+                <h2 className="cu_h2">Points of contact</h2>
                 <h3>Hungary | Event Horizon</h3>
                 <p>1000 Budapest</p>
                 <p>Progmatic utca 7.</p>
                 <p>Tel: +36-30-123-4567</p>
                 <h4>Information</h4>
-                <p className='email'>information@eventhorizon.com</p>
+                <p className="email">information@eventhorizon.com</p>
                 <h4>Support</h4>
-                <p className='email'>support@eventhorizon.com</p>
+                <p className="email">support@eventhorizon.com</p>
                 <h3>Additional office location</h3>
                 <h4 id="panama">Panama</h4>
                 <p>Via Argentina Galerias Alvear 2</p>
@@ -94,7 +92,10 @@ function Contact() {
                     />
                   </div>
                 </div>
-                <label htmlFor="contact-message" className="cu_textlabel right-margin">
+                <label
+                  htmlFor="contact-message"
+                  className="cu_textlabel right-margin"
+                >
                   Message
                 </label>
                 <div className="responsive">
@@ -111,21 +112,22 @@ function Contact() {
                   <div className="inline-block">
                     <input type="checkbox" name="moreinfo" id="cu_moreinfo" />
                     <label htmlFor="cu_moreinfo" id="privacycheckbox_label">
-                      I'd like to receive more information about Event Horizon, I
-                      understand and agree to the <br></br>
+                      I'd like to receive more information about Event Horizon,
+                      I understand and agree to the <br></br>
                       <NavLink to="/privacy" className="privacylink">
                         privacy policy
                       </NavLink>
                     </label>
                   </div>
                 </div>
-                <div class="row contact-message">
+                <div className="row contact-message">
                   <div>
-                    <button type="submit" class="contactmessage_btn">Send Message</button>
+                    <button type="submit" className="contactmessage_btn">
+                      Send Message
+                    </button>
                   </div>
                 </div>
-                <div>
-                </div>
+                <div></div>
                 <div id="feedback">
                   {feedback && <p>Thank you for your message!</p>}
                 </div>
@@ -134,9 +136,8 @@ function Contact() {
           </div>
         </div>
       </div>
-
     </div>
-  )
+  );
 }
 
-export default Contact
+export default Contact;
