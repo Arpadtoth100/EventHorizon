@@ -23,7 +23,6 @@ function Contact() {
         <div className='contact_head_title'>
           <span className='contact_head_title2'>Contact Us</span>
         </div>
-
         <div>
           <div className='contactus_content'>
             <div className='contactus_text'>
@@ -41,7 +40,6 @@ function Contact() {
                 <h4 id="panama">Panama</h4>
                 <p>Via Argentina Galerias Alvear 2</p>
               </div>
-
             </div>
             <div className="cu_form-container">
               <form id="cu_form" onSubmit={submitHandler}>
