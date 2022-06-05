@@ -145,7 +145,7 @@ function CreateEventScreen() {
               className="cr_textinput"
               required
               onChange={createChangeHandler}
-              maxLength="55"
+              maxLength="50"
             />
             <label htmlFor="description" className="textlabel textarea">
               Description
@@ -221,6 +221,7 @@ function CreateEventScreen() {
                   <option value="6">{'Art & Culture'}</option>
                   <option value="7">Games</option>
                   <option value="8">Hobbies</option>
+                  <option value="9">Other</option>
                 </select>
               </div>
               <div className="inline-block responsive right-margin">
