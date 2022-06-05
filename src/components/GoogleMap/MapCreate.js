@@ -26,7 +26,7 @@ const libs = ['places'];
 
 const mapContainerStyle = {
   width: '45vw',
-  height: '110vh',
+  height: '120vh',
   borderRadius: '1%'
 };
 const center = {
