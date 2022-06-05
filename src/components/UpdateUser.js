@@ -114,12 +114,15 @@ function UpdateUser() {
   return (
     <div className="updateuser_main">
       <form className="updateuserform" onSubmit={submitHandler}>
-      {(success && <h4 className='warning'>Your information has been updated!</h4>) ||
+        <div className='signError'>
+        {(success && <h4 className='warning'>Your information has been updated!</h4>) ||
           (error && (
             <p className="updateform_p">
               Invalid email and/or passwords do not match, please try again!
             </p>
           ))}
+        </div>
+      
         <div className="formRow">
           <div className="inline-block right-margin">
             <label htmlFor="su_username" className="textlabel">

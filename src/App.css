@@ -160,12 +160,13 @@ form * {
 }
 
 .create_event_form {
-  width: 30vw;
-  height: 95vh;
+  width: 33rem;
+  height: 55rem;
   padding: 1rem;
-  margin-left: 2rem;
-  margin-top: 0.75rem;
-  margin-bottom: 2vh;
+  margin-left: 3rem;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  margin-right: 3rem;
   background-color: #edf6f9;
 }
 
@@ -624,8 +625,8 @@ form h2 {
   margin-left: 7vw;
   margin-top: 4vh;
   margin-bottom: 4vh;
-  padding-top: 20px;
-  height: 33rem;
+  padding-top: 50px;
+  height: 35rem;
   width: 36rem;
   background-color: #edf6f9;
 }
