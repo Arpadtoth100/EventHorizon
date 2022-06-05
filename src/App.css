@@ -445,6 +445,16 @@ form h2 {
   font-weight: bold;
 }
 
+#update_checkbox_label{
+  display: inline-block;
+  margin-top: -15px;
+  font-size: 16px;
+  font-weight: 500;
+  text-align: left;
+  font-weight: bold;
+  margin-right: 7rem;
+}
+
 .btn {
   margin-top: 50px;
   width: 100%;
@@ -461,7 +471,7 @@ form h2 {
 .signup_btn,
 .update_btn {
   margin-top: 30px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   margin-left: 15px;
   width: 40%;
   background-color: #006d77;
@@ -479,8 +489,9 @@ form h2 {
 }
 
 .update_btn {
+  width: 10rem;
   margin-top: 20px;
-  margin-left: 4vw;
+  margin-left: 40px;
 }
 
 .infoboxcolumn {
@@ -613,9 +624,9 @@ form h2 {
   margin-left: 7vw;
   margin-top: 4vh;
   margin-bottom: 4vh;
-  height: 80vh;
-  width: 18vw;
-  left: 60px;
+  padding-top: 20px;
+  height: 33rem;
+  width: 36rem;
   background-color: #edf6f9;
 }
 
@@ -623,7 +634,8 @@ form h2 {
   display: flex;
   width: 100%;
   background-image: url(./images/updateprofileBg.jpg);
-  background-size: cover;
+  background-size: 100%;
+  background-position: 10% 32%;
 }
 
 .updateform_p {

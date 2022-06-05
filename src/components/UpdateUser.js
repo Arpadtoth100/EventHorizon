@@ -114,39 +114,46 @@ function UpdateUser() {
   return (
     <div className="updateuser_main">
       <form className="updateuserform" onSubmit={submitHandler}>
-        {(success && <h4>Your information has been updated!</h4>) ||
+      {(success && <h4 className='warning'>Your information has been updated!</h4>) ||
           (error && (
             <p className="updateform_p">
               Invalid email and/or passwords do not match, please try again!
             </p>
           ))}
-        <br></br>
-        <label htmlFor="su_username" className="textlabel">
-          Username
-        </label>
-        <input
-          type="text"
-          defaultValue={userData.username}
-          placeholder="Username"
-          name="username"
-          id="su_username"
-          className="textinput"
-          onChange={collectUserData}
-        />
+        <div className="formRow">
+          <div className="inline-block right-margin">
+            <label htmlFor="su_username" className="textlabel">
+              Username
+            </label>
+            <input
+              type="text"
+              defaultValue={userData.username}
+              placeholder="Username"
+              name="username"
+              id="su_username"
+              className="textinput"
+              onChange={collectUserData}
+            />
+            
+          </div>
+          <div className="inline-block responsive right-margin">
+              <label htmlFor="su_email" className="textlabel">
+                Email
+              </label>
+              <input
+                type="text"
+                defaultValue={getEmailAuth()}
+                placeholder="Email"
+                name="email"
+                id="su_email"
+                className="textinput"
+                onChange={collectUserData}
+              />
+            </div>
+        </div>
 
-        <label htmlFor="su_email" className="textlabel">
-          Email
-        </label>
-        <input
-          type="text"
-          defaultValue={getEmailAuth()}
-          placeholder="Email"
-          name="email"
-          id="su_email"
-          className="textinput"
-          onChange={collectUserData}
-        />
-
+        <div className="formRow">
+        <div className="inline-block right-margin">
         <label htmlFor="su_password" className="textlabel">
           Password
         </label>
@@ -158,7 +165,8 @@ function UpdateUser() {
           className="textinput"
           onChange={collectUserData}
         />
-
+        </div>
+        <div className="inline-block responsive right-margin">
         <label htmlFor="su_confirmpassword" className="textlabel">
           Confirm Password
         </label>
@@ -170,7 +178,26 @@ function UpdateUser() {
           className="textinput"
           onChange={collectUserData}
         />
-
+        </div>
+        </div>
+        <div className="formRow">
+        <div className="inline-block right-margin">
+        <label htmlFor="uu_upload" className="textlabel">
+          Profile Picture
+        </label>
+        
+        <input
+          type="file"
+          placeholder="Upload Image"
+          name="upload"
+          id="uu_upload"
+          accept="image/*"
+          className="textinput"
+          onChange={imageHandler}
+        />
+       
+        </div>
+        <div className="inline-block responsive right-margin">
         <label htmlFor="su_location" className="textlabel">
           Location
         </label>
@@ -183,19 +210,11 @@ function UpdateUser() {
           className="textinput"
           onChange={collectUserData}
         />
-
-        <label htmlFor="uu_upload" className="textlabel">
-          Profile Picture
-        </label>
-        <input
-          type="file"
-          placeholder="Upload Image"
-          name="upload"
-          id="uu_upload"
-          accept="image/*"
-          className="textinput"
-          onChange={imageHandler}
-        />
+       
+        </div>
+        </div>
+        <div className="formRow">
+        <div className="inline-block right-margin">
         {imageToUpload && (
           <div className="imagepreview_container">
             <img
@@ -205,7 +224,6 @@ function UpdateUser() {
             />
           </div>
         )}
-
         <input
           type="checkbox"
           name="organization"
@@ -213,11 +231,18 @@ function UpdateUser() {
           onChange={collectUserData}
           checked={userData.organization}
         />
-        <label htmlFor="su_organization" id="checkbox_label">
+        
+        <label htmlFor="su_organization" id="update_checkbox_label">
           Organization
         </label>
-        <br></br>
+       
+        </div>
+        <div className="inline-block responsive right-margin">
         <button className="update_btn">Update</button>
+        </div>
+        </div>
+        
+        
       </form>
     </div>
   );
