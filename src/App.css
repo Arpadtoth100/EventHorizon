@@ -161,7 +161,7 @@ form * {
 
 .create_event_form {
   width: 33rem;
-  height: 55rem;
+  height: 60rem;
   padding: 1rem;
   margin-left: 3rem;
   margin-top: 1rem;
@@ -1053,7 +1053,7 @@ ul.paginationBtns {
   justify-content: center;
   align-items: center;
   color: #006d77;
-  background-color: #dcf1f5;
+  background-color: #aed9e0;
   height: 2rem;
   font-size: 1.5rem;
   width: 55vw;
@@ -1774,7 +1774,7 @@ a.active {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  background-color: #dcf1f5;
+  background-color: #aed9e0;
 }
 
 .eventdescription-container {
