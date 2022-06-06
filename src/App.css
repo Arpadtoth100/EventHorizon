@@ -182,9 +182,8 @@ form * {
   width: 100%-240px;
   display: flex;
   justify-content: center;
-  height: 60vh
+  height: 60vh;
 }
-
 
 .search_map {
   position: relative;
@@ -201,8 +200,8 @@ form * {
 }
 
 .search_form > h3,
-.search_form > .textlabel{
-align-self: flex-start;
+.search_form > .textlabel {
+  align-self: flex-start;
 }
 
 .search_output {
@@ -493,7 +492,7 @@ form h2 {
   height: 500px;
 }
 
-.infoboxcolumn+.infoboxcolumn {
+.infoboxcolumn + .infoboxcolumn {
   margin-left: 2%;
 }
 
@@ -534,7 +533,7 @@ form h2 {
 
   text-overflow: ellipsis;
   overflow: hidden;
-  margin-left:1rem;
+  margin-left: 1rem;
   margin-bottom: 1rem;
 }
 
@@ -555,7 +554,6 @@ form h2 {
 }
 
 @keyframes flip {
-
   0%,
   80% {
     transform: rotateY(360deg);
@@ -791,8 +789,6 @@ ul.paginationBtns {
   margin-top: -6vh;
   margin-bottom: 6vh;
 }
-
-
 
 .create_event_main {
   display: flex;
@@ -1277,7 +1273,7 @@ a.active {
   color: white;
   margin-left: 0;
   margin-top: 80px;
-  width: 100%
+  width: 100%;
 }
 
 .privacy_icon_container {
@@ -1343,7 +1339,7 @@ a.active {
   color: white;
   margin-left: 0;
   margin-top: 80px;
-  width: 100%
+  width: 100%;
 }
 
 .contactus_icon_container {
@@ -1363,8 +1359,8 @@ a.active {
   width: 100%;
   margin-top: 80px;
   margin-left: auto;
-  background-image: url(./images/contact7.jpg);
-  background-size: 4000px;
+  background-image: url(./images/contact.jpg);
+  background-size: 2000px;
 }
 
 .contact_head_title {
@@ -1699,7 +1695,7 @@ a.active {
   padding: 20px 20px;
 }
 
-@media screen and  (max-width: 960px) {
+@media screen and (max-width: 960px) {
   .header_main {
     display: flex;
     justify-content: space-between;
@@ -1772,10 +1768,7 @@ a.active {
   }
 }
 
-
-
 @media only screen and (max-width: 600px) {
-
   .header_main {
     display: flex;
     justify-content: space-around;
@@ -1786,6 +1779,10 @@ a.active {
   .contactus_main {
     background-image: url(./images/contact8.jpg);
     background-size: 700px;
+  }
+
+  .contactus_icon_container {
+    margin-top: 7rem;
   }
 
   .contactustextbox {
