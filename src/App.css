@@ -1149,8 +1149,8 @@ ul.paginationBtns {
 /* Joined Events Profile Images*/
 
 .useravatar_joinedeventsuserimage {
-  width: 5rem;
-  height: 5rem;
+  width: 4rem;
+  height: 4rem;
   border-radius: 50%;
 }
 
@@ -1688,6 +1688,8 @@ a.active {
 .attendees {
   display: flex;
   flex-direction: row;
+  /* box-sizing: border-box;
+  width: 100%; */
 }
 
 .attendeetitle {
@@ -1697,6 +1699,11 @@ a.active {
   color: #006d77;
   font-weight: bold;
   margin-top: 20px;
+}
+
+.attendeebox {
+  box-sizing: border-box;
+  width: 100%;
 }
 
 /*****************eventpage eddig******************/
