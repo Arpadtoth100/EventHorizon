@@ -1,0 +1,37 @@
+0-1 DIA
+
+main page
+-   landing page
+-   itt is elég már felkínált fizetős és ingyenes eventeket egyaránt
+tud keresni -> events
+-   clustering
+-   random felkínáált eventeket
+about us
+sign up/in -> sign up (egy hibaüzenetet lehet mutatni)
+my profile
+-   lista random eventekről
+klikk egy eventre (fizetős event)
+eventcard -> eventpage
+-   fizetős eventcardra menjünk
+-   fizetés (paypal react API; sandbox accounttal mutatunk egy teljes fizetést
+        -> ténylegesen megtörténik az átutalás a tulajdonos számlájára)
+-   vissza az event infora
+-   kap üzenetet, hogy sikeres volt
+-   le lehet iratkozni
+
+=====================================================================================
+
+create event -> teljes event creaálást megmutatunk (jelölni a mapon)
+sikeres create event -> thank you page
+joined és created eventek
+-   le tud iratkozni
+-   lehet törölni
+-   alapvetően nincs benne az attendeekben a creator
+profil oldalon tudja módosítani a saját adatait (miket tud változtatni)
+contact us
+-   beépített üzenetküldési lehetőség
+FAQ
+privacy
+sign Out
+
+2-4 DIA
