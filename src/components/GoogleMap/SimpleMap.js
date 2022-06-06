@@ -67,12 +67,12 @@ function SimpleMap({ eventData, title }) {
           onClick={() => {
             setSelected(marker);
           }}
-          icon={{
-            url: './sunrise.png',
-            scaledSize: new window.google.maps.Size(30, 30),
-            origin: new window.google.maps.Point(0, 0),
-            anchor: new window.google.maps.Point(15, 15),
-          }}
+          // icon={{
+          //   url: './sunrise.png',
+          //   scaledSize: new window.google.maps.Size(30, 30),
+          //   origin: new window.google.maps.Point(0, 0),
+          //   anchor: new window.google.maps.Point(15, 15),
+          // }}
         />
         {selected ? (
           <InfoWindow
@@ -81,7 +81,7 @@ function SimpleMap({ eventData, title }) {
               setSelected(null);
             }}
           >
-            <div>
+            <div className="info_text">
               <h2>{eventData.title && eventData.title}</h2>
               <p>{eventData.location && eventData.location}</p>
             </div>

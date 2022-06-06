@@ -61,6 +61,10 @@ textarea {
 
 /* Infobox thankyou */
 
+.info_text{
+  color: #006d77;
+}
+
 .infoboxcontainer {
   display: flex;
   margin-left: 4rem;
