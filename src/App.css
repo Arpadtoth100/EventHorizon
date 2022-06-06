@@ -63,6 +63,7 @@ textarea {
 
 .infoboxcontainer {
   display: flex;
+  margin-left: 4rem;
 }
 
 .infoboxcolumn {
@@ -72,7 +73,7 @@ textarea {
 
 .infoboxImg {
   height: 25vh;
-  width: 20vw;
+  width: 23rem;
 }
 
 .thankyoutext {
@@ -177,12 +178,6 @@ form * {
   background-color: #edf6f9;
 }
 
-/* .map-create {
-  margin-left: -2vw;
-  margin-top: -6vh;
-  height: 50rem;
-} */
-
 .search_container {
   width: 100%-240px;
   display: flex;
@@ -198,7 +193,6 @@ form * {
 .search_form {
   background-color: #edf6f9;
   padding: 1rem;
-  min-width: 10vw;
   margin-right: 2rem;
   height: 60vh;
   display: flex;
@@ -304,12 +298,6 @@ align-self: flex-start;
   margin-top: 3rem;
 }
 
-.contactusform {
-  background-color: #edf6f9;
-  width: 18vw;
-  margin: 20px;
-}
-
 .rowForm {
   margin: 18px 0;
   display: flex;
@@ -354,7 +342,6 @@ form h2 {
   display: inline-block;
   height: 30px;
   width: 15rem;
-  max-width: 20vw;
   background-color: white;
   border-radius: 3px;
   padding: 0 5px;
@@ -368,7 +355,6 @@ form h2 {
   display: inline-block;
   height: 30px;
   width: 30.5rem;
-  max-width: 30vw;
   background-color: white;
   border-radius: 3px;
   padding: 0 5px;
@@ -395,7 +381,6 @@ form h2 {
   display: block;
   height: 30px;
   width: 14.5rem;
-  max-width: 20vw;
   background-color: white;
   border-radius: 3px;
   padding: 0 10px;
@@ -604,13 +589,6 @@ form h2 {
   font-size: 24px;
 }
 
-.eventimage_container {
-  position: relative;
-  height: 41vh;
-  width: 80vw;
-  filter: blur(50px) brightness(0.9);
-}
-
 .eventpage_img {
   position: relative;
   height: 350px;
@@ -634,7 +612,7 @@ form h2 {
 
 .updateuserform {
   position: relative;
-  margin-left: 7vw;
+  margin-left: 8rem;
   margin-top: 4vh;
   margin-bottom: 4vh;
   padding-top: 50px;
@@ -680,10 +658,6 @@ form h2 {
   height: 80px;
   padding: 15px;
   color: #d81159;
-}
-
-.price_input{
-  height: 
 }
 
 .paginationBtns {
@@ -743,7 +717,6 @@ ul.paginationBtns {
   margin-top: 5vh;
   margin-bottom: 5vh;
   text-align: center;
-  /* margin-left: 4vw; */
 }
 
 .createevent_h3 {
@@ -1338,8 +1311,8 @@ a.active {
   font-size: 16px;
   line-height: 1.6;
   margin-top: 1rem;
-  margin-left: 5vw;
-  margin-right: 5vw;
+  margin-left: 7rem;
+  margin-right: 7rem;
 }
 
 .privacy_text h3,
@@ -1347,7 +1320,7 @@ a.active {
   color: #006d77;
   margin-bottom: 5px;
   margin-top: 3rem;
-  margin-left: 4vw;
+  margin-left: 5rem;
 }
 
 .privacy_title {
@@ -1356,7 +1329,7 @@ a.active {
 
 .contactlink {
   color: blue;
-  margin-left: 5vw;
+  margin-left: 7rem;
 }
 
 .privacylink {
@@ -1364,9 +1337,9 @@ a.active {
 }
 
 .faq_head {
-  background-image: url(./images/faqBg2.jpg);
+  background-image: url(./images/faqBg.jpg);
   height: 25vh;
-  opacity: 0.8;
+  opacity: 0.9;
   color: white;
   margin-left: 0;
   margin-top: 80px;
