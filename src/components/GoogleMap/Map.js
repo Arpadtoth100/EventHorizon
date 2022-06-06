@@ -150,7 +150,7 @@ function Map({ eventList }) {
               setSelected(null);
             }}
           >
-            <div>
+            <div className="info_text">
               <h2>{selected.title}</h2>
               <p>Location: {selected.location}</p>
               <p>Date of event: {selected.date}</p>

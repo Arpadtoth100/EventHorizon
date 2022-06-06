@@ -108,7 +108,7 @@ function MapCreate({ eventData, marker, onMapClick }) {
               setSelected(null);
             }}
           >
-            <div>
+            <div className="info_text">
               <h3>{eventData && eventData.title}</h3>
               <p>Location: {eventData && eventData.location}</p>
             </div>
