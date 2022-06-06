@@ -176,28 +176,6 @@ function CreateEventScreen() {
               onChange={createChangeHandler}
               maxLength="50"
             />
-            <label htmlFor="ce_upload" className="textlabel">
-              Choose Image to Upload
-            </label>
-            {imageToUpload && (
-              <div className="imagepreview_containerEvent">
-                <img
-                  className="imagepreview"
-                  src={URL.createObjectURL(imageToUpload)}
-                  alt="neweventimage"
-                />
-              </div>
-            )}
-            <input
-              required
-              type="file"
-              placeholder="Upload Image"
-              name="upload"
-              id="ce_upload"
-              className="cr_textinput"
-              accept="image/*"
-              onChange={imageHandler}
-            />
 
             <div className="formRow">
               <div className="inline-block right-margin">
@@ -307,7 +285,7 @@ function CreateEventScreen() {
                 {eventData.free === 'true' ? (
                   <></>
                 ) : (
-                  <>
+                  <div className="price_input">
                     <label htmlFor="price" className="textlabel">
                       Price
                     </label>
@@ -334,11 +312,33 @@ function CreateEventScreen() {
                       <option value="USD">USD</option>
                       <option value="EUR">EUR</option>
                     </select>
-                  </>
+                  </div>
                 )}
               </div>
             </div>
+            <label htmlFor="ce_upload" className="textlabel">
+              Choose Image to Upload
+            </label>
 
+            <input
+              required
+              type="file"
+              placeholder="Upload Image"
+              name="upload"
+              id="ce_upload"
+              className="cr_textinput"
+              accept="image/*"
+              onChange={imageHandler}
+            />
+            <div className="imagepreview_containerEvent">
+              {imageToUpload && (
+                <img
+                  className="imagepreview"
+                  src={URL.createObjectURL(imageToUpload)}
+                  alt="neweventimage"
+                />
+              )}
+            </div>
             <button
               type="submit"
               className="btn createeventBtn"
