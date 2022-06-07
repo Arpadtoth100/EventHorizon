@@ -7,6 +7,9 @@ tud keresni -> events
 -   clustering
 -   random felkínáált eventeket
 about us
+
+===================================================================================
+
 sign up/in -> sign up (egy hibaüzenetet lehet mutatni)
 my profile
 -   lista random eventekről
@@ -18,9 +21,6 @@ eventcard -> eventpage
 -   vissza az event infora
 -   kap üzenetet, hogy sikeres volt
 -   le lehet iratkozni
-
-=====================================================================================
-
 create event -> teljes event creaálást megmutatunk (jelölni a mapon)
 sikeres create event -> thank you page
 joined és created eventek
@@ -28,6 +28,9 @@ joined és created eventek
 -   lehet törölni
 -   alapvetően nincs benne az attendeekben a creator
 profil oldalon tudja módosítani a saját adatait (miket tud változtatni)
+
+===================================================================================
+
 contact us
 -   beépített üzenetküldési lehetőség
 FAQ
