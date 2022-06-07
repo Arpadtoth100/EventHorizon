@@ -96,6 +96,10 @@ textarea {
   z-index: 999;
 }
 
+.footer {
+  margin-top: auto;
+}
+
 .footer_main {
   display: flex;
   justify-content: center;
