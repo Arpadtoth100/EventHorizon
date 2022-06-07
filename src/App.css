@@ -1338,6 +1338,7 @@ a.active {
 
 .faq_head {
   background-image: url(./images/faqBg.jpg);
+  background-size: cover;
   height: 25vh;
   opacity: 0.9;
   color: white;
@@ -1364,7 +1365,7 @@ a.active {
   margin-top: 80px;
   margin-left: auto;
   background-image: url(./images/contact.jpg);
-  background-size: 2000px;
+  background-size: cover;
 }
 
 .contact_head_title {
