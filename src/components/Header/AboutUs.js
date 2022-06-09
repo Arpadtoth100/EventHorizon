@@ -28,25 +28,9 @@ function AboutUs() {
         </div>
         <div className="team_container">
           <div className="memberdetails">
-            <div className="teammember">
-              <img className="teammember" src="Arpad.jpg" alt="teammember" />
-            </div>
-            <p>Árpád</p>
-            <p>TÓTH</p>
-          </div>
-          <div className="memberdetails">
-            <img className="teammember" src="dandelion.jpg" alt="teammember" />
-            <p>Dávid</p>
-            <p>VÉGH</p>
-          </div>
-          <div className="memberdetails">
-            <img
-              className="teammember"
-              src="marcus.jpg"
-              alt="teammember"
-            />
-            <p>Marcus</p>
-            <p>VIDRÁNYI</p>
+            <img className="teammember" src="Tamas.png" alt="teammember" />
+            <p>Tamás</p>
+            <p>BITTERA</p>
           </div>
           <div className="memberdetails">
             <img className="teammember" src="MSE.jpg" alt="teammember" />
@@ -54,19 +38,21 @@ function AboutUs() {
             <p>JÓZSA</p>
           </div>
           <div className="memberdetails">
-            <img className="teammember" src="Tamas.png" alt="teammember" />
-            <p>Tamás</p>
-            <p>BITTERA</p>
+            <div className="teammember">
+              <img className="teammember" src="Arpad.jpg" alt="teammember" />
+            </div>
+            <p>Árpád</p>
+            <p>TÓTH</p>
           </div>
           <div className="memberdetails">
-            <img className="teammember" src="dandelion.jpg" alt="teammember" />
+            <img className="teammember" src="VDavid.jpeg" alt="teammember" />
             <p>Dávid</p>
-            <p>BALÁZS</p>
+            <p>VÉGH</p>
           </div>
           <div className="memberdetails">
-            <img className="teammember" src="dandelion.jpg" alt="teammember" />
-            <p>Dávid</p>
-            <p>FARKAS</p>
+            <img className="teammember" src="marcus.jpg" alt="teammember" />
+            <p>Marcus</p>
+            <p>VIDRÁNYI</p>
           </div>
         </div>
       </div>
