@@ -35,7 +35,7 @@ function AboutUs() {
             <p>TÓTH</p>
           </div>
           <div className="memberdetails">
-            <img className="teammember" src="dandelion.jpg" alt="teammember" />
+            <img className="teammember" src="davidvegh.jpg" alt="teammember" />
             <p>Dávid</p>
             <p>VÉGH</p>
           </div>
