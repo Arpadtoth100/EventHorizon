@@ -42,7 +42,7 @@ function AboutUs() {
           <div className="memberdetails">
             <img
               className="teammember"
-              src="zealot_profile.png"
+              src="marcus.jpg"
               alt="teammember"
             />
             <p>Marcus</p>
