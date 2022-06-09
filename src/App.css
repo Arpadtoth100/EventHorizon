@@ -1118,8 +1118,8 @@ ul.paginationBtns {
 .map_container {
   display: flex;
   justify-content: center;
-  /* position: relative;
-  top: 4rem;
+   position: relative;
+  /*top: 4rem;
   left: 4rem; */
 }
 
